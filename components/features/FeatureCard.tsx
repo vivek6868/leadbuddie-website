@@ -1,7 +1,8 @@
 import { LucideIcon } from 'lucide-react'
-import { Feature } from '@/lib/types'
 
-interface FeatureCardProps extends Feature {
+interface FeatureCardProps {
+  title: string
+  description: string
   icon: LucideIcon
 }
 

@@ -12,7 +12,7 @@ export interface PricingPlan {
   currency: string
   period: string
   description: string
-  features: string[]
+  features: readonly string[] | string[]
   cta: string
   highlighted: boolean
 }
