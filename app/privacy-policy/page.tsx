@@ -8,16 +8,11 @@ export const metadata: Metadata = {
 }
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = 'December 7, 2024'
-
   return (
     <Section className="pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-dark-400">
-            Last updated: {lastUpdated}
-          </p>
         </div>
 
         <div className="prose prose-invert max-w-none space-y-8">
