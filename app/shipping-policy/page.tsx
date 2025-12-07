@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 export default function ShippingPolicyPage() {
-  const lastUpdated = 'January 1, 2025'
+  const lastUpdated = 'December 7, 2024'
 
   return (
     <Section className="pt-24 pb-16 md:pt-32 md:pb-24">
@@ -22,6 +22,15 @@ export default function ShippingPolicyPage() {
         </div>
 
         <div className="prose prose-invert max-w-none space-y-8">
+          <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
+            <h2 className="text-2xl font-semibold mb-4">Shipping Policy</h2>
+            <p className="text-dark-300 mb-4">
+              As a digital service, no physical shipping applies. LeadBuddie is a Software-as-a-Service (SaaS) platform delivered exclusively through our web application. We do not ship, deliver, or provide any physical goods, products, hardware, or materials. All services are accessed digitally through your internet-connected device.
+            </p>
+            <p className="text-dark-300">
+              Since there are no physical items to ship, <strong className="text-white">no shipping charges, delivery fees, or handling costs apply</strong>. Your subscription payment covers only the digital service access, which is provided instantly upon account activation.
+            </p>
+          </div>
           <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
             <div className="flex items-start space-x-4 mb-6">
               <div className="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -163,8 +172,8 @@ export default function ShippingPolicyPage() {
                   </li>
                   <li>
                     <strong>General Inquiries:</strong>{' '}
-                    <a href={`mailto:${CONTACT.general}`} className="text-primary-400 hover:text-primary-300">
-                      {CONTACT.general}
+                    <a href="mailto:hello@leadbuddie.com" className="text-primary-400 hover:text-primary-300">
+                      hello@leadbuddie.com
                     </a>
                   </li>
                   <li>

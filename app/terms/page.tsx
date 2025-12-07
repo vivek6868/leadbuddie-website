@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default function TermsPage() {
-  const lastUpdated = 'January 1, 2025'
+  const lastUpdated = 'December 7, 2024'
 
   return (
     <Section className="pt-24 pb-16 md:pt-32 md:pb-24">
