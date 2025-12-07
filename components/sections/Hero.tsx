@@ -19,11 +19,10 @@ export function Hero() {
           {BRAND.tagline}
         </p>
         <p className="text-lg text-dark-400 mb-8 max-w-2xl mx-auto text-balance">
-          Track, score, and follow up with every WhatsApp lead automatically. 
-          Made in India, available worldwide for contractors and small businesses everywhere.
+          See every WhatsApp enquiry, chat reply, note and AI insight in one place. LeadBuddie gives your team a real-time WhatsApp-style inbox, AI reply drafts, and simple follow-up tools built for Indian SMBs.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" href="/pricing" className="group">
+          <Button size="lg" href="https://app.leadbuddie.com" className="group">
             Start Free Trial
             <ArrowRight className="ml-2 inline-block group-hover:translate-x-1 transition-transform" size={20} />
           </Button>
@@ -37,7 +36,7 @@ export function Hero() {
             Made in India | Trusted Worldwide
           </span>
           <span>•</span>
-          <span>14-day free trial</span>
+          <span>7-day free trial</span>
           <span>•</span>
           <span>No credit card required</span>
         </div>

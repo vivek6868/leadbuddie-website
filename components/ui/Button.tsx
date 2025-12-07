@@ -40,6 +40,15 @@ export function Button({
   )
   
   if (href) {
+    // Use regular <a> tag for external links (http/https)
+    if (href.startsWith('http://') || href.startsWith('https://')) {
+      return (
+        <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      )
+    }
+    // Use Next.js Link for internal links
     return (
       <Link href={href} className={classes}>
         {children}

@@ -27,7 +27,9 @@ export interface Step {
 export interface Testimonial {
   quote: string
   author: string
+  company?: string
   location: string
+  rating: number
 }
 
 export interface NavLink {

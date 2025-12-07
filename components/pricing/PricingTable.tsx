@@ -2,58 +2,65 @@ import { PRICING_PLANS } from '@/lib/constants'
 import { Check, X } from 'lucide-react'
 
 const allFeatures = [
-  'Monthly Leads Limit',
-  'AI-Powered Summaries',
-  'Lead Scoring',
-  'Follow-up Reminders',
-  'WhatsApp Integration',
-  'Auto-reply Messages',
-  'Team Collaboration',
+  'Included Users',
+  'WhatsApp Numbers',
+  'Unified Chat Inbox',
+  'AI Reply Assist',
+  'AI Auto-Welcome & First Reply',
+  'AI Conversation Summaries',
+  'Follow-up Status & Reminders',
+  'Multiple Workspaces',
   'Priority Support',
-  'Custom Pipelines',
-  'Advanced Analytics',
 ]
 
 function getFeatureValue(planId: string, feature: string): boolean | string {
   const plan = PRICING_PLANS.find(p => p.id === planId)
   if (!plan) return false
   
-  const featureMap: Record<string, Record<string, boolean | string>> = {
-    'basic': {
-      'Monthly Leads Limit': '100 leads',
-      'AI-Powered Summaries': true,
-      'Lead Scoring': true,
-      'Follow-up Reminders': true,
-      'WhatsApp Integration': 'Manual',
-      'Auto-reply Messages': false,
-      'Team Collaboration': false,
+  const featureMap: Record<string, Record<string, string | boolean>> = {
+    starter: {
+      'Included Users': '1',
+      'WhatsApp Numbers': '1',
+      'Unified Chat Inbox': true,
+      'AI Reply Assist': true,
+      'AI Auto-Welcome & First Reply': false,
+      'AI Conversation Summaries': true,
+      'Follow-up Status & Reminders': true,
+      'Multiple Workspaces': false,
       'Priority Support': false,
-      'Custom Pipelines': false,
-      'Advanced Analytics': false,
     },
-    'pro': {
-      'Monthly Leads Limit': '500 leads',
-      'AI-Powered Summaries': true,
-      'Lead Scoring': true,
-      'Follow-up Reminders': true,
-      'WhatsApp Integration': true,
-      'Auto-reply Messages': true,
-      'Team Collaboration': false,
-      'Priority Support': true,
-      'Custom Pipelines': true,
-      'Advanced Analytics': false,
+    growth: {
+      'Included Users': '5',
+      'WhatsApp Numbers': '1',
+      'Unified Chat Inbox': true,
+      'AI Reply Assist': true,
+      'AI Auto-Welcome & First Reply': true,
+      'AI Conversation Summaries': true,
+      'Follow-up Status & Reminders': true,
+      'Multiple Workspaces': true,
+      'Priority Support': false,
     },
-    'business': {
-      'Monthly Leads Limit': 'Unlimited',
-      'AI-Powered Summaries': true,
-      'Lead Scoring': true,
-      'Follow-up Reminders': true,
-      'WhatsApp Integration': true,
-      'Auto-reply Messages': true,
-      'Team Collaboration': true,
+    team: {
+      'Included Users': '20',
+      'WhatsApp Numbers': '3',
+      'Unified Chat Inbox': true,
+      'AI Reply Assist': true,
+      'AI Auto-Welcome & First Reply': true,
+      'AI Conversation Summaries': true,
+      'Follow-up Status & Reminders': true,
+      'Multiple Workspaces': true,
       'Priority Support': true,
-      'Custom Pipelines': true,
-      'Advanced Analytics': true,
+    },
+    enterprise: {
+      'Included Users': 'Custom',
+      'WhatsApp Numbers': 'Custom',
+      'Unified Chat Inbox': true,
+      'AI Reply Assist': true,
+      'AI Auto-Welcome & First Reply': true,
+      'AI Conversation Summaries': true,
+      'Follow-up Status & Reminders': true,
+      'Multiple Workspaces': true,
+      'Priority Support': true,
     },
   }
   

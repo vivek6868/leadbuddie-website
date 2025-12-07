@@ -7,20 +7,20 @@ import { useState } from 'react'
 
 const screenshots = [
   {
-    title: 'Dashboard Overview',
-    description: 'See all your leads at a glance with AI-powered scoring and prioritization',
+    title: 'Unified Chat Inbox',
+    description: 'Real-time WhatsApp chat workspace with AI replies and lead details side by side. See all conversations in one place.',
     image: '/images/dashboard-overview.png',
-    alt: 'LeadBuddie Dashboard showing all leads with AI scoring',
+    alt: 'LeadBuddie unified WhatsApp chat inbox with real-time conversations',
   },
   {
-    title: 'Lead Detail View',
-    description: 'Complete conversation history, notes, and AI-generated insights for each lead',
+    title: 'Chat Workspace with AI',
+    description: 'Desktop split view showing WhatsApp chat, AI reply suggestions, and lead CRM details all in one screen.',
     image: '/images/lead-detail-view.png',
-    alt: 'LeadBuddie Lead Detail page with conversation history and AI insights',
+    alt: 'LeadBuddie chat workspace with AI reply copilot and lead information',
   },
   {
-    title: 'AI Summary',
-    description: 'Instant AI summaries help you understand lead context without reading entire conversations',
+    title: 'AI Conversation Summaries',
+    description: 'Instant AI summaries help your team understand lead context without reading entire conversations',
     image: '/images/ai-summary.png',
     alt: 'LeadBuddie AI Summary showing conversation insights',
   },

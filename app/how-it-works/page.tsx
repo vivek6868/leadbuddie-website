@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
       <ComplianceSection />
       <CTASection 
         title="Ready to Get Started?"
-        description="Start your 14-day free trial and see how easy it is to manage your WhatsApp leads."
+        description="Start your 7-day free trial and see how easy it is to manage your WhatsApp leads."
       />
     </>
   )

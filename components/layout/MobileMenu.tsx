@@ -70,7 +70,7 @@ export function MobileMenu() {
               <div className="pt-6 border-t border-dark-700">
                 <Button 
                   className="w-full" 
-                  href="/pricing"
+                  href="https://app.leadbuddie.com"
                   onClick={() => setIsOpen(false)}
                 >
                   Start Free Trial

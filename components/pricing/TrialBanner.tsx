@@ -10,7 +10,7 @@ export function TrialBanner() {
           </div>
         </div>
         <div>
-          <h3 className="text-xl font-semibold mb-2">14-Day Free Trial</h3>
+          <h3 className="text-xl font-semibold mb-2">7-Day Free Trial</h3>
           <p className="text-dark-300 mb-4">
             Start your free trial today. No credit card required. Cancel anytime.
           </p>
@@ -25,7 +25,7 @@ export function TrialBanner() {
             </li>
             <li className="flex items-center space-x-2 text-sm text-dark-300">
               <CheckCircle2 className="text-green-400" size={16} />
-              <span>14-day money-back guarantee</span>
+              <span>7-day money-back guarantee</span>
             </li>
           </ul>
         </div>

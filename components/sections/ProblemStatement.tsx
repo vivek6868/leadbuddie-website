@@ -4,23 +4,23 @@ import { MessageCircle, XCircle, Clock, FileSpreadsheet } from 'lucide-react'
 const problems = [
   {
     icon: MessageCircle,
-    title: 'Leads Lost in WhatsApp',
-    description: 'Important customer inquiries get buried in endless WhatsApp chats. You miss follow-ups and lose potential business.',
+    title: 'Leads Lost in Scattered WhatsApp Chats',
+    description: 'Important customer inquiries get buried across multiple phones and WhatsApp chats. No central inbox means you miss follow-ups and lose potential business.',
   },
   {
     icon: FileSpreadsheet,
-    title: 'Messy Excel Tracking',
-    description: 'Trying to track leads in Excel sheets is time-consuming and error-prone. Data gets outdated and disorganized.',
+    title: 'No Central Chat Inbox',
+    description: 'Juggling multiple phones and WhatsApp accounts makes it impossible to see all conversations in one place. Hard to collaborate as a team.',
   },
   {
     icon: Clock,
     title: 'Missed Follow-ups',
-    description: 'Without reminders, you forget to follow up with leads. Days turn into weeks, and opportunities slip away.',
+    description: 'Without reminders and a clear view of which leads need attention, you forget to follow up. Days turn into weeks, and opportunities slip away.',
   },
   {
     icon: XCircle,
-    title: 'No Lead Prioritization',
-    description: 'You can\'t tell which leads are hot and which are cold. You waste time on low-quality leads.',
+    title: 'Hard to Collaborate as a Team',
+    description: 'When everyone uses their own phone, you can\'t see who\'s handling which lead. No visibility, no coordination, missed opportunities.',
   },
 ]
 

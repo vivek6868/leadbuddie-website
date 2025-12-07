@@ -45,7 +45,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button href="/pricing">Start Free Trial</Button>
+            <Button href="https://app.leadbuddie.com">Start Free Trial</Button>
           </div>
 
           {/* Mobile Menu */}

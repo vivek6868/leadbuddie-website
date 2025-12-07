@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us - LeadBuddie',
-  description: 'Get in touch with LeadBuddie. We\'re here to help you manage your WhatsApp leads better.',
+  description: 'Contact LeadBuddie support. Email support@leadbuddie.com. Support hours: Monday–Saturday, 10am to 6pm IST.',
 }
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Get in Touch
+            Contact Us
           </h1>
           <p className="text-lg text-dark-300 max-w-2xl mx-auto">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -59,10 +59,13 @@ export default function ContactPage() {
                     <h3 className="font-semibold mb-1">Customer Support</h3>
                     <a
                       href={`mailto:${CONTACT.support}`}
-                      className="text-secondary-400 hover:text-secondary-300 transition-colors"
+                      className="text-secondary-400 hover:text-secondary-300 transition-colors block mb-2"
                     >
                       {CONTACT.support}
                     </a>
+                    <p className="text-sm text-dark-400">
+                      Support hours: Monday–Saturday, 10am to 6pm IST
+                    </p>
                   </div>
                 </div>
               </div>
@@ -106,9 +109,12 @@ export default function ContactPage() {
                     <Clock className="text-green-400" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Response Time</h3>
+                    <h3 className="font-semibold mb-1">Business Information</h3>
+                    <p className="text-dark-300 mb-2">
+                      <strong>Business Name:</strong> Hutliv Technologies
+                    </p>
                     <p className="text-dark-300">
-                      We typically respond within 24 hours during business days.
+                      <strong>Location:</strong> India
                     </p>
                   </div>
                 </div>

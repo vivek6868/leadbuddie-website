@@ -50,7 +50,7 @@ export function PricingCard({
       </ul>
       
       <Button
-        href="/pricing"
+        href={cta === 'Talk to Sales' || cta === 'Contact Us' ? '/contact' : cta === 'Start Free Trial' ? 'https://app.leadbuddie.com' : '/pricing'}
         variant={highlighted ? 'primary' : 'outline'}
         className="w-full"
       >

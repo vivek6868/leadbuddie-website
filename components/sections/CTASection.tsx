@@ -13,7 +13,7 @@ interface CTASectionProps {
 
 export function CTASection({
   title = "Ready to Never Lose a Lead Again?",
-  description = "Start your 14-day free trial today. No credit card required.",
+  description = "Start your 7-day free trial today. No credit card required.",
   primaryCTA = "Start Free Trial",
   primaryHref = "/pricing",
   secondaryCTA,

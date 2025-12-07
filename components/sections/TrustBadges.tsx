@@ -7,10 +7,10 @@ export function TrustBadges() {
     <Section>
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Made in India, Trusted Worldwide
+          Made in India, Trusted by Indian Businesses
         </h2>
         <p className="text-lg text-dark-300">
-          See what businesses like yours are saying
+          See what business owners like you are saying about LeadBuddie
         </p>
       </div>
       
@@ -30,26 +30,29 @@ export function TrustBadges() {
       </div>
       
       {TESTIMONIALS.length > 0 && (
-        <div className="max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {TESTIMONIALS.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8"
+              className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 hover:border-primary-600/50 transition-all hover:shadow-lg hover:shadow-primary-600/10"
             >
-              <Quote className="text-primary-400 mb-4" size={32} />
-              <p className="text-lg text-dark-200 mb-4 italic">
-                "{testimonial.quote}"
-              </p>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center mb-4">
+                <Quote className="text-primary-400 mr-2" size={24} />
                 <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="text-yellow-400 fill-yellow-400" size={16} />
+                  {[...Array(testimonial.rating || 5)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400 fill-yellow-400" size={14} />
                   ))}
                 </div>
-                <div className="ml-2">
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-sm text-dark-400">{testimonial.location}</div>
-                </div>
+              </div>
+              <p className="text-dark-200 mb-4 text-sm leading-relaxed">
+                "{testimonial.quote}"
+              </p>
+              <div className="border-t border-dark-700 pt-4">
+                <div className="font-semibold text-white">{testimonial.author}</div>
+                {testimonial.company && (
+                  <div className="text-sm text-primary-400">{testimonial.company}</div>
+                )}
+                <div className="text-xs text-dark-400 mt-1">{testimonial.location}</div>
               </div>
             </div>
           ))}

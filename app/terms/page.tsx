@@ -153,7 +153,7 @@ export default function TermsPage() {
               <strong>6.2 Free Trial</strong>
             </p>
             <p className="text-dark-300 mb-4">
-              We offer a 14-day free trial period. During the trial, you have full access to the Service. 
+              We offer a 7-day free trial period. During the trial, you have full access to the Service. 
               No payment information is required to start the trial. At the end of the trial period, you may 
               choose to subscribe to a paid plan or your account will be suspended.
             </p>
@@ -178,11 +178,11 @@ export default function TermsPage() {
           <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-4">7. Refund Policy</h2>
             <p className="text-dark-300 mb-4">
-              <strong>7.1 14-Day Money-Back Guarantee</strong>
+              <strong>7.1 7-Day Money-Back Guarantee</strong>
             </p>
             <p className="text-dark-300 mb-4">
-              We offer a 14-day money-back guarantee from the date of your first paid subscription. If you are 
-              not satisfied with our Service within 14 days of your first payment, contact us at {CONTACT.support} 
+              We offer a 7-day money-back guarantee from the date of your first paid subscription. If you are 
+              not satisfied with our Service within 7 days of your first payment, contact us at {CONTACT.support} 
               to request a full refund.
             </p>
 
@@ -195,10 +195,10 @@ export default function TermsPage() {
             </p>
 
             <p className="text-dark-300 mb-4">
-              <strong>7.3 No Refunds After 14 Days</strong>
+              <strong>7.3 No Refunds After 7 Days</strong>
             </p>
             <p className="text-dark-300">
-              After the 14-day guarantee period, subscription fees are non-refundable. However, you may cancel 
+              After the 7-day guarantee period, subscription fees are non-refundable. However, you may cancel 
               your subscription at any time, and you will continue to have access until the end of your current 
               billing period.
             </p>

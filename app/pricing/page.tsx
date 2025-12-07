@@ -8,7 +8,7 @@ import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
   title: 'Pricing - LeadBuddie',
-  description: 'Simple, transparent pricing for SMBs worldwide. Start with a 14-day free trial. No credit card required.',
+  description: 'Simple, India-first pricing for WhatsApp CRM and AI chat automation. Start with a 7-day free trial. No credit card required.',
 }
 
 export default function PricingPage() {
@@ -20,13 +20,13 @@ export default function PricingPage() {
             Simple, Transparent Pricing
           </h1>
           <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-            Choose the plan that fits your business. All plans include a 14-day free trial.
+            Choose the plan that fits your business. All plans include a 7-day free trial.
           </p>
         </div>
 
         <TrialBanner />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {PRICING_PLANS.map((plan) => (
             <PricingCard key={plan.id} {...plan} />
           ))}
@@ -45,7 +45,7 @@ export default function PricingPage() {
             <div>
               <h3 className="text-lg font-semibold mb-2">What happens after my free trial?</h3>
               <p className="text-dark-300">
-                After your 14-day free trial, you can choose to continue with any paid plan. 
+                After your 7-day free trial, you can choose to continue with any paid plan. 
                 If you don't want to continue, simply cancel - no charges will be made.
               </p>
             </div>
@@ -66,8 +66,8 @@ export default function PricingPage() {
             <div>
               <h3 className="text-lg font-semibold mb-2">Is there a money-back guarantee?</h3>
               <p className="text-dark-300">
-                Yes! We offer a 14-day money-back guarantee. If you're not satisfied, 
-                contact us within 14 days for a full refund.
+                Yes! We offer a 7-day money-back guarantee. If you're not satisfied, 
+                contact us within 7 days for a full refund.
               </p>
             </div>
           </div>
