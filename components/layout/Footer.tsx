@@ -106,17 +106,12 @@ export function Footer() {
         </div>
 
         <div className="border-t border-dark-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-center md:text-left">
-              <p className="text-dark-400 text-sm">
-                {BRAND.name} is a product by {BRAND.company}
-              </p>
-              <p className="text-dark-500 text-xs mt-1">
-                Made in India | Available Worldwide
-              </p>
-            </div>
-            <p className="text-dark-500 text-sm">
-              © {currentYear} {BRAND.company}. All rights reserved.
+          <div className="flex flex-col items-center space-y-2 text-center">
+            <p className="text-dark-400 text-xs">
+              © 2025 {BRAND.name} • A product by {BRAND.company}
+            </p>
+            <p className="text-dark-500 text-xs">
+              Owned and operated by Vivek Dhandapani
             </p>
           </div>
         </div>
