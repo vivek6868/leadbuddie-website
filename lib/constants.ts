@@ -25,6 +25,7 @@ export const LEGAL_LINKS = [
   { name: 'Terms of Service', href: '/terms' },
   { name: 'Refund Policy', href: '/refund-policy' },
   { name: 'Shipping Policy', href: '/shipping-policy' },
+  { name: 'Data Deletion Instructions', href: '/data-deletion-instructions' },
 ] as const
 
 export const FEATURES = [
