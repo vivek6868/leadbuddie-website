@@ -111,7 +111,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Business Information</h3>
                     <p className="text-dark-300 mb-2">
-                      <strong>Business Name:</strong> Hutliv Technologies
+                      <strong>Business Name:</strong> Hutliv
                     </p>
                     <p className="text-dark-300">
                       <strong>Location:</strong> India
