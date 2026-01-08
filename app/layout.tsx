@@ -25,6 +25,17 @@ export const metadata: Metadata = {
   authors: [{ name: 'Hutliv Technologies' }],
   creator: 'Hutliv Technologies',
   publisher: 'Hutliv Technologies',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
+      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+    ],
+    apple: [
+      { url: '/images/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',

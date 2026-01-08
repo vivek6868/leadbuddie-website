@@ -242,7 +242,7 @@ For questions or issues:
 
 ## 📄 License
 
-© 2025 Hutliv Technologies. All rights reserved.
+© 2025 Hutliv. All rights reserved.
 
 ---
 

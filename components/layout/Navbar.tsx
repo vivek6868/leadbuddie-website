@@ -11,7 +11,7 @@ export function Navbar() {
   const [logoError, setLogoError] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-40 bg-dark-900/80 backdrop-blur-md border-b border-dark-800">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-3">
@@ -26,7 +26,7 @@ export function Navbar() {
                 onError={() => setLogoError(true)}
               />
             )}
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-gray-900">
               LeadBuddie
             </span>
           </Link>
@@ -37,7 +37,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-dark-200 hover:text-white transition-colors text-sm font-medium"
+                className="text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium"
               >
                 {item.name}
               </Link>
@@ -57,4 +57,3 @@ export function Navbar() {
     </nav>
   )
 }
-

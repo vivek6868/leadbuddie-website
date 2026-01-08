@@ -7,17 +7,15 @@ export const BRAND = {
 
 export const CONTACT = {
   general: 'hello@hutliv.com',
-  support: 'support@leadbuddie.com',
+  support: 'hello@hutliv.com',
   phone: '[Your India Phone]', // TODO: Fill in actual phone
   address: '[Your India Address]', // TODO: Fill in actual address
 } as const
 
 export const NAVIGATION = [
-  { name: 'Features', href: '/features' },
+  { name: 'Product', href: '/product' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'How It Works', href: '/how-it-works' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Demo', href: '/demo' },
 ] as const
 
 export const LEGAL_LINKS = [
@@ -81,18 +79,32 @@ export const FEATURES = [
 
 export const PRICING_PLANS = [
   {
+    id: 'basic',
+    name: 'Basic',
+    price: 0,
+    currency: '₹',
+    period: 'month',
+    description: 'Get started with lead management',
+    features: [
+      'Up to 10 leads',
+      'No WhatsApp integration',
+      'No AI features',
+      'Basic CRM',
+    ],
+    cta: 'Start Free',
+    highlighted: false,
+  },
+  {
     id: 'starter',
     name: 'Starter',
     price: 499,
     currency: '₹',
     period: 'month',
-    description: 'For solo owners getting organized on WhatsApp',
+    description: 'WhatsApp CRM with AI summaries',
     features: [
-      '1 user seat',
-      '1 WhatsApp Business number',
-      'Unified WhatsApp chat inbox',
-      'Lead CRM with notes & follow-ups',
-      'Manual AI reply assist & summaries',
+      'WhatsApp CRM',
+      'AI summaries',
+      '50 AI actions/month',
       'Email support',
     ],
     cta: 'Start Free Trial',
@@ -104,14 +116,13 @@ export const PRICING_PLANS = [
     price: 999,
     currency: '₹',
     period: 'month',
-    description: 'For small teams who want AI to help with replies',
+    description: 'Full AI automation for growing teams',
     features: [
-      'Up to 5 team members',
-      'Full chats workspace with assignments',
-      'AI auto-welcome & first response',
-      'AI conversation summaries',
-      'Follow-up statuses & reminders',
-      'Priority email support',
+      'Full AI automation',
+      'Unlimited AI actions',
+      '3 campaigns/month',
+      '50 recipients/campaign',
+      'Priority support',
     ],
     cta: 'Start Free Trial',
     highlighted: true,
@@ -119,19 +130,18 @@ export const PRICING_PLANS = [
   {
     id: 'team',
     name: 'Team',
-    price: 1499,
+    price: 1999,
     currency: '₹',
     period: 'month',
     description: 'For high-volume teams and agencies',
     features: [
-      'Up to 20 team members',
-      'Multiple workspaces/brands support',
-      'Advanced assignment & role controls',
-      'SLA-friendly follow-up views',
-      'Access to upcoming automations & reports',
+      'Up to 5 team members',
+      'Shared inbox',
+      '20 campaigns/month',
+      '500 recipients/campaign',
       'Priority support',
     ],
-    cta: 'Talk to Sales',
+    cta: 'Start Free Trial',
     highlighted: false,
   },
   {
@@ -140,14 +150,14 @@ export const PRICING_PLANS = [
     price: 4999,
     currency: '₹',
     period: 'month',
-    description: 'Custom deployments & SLAs for larger organisations',
+    description: 'Custom deployments for larger organizations',
     features: [
-      'Everything in Team',
-      'Custom onboarding & training',
-      'Dedicated account manager',
-      'Custom limits & integrations',
-      'Data export & audit options',
-      'SLA-backed support',
+      'Multiple businesses',
+      'Unlimited campaigns',
+      'Unlimited recipients',
+      'Multiple WhatsApp numbers',
+      'Audit logs',
+      'Dedicated support',
     ],
     cta: 'Contact Us',
     highlighted: false,

@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us - LeadBuddie',
-  description: 'Contact LeadBuddie support. Email support@leadbuddie.com. Support hours: Monday–Saturday, 10am to 6pm IST.',
+  description: 'Contact LeadBuddie support. Email hello@hutliv.com. Support hours: Monday–Saturday, 10am to 6pm IST.',
 }
 
 export default function ContactPage() {
@@ -39,29 +39,12 @@ export default function ContactPage() {
                     <Mail className="text-primary-400" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">General Inquiries</h3>
+                    <h3 className="font-semibold mb-1">Email Us</h3>
                     <a
                       href={`mailto:${CONTACT.general}`}
-                      className="text-primary-400 hover:text-primary-300 transition-colors"
+                      className="text-primary-400 hover:text-primary-300 transition-colors block mb-2"
                     >
                       {CONTACT.general}
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-secondary-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-secondary-400" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Customer Support</h3>
-                    <a
-                      href={`mailto:${CONTACT.support}`}
-                      className="text-secondary-400 hover:text-secondary-300 transition-colors block mb-2"
-                    >
-                      {CONTACT.support}
                     </a>
                     <p className="text-sm text-dark-400">
                       Support hours: Monday–Saturday, 10am to 6pm IST

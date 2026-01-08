@@ -53,7 +53,7 @@ export default function DataDeletionInstructionsPage() {
                 <div className="bg-dark-900 border border-dark-700 rounded-lg p-4 mb-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Mail className="text-primary-400" size={20} />
-                    <strong className="text-white">support@hutliv.com</strong>
+                    <strong className="text-white">hello@hutliv.com</strong>
                   </div>
                   <p className="text-dark-300 text-sm">
                     with the subject line <strong className="text-white">"Data Deletion Request"</strong>
@@ -118,7 +118,7 @@ export default function DataDeletionInstructionsPage() {
                 </ul>
                 <p className="text-dark-300">
                   If you have any questions about the deletion process or need assistance, please don't hesitate 
-                  to contact us at <a href="mailto:support@hutliv.com" className="text-primary-400 hover:text-primary-300">support@hutliv.com</a>.
+                  to contact us at <a href="mailto:hello@hutliv.com" className="text-primary-400 hover:text-primary-300">hello@hutliv.com</a>.
                 </p>
               </div>
             </div>

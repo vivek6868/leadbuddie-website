@@ -167,8 +167,8 @@ export default function ShippingPolicyPage() {
                   </li>
                   <li>
                     <strong>General Inquiries:</strong>{' '}
-                    <a href="mailto:hello@leadbuddie.com" className="text-primary-400 hover:text-primary-300">
-                      hello@leadbuddie.com
+                    <a href="mailto:hello@hutliv.com" className="text-primary-400 hover:text-primary-300">
+                      hello@hutliv.com
                     </a>
                   </li>
                   <li>

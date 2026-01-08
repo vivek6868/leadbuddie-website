@@ -17,13 +17,13 @@ export function Button({
   href,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-900 inline-block text-center'
+  const baseStyles = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 inline-block text-center'
   
   const variants = {
-    primary: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500',
-    secondary: 'bg-secondary-600 hover:bg-secondary-700 text-white focus:ring-secondary-500',
-    outline: 'border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white focus:ring-primary-500',
-    ghost: 'text-primary-400 hover:bg-primary-600/10 hover:text-primary-300 focus:ring-primary-500',
+    primary: 'bg-teal-600 hover:bg-teal-700 text-white focus:ring-teal-500 shadow-sm hover:shadow-md',
+    secondary: 'bg-gray-900 hover:bg-gray-800 text-white focus:ring-gray-500 shadow-sm hover:shadow-md',
+    outline: 'border-2 border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
+    ghost: 'text-teal-600 hover:bg-teal-50 focus:ring-teal-500',
   }
   
   const sizes = {
