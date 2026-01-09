@@ -16,6 +16,8 @@ export const NAVIGATION = [
   { name: 'Product', href: '/product' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'Demo', href: '/demo' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
 ] as const
 
 export const LEGAL_LINKS = [

@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us - LeadBuddie',
-  description: 'Contact LeadBuddie support. Email hello@hutliv.com. Support hours: Monday–Saturday, 10am to 6pm IST.',
+  description: 'Contact LeadBuddie support. Email hello@hutliv.com.',
 }
 
 export default function ContactPage() {
@@ -25,13 +25,13 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Send us a Message</h2>
             <ContactForm />
           </div>
 
           {/* Contact Information */}
           <div>
-            <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Contact Information</h2>
             <div className="space-y-6">
               <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6">
                 <div className="flex items-start space-x-4">
@@ -42,13 +42,10 @@ export default function ContactPage() {
                     <h3 className="font-semibold mb-1">Email Us</h3>
                     <a
                       href={`mailto:${CONTACT.general}`}
-                      className="text-primary-400 hover:text-primary-300 transition-colors block mb-2"
+                      className="text-primary-400 hover:text-primary-300 transition-colors block"
                     >
                       {CONTACT.general}
                     </a>
-                    <p className="text-sm text-dark-400">
-                      Support hours: Monday–Saturday, 10am to 6pm IST
-                    </p>
                   </div>
                 </div>
               </div>
