@@ -50,7 +50,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-dark-800/50 border border-gray-200 dark:border-dark-700 rounded-lg p-6 md:p-8">
+    <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 md:p-8">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-200">
@@ -63,8 +63,9 @@ export function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-gray-300 dark:border-dark-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
             placeholder="Your name"
+            style={{ color: 'inherit' }}
           />
         </div>
 
@@ -79,8 +80,9 @@ export function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-gray-300 dark:border-dark-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
             placeholder="your@email.com"
+            style={{ color: 'inherit' }}
           />
         </div>
 
@@ -95,8 +97,9 @@ export function ContactForm() {
             rows={6}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white dark:bg-dark-900 border border-gray-300 dark:border-dark-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent resize-none"
+            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent resize-none"
             placeholder="How can we help you?"
+            style={{ color: 'inherit' }}
           />
         </div>
 
@@ -131,8 +134,8 @@ export function ContactForm() {
         </Button>
       </form>
 
-      <div className="mt-6 pt-6 border-t border-gray-200 dark:border-dark-700">
-        <p className="text-sm text-gray-600 dark:text-dark-400 text-center">
+      <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+        <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
           Or email us directly at{' '}
           <a href="mailto:hello@hutliv.com" className="text-primary-400 hover:text-primary-300">
             hello@hutliv.com

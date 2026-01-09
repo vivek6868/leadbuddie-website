@@ -3,6 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
+// Internal notification email recipient (actual email, not displayed on website)
+const INTERNAL_EMAIL = 'iamvivekd@gmail.com'
+
 export async function POST(request: NextRequest) {
   try {
     // Check if Resend is configured
@@ -24,22 +27,48 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Send email using Resend
-    const data = await resend.emails.send({
-      from: 'LeadBuddie Contact Form <onboarding@resend.dev>', // Change this to your verified domain
-      to: 'hello@hutliv.com',
-      subject: `New Contact Form Submission from ${name}`,
-      replyTo: email,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
-    })
+    // Send both emails in parallel
+    const [internalResult, acknowledgementResult] = await Promise.all([
+      // 1. Internal notification email to team
+      resend.emails.send({
+        from: 'LeadBuddie Team <contact@leadbuddie.com>',
+        to: INTERNAL_EMAIL,
+        replyTo: email,
+        subject: `New Contact Form Submission from ${name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #e5e7eb;">
+          <p style="color: #6b7280; font-size: 14px;">You can reply directly to this email to respond to ${name}.</p>
+        `,
+      }),
+      // 2. Acknowledgement email to user
+      resend.emails.send({
+        from: 'LeadBuddie Team <contact@leadbuddie.com>',
+        to: email,
+        subject: "We've received your message 👍",
+        html: `
+          <p>Hi ${name},</p>
+          <p>Thanks for contacting <strong>LeadBuddie</strong>.</p>
+          <p>We've received your message and our team will get back to you shortly.</p>
+          <p>– LeadBuddie Team</p>
+        `,
+      }),
+    ])
 
-    return NextResponse.json({ success: true, data }, { status: 200 })
+    return NextResponse.json(
+      { 
+        success: true, 
+        data: {
+          internal: internalResult,
+          acknowledgement: acknowledgementResult,
+        }
+      }, 
+      { status: 200 }
+    )
   } catch (error) {
     console.error('Error sending email:', error)
     return NextResponse.json(
