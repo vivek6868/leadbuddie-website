@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
-// Internal notification email recipient (temporarily changed for testing)
-const INTERNAL_EMAIL = 'leadbuddie@gmail.com'
+// Internal notification email recipients
+const INTERNAL_EMAILS = ['hello@hutliv.com', 'leadbuddie@gmail.com']
 
 export async function POST(request: NextRequest) {
   try {
@@ -29,10 +29,10 @@ export async function POST(request: NextRequest) {
 
     // Send both emails in parallel
     const [internalResult, acknowledgementResult] = await Promise.all([
-      // 1. Internal notification email to team
+      // 1. Internal notification email to team (sent to both addresses)
       resend.emails.send({
         from: 'LeadBuddie <no-reply@leadbuddie.com>',
-        to: INTERNAL_EMAIL,
+        to: INTERNAL_EMAILS,
         replyTo: email,
         subject: `New Contact Form Submission from ${name}`,
         html: `
