@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
-// Internal notification email recipient
-const INTERNAL_EMAIL = 'hello@hutliv.com'
+// Internal notification email recipient (temporarily changed for testing)
+const INTERNAL_EMAIL = 'leadbuddie@gmail.com'
 
 export async function POST(request: NextRequest) {
   try {
@@ -58,6 +58,18 @@ export async function POST(request: NextRequest) {
         `,
       }),
     ])
+
+    // Log the results for debugging
+    console.log('Internal email result:', JSON.stringify(internalResult, null, 2))
+    console.log('Acknowledgement email result:', JSON.stringify(acknowledgementResult, null, 2))
+
+    // Check if there are any errors in the response
+    if (internalResult.error) {
+      console.error('Internal email error:', internalResult.error)
+    }
+    if (acknowledgementResult.error) {
+      console.error('Acknowledgement email error:', acknowledgementResult.error)
+    }
 
     return NextResponse.json(
       { 
