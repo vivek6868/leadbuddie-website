@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
-// Internal notification email recipient (actual email, not displayed on website)
-const INTERNAL_EMAIL = 'iamvivekd@gmail.com'
+// Internal notification email recipient
+const INTERNAL_EMAIL = 'hello@hutliv.com'
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     const [internalResult, acknowledgementResult] = await Promise.all([
       // 1. Internal notification email to team
       resend.emails.send({
-        from: 'LeadBuddie Team <contact@leadbuddie.com>',
+        from: 'LeadBuddie <no-reply@leadbuddie.com>',
         to: INTERNAL_EMAIL,
         replyTo: email,
         subject: `New Contact Form Submission from ${name}`,
@@ -45,9 +45,9 @@ export async function POST(request: NextRequest) {
           <p style="color: #6b7280; font-size: 14px;">You can reply directly to this email to respond to ${name}.</p>
         `,
       }),
-      // 2. Acknowledgement email to user
+      // 2. Auto-reply acknowledgment email to user
       resend.emails.send({
-        from: 'LeadBuddie Team <contact@leadbuddie.com>',
+        from: 'LeadBuddie Team <no-reply@leadbuddie.com>',
         to: email,
         subject: "We've received your message 👍",
         html: `
