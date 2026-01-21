@@ -1,7 +1,8 @@
 import { HeroNew } from '@/components/sections/HeroNew'
 import { TrustBar } from '@/components/sections/TrustBar'
+import { ValuePropositions } from '@/components/sections/ValuePropositions'
 import { HowItWorks } from '@/components/sections/HowItWorks'
-import { FeatureHighlights } from '@/components/sections/FeatureHighlights'
+import { SolutionsPath } from '@/components/sections/SolutionsPath'
 import { FeatureShowcase } from '@/components/sections/FeatureShowcase'
 import { DemoSection } from '@/components/sections/DemoSection'
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
@@ -14,8 +15,9 @@ export default function HomePage() {
     <>
       <HeroNew />
       <TrustBar />
+      <ValuePropositions />
       <HowItWorks />
-      <FeatureHighlights />
+      <SolutionsPath />
       <FeatureShowcase />
       <DemoSection />
       <TestimonialsSection />

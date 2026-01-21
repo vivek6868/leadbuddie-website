@@ -23,7 +23,7 @@ const productSections = [
     id: 'inbox',
     title: 'WhatsApp Team Inbox',
     description: 'Unified inbox for all your WhatsApp conversations with real-time sync and team collaboration.',
-    screenshot: '/images/product-inbox.png',
+    screenshot: '/graphics/features/whatsapp-team-inbox.svg',
     benefits: [
       'See all WhatsApp conversations in one place',
       'Real-time sync and instant notifications',
@@ -37,7 +37,7 @@ const productSections = [
     id: 'leads',
     title: 'Lead Pipeline CRM',
     description: 'Track every lead from first contact to close with custom statuses, tags, and follow-ups.',
-    screenshot: '/images/product-leads.png',
+    screenshot: '/graphics/features/lead-pipeline-crm.svg',
     benefits: [
       'Custom lead statuses and pipelines',
       'Tags and categorization',
@@ -51,7 +51,7 @@ const productSections = [
     id: 'ai',
     title: 'AI Insights & Smart Replies',
     description: 'Get AI-suggested replies and instant conversation summaries to respond faster.',
-    screenshot: '/images/product-ai.png',
+    screenshot: '/graphics/features/ai-insights-smart-replies.svg',
     benefits: [
       'AI reply suggestions based on context',
       'Instant conversation summaries',
@@ -65,7 +65,7 @@ const productSections = [
     id: 'automation',
     title: 'Automations & Routing',
     description: 'Auto-assign leads by source and set up smart routing rules for your team.',
-    screenshot: '/images/product-automation.png',
+    screenshot: '/graphics/features/automations-routing.svg',
     benefits: [
       'Source-based auto-assignment',
       'Custom routing rules',
@@ -79,7 +79,7 @@ const productSections = [
     id: 'campaigns',
     title: 'Campaigns',
     description: 'Schedule messages, retry failed sends, and track campaign performance.',
-    screenshot: '/images/product-campaigns.png',
+    screenshot: '/graphics/features/campaigns.svg',
     benefits: [
       'Schedule messages for later',
       'Retry failed sends automatically',
@@ -93,7 +93,7 @@ const productSections = [
     id: 'analytics',
     title: 'Analytics & Performance',
     description: 'Track response times, conversion rates, and team performance metrics.',
-    screenshot: '/images/product-analytics.png',
+    screenshot: '/graphics/features/analytics-team-performance.svg',
     benefits: [
       'Response time metrics',
       'Conversion tracking',
@@ -107,7 +107,7 @@ const productSections = [
     id: 'team',
     title: 'Team Collaboration',
     description: 'Invite team members, assign roles, and collaborate on leads in real-time.',
-    screenshot: '/images/product-team.png',
+    screenshot: '/graphics/features/team-collaboration.svg',
     benefits: [
       'Invite unlimited team members',
       'Role-based permissions',
@@ -134,8 +134,8 @@ export default function ProductPage() {
         />
       </Section>
 
-      {/* Sticky Tabs */}
-      <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+      {/* Sticky Tabs - Premium Design */}
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-[0_4px_20px_rgba(15,23,42,0.06)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto scrollbar-hide">
             {tabs.map((tab) => (
@@ -146,52 +146,103 @@ export default function ProductPage() {
                   document.getElementById(tab.id)?.scrollIntoView({ behavior: 'smooth' })
                 }}
                 className={cn(
-                  'flex items-center gap-2 px-6 py-4 border-b-2 font-medium text-sm whitespace-nowrap transition-colors',
+                  'relative flex items-center gap-2 px-6 py-4 border-b-2 font-semibold text-sm whitespace-nowrap transition-all duration-200',
                   activeTab === tab.id
-                    ? 'border-teal-600 text-teal-600'
-                    : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'
+                    ? 'border-teal-600 text-teal-600 bg-teal-50/50'
+                    : 'border-transparent text-gray-600 hover:text-ink hover:border-gray-300 hover:bg-gray-50/50'
                 )}
               >
-                <tab.icon size={18} />
+                <tab.icon size={18} className={cn(
+                  'transition-transform duration-200',
+                  activeTab === tab.id && 'scale-110'
+                )} />
                 {tab.label}
+                {activeTab === tab.id && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-600 via-cyan-500 to-teal-600 rounded-full" />
+                )}
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Product Sections */}
+      {/* Product Sections - Premium Design */}
       <Section>
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
-          <div>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-4">
-              {activeSection.title}
+        <div className="relative">
+          {/* Background gradient glow */}
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-teal-50/50 via-transparent to-cyan-50/30 blur-3xl" />
+          
+          <div className="relative rounded-[32px] bg-white/80 backdrop-blur-sm border border-gray-200/60 shadow-[0_24px_80px_rgba(15,23,42,0.08)] p-8 md:p-12 lg:p-16">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left: Content */}
+              <div className="space-y-6">
+                {/* Feature label pill */}
+                <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-[0.16em] mb-2">
+                  {activeSection.title}
+                </div>
+                
+                {/* Title */}
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 leading-tight font-display">
+                  {activeSection.title}
+                </h2>
+                
+                {/* Description */}
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                  {activeSection.description}
+                </p>
+                
+                {/* Benefits list */}
+                <ul className="space-y-3.5 pt-2">
+                  {activeSection.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3 group">
+                      <div className="relative flex-shrink-0 mt-0.5">
+                        <div className="absolute inset-0 bg-teal-100 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="relative w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center ring-2 ring-teal-50">
+                          <div className="w-2 h-2 rounded-full bg-teal-600" />
+                        </div>
+                      </div>
+                      <span className="text-gray-700 text-base leading-relaxed">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* CTA Button */}
+                <div className="pt-4">
+                  <Button 
+                    href="/demo" 
+                    variant="lime"
+                    size="lg"
+                    className="shadow-lg hover:shadow-xl transition-all group"
+                  >
+                    See it in action
+                    <svg className="ml-2 inline-block w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Right: Premium Image with enhanced effects */}
+              <div className="relative">
+                {/* Glow effect behind image */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 via-cyan-400/15 to-transparent rounded-[32px] blur-2xl -z-10" />
+                
+                {/* Image container with premium shadow */}
+                <div className="relative transform transition-all duration-500 hover:scale-[1.02]">
+                  <ScreenshotFrame
+                    src={activeSection.screenshot}
+                    alt={activeSection.title}
+                    status={activeSection.id === 'inbox' ? 'connected' : undefined}
+                    aspect="3/2"
+                    fit="cover"
+                    className="md:animate-float-slow"
+                  />
+                  
+                  {/* Additional premium shadow layer */}
+                  <div className="absolute inset-0 rounded-2xl shadow-[0_40px_120px_rgba(11,31,51,0.25)] pointer-events-none -z-10" />
+                </div>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {activeSection.title}
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">{activeSection.description}</p>
-            <ul className="space-y-3 mb-8">
-              {activeSection.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start">
-                  <div className="w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
-                    <div className="w-2 h-2 rounded-full bg-teal-600"></div>
-                  </div>
-                  <span className="text-gray-700">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-            <Button href="/demo" variant="outline">
-              See it in action
-            </Button>
-          </div>
-          <div>
-            <ScreenshotFrame
-              src={activeSection.screenshot}
-              alt={activeSection.title}
-              status={activeSection.id === 'inbox' ? 'connected' : undefined}
-              aspect="3/2"
-            />
           </div>
         </div>
       </Section>

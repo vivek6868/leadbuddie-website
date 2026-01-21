@@ -14,7 +14,7 @@ const features = [
       'Team assignment and collaboration',
       'Mobile and desktop views',
     ],
-    screenshot: '/images/product-inbox.png',
+    screenshot: '/graphics/features/whatsapp-team-inbox.svg',
     reverse: false,
   },
   {
@@ -28,7 +28,7 @@ const features = [
       'Budget and source tracking',
       'Follow-up reminders',
     ],
-    screenshot: '/images/product-leads.png',
+    screenshot: '/graphics/features/lead-pipeline-crm.svg',
     reverse: true,
   },
   {
@@ -42,7 +42,7 @@ const features = [
       'Context-aware responses',
       'Learn from your business',
     ],
-    screenshot: '/images/product-ai.png',
+    screenshot: '/graphics/features/ai-insights-smart-replies.svg',
     reverse: false,
   },
   {
@@ -56,7 +56,7 @@ const features = [
       'Auto-welcome messages',
       'Smart lead distribution',
     ],
-    screenshot: '/images/product-automation.png',
+    screenshot: '/graphics/features/automations-routing.svg',
     reverse: true,
   },
   {
@@ -70,7 +70,7 @@ const features = [
       'Campaign analytics',
       'Recipient management',
     ],
-    screenshot: '/images/product-campaigns.png',
+    screenshot: '/graphics/features/campaigns.svg',
     reverse: false,
   },
   {
@@ -84,7 +84,7 @@ const features = [
       'Team performance dashboards',
       'Lead source analytics',
     ],
-    screenshot: '/images/product-analytics.png',
+    screenshot: '/graphics/features/analytics-team-performance.svg',
     reverse: true,
   },
 ]
@@ -104,7 +104,7 @@ export function FeatureShowcase() {
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-4">
                 {feature.title}
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h3 className="text-4xl md:text-5xl font-bold text-ink mb-4">
                 {feature.title}
               </h3>
               <p className="text-lg text-gray-600 mb-6">{feature.description}</p>
@@ -124,6 +124,9 @@ export function FeatureShowcase() {
                 src={feature.screenshot}
                 alt={feature.title}
                 status={feature.id === 'inbox' ? 'connected' : undefined}
+                aspect="3/2"
+                fit="cover"
+                className="md:animate-float-slow"
               />
             </div>
           </div>

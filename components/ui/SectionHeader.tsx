@@ -22,7 +22,7 @@ export function SectionHeader({
           {label}
         </div>
       )}
-      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 ${centered ? 'mx-auto' : ''} max-w-3xl`}>
+      <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 ${centered ? 'mx-auto' : ''} max-w-4xl`}>
         {title}
       </h2>
       {description && (

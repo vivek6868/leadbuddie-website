@@ -15,7 +15,7 @@ export function Section({ children, className, id, background = 'white' }: Secti
     <section 
       id={id}
       className={cn(
-        'py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8',
+        'py-24 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8',
         bgClass,
         className
       )}

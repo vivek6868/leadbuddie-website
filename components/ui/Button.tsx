@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'lime'
   size?: 'sm' | 'md' | 'lg'
   children: ReactNode
   href?: string
@@ -20,9 +20,10 @@ export function Button({
   const baseStyles = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 inline-block text-center'
   
   const variants = {
-    primary: 'bg-teal-600 hover:bg-teal-700 text-white focus:ring-teal-500 shadow-sm hover:shadow-md',
-    secondary: 'bg-gray-900 hover:bg-gray-800 text-white focus:ring-gray-500 shadow-sm hover:shadow-md',
-    outline: 'border-2 border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
+    primary: 'bg-ink hover:bg-ink-800 text-white focus:ring-teal-500 shadow-sm hover:shadow-md',
+    secondary: 'bg-teal-500 hover:bg-teal-600 text-white focus:ring-teal-500 shadow-sm hover:shadow-md',
+    lime: 'bg-accent-lime hover:bg-accent-lime-dark text-ink font-bold shadow-lg hover:shadow-xl transition-all',
+    outline: 'border-2 border-white/20 text-white hover:bg-white/10 focus:ring-white/50',
     ghost: 'text-teal-600 hover:bg-teal-50 focus:ring-teal-500',
   }
   

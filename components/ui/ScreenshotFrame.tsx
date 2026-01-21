@@ -102,16 +102,10 @@ export function ScreenshotFrame({
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 420px, 480px"
               className={`${objectClass} rounded-2xl`}
               onError={() => setImageError(true)}
-              priority={false}
+              priority={true}
+              unoptimized={src.endsWith('.svg')}
             />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100">
-              <div className="text-center">
-                <Monitor className="mx-auto mb-2 text-gray-400" size={30} />
-                <p className="text-sm text-gray-500">{alt}</p>
-              </div>
-            </div>
-          )}
+          ) : null}
 
           {/* Label / Status Badge */}
           {(label || status) && (
