@@ -50,10 +50,10 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 md:p-8">
+    <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-200">
+          <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-900">
             Name *
           </label>
           <input
@@ -63,14 +63,14 @@ export function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
             placeholder="Your name"
             style={{ color: 'inherit' }}
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-200">
+          <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-900">
             Email *
           </label>
           <input
@@ -80,14 +80,14 @@ export function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
             placeholder="your@email.com"
             style={{ color: 'inherit' }}
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-200">
+          <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-900">
             Message *
           </label>
           <textarea
@@ -97,7 +97,7 @@ export function ContactForm() {
             rows={6}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent resize-none"
+            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent resize-none"
             placeholder="How can we help you?"
             style={{ color: 'inherit' }}
           />
@@ -134,8 +134,8 @@ export function ContactForm() {
         </Button>
       </form>
 
-      <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-        <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+      <div className="mt-6 pt-6 border-t border-gray-200">
+        <p className="text-sm text-gray-600 text-center">
           Or email us directly at{' '}
           <a href="mailto:hello@hutliv.com" className="text-primary-400 hover:text-primary-300">
             hello@hutliv.com
