@@ -65,7 +65,6 @@ export function ContactForm() {
             onChange={handleChange}
             className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
             placeholder="Your name"
-            style={{ color: 'inherit' }}
           />
         </div>
 
@@ -82,7 +81,6 @@ export function ContactForm() {
             onChange={handleChange}
             className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
             placeholder="your@email.com"
-            style={{ color: 'inherit' }}
           />
         </div>
 
@@ -99,7 +97,6 @@ export function ContactForm() {
             onChange={handleChange}
             className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent resize-none"
             placeholder="How can we help you?"
-            style={{ color: 'inherit' }}
           />
         </div>
 
