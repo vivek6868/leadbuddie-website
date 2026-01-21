@@ -62,17 +62,11 @@ body {
   background: #94a3b8;
 }
 
-/* Ensure contact form input and textarea text is visible in both modes */
+/* Ensure contact form input and textarea text is visible */
 input[type="text"],
 input[type="email"],
 textarea {
   color: #0f172a !important;
-}
-
-.dark input[type="text"],
-.dark input[type="email"],
-.dark textarea {
-  color: #ffffff !important;
 }
 
 /* Ensure autofill doesn't override text color */
@@ -81,13 +75,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: #0f172a !important;
-}
-
-.dark input:-webkit-autofill,
-.dark input:-webkit-autofill:hover,
-.dark input:-webkit-autofill:focus,
-.dark input:-webkit-autofill:active {
-  -webkit-text-fill-color: #ffffff !important;
 }
 
 /* Hero Graphics Animations */
