@@ -129,7 +129,7 @@ export default function ProductPage() {
       <Section className="pt-32 pb-16">
         <SectionHeader
           title="Everything You Need to Manage WhatsApp Leads"
-          description="A complete WhatsApp CRM and AI automation platform built for Indian SMBs"
+          description="A complete WhatsApp CRM and AI automation platform for businesses"
           centered
         />
       </Section>

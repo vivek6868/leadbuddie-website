@@ -19,7 +19,7 @@ export default function AboutPage() {
               About LeadBuddie
             </h1>
             <p className="text-lg text-dark-300">
-              Made in India, built for SMBs worldwide by a team that understands your challenges
+              Made in India, built for businesses worldwide by a team that understands your challenges
             </p>
           </div>
 
@@ -34,18 +34,17 @@ export default function AboutPage() {
                   <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
                   <p className="text-dark-300 mb-4">
                     {BRAND.name} is built by {BRAND.company}, an Indian software company serving 
-                    businesses worldwide. We understand the unique challenges that small and medium 
-                    businesses face when it comes to managing customer leads, with a special focus 
-                    on the Indian market.
+                    businesses worldwide. We understand the unique challenges that businesses face when 
+                    it comes to managing customer leads.
                   </p>
                   <p className="text-dark-300 mb-4">
-                    Founded in {BRAND.founded}, we set out with a simple mission: help SMBs never lose 
+                    Founded in {BRAND.founded}, we set out with a simple mission: help businesses never lose 
                     a customer lead again. We saw too many businesses losing potential customers because 
                     of disorganized lead management, missed follow-ups, and lack of prioritization.
                   </p>
                   <p className="text-dark-300">
-                    Today, {BRAND.name} helps businesses worldwide, with a strong focus on Indian contractors, 
-                    service providers, and small businesses. Our platform helps them manage their WhatsApp 
+                    Today, {BRAND.name} helps businesses worldwide, including contractors, 
+                    service providers, and agencies. Our platform helps them manage their WhatsApp 
                     leads more effectively, close more deals, and grow their businesses.
                   </p>
                 </div>
@@ -61,7 +60,7 @@ export default function AboutPage() {
                 <div>
                   <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
                   <p className="text-dark-300 mb-4">
-                    Our mission is simple: <strong className="text-white">Help SMBs never lose a customer lead.</strong>
+                    Our mission is simple: <strong className="text-white">Help businesses never lose a customer lead.</strong>
                   </p>
                   <p className="text-dark-300">
                     We believe that every lead matters, and no business should lose a potential customer 

@@ -11,9 +11,9 @@ import { cn } from '@/lib/utils'
 const solutions = [
   {
     id: 'smb',
-    label: 'SMBS',
-    title: 'SMBs & Contractors',
-    description: 'Forget weeks of setup hell. Connect your WhatsApp Business number in minutes. Clean interface, code examples that actually work, and support that responds fast. Whether you\'re a contractor, agency, or SMB, your WhatsApp CRM journey starts here. Today.',
+    label: 'BUSINESSES',
+    title: 'Businesses',
+    description: 'Forget weeks of setup hell. Connect your WhatsApp Business number in minutes. Clean interface, code examples that actually work, and support that responds fast. Whether you\'re a contractor, agency, or business owner, your WhatsApp CRM journey starts here. Today.',
     features: [
       'Unified WhatsApp inbox',
       'AI reply suggestions',

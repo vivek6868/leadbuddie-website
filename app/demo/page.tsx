@@ -59,7 +59,7 @@ export default function DemoPage() {
         {/* Testimonials */}
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">What Indian Businesses Say</h2>
-          <p className="text-center text-gray-600 mb-8">Trusted by Indian SMBs, contractors, and service businesses</p>
+          <p className="text-center text-gray-600 mb-8">Trusted by businesses, contractors, and service providers</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TESTIMONIALS.map((testimonial, index) => (
               <Card key={index} hover className="flex flex-col h-full">

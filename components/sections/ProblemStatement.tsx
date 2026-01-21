@@ -32,7 +32,7 @@ export function ProblemStatement() {
           Are You Losing Leads Every Day?
         </h2>
         <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-          If you're using WhatsApp for business, you know the struggle. Here's what SMBs worldwide face:
+          If you're using WhatsApp for business, you know the struggle. Here's what businesses worldwide face:
         </p>
       </div>
       

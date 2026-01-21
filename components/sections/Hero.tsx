@@ -19,7 +19,7 @@ export function Hero() {
           {BRAND.tagline}
         </p>
         <p className="text-lg text-dark-400 mb-8 max-w-2xl mx-auto text-balance">
-          See every WhatsApp enquiry, chat reply, note and AI insight in one place. LeadBuddie gives your team a real-time WhatsApp-style inbox, AI reply drafts, and simple follow-up tools built for Indian SMBs.
+          See every WhatsApp enquiry, chat reply, note and AI insight in one place. LeadBuddie gives your team a real-time WhatsApp-style inbox, AI reply drafts, and simple follow-up tools for businesses.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button size="lg" href="https://app.leadbuddie.com" className="group">

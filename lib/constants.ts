@@ -1,6 +1,6 @@
 export const BRAND = {
   name: 'LeadBuddie',
-  tagline: 'WhatsApp-first chat inbox and AI copilot for Indian service businesses',
+  tagline: 'WhatsApp-first chat inbox and AI copilot for businesses',
   company: 'Hutliv Technologies',
   founded: 2025,
 } as const
@@ -293,7 +293,7 @@ export const TESTIMONIALS = [
     },
   },
   {
-    quote: 'Best investment for my small business. The unified inbox means I can manage everything from my laptop instead of being stuck on my phone.',
+    quote: 'Best investment for my business. The unified inbox means I can manage everything from my laptop instead of being stuck on my phone.',
     author: 'Meera Nair',
     company: 'Nair Plumbing Services',
     location: 'Kochi',
@@ -308,8 +308,8 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie - AI-Powered WhatsApp Lead Manager for SMBs',
-  description: 'Never lose a WhatsApp lead again. AI-powered lead management for contractors and small businesses worldwide. Track leads, automate follow-ups, close more deals.',
-  keywords: 'WhatsApp CRM, lead management, SMB, AI lead scoring, WhatsApp Business API, contractor CRM, lead management India',
+  title: 'LeadBuddie - AI-Powered WhatsApp Lead Manager',
+  description: 'Never lose a WhatsApp lead again. AI-powered lead management for businesses worldwide. Track leads, automate follow-ups, close more deals.',
+  keywords: 'WhatsApp CRM, lead management, AI lead scoring, WhatsApp Business API, CRM, lead management',
 } as const
 

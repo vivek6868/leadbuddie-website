@@ -10,7 +10,7 @@ export function FeaturesShowcase() {
           Everything You Need to Manage WhatsApp Leads
         </h2>
         <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-          A WhatsApp-style chat inbox plus AI tools designed for Indian SMBs, contractors, and small agencies.
+          A WhatsApp-style chat inbox plus AI tools designed for businesses, contractors, and agencies.
         </p>
       </div>
       
