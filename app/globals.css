@@ -154,6 +154,15 @@ input:-webkit-autofill:active {
   }
 }
 
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Animation utility classes */
 .animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
@@ -200,5 +209,21 @@ input:-webkit-autofill:active {
 .delay-700 {
   animation-delay: 0.7s;
   opacity: 0;
+}
+
+/* Hero value card headline: gradient text with shimmer */
+.text-gradient-shimmer {
+  background: linear-gradient(
+    90deg,
+    #14b8a6 0%,
+    #22d3ee 35%,
+    #d4ff00 70%,
+    #22d3ee 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease-in-out infinite;
 }
 

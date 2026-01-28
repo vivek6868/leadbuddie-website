@@ -1,4 +1,5 @@
 import { HeroNew } from '@/components/sections/HeroNew'
+import { HeroValueCard } from '@/components/sections/HeroValueCard'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ValuePropositions } from '@/components/sections/ValuePropositions'
 import { HowItWorks } from '@/components/sections/HowItWorks'
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <>
       <HeroNew />
+      <HeroValueCard />
       <TrustBar />
       <ValuePropositions />
       <HowItWorks />
