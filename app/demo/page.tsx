@@ -18,41 +18,40 @@ export default function DemoPage() {
 
       {/* Featured Videos */}
       <Section>
-        <div className="mb-16 max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Full Product Demos</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* First Video */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Product Overview</h3>
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/fqg46eP9tmQ?si=UoXmi7uisM6IY7z-"
-                  title="LeadBuddie Product Demo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-            </div>
-            
-            {/* Second Video */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Getting Started</h3>
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/SGtTIi2ajCI?si=8ctY818SUljN3ZF_"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-            </div>
+        <div className="mb-16 max-w-4xl mx-auto space-y-8">
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/cG3R_e462nM"
+              title="How to connect your existing WhatsApp number to LeadBuddie"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/fqg46eP9tmQ?si=UoXmi7uisM6IY7z-"
+              title="LeadBuddie Product Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/SGtTIi2ajCI?si=8ctY818SUljN3ZF_"
+              title="LeadBuddie Getting Started"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
           </div>
         </div>
 
