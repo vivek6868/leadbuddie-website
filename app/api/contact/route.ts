@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 // Internal notification email recipients
-const INTERNAL_EMAILS = ['hello@hutliv.com', 'leadbuddie@gmail.com']
+const INTERNAL_EMAILS = ['hello@hutliv.com', 'leadbuddie@gmail.com', 'vivek@hutliv.com', 'anupriya@hutliv.com']
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,15 +17,33 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { name, email, message } = body
+    const { name, email, message, subjectType } = body
 
-    // Validate input
-    if (!name || !email || !message) {
+    const isDemoRequest = subjectType === 'demo'
+    const messageText = (message && message.trim()) || (isDemoRequest ? 'I would like to request a demo.' : '')
+
+    // Validate input (message required only for general contact)
+    if (!name || !email) {
       return NextResponse.json(
-        { error: 'All fields are required' },
+        { error: 'Name and email are required' },
         { status: 400 }
       )
     }
+    if (!isDemoRequest && !messageText) {
+      return NextResponse.json(
+        { error: 'Message is required' },
+        { status: 400 }
+      )
+    }
+
+    const internalSubject = isDemoRequest
+      ? `Demo request from ${name}`
+      : `New Contact Form Submission from ${name}`
+    const internalTitle = isDemoRequest ? 'Demo Request' : 'New Contact Form Submission'
+    const ackSubject = isDemoRequest ? "We've received your demo request 👍" : "We've received your message 👍"
+    const ackBody = isDemoRequest
+      ? "We've received your demo request and our team will reach out to schedule a call shortly."
+      : "We've received your message and our team will get back to you shortly."
 
     // Send both emails in parallel
     const [internalResult, acknowledgementResult] = await Promise.all([
@@ -34,13 +52,13 @@ export async function POST(request: NextRequest) {
         from: 'LeadBuddie <no-reply@leadbuddie.com>',
         to: INTERNAL_EMAILS,
         replyTo: email,
-        subject: `New Contact Form Submission from ${name}`,
+        subject: internalSubject,
         html: `
-          <h2>New Contact Form Submission</h2>
+          <h2>${internalTitle}</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>${messageText.replace(/\n/g, '<br>')}</p>
           <hr style="margin: 20px 0; border: none; border-top: 1px solid #e5e7eb;">
           <p style="color: #6b7280; font-size: 14px;">You can reply directly to this email to respond to ${name}.</p>
         `,
@@ -49,11 +67,11 @@ export async function POST(request: NextRequest) {
       resend.emails.send({
         from: 'LeadBuddie Team <no-reply@leadbuddie.com>',
         to: email,
-        subject: "We've received your message 👍",
+        subject: ackSubject,
         html: `
           <p>Hi ${name},</p>
           <p>Thanks for contacting <strong>LeadBuddie</strong>.</p>
-          <p>We've received your message and our team will get back to you shortly.</p>
+          <p>${ackBody}</p>
           <p>– LeadBuddie Team</p>
         `,
       }),

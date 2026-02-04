@@ -7,7 +7,11 @@ import { Menu, X } from 'lucide-react'
 import { NAVIGATION } from '@/lib/constants'
 import { Button } from '@/components/ui/Button'
 
-export function MobileMenu() {
+interface MobileMenuProps {
+  onRequestDemo?: () => void
+}
+
+export function MobileMenu({ onRequestDemo }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [logoError, setLogoError] = useState(false)
 
@@ -73,11 +77,20 @@ export function MobileMenu() {
               ))}
             </nav>
 
-            {/* Footer Button */}
-            <div className="mt-auto p-4 border-t border-white/10 bg-ink">
-              <Button 
+            {/* Footer Buttons */}
+            <div className="mt-auto p-4 border-t border-white/10 bg-ink space-y-3">
+              {onRequestDemo && (
+                <button
+                  type="button"
+                  onClick={() => { onRequestDemo(); setIsOpen(false); }}
+                  className="w-full py-2.5 px-4 rounded-lg border-2 border-teal-400 text-teal-300 font-medium text-sm hover:bg-teal-500/25 hover:text-white transition-colors"
+                >
+                  Request for demo
+                </button>
+              )}
+              <Button
                 variant="lime"
-                className="w-full" 
+                className="w-full"
                 href="https://app.leadbuddie.com"
                 onClick={() => setIsOpen(false)}
               >

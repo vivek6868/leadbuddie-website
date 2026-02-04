@@ -5,10 +5,12 @@ import Image from 'next/image'
 import { NAVIGATION } from '@/lib/constants'
 import { Button } from '@/components/ui/Button'
 import { MobileMenu } from './MobileMenu'
+import { DemoRequestModal } from '@/components/forms/DemoRequestModal'
 import { useState } from 'react'
 
 export function Navbar() {
   const [logoError, setLogoError] = useState(false)
+  const [demoModalOpen, setDemoModalOpen] = useState(false)
 
   return (
     <nav className="sticky top-0 z-50 bg-ink backdrop-blur-md border-b border-ink-800 shadow-lg">
@@ -45,15 +47,24 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
+            <button
+              type="button"
+              onClick={() => setDemoModalOpen(true)}
+              className="rounded-lg px-4 py-2 border-2 border-teal-400 text-teal-300 font-medium text-sm hover:bg-teal-500/25 hover:text-white hover:border-teal-300 transition-colors"
+            >
+              Request for demo
+            </button>
             <Button href="https://app.leadbuddie.com" variant="lime" size="md">Get Started</Button>
           </div>
 
           {/* Mobile Menu */}
           <div className="md:hidden">
-            <MobileMenu />
+            <MobileMenu onRequestDemo={() => setDemoModalOpen(true)} />
           </div>
         </div>
       </div>
+
+      <DemoRequestModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
     </nav>
   )
 }

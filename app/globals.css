@@ -62,11 +62,29 @@ body {
   background: #94a3b8;
 }
 
-/* Ensure contact form input and textarea text is visible */
+/* Ensure contact form input and textarea text is visible (light backgrounds) */
 input[type="text"],
 input[type="email"],
 textarea {
   color: #0f172a !important;
+}
+
+/* Demo request modal: light text on dark background */
+.demo-request-modal input[type="text"],
+.demo-request-modal input[type="email"],
+.demo-request-modal textarea {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.demo-request-modal input::placeholder,
+.demo-request-modal textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.demo-request-modal input:-webkit-autofill,
+.demo-request-modal input:-webkit-autofill:hover,
+.demo-request-modal input:-webkit-autofill:focus,
+.demo-request-modal input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff !important;
 }
 
 /* Ensure autofill doesn't override text color */
@@ -226,4 +244,3 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 4s ease-in-out infinite;
 }
-
