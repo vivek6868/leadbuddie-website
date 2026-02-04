@@ -83,6 +83,37 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Event snippet for Purchase conversion - call gtag_report_conversion on CTA click */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-17930856536/wtseCNjOv_IbENjQjOZC',
+                  'value': 1.0,
+                  'currency': 'SGD',
+                  'transaction_id': '',
+                  'event_callback': callback
+                });
+                return false;
+              }
+              document.addEventListener('DOMContentLoaded', function() {
+                document.body.addEventListener('click', function(e) {
+                  var a = e.target.closest('a[href*="app.leadbuddie.com"]');
+                  if (a && a.href) {
+                    e.preventDefault();
+                    gtag_report_conversion(a.href);
+                  }
+                });
+              });
+            `,
+          }}
+        />
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
