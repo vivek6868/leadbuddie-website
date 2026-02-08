@@ -1,4 +1,5 @@
 import { HeroNew } from '@/components/sections/HeroNew'
+import { TrustedByStrip } from '@/components/sections/TrustedByStrip'
 import { HeroValueCard } from '@/components/sections/HeroValueCard'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ValuePropositions } from '@/components/sections/ValuePropositions'
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <HeroNew />
+      <TrustedByStrip />
       <HeroValueCard />
       <TrustBar />
       <ValuePropositions />

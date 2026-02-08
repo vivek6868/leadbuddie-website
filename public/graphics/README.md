@@ -5,9 +5,15 @@ This folder contains graphics and images for the LeadBuddie website.
 ## Structure
 
 - `hero/` - Hero section graphics and animations
+- `features/` - Feature section screenshots (e.g. whatsapp-team-inbox, lead-pipeline-crm, follow-ups, pipeline)
 - `icons/` - Custom icons and SVG graphics
 - `partners/` - Partner logos (WhatsApp Business, etc.)
 - `metrics/` - Metric badges and graphics
+
+## Feature screenshots
+
+- `features/follow-ups.svg` - Follow-ups feature (placeholder; replace with product screenshot)
+- `features/pipeline.svg` - Pipeline feature (placeholder; replace with product screenshot)
 
 ## Usage
 

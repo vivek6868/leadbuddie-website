@@ -1,6 +1,6 @@
 import { Section } from '@/components/ui/Section'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
-import { MessageSquare, Kanban, Sparkles, Zap, Send, BarChart } from 'lucide-react'
+import { MessageSquare, Kanban, Sparkles, Zap, Send, BarChart, Clock, LayoutGrid } from 'lucide-react'
 
 const features = [
   {
@@ -29,6 +29,36 @@ const features = [
       'Follow-up reminders',
     ],
     screenshot: '/graphics/features/lead-pipeline-crm.svg',
+    reverse: true,
+  },
+  {
+    id: 'followups',
+    icon: Clock,
+    title: 'Never miss a follow-up. Close more deals on time.',
+    description: 'LeadBuddie helps you stay on top of every lead with smart, flexible follow-ups built for WhatsApp-first businesses.',
+    stripBullets: 'Smart scheduling & reminders • Calendar & list views • Team assignment with full context • AI-powered & automated follow-ups (Growth+)',
+    benefits: [
+      'Smart scheduling & reminders',
+      'Calendar & list views',
+      'Team assignment with full context',
+      'AI-powered & automated follow-ups (Growth+)',
+    ],
+    screenshot: '/graphics/features/follow-ups.png',
+    reverse: false,
+  },
+  {
+    id: 'pipeline',
+    icon: LayoutGrid,
+    title: 'Visualize your sales. Move leads faster.',
+    description: 'Track every lead from first message to closed deal with a powerful, mobile-friendly pipeline.',
+    stripBullets: 'Visual Kanban pipeline • Drag-and-drop stages • Custom stages, priorities & teams • List + pipeline views (mobile-ready)',
+    benefits: [
+      'Visual Kanban pipeline',
+      'Drag-and-drop stages',
+      'Custom stages, priorities & teams',
+      'List + pipeline views (mobile-ready)',
+    ],
+    screenshot: '/graphics/features/pipeline.png',
     reverse: true,
   },
   {
@@ -92,6 +122,9 @@ const features = [
 export function FeatureShowcase() {
   return (
     <Section>
+      <h2 className="text-3xl md:text-4xl font-bold text-ink text-center mb-16">
+        From first message to closed deal — all in one place.
+      </h2>
       <div className="space-y-32">
         {features.map((feature) => (
           <div
@@ -108,6 +141,9 @@ export function FeatureShowcase() {
                 {feature.title}
               </h3>
               <p className="text-lg text-gray-600 mb-6">{feature.description}</p>
+              {'stripBullets' in feature && feature.stripBullets && (
+                <p className="text-sm text-gray-500 mb-6">{feature.stripBullets}</p>
+              )}
               <ul className="space-y-3">
                 {feature.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
