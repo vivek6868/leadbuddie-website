@@ -123,6 +123,11 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <script
+          src="https://app.leadbuddie.com/widget.js"
+          data-lb-key="HutlivTech123nologies"
+          async
+        />
       </body>
     </html>
   )
