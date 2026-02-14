@@ -126,6 +126,7 @@ export default function RootLayout({
         <script
           src="https://app.leadbuddie.com/widget.js"
           data-lb-key="HutlivTech123nologies"
+          data-lb-theme="light"
           async
         ></script>
       </body>
