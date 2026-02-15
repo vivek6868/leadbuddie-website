@@ -68,10 +68,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
-        {/* Google tag (gtag.js) - AW-17930856536 */}
+        {/* Google tag (gtag.js) - Analytics GA4 + Ads */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17930856536"
+          src="https://www.googletagmanager.com/gtag/js?id=G-YKTEHGXVMY"
         />
         <script
           dangerouslySetInnerHTML={{
@@ -79,6 +79,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
+              gtag('config', 'G-YKTEHGXVMY');
               gtag('config', 'AW-17930856536');
             `,
           }}
