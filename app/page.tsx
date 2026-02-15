@@ -4,6 +4,7 @@ import { HeroValueCard } from '@/components/sections/HeroValueCard'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ValuePropositions } from '@/components/sections/ValuePropositions'
 import { HowItWorks } from '@/components/sections/HowItWorks'
+import { ChatbotWebsiteSection } from '@/components/sections/ChatbotWebsiteSection'
 import { SolutionsPath } from '@/components/sections/SolutionsPath'
 import { FeatureShowcase } from '@/components/sections/FeatureShowcase'
 import { DemoSection } from '@/components/sections/DemoSection'
@@ -21,6 +22,7 @@ export default function HomePage() {
       <TrustBar />
       <ValuePropositions />
       <HowItWorks />
+      <ChatbotWebsiteSection />
       <SolutionsPath />
       <FeatureShowcase />
       <DemoSection />
