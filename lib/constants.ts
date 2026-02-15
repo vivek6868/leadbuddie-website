@@ -16,6 +16,7 @@ export const NAVIGATION = [
   { name: 'Product', href: '/product' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'Demo', href: '/demo' },
+  { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ] as const

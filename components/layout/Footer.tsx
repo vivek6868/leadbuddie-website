@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <h3 className="text-gray-900 font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
-              {NAVIGATION.filter(item => ['Product', 'Pricing', 'Demo'].includes(item.name)).map((item) => (
+              {NAVIGATION.filter(item => ['Product', 'Pricing', 'Demo', 'Blog'].includes(item.name)).map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -21,6 +21,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/blog/rss.xml"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                >
+                  RSS
+                </Link>
+              </li>
             </ul>
           </div>
 

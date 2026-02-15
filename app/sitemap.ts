@@ -1,8 +1,19 @@
 import { MetadataRoute } from 'next'
+import { getAllSlugs } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://leadbuddie.com'
-  
+  const blogSlugs = getAllSlugs()
+  const blogEntries: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    ...blogSlugs.map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+  ]
+
   return [
     {
       url: baseUrl,
@@ -70,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.5,
     },
+    ...blogEntries,
   ]
 }
 
