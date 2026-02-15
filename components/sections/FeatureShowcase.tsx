@@ -1,6 +1,6 @@
 import { Section } from '@/components/ui/Section'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
-import { MessageSquare, Kanban, Sparkles, Zap, Send, BarChart, Clock, LayoutGrid, Globe } from 'lucide-react'
+import { MessageSquare, Kanban, Sparkles, Zap, Send, BarChart, Clock, LayoutGrid } from 'lucide-react'
 
 const features = [
   {
@@ -73,20 +73,6 @@ const features = [
       'Learn from your business',
     ],
     screenshot: '/graphics/features/ai-insights-smart-replies.svg',
-    reverse: false,
-  },
-  {
-    id: 'chatbot-website',
-    icon: Globe,
-    title: 'Chatbot & Website',
-    description: 'We build your website and add a WhatsApp-style chatbot. Every visitor who chats becomes a lead in LeadBuddie automatically — no copy-paste, no lost enquiries.',
-    benefits: [
-      'We design and build your website if you don’t have one',
-      'WhatsApp-style chatbot on your site',
-      'Every conversation becomes a lead in LeadBuddie',
-      'One place for website and WhatsApp leads',
-    ],
-    screenshot: '/graphics/features/whatsapp-team-inbox.svg',
     reverse: false,
   },
   {

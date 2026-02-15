@@ -5,14 +5,13 @@ import { Section } from '@/components/ui/Section'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
 import { Button } from '@/components/ui/Button'
-import { MessageSquare, Kanban, Clock, Globe, Sparkles, Zap, Send, BarChart, Users } from 'lucide-react'
+import { MessageSquare, Kanban, Clock, Sparkles, Zap, Send, BarChart, Users } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const tabs = [
   { id: 'inbox', label: 'Inbox', icon: MessageSquare },
   { id: 'leads', label: 'Lead Pipeline', icon: Kanban },
   { id: 'followups', label: 'Follow-ups', icon: Clock },
-  { id: 'chatbot-website', label: 'Chatbot & Website', icon: Globe },
   { id: 'ai', label: 'AI', icon: Sparkles },
   { id: 'automation', label: 'Automation', icon: Zap },
   { id: 'campaigns', label: 'Campaigns', icon: Send },
@@ -60,19 +59,6 @@ const productSections = [
       'Due dates and team assignment with context',
       'AI-powered and automated follow-ups (Growth+)',
       'Never lose a lead to a missed callback',
-    ],
-  },
-  {
-    id: 'chatbot-website',
-    title: 'Chatbot & Website',
-    description: 'We build your website and add a WhatsApp-style chatbot. Every site visitor who chats becomes a lead in LeadBuddie automatically.',
-    videoSrc: '/videos/chatbot-lead-flow.mp4',
-    benefits: [
-      'We design and build your website if you don’t have one',
-      'WhatsApp-style chatbot on your site',
-      'Every conversation becomes a lead in LeadBuddie',
-      'No copy-paste, no lost enquiries',
-      'One place for website and WhatsApp leads',
     ],
   },
   {
@@ -250,34 +236,20 @@ export default function ProductPage() {
                 </div>
               </div>
               
-              {/* Right: Video or premium image */}
+              {/* Right: Premium Image with enhanced effects */}
               <div className="relative">
                 {/* Glow effect behind image/video */}
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 via-cyan-400/15 to-transparent rounded-[32px] blur-2xl -z-10" />
                 
                 <div className="relative transform transition-all duration-500 hover:scale-[1.02]">
-                  {'videoSrc' in activeSection && activeSection.videoSrc ? (
-                    <div className="relative aspect-[3/2] rounded-2xl overflow-hidden border border-gray-200/60 shadow-[0_24px_80px_rgba(15,23,42,0.08)] bg-gray-100">
-                      <video
-                        src={activeSection.videoSrc}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                        title={activeSection.title}
-                      />
-                    </div>
-                  ) : (
-                    <ScreenshotFrame
-                      src={activeSection.screenshot}
-                      alt={activeSection.title}
-                      status={activeSection.id === 'inbox' ? 'connected' : undefined}
-                      aspect="3/2"
-                      fit="cover"
-                      className="md:animate-float-slow"
-                    />
-                  )}
+                  <ScreenshotFrame
+                    src={activeSection.screenshot}
+                    alt={activeSection.title}
+                    status={activeSection.id === 'inbox' ? 'connected' : undefined}
+                    aspect="3/2"
+                    fit="cover"
+                    className="md:animate-float-slow"
+                  />
                   {/* Additional premium shadow layer */}
                   <div className="absolute inset-0 rounded-2xl shadow-[0_40px_120px_rgba(11,31,51,0.25)] pointer-events-none -z-10" />
                 </div>
