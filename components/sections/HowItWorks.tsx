@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 const steps = [
   {
     step: 'STEP 01',
-    title: 'Connect Your WhatsApp',
+    title: 'Connect your WhatsApp number',
     punchline: 'Securely connect your WhatsApp Business number in minutes.',
     bullets: ['Connect your number securely', 'Ready to use in minutes'],
     icon: MessageCircle,
@@ -15,16 +15,16 @@ const steps = [
   },
   {
     step: 'STEP 02',
-    title: 'Leads Flow Into Inbox',
-    punchline: 'All WhatsApp conversations sync automatically into one shared inbox.',
-    bullets: ['Auto‑capture every new lead', 'Assign chats to your team'],
+    title: 'Assign chats to your team',
+    punchline: 'All WhatsApp conversations sync into one shared inbox. Assign and hand off chats easily.',
+    bullets: ['Auto-capture every new lead', 'Assign chats to your team'],
     icon: Inbox,
     image: '/graphics/steps/step-02-leads-inbox.svg',
   },
   {
     step: 'STEP 03',
-    title: 'AI Helps You Reply',
-    punchline: 'Get AI summaries and smart replies to respond instantly.',
+    title: 'Manage leads and follow-ups easily',
+    punchline: 'Get AI summaries and smart replies. Never miss a follow-up.',
     bullets: ['Suggested replies for every chat', 'Instant conversation summaries'],
     icon: Sparkles,
     image: '/graphics/steps/step-03-ai-reply.svg',
@@ -37,7 +37,7 @@ export function HowItWorks() {
       <SectionHeader
         label="How It Works"
         title="Get started in 3 simple steps"
-        description="Set up your WhatsApp CRM and start closing leads faster."
+        description="No complexity."
         centered
         className="mb-16"
       />

@@ -23,23 +23,20 @@ export function HeroNew() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative z-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
-              WhatsApp CRM + AI Automation
+              Stop missing customers when your WhatsApp gets busy
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight font-sans">
-              First lead captured.<br />
-              First deal closed.<br />
-              <span className="text-white/80">Without missed follow-ups.</span>
+              Manage High WhatsApp Enquiries Without Missing Customers
             </h1>
             <p className="text-base text-white/80 mb-6 leading-relaxed max-w-xl">
-              Turn WhatsApp chats into leads and deals with a shared inbox, AI summaries, and automated follow-ups.
+              LeadBuddie helps service businesses handle 30–100 daily leads, assign chats to teams, and respond faster with AI — using the same WhatsApp number.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="https://app.leadbuddie.com" variant="lime" size="lg" className="w-full sm:w-auto">
-                Get Started
+                Start Free Trial
               </Button>
               <Button href="/demo" variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10">
-                <Play className="inline mr-2" size={20} />
-                Watch Demo
+                Book Demo
               </Button>
             </div>
           </div>

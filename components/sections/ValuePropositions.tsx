@@ -1,47 +1,26 @@
 import { Section } from '@/components/ui/Section'
-import { Zap, TrendingUp, Users, CheckCircle2 } from 'lucide-react'
+import { Zap, Inbox, Smartphone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
 const valueProps = [
   {
     icon: Zap,
-    tag: 'Setup',
-    title: 'First Lead: Managed in Minutes',
-    punchline: 'Connect WhatsApp and start tracking instantly.',
-    bullets: [
-      'Connect your WhatsApp number in under 2 minutes',
-      'Auto-capture and assign every new lead',
-      'No complex setup or onboarding needed',
-    ],
-    metric: '2 min setup',
+    title: 'Faster Responses',
+    punchline: 'Reply instantly with AI suggestions and team coordination.',
     featured: false,
   },
   {
-    icon: TrendingUp,
-    tag: 'AI',
-    title: 'First Deal: Closed in Week One',
-    punchline: 'Let AI handle context so your team can close.',
-    bullets: [
-      'AI reply suggestions that sound like your team',
-      'Follow-up reminders so no lead goes cold',
-      'Conversation summaries in one glance',
-    ],
-    metric: '+30% faster replies',
-    featured: false,
-  },
-  {
-    icon: Users,
-    tag: 'Scale',
-    title: 'First 100 Leads: Scale Without Breaking',
-    punchline: 'Handle your first 100+ leads without chaos.',
-    bullets: [
-      'Shared team inbox for every WhatsApp lead',
-      'Simple pipeline to track deals to closure',
-      'Built to handle thousands of conversations',
-    ],
-    metric: '10,000+ messages',
+    icon: Inbox,
+    title: 'Organized Leads',
+    punchline: 'Never lose customer conversations or follow-ups.',
     featured: true,
+  },
+  {
+    icon: Smartphone,
+    title: 'Same WhatsApp Number',
+    punchline: 'No need to change your existing WhatsApp.',
+    featured: false,
   },
 ]
 
@@ -69,15 +48,9 @@ export function ValuePropositions() {
 
               <div className="relative flex flex-col h-full p-7">
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <div>
-                    <span className="inline-flex items-center rounded-full border border-teal-100 bg-teal-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-teal-800">
-                      {prop.tag}
-                    </span>
-                    <h3 className="mt-3 text-2xl md:text-3xl font-bold text-ink leading-snug">
-                      {prop.title}
-                    </h3>
-                  </div>
-
+                  <h3 className="text-2xl md:text-3xl font-bold text-ink leading-snug">
+                    {prop.title}
+                  </h3>
                   <div className="relative">
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-teal-500/35 via-cyan-400/25 to-transparent blur-xl opacity-70" />
                     <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-teal-500 to-cyan-400 text-white shadow-lg shadow-teal-500/40 ring-1 ring-white/40">
@@ -86,22 +59,11 @@ export function ValuePropositions() {
                   </div>
                 </div>
 
-                <p className="text-sm md:text-base text-gray-600 mb-4">
+                <p className="text-base text-gray-600 flex-1">
                   {prop.punchline}
                 </p>
 
-                <ul className="space-y-2 mb-5 text-sm text-gray-600">
-                  {prop.bullets.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="mt-[2px] text-teal-600">
-                        <CheckCircle2 className="h-4 w-4" />
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-auto pt-2 flex items-center justify-between gap-3">
+                <div className="mt-auto pt-4">
                   <Link
                     href="https://app.leadbuddie.com"
                     className="inline-flex items-center text-sm font-semibold text-teal-700 group-hover:text-ink transition-colors"
@@ -111,10 +73,6 @@ export function ValuePropositions() {
                       ↗
                     </span>
                   </Link>
-
-                  <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-gray-700 shadow-sm">
-                    {prop.metric}
-                  </span>
                 </div>
               </div>
             </div>

@@ -10,6 +10,8 @@ export const CONTACT = {
   support: 'hello@hutliv.com',
   phone: '[Your India Phone]', // TODO: Fill in actual phone
   address: '[Your India Address]', // TODO: Fill in actual address
+  /** WhatsApp link for "Chat on WhatsApp" CTA (e.g. https://wa.me/919876543210) */
+  whatsappUrl: 'https://wa.me/919876543210',
 } as const
 
 export const NAVIGATION = [
@@ -228,6 +230,19 @@ export const COMPLIANCE_STATEMENTS = [
 ] as const
 
 export const TESTIMONIALS = [
+  {
+    quote: 'Handling 60–100 leads per day was very time-consuming. After LeadBuddie, responses and follow-ups became much easier.',
+    author: 'Water Purifier Business Owner',
+    company: 'Service business',
+    location: 'India',
+    rating: 5,
+    metrics: {
+      primary: '60–100',
+      primaryLabel: 'leads per day',
+      secondary: 'Easier',
+      secondaryLabel: 'follow-ups',
+    },
+  },
   {
     quote: 'Before LeadBuddie, I was juggling 3 phones and losing leads daily. Now all my WhatsApp chats are in one place, and the AI helps me reply faster.',
     author: 'Rajesh Kumar',
