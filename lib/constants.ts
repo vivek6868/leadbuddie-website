@@ -8,10 +8,10 @@ export const BRAND = {
 export const CONTACT = {
   general: 'hello@hutliv.com',
   support: 'hello@hutliv.com',
-  phone: '[Your India Phone]', // TODO: Fill in actual phone
-  address: '[Your India Address]', // TODO: Fill in actual address
-  /** WhatsApp link for "Chat on WhatsApp" CTA (e.g. https://wa.me/919876543210) */
-  whatsappUrl: 'https://wa.me/919876543210',
+  phone: '+91 9003444702',
+  address: 'Tiruppur, Tamil Nadu, India',
+  /** WhatsApp link for "Chat on WhatsApp" CTA */
+  whatsappUrl: 'https://wa.me/919003444702',
 } as const
 
 export const NAVIGATION = [

@@ -1,4 +1,5 @@
 import { HeroNew } from '@/components/sections/HeroNew'
+import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
 import { CustomerProofSection } from '@/components/sections/CustomerProofSection'
 import { WhoIsThisFor } from '@/components/sections/WhoIsThisFor'
 import { ValuePropositions } from '@/components/sections/ValuePropositions'
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <HeroNew />
+      <MetaTechProviderBadge />
       <CustomerProofSection />
       <WhoIsThisFor />
       <ValuePropositions />

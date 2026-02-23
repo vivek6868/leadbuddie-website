@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import { Section } from '@/components/ui/Section'
 import { ContactForm } from '@/components/forms/ContactForm'
-import { CONTACT } from '@/lib/constants'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { CONTACT, BRAND } from '@/lib/constants'
+import { Mail, Phone, MapPin, Building2 } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us - LeadBuddie',
@@ -50,52 +50,50 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {CONTACT.phone !== '[Your India Phone]' && (
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-accent-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="text-accent-400" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1 text-ink">Phone</h3>
-                      <a
-                        href={`tel:${CONTACT.phone}`}
-                        className="text-accent-400 hover:text-accent-300 transition-colors"
-                      >
-                        {CONTACT.phone}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {CONTACT.address !== '[Your India Address]' && (
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-primary-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="text-primary-400" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1 text-ink">Address</h3>
-                      <p className="text-gray-700">{CONTACT.address}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-green-400" size={20} />
+                  <div className="w-10 h-10 bg-primary-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Building2 className="text-primary-400" size={20} />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1 text-ink">Business Information</h3>
-                    <p className="text-gray-700 mb-2">
-                      <strong>Business Name:</strong> Hutliv
-                    </p>
-                    <p className="text-gray-700">
-                      <strong>Location:</strong> India
-                    </p>
+                  <div className="space-y-4">
+                    <h3 className="font-semibold mb-3 text-ink">Company Information</h3>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="flex items-start gap-2">
+                        <span className="font-medium text-ink min-w-[4.5rem]">Company:</span>
+                        {BRAND.company}
+                      </p>
+                      <p className="flex items-start gap-2">
+                        <MapPin size={18} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                        <span>
+                          <span className="font-medium text-ink">Address:</span>{' '}
+                          {CONTACT.address}
+                        </span>
+                      </p>
+                      <p className="flex items-start gap-2">
+                        <Mail size={18} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                        <span>
+                          <span className="font-medium text-ink">Email:</span>{' '}
+                          <a
+                            href={`mailto:${CONTACT.general}`}
+                            className="text-primary-400 hover:text-primary-300 transition-colors"
+                          >
+                            {CONTACT.general}
+                          </a>
+                        </span>
+                      </p>
+                      <p className="flex items-start gap-2">
+                        <Phone size={18} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                        <span>
+                          <span className="font-medium text-ink">Phone / WhatsApp:</span>{' '}
+                          <a
+                            href={CONTACT.whatsappUrl}
+                            className="text-primary-400 hover:text-primary-300 transition-colors"
+                          >
+                            {CONTACT.phone}
+                          </a>
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
