@@ -120,11 +120,9 @@ export default function AboutPage() {
                     built in India with deep understanding of the Indian market, LeadBuddie is 
                     available to businesses in all countries.
                   </p>
-                  {CONTACT.address !== '[Your India Address]' && (
-                    <p className="text-dark-300">
-                      <strong>Address:</strong> {CONTACT.address}
-                    </p>
-                  )}
+                  <p className="text-dark-300">
+                    <strong>Address:</strong> {CONTACT.address}
+                  </p>
                 </div>
               </div>
             </div>
