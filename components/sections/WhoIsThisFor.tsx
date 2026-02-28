@@ -5,11 +5,10 @@ const VIDEO_SRC = '/videos/whatsapp-for-you.mp4'
 const VIDEO_POSTER = '/images/is-leadbuddie-right-for-you.png'
 
 const items = [
-  'You get many WhatsApp enquiries daily',
-  'Your team handles or shares customer chats',
-  'Follow-ups are important to close sales',
-  'You run ads or marketing campaigns that generate leads',
-  'You want faster responses without extra effort',
+  'You get 10+ WhatsApp enquiries daily',
+  'Multiple people reply to customers',
+  'You sometimes forget follow-ups',
+  'You run ads or marketing campaigns',
 ]
 
 export function WhoIsThisFor() {
@@ -35,7 +34,7 @@ export function WhoIsThisFor() {
         {/* Right: Content */}
         <div className="order-2 lg:order-2 animate-fade-in-up">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-ink mb-6 lg:mb-8 text-center lg:text-left">
-            Is LeadBuddie Right for You?
+            LeadBuddie is perfect if:
           </h2>
           <ul className="space-y-4 md:space-y-5">
             {items.map((item, i) => (

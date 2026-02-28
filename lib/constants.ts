@@ -1,6 +1,6 @@
 export const BRAND = {
   name: 'LeadBuddie',
-  tagline: 'WhatsApp-first chat inbox and AI copilot for businesses',
+  tagline: 'WhatsApp Lead Management System for Growing Businesses',
   company: 'Hutliv Technologies',
   founded: 2025,
 } as const
@@ -232,8 +232,8 @@ export const COMPLIANCE_STATEMENTS = [
 export const TESTIMONIALS = [
   {
     quote: 'Handling 60–100 leads per day was very time-consuming. After LeadBuddie, responses and follow-ups became much easier.',
-    author: 'Water Purifier Business Owner',
-    company: 'Service business',
+    author: 'Mastec Water Purifier',
+    company: 'Mastec Water Purifier',
     location: 'India',
     rating: 5,
     metrics: {
@@ -324,8 +324,15 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie - AI-Powered WhatsApp Lead Manager',
-  description: 'Never lose a WhatsApp lead again. AI-powered lead management for businesses worldwide. Track leads, automate follow-ups, close more deals.',
-  keywords: 'WhatsApp CRM, lead management, AI lead scoring, WhatsApp Business API, CRM, lead management',
+  title: 'LeadBuddie — WhatsApp Lead Management for Growing Businesses',
+  description: 'Never miss a WhatsApp customer again. Track, assign, and follow up on every lead using your existing number. Lead management and follow-ups first — AI supports you.',
+  keywords: 'WhatsApp CRM, lead management system, WhatsApp lead management, AI lead scoring, WhatsApp Business API, CRM, growing businesses',
+} as const
+
+/** Social proof stats for homepage (CustomerProofSection) */
+export const SOCIAL_PROOF_STATS = {
+  leadsManaged: '5000+',
+  businessesOnboarded: '20+',
+  trustLine: 'Trusted by service companies across India',
 } as const
 

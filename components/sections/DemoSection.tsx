@@ -12,8 +12,7 @@ export function DemoSection() {
         centered
         className="mb-16"
       />
-      
-      {/* Featured Video */}
+
       <div className="mb-16 max-w-4xl mx-auto">
         <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200">
           <iframe

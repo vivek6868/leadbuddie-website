@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Section } from '@/components/ui/Section'
+import { Button } from '@/components/ui/Button'
 import { useState } from 'react'
 
 /** Replace with real founder image: public/images/founder.jpg */
@@ -26,16 +27,24 @@ export function FounderSection() {
           )}
         </div>
         <div>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-2">
+            We personally help you set up LeadBuddie for your business.
+          </p>
+          <p className="text-gray-600 mb-6">
             Built by founders who understand how hard it is to manage customer enquiries manually.
           </p>
-          <Link
-            href="/about"
-            className="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors"
-          >
-            Meet the team
-            <span className="ml-1">→</span>
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Button href="/demo" variant="lime" size="md">
+              Book Free Setup
+            </Button>
+            <Link
+              href="/about"
+              className="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors"
+            >
+              Meet the team
+              <span className="ml-1">→</span>
+            </Link>
+          </div>
         </div>
       </div>
     </Section>

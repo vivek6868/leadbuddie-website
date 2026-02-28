@@ -2,6 +2,7 @@ import { HeroNew } from '@/components/sections/HeroNew'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
 import { CustomerProofSection } from '@/components/sections/CustomerProofSection'
 import { WhoIsThisFor } from '@/components/sections/WhoIsThisFor'
+import { BeforeAfterSection } from '@/components/sections/BeforeAfterSection'
 import { ValuePropositions } from '@/components/sections/ValuePropositions'
 import { IndustryExamples } from '@/components/sections/IndustryExamples'
 import { HowItWorks } from '@/components/sections/HowItWorks'
@@ -23,6 +24,7 @@ export default function HomePage() {
       <MetaTechProviderBadge />
       <CustomerProofSection />
       <WhoIsThisFor />
+      <BeforeAfterSection />
       <ValuePropositions />
       <IndustryExamples />
       <HowItWorks />

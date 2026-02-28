@@ -7,20 +7,20 @@ const valueProps = [
   {
     icon: Zap,
     title: 'Faster Responses',
-    punchline: 'Reply instantly with AI suggestions and team coordination.',
+    punchline: 'Reply faster with team coordination and AI suggestions when you need them.',
     featured: false,
   },
   {
     icon: Inbox,
     title: 'Organized Leads',
     punchline: 'Never lose customer conversations or follow-ups.',
-    featured: true,
+    featured: false,
   },
   {
     icon: Smartphone,
     title: 'Same WhatsApp Number',
-    punchline: 'No need to change your existing WhatsApp.',
-    featured: false,
+    punchline: 'No new number. Use the WhatsApp you already have.',
+    featured: true,
   },
 ]
 

@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/Button'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
-import { Play } from 'lucide-react'
 
 export function HeroNew() {
   return (
@@ -23,22 +22,25 @@ export function HeroNew() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative z-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
-              Stop missing customers when your WhatsApp gets busy
+              Works with your existing WhatsApp number
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight font-sans">
-              Manage High WhatsApp Enquiries Without Missing Customers
+              Never miss a WhatsApp customer again.
             </h1>
             <p className="text-base text-white/80 mb-6 leading-relaxed max-w-xl">
-              LeadBuddie helps service businesses handle 30–100 daily leads, assign chats to teams, and respond faster with AI — using the same WhatsApp number.
+              All your enquiries in one place — track, assign, follow up, and close more deals using your existing WhatsApp number.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="https://app.leadbuddie.com" variant="lime" size="lg" className="w-full sm:w-auto">
+              <Button href="/demo" variant="lime" size="lg" className="w-full sm:w-auto">
+                Book Free Setup
+              </Button>
+              <Button href="https://app.leadbuddie.com" variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10">
                 Start Free Trial
               </Button>
-              <Button href="/demo" variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10">
-                Book Demo
-              </Button>
             </div>
+            <p className="mt-4 text-sm text-white/70">
+              We set everything up for you in minutes.
+            </p>
           </div>
           <div className="relative z-20">
             <ScreenshotFrame
