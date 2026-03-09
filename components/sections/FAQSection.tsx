@@ -16,6 +16,22 @@ const faqItems = [
     answer: 'Yes! LeadBuddie is built for teams. You can invite team members, assign chats, add notes, and see who\'s handling which lead. Team members can collaborate in real-time on the same conversations.',
   },
   {
+    question: 'How does Google Sheets sync work?',
+    answer: 'When a new lead is created or updated in LeadBuddie, the latest lead details can sync to your connected Google Sheet automatically. This gives your team a live reporting view without manual updates.',
+  },
+  {
+    question: 'Can I export lead data to Google Sheets anytime?',
+    answer: 'Yes. You can export your lead data whenever you need a backup, custom analysis, or a report for internal reviews.',
+  },
+  {
+    question: 'Can I share lead reports with my team in Sheets?',
+    answer: 'Absolutely. Since your lead data is available in Google Sheets, you can share reporting tabs with team members and stakeholders using normal Google sharing permissions.',
+  },
+  {
+    question: 'Is my Google Sheets connection secure?',
+    answer: 'Yes. You control which account and sheet are connected, and you can disconnect access anytime. Your lead data remains private to your workspace and authorized integrations.',
+  },
+  {
     question: 'How does the AI reply feature work?',
     answer: 'Our AI analyzes the full conversation context and your business description to suggest relevant replies. You can edit the suggestions before sending. The AI learns from your business to provide better suggestions over time.',
   },

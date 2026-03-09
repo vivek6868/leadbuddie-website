@@ -6,20 +6,20 @@ import Link from 'next/link'
 const valueProps = [
   {
     icon: Zap,
-    title: 'Faster Responses',
-    punchline: 'Reply faster with team coordination and AI suggestions when you need them.',
+    title: 'Capture Every Enquiry',
+    punchline: 'Bring every WhatsApp lead into one pipeline so no enquiry gets missed or lost.',
     featured: false,
   },
   {
     icon: Inbox,
-    title: 'Organized Leads',
-    punchline: 'Never lose customer conversations or follow-ups.',
+    title: 'Manage with Context',
+    punchline: 'Assign chats, track follow-ups, and keep your team aligned on every lead conversation.',
     featured: false,
   },
   {
     icon: Smartphone,
-    title: 'Same WhatsApp Number',
-    punchline: 'No new number. Use the WhatsApp you already have.',
+    title: 'Report in Google Sheets',
+    punchline: 'Auto-sync lead updates and export data anytime for reporting, backup, and sharing.',
     featured: true,
   },
 ]
@@ -68,7 +68,7 @@ export function ValuePropositions() {
                     href="https://app.leadbuddie.com"
                     className="inline-flex items-center text-sm font-semibold text-teal-700 group-hover:text-ink transition-colors"
                   >
-                    <span className="mr-1">See how it works</span>
+                    <span className="mr-1">Start syncing leads</span>
                     <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                       ↗
                     </span>

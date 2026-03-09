@@ -8,10 +8,10 @@ export function FinalCTA() {
     <Section className="py-24 md:py-32">
       <div className="bg-gradient-to-br from-teal-500 via-teal-600 to-ink rounded-2xl p-12 md:p-16 lg:p-20 text-center text-white">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Ready to manage your WhatsApp leads better?
+          Ready to run your WhatsApp leads and Google Sheets reporting in one flow?
         </h2>
         <p className="text-xl md:text-2xl text-teal-50 mb-10 max-w-3xl mx-auto leading-relaxed">
-          Join 500+ Indian businesses. Start free, no credit card required.
+          Capture leads on WhatsApp, keep your team aligned in LeadBuddie, and sync updates to Google Sheets automatically.
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
           <Button

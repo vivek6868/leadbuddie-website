@@ -6,6 +6,7 @@ import { BeforeAfterSection } from '@/components/sections/BeforeAfterSection'
 import { ValuePropositions } from '@/components/sections/ValuePropositions'
 import { IndustryExamples } from '@/components/sections/IndustryExamples'
 import { HowItWorks } from '@/components/sections/HowItWorks'
+import { GoogleSheetsIntegrationSection } from '@/components/sections/GoogleSheetsIntegrationSection'
 import { SafetyReassurance } from '@/components/sections/SafetyReassurance'
 import { ChatbotWebsiteSection } from '@/components/sections/ChatbotWebsiteSection'
 import { SolutionsPath } from '@/components/sections/SolutionsPath'
@@ -23,6 +24,7 @@ export default function HomePage() {
       <HeroNew />
       <MetaTechProviderBadge />
       <CustomerProofSection />
+      <GoogleSheetsIntegrationSection />
       <WhoIsThisFor />
       <BeforeAfterSection />
       <ValuePropositions />

@@ -22,24 +22,24 @@ export function HeroNew() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative z-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
-              Works with your existing WhatsApp number
+              WhatsApp lead management + Google Sheets sync
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight font-sans">
-              Never miss a WhatsApp customer again.
+              Capture on WhatsApp. Sync to Google Sheets. Close faster.
             </h1>
             <p className="text-base text-white/80 mb-6 leading-relaxed max-w-xl">
-              All your enquiries in one place — track, assign, follow up, and close more deals using your existing WhatsApp number.
+              LeadBuddie keeps every WhatsApp lead organized, auto-syncs updates to Google Sheets, and makes reporting easy for your team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="/demo" variant="lime" size="lg" className="w-full sm:w-auto">
-                Book Free Setup
-              </Button>
-              <Button href="https://app.leadbuddie.com" variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10">
+              <Button href="https://app.leadbuddie.com" variant="lime" size="lg" className="w-full sm:w-auto">
                 Start Free Trial
+              </Button>
+              <Button href="/demo" variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10">
+                Book Free Setup
               </Button>
             </div>
             <p className="mt-4 text-sm text-white/70">
-              We set everything up for you in minutes.
+              No dev work needed. Go live in minutes.
             </p>
           </div>
           <div className="relative z-20">
