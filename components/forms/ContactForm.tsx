@@ -9,6 +9,7 @@ export function ContactForm() {
     name: '',
     email: '',
     message: '',
+    website: '',
   })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
@@ -29,7 +30,7 @@ export function ContactForm() {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
+        setFormData({ name: '', email: '', message: '', website: '' })
         setTimeout(() => setStatus('idle'), 5000)
       } else {
         setStatus('error')
@@ -52,6 +53,18 @@ export function ContactForm() {
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
       <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.website}
+            onChange={handleChange}
+          />
+        </div>
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-900">
             Name *
