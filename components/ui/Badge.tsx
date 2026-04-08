@@ -10,10 +10,10 @@ interface BadgeProps {
 
 export function Badge({ children, variant = 'default', size = 'md', className }: BadgeProps) {
   const variants = {
-    default: 'bg-gray-100 text-gray-700',
-    teal: 'bg-teal-50 text-teal-700',
-    gray: 'bg-gray-100 text-gray-600',
-    success: 'bg-green-50 text-green-700',
+    default: 'bg-brand-subtle text-brand-light border border-brand/25',
+    teal: 'bg-wa-subtle text-wa border border-wa/25',
+    gray: 'bg-bg-elevated text-text-secondary border border-border',
+    success: 'bg-wa-subtle text-wa border border-wa/25',
   }
 
   const sizes = {

@@ -39,7 +39,7 @@ export default function ShippingPolicyPage() {
                 </p>
 
                 <p className="text-dark-300 mb-4">
-                  Our services are delivered entirely through our online platform at <strong className="text-white">app.leadbuddie.com</strong>. Upon successful payment and account activation, you gain immediate access to our WhatsApp CRM, chat inbox, AI-powered features, and all other subscription benefits through your web browser. There are no physical components, hardware, or tangible items associated with our service.
+                  Our services are delivered entirely through our online platform at <strong className="text-white">app.leadbuddie.com</strong>. Upon successful payment and account activation, you gain immediate access to our WhatsApp + Instagram CRM, chat inbox, AI-powered features, and all other subscription benefits through your web browser. There are no physical components, hardware, or tangible items associated with our service.
                 </p>
 
                 <p className="text-dark-300 mb-4">

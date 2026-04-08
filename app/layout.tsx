@@ -1,22 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Bricolage_Grotesque, Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { SEO } from '@/lib/constants'
 
-const inter = Inter({ 
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['500', '600', '700', '800'],
+  variable: '--font-heading',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
 })
 
-const spaceGrotesk = Space_Grotesk({ 
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-space-grotesk',
+  weight: ['400', '500', '600'],
+  variable: '--font-body',
   display: 'swap',
 })
 
@@ -66,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${bricolage.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         {/* Google tag (gtag.js) - Analytics GA4 + Ads */}
         <script
@@ -116,7 +116,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className="bg-bg-primary text-text-primary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="min-h-screen">

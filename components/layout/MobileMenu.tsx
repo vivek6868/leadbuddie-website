@@ -19,7 +19,7 @@ export function MobileMenu({ onRequestDemo }: MobileMenuProps) {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 text-white hover:text-white/80 transition-colors"
+        className="p-2 text-text-primary transition-colors hover:text-brand-light"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >
@@ -28,19 +28,13 @@ export function MobileMenu({ onRequestDemo }: MobileMenuProps) {
 
       {isOpen && (
         <div className="fixed inset-0 z-[100] md:hidden">
-          {/* Backdrop - clickable to close */}
-          <div 
-            className="absolute inset-0 bg-gray-900/80 dark:bg-black/80"
-            onClick={() => setIsOpen(false)}
-          />
-          
-          {/* Menu panel - separate layer, clickable */}
-          <div 
-            className="absolute right-0 top-0 h-full w-72 bg-ink shadow-2xl flex flex-col"
+          <div className="absolute inset-0 bg-bg-primary/80 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+
+          <div
+            className="absolute right-0 top-0 flex h-full w-72 flex-col border-l border-border bg-bg-secondary"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header */}
-            <div className="flex justify-between items-center p-4 border-b border-white/10 bg-ink">
+            <div className="flex items-center justify-between border-b border-border p-4">
               <div className="flex items-center space-x-2">
                 {!logoError && (
                   <Image
@@ -48,52 +42,48 @@ export function MobileMenu({ onRequestDemo }: MobileMenuProps) {
                     alt="LeadBuddie Logo"
                     width={140}
                     height={40}
-                    className="h-8 w-auto brightness-0 invert"
+                    className="h-8 w-auto"
                     onError={() => setLogoError(true)}
                   />
                 )}
-                <span className="text-lg font-bold text-white">LeadBuddie</span>
+                <span className="font-heading text-lg font-bold text-text-primary">LeadBuddie</span>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 text-white/90 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+                className="rounded-lg p-2 text-text-secondary transition-colors hover:bg-bg-card hover:text-text-primary"
                 aria-label="Close menu"
               >
                 <X size={20} />
               </button>
             </div>
-            
-            {/* Navigation Links */}
-            <nav className="flex flex-col bg-ink p-3">
+
+            <nav className="flex flex-col p-3">
               {NAVIGATION.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-white/90 hover:text-white hover:bg-white/10 transition-all py-2.5 px-3 rounded-lg font-medium text-sm mb-1.5 block"
+                  className="mb-1.5 block rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary transition-all hover:bg-bg-card hover:text-text-primary"
                 >
                   {item.name}
                 </Link>
               ))}
             </nav>
 
-            {/* Footer Buttons */}
-            <div className="mt-auto p-4 border-t border-white/10 bg-ink space-y-3">
+            <div className="mt-auto space-y-3 border-t border-border p-4">
               {onRequestDemo && (
                 <button
                   type="button"
-                  onClick={() => { onRequestDemo(); setIsOpen(false); }}
-                  className="w-full py-2.5 px-4 rounded-lg border-2 border-teal-400 text-teal-300 font-medium text-sm hover:bg-teal-500/25 hover:text-white transition-colors"
+                  onClick={() => {
+                    onRequestDemo()
+                    setIsOpen(false)
+                  }}
+                  className="w-full rounded-xl border border-border-light bg-white/5 px-4 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-brand-light hover:bg-brand-subtle"
                 >
-                  Request for demo
+                  Book Demo
                 </button>
               )}
-              <Button
-                variant="lime"
-                className="w-full"
-                href="https://app.leadbuddie.com"
-                onClick={() => setIsOpen(false)}
-              >
+              <Button variant="primary" className="w-full" href="https://app.leadbuddie.com" onClick={() => setIsOpen(false)}>
                 Get Started
               </Button>
             </div>

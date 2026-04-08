@@ -22,11 +22,11 @@ const tabs = [
 const productSections = [
   {
     id: 'inbox',
-    title: 'WhatsApp Team Inbox',
-    description: 'Unified inbox for all your WhatsApp conversations with real-time sync and team collaboration.',
+    title: 'WhatsApp + Instagram Team Inbox',
+    description: 'Unified inbox for your WhatsApp and Instagram conversations with real-time sync and team collaboration.',
     screenshot: '/graphics/features/whatsapp-team-inbox.svg',
     benefits: [
-      'See all WhatsApp conversations in one place',
+      'See WhatsApp and Instagram conversations in one place',
       'Real-time sync and instant notifications',
       'Filter by assigned, unassigned, or my chats',
       'Desktop split view and mobile-optimized',
@@ -142,14 +142,14 @@ export default function ProductPage() {
       {/* Hero */}
       <Section className="pt-32 pb-16">
         <SectionHeader
-          title="Everything You Need to Manage WhatsApp Leads"
-          description="WhatsApp lead management on your existing number. Inbox, pipeline, follow-ups, and AI — all in one place."
+          title="Everything You Need to Run a WhatsApp + Instagram CRM"
+          description="Inbox, pipeline, follow-ups, and AI across your most important conversation channels."
           centered
         />
       </Section>
 
       {/* Sticky Tabs - Premium Design */}
-      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-[0_4px_20px_rgba(15,23,42,0.06)]">
+      <div className="sticky top-0 z-40 border-b border-border bg-bg-primary/92 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.28)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto scrollbar-hide">
             {tabs.map((tab) => (
@@ -162,8 +162,8 @@ export default function ProductPage() {
                 className={cn(
                   'relative flex items-center gap-2 px-6 py-4 border-b-2 font-semibold text-sm whitespace-nowrap transition-all duration-200',
                   activeTab === tab.id
-                    ? 'border-teal-600 text-teal-600 bg-teal-50/50'
-                    : 'border-transparent text-gray-600 hover:text-ink hover:border-gray-300 hover:bg-gray-50/50'
+                    ? 'border-brand text-text-primary bg-brand-subtle'
+                    : 'border-transparent text-text-secondary hover:text-text-primary hover:border-border-light hover:bg-bg-card/70'
                 )}
               >
                 <tab.icon size={18} className={cn(
@@ -172,7 +172,7 @@ export default function ProductPage() {
                 )} />
                 {tab.label}
                 {activeTab === tab.id && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-600 via-cyan-500 to-teal-600 rounded-full" />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-brand via-ig-2 to-wa" />
                 )}
               </button>
             ))}
@@ -184,24 +184,24 @@ export default function ProductPage() {
       <Section>
         <div className="relative">
           {/* Background gradient glow */}
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-teal-50/50 via-transparent to-cyan-50/30 blur-3xl" />
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-brand-glow via-transparent to-ig-glow blur-3xl" />
           
-          <div className="relative rounded-[32px] bg-white/80 backdrop-blur-sm border border-gray-200/60 shadow-[0_24px_80px_rgba(15,23,42,0.08)] p-8 md:p-12 lg:p-16">
+          <div className="relative rounded-[32px] border border-border-light bg-bg-card/92 p-8 shadow-[0_28px_100px_rgba(0,0,0,0.36)] backdrop-blur-sm md:p-12 lg:p-16">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left: Content */}
               <div className="space-y-6">
                 {/* Feature label pill */}
-                <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-[0.16em] mb-2">
+                <div className="mb-2 inline-flex items-center rounded-full border border-brand/30 bg-brand-subtle px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-light">
                   {activeSection.title}
                 </div>
                 
                 {/* Title */}
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 leading-tight font-display">
+                <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4 leading-tight">
                   {activeSection.title}
                 </h2>
                 
                 {/* Description */}
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
                   {activeSection.description}
                 </p>
                 
@@ -210,12 +210,12 @@ export default function ProductPage() {
                   {activeSection.benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start gap-3 group">
                       <div className="relative flex-shrink-0 mt-0.5">
-                        <div className="absolute inset-0 bg-teal-100 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <div className="relative w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center ring-2 ring-teal-50">
-                          <div className="w-2 h-2 rounded-full bg-teal-600" />
+                        <div className="absolute inset-0 rounded-full bg-brand-glow blur-sm opacity-0 transition-opacity group-hover:opacity-100" />
+                        <div className="relative flex h-5 w-5 items-center justify-center rounded-full bg-bg-elevated ring-2 ring-border">
+                          <div className="h-2 w-2 rounded-full bg-brand-light" />
                         </div>
                       </div>
-                      <span className="text-gray-700 text-base leading-relaxed">{benefit}</span>
+                      <span className="text-base leading-relaxed text-text-primary/92">{benefit}</span>
                     </li>
                   ))}
                 </ul>
@@ -226,7 +226,7 @@ export default function ProductPage() {
                     href="/demo" 
                     variant="lime"
                     size="lg"
-                    className="shadow-lg hover:shadow-xl transition-all group"
+                    className="group shadow-lg hover:shadow-xl transition-all"
                   >
                     See it in action
                     <svg className="ml-2 inline-block w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -239,7 +239,7 @@ export default function ProductPage() {
               {/* Right: Premium Image with enhanced effects */}
               <div className="relative">
                 {/* Glow effect behind image/video */}
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 via-cyan-400/15 to-transparent rounded-[32px] blur-2xl -z-10" />
+                <div className="absolute inset-0 -z-10 rounded-[32px] bg-gradient-to-br from-brand-glow via-ig-glow to-transparent blur-2xl" />
                 
                 <div className="relative transform transition-all duration-500 hover:scale-[1.02]">
                   <ScreenshotFrame
@@ -262,10 +262,10 @@ export default function ProductPage() {
       {/* CTA */}
       <Section background="gray" className="py-16">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-text-primary">
             Ready to get started?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="mb-8 text-lg text-text-secondary">
             Start your 7-day free trial. No credit card required.
           </p>
           <Button href="https://app.leadbuddie.com" size="lg">

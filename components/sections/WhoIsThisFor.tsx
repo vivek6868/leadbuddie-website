@@ -1,55 +1,34 @@
 import { Section } from '@/components/ui/Section'
 import { CheckCircle2 } from 'lucide-react'
 
-const VIDEO_SRC = '/videos/whatsapp-for-you.mp4'
-const VIDEO_POSTER = '/images/is-leadbuddie-right-for-you.png'
-
 const items = [
-  'You get 10+ WhatsApp enquiries daily',
-  'Multiple people reply to customers',
-  'You sometimes forget follow-ups',
-  'You run ads or marketing campaigns',
+  'You reply to leads on both WhatsApp and Instagram',
+  'Multiple teammates need context before jumping into chats',
+  'Important follow-ups get delayed or forgotten',
+  'You want one CRM instead of scattered DMs and notes',
 ]
 
 export function WhoIsThisFor() {
   return (
-    <Section id="is-leadbuddie-right-for-you" className="pt-6 md:pt-7">
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        {/* Left: Video (muted, no sound) — mobile first (top), desktop left */}
-        <div className="relative order-1 lg:order-1">
-          <div className="relative aspect-[4/3] lg:aspect-[4/3] lg:min-h-[340px] rounded-2xl overflow-hidden bg-teal-50 shadow-lg border border-gray-100">
-            <video
-              src={VIDEO_SRC}
-              poster={VIDEO_POSTER}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-              title="Is LeadBuddie right for you?"
-            />
-          </div>
+    <Section>
+      <div className="grid items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="rounded-[28px] border border-border bg-[linear-gradient(160deg,rgba(124,58,237,0.18),rgba(26,26,40,0.92)_45%,rgba(37,211,102,0.08))] p-8 shadow-[0_24px_90px_rgba(0,0,0,0.3)]">
+          <p className="text-sm uppercase tracking-[0.2em] text-brand-light">Who it&apos;s for</p>
+          <h2 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">LeadBuddie fits teams that live inside social conversations</h2>
+          <p className="mt-4 text-lg leading-relaxed text-text-secondary">
+            If your pipeline starts in DMs, comments, replies, or WhatsApp threads, LeadBuddie turns that chaos into one
+            clean revenue workflow.
+          </p>
         </div>
 
-        {/* Right: Content */}
-        <div className="order-2 lg:order-2 animate-fade-in-up">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-ink mb-6 lg:mb-8 text-center lg:text-left">
-            LeadBuddie is perfect if:
-          </h2>
-          <ul className="space-y-4 md:space-y-5">
-            {items.map((item, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-gray-700 group transition-transform duration-200 hover:translate-x-0.5"
-              >
-                <span className="mt-0.5 shrink-0 rounded-full bg-teal-50 p-0.5 group-hover:bg-teal-100 transition-colors">
-                  <CheckCircle2 className="h-6 w-6 text-teal-600" strokeWidth={2} />
-                </span>
-                <span className="text-base md:text-lg leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="space-y-4">
+          {items.map((item) => (
+            <li key={item} className="flex items-start gap-4 rounded-2xl border border-border bg-bg-card/85 p-5">
+              <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-wa" />
+              <span className="text-base leading-relaxed text-text-secondary md:text-lg">{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </Section>
   )

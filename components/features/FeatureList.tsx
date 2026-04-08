@@ -11,7 +11,7 @@ export function FeatureList() {
           Powerful Features for Lead Management
         </h1>
         <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-          Everything you need to manage WhatsApp leads effectively
+          Everything you need to manage WhatsApp & Instagram leads effectively
         </p>
       </div>
       

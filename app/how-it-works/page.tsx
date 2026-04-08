@@ -8,7 +8,7 @@ import { Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'How It Works - LeadBuddie',
-  description: 'Get started with LeadBuddie in 5 simple steps. Connect your WhatsApp Business number and start managing leads effectively.',
+  description: 'Get started with LeadBuddie in 5 simple steps and turn WhatsApp + Instagram conversations into an organized CRM workflow.',
 }
 
 export default function HowItWorksPage() {
@@ -21,7 +21,7 @@ export default function HowItWorksPage() {
               How LeadBuddie Works
             </h1>
             <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-              Get started in minutes. Manage all your WhatsApp leads from one powerful dashboard.
+              Get started in minutes. Manage all your WhatsApp & Instagram leads from one powerful dashboard.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
       <ComplianceSection />
       <CTASection 
         title="Ready to Get Started?"
-        description="Start your 7-day free trial and see how easy it is to manage your WhatsApp leads."
+        description="Start your 7-day free trial and see how easy it is to manage your WhatsApp & Instagram leads."
       />
     </>
   )

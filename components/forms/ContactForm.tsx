@@ -51,7 +51,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+    <div className="rounded-[28px] border border-border bg-bg-card/92 p-6 shadow-[0_24px_90px_rgba(0,0,0,0.28)] md:p-8">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="hidden" aria-hidden="true">
           <label htmlFor="website">Website</label>
@@ -66,7 +66,7 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-900">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium text-text-primary">
             Name *
           </label>
           <input
@@ -76,13 +76,13 @@ export function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            className="w-full rounded-xl border border-border-light bg-bg-elevated px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
             placeholder="Your name"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-900">
+          <label htmlFor="email" className="mb-2 block text-sm font-medium text-text-primary">
             Email *
           </label>
           <input
@@ -92,13 +92,13 @@ export function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            className="w-full rounded-xl border border-border-light bg-bg-elevated px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
             placeholder="your@email.com"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-900">
+          <label htmlFor="message" className="mb-2 block text-sm font-medium text-text-primary">
             Message *
           </label>
           <textarea
@@ -108,22 +108,22 @@ export function ContactForm() {
             rows={6}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent resize-none"
+            className="w-full resize-none rounded-xl border border-border-light bg-bg-elevated px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
             placeholder="How can we help you?"
           />
         </div>
 
         {status === 'success' && (
-          <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 flex items-center space-x-2">
-            <CheckCircle2 className="text-green-400" size={20} />
-            <span className="text-green-400">Message sent successfully! We'll get back to you within 24 hours.</span>
+          <div className="flex items-center space-x-2 rounded-xl border border-wa/30 bg-wa-subtle p-4">
+            <CheckCircle2 className="text-wa" size={20} />
+            <span className="text-wa">Message sent successfully! We'll get back to you within 24 hours.</span>
           </div>
         )}
 
         {status === 'error' && (
-          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 flex items-center space-x-2">
-            <AlertCircle className="text-red-400" size={20} />
-            <span className="text-red-400">Something went wrong. Please try again or email us directly.</span>
+          <div className="flex items-center space-x-2 rounded-xl border border-[#ef4444]/30 bg-[#ef4444]/10 p-4">
+            <AlertCircle className="text-[#f87171]" size={20} />
+            <span className="text-[#fca5a5]">Something went wrong. Please try again or email us directly.</span>
           </div>
         )}
 
@@ -144,10 +144,10 @@ export function ContactForm() {
         </Button>
       </form>
 
-      <div className="mt-6 pt-6 border-t border-gray-200">
-        <p className="text-sm text-gray-600 text-center">
+      <div className="mt-6 border-t border-border pt-6">
+        <p className="text-center text-sm text-text-secondary">
           Or email us directly at{' '}
-          <a href="mailto:hello@hutliv.com" className="text-primary-400 hover:text-primary-300">
+          <a href="mailto:hello@hutliv.com" className="text-brand-light hover:text-text-primary">
             hello@hutliv.com
           </a>
         </p>

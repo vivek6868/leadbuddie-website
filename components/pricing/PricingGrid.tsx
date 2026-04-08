@@ -48,12 +48,12 @@ export function PricingGrid() {
       <Section>
         {/* Billing toggle */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center rounded-full bg-gray-100 p-1 text-xs font-semibold">
+          <div className="inline-flex items-center rounded-full border border-border bg-bg-card p-1 text-xs font-semibold shadow-[0_18px_50px_rgba(0,0,0,0.24)]">
             <button
               type="button"
               onClick={() => setBillingPeriod('monthly')}
               className={`px-4 py-2 rounded-full transition-all ${
-                !isAnnual ? 'bg-white text-ink shadow-sm' : 'text-gray-500'
+                !isAnnual ? 'bg-brand text-white shadow-[0_8px_24px_rgba(124,58,237,0.35)]' : 'text-text-secondary'
               }`}
             >
               Monthly
@@ -62,11 +62,11 @@ export function PricingGrid() {
               type="button"
               onClick={() => setBillingPeriod('annual')}
               className={`px-4 py-2 rounded-full transition-all flex items-center gap-1 ${
-                isAnnual ? 'bg-white text-ink shadow-sm' : 'text-gray-500'
+                isAnnual ? 'bg-brand text-white shadow-[0_8px_24px_rgba(124,58,237,0.35)]' : 'text-text-secondary'
               }`}
             >
               Annual
-              <span className="text-[10px] font-semibold text-teal-600 uppercase tracking-wide">
+              <span className="text-[10px] font-semibold text-wa uppercase tracking-wide">
                 2 months free
               </span>
             </button>
@@ -86,7 +86,7 @@ export function PricingGrid() {
               <Card
                 key={plan.id}
                 className={`relative ${
-                  plan.highlighted ? 'border-teal-500 border-2 shadow-lg shadow-teal-500/20' : ''
+                  plan.highlighted ? 'border-brand border-2 shadow-[0_22px_80px_rgba(124,58,237,0.28)]' : ''
                 }`}
                 hover
               >
@@ -96,34 +96,34 @@ export function PricingGrid() {
                   </div>
                 )}
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-ink mb-2">{plan.name}</h3>
+                  <h3 className="mb-2 text-2xl font-bold text-text-primary">{plan.name}</h3>
                   <div className="flex items-baseline mb-1">
-                    <span className="text-4xl font-bold text-ink">
+                    <span className="text-4xl font-bold text-text-primary">
                       {displayPrice === 0 ? 'Free' : `₹${displayPrice.toLocaleString('en-IN')}`}
                     </span>
                     {displayPrice > 0 && (
-                      <span className="text-gray-600 ml-2">/{periodLabel}</span>
+                      <span className="ml-2 text-text-secondary">/{periodLabel}</span>
                     )}
                   </div>
                   {showSavings && (
-                    <p className="text-xs font-semibold text-teal-600 mb-1">
+                    <p className="mb-1 text-xs font-semibold text-wa">
                       Save 2 months with annual billing
                     </p>
                   )}
                   {monthlyPrice > 0 && (
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-text-muted">
                       {isAnnual
                         ? `₹${monthlyPrice.toLocaleString('en-IN')}/month, billed annually`
                         : 'Billed monthly'}
                     </p>
                   )}
-                  <p className="text-sm text-gray-600 mt-3">{plan.description}</p>
+                  <p className="mt-3 text-sm text-text-secondary">{plan.description}</p>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="text-teal-600 flex-shrink-0 mr-2 mt-0.5" size={18} />
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <Check className="mr-2 mt-0.5 flex-shrink-0 text-wa" size={18} />
+                      <span className="text-sm text-text-secondary">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -139,15 +139,15 @@ export function PricingGrid() {
           })}
         </div>
 
-        <div className="bg-teal-50 rounded-xl p-6 mb-16">
-          <p className="text-sm text-gray-700 text-center">
-            <strong>Note:</strong> WhatsApp conversation charges by Meta may apply. These are
+        <div className="mb-16 rounded-2xl border border-border bg-bg-card/90 p-6">
+          <p className="text-center text-sm text-text-secondary">
+            <strong className="text-text-primary">Note:</strong> WhatsApp conversation charges by Meta may apply. These are
             separate from LeadBuddie subscription fees.
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-ink mb-8 text-center">
+          <h2 className="mb-8 text-center text-2xl font-bold text-text-primary">
             Frequently Asked Questions
           </h2>
           <FAQAccordion items={pricingFAQ} />

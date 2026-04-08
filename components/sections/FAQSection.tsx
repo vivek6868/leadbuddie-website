@@ -4,69 +4,52 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion'
 
 const faqItems = [
   {
-    question: 'How does LeadBuddie connect to WhatsApp?',
-    answer: 'LeadBuddie connects to your WhatsApp Business number through the official WhatsApp Business API. We guide you through a simple setup process that takes just a few minutes. All your conversations sync automatically to your LeadBuddie inbox.',
+    question: 'How does LeadBuddie connect to WhatsApp and Instagram?',
+    answer: 'LeadBuddie is designed for businesses that manage customer conversations across WhatsApp and Instagram. We help bring those conversations into one CRM workflow so your team can manage leads with context.',
   },
   {
-    question: 'Do I need a WhatsApp Business API account?',
-    answer: 'Yes, you need a WhatsApp Business API account. We help you set this up during onboarding. If you already have one, you can connect it directly.',
+    question: 'Can my team collaborate on the same leads?',
+    answer: 'Yes. Your team can assign chats, add notes, track lead stages, and keep everyone aligned on who owns the next step.',
   },
   {
-    question: 'Can my team collaborate on leads?',
-    answer: 'Yes! LeadBuddie is built for teams. You can invite team members, assign chats, add notes, and see who\'s handling which lead. Team members can collaborate in real-time on the same conversations.',
+    question: 'What does the AI actually do?',
+    answer: 'LeadBuddie uses AI for things like conversation summaries, reply suggestions, and helping teams understand lead context faster. Your team stays in control of what gets sent.',
   },
   {
-    question: 'How does Google Sheets sync work?',
-    answer: 'When a new lead is created or updated in LeadBuddie, the latest lead details can sync to your connected Google Sheet automatically. This gives your team a live reporting view without manual updates.',
-  },
-  {
-    question: 'Can I export lead data to Google Sheets anytime?',
-    answer: 'Yes. You can export your lead data whenever you need a backup, custom analysis, or a report for internal reviews.',
-  },
-  {
-    question: 'Can I share lead reports with my team in Sheets?',
-    answer: 'Absolutely. Since your lead data is available in Google Sheets, you can share reporting tabs with team members and stakeholders using normal Google sharing permissions.',
-  },
-  {
-    question: 'Is my Google Sheets connection secure?',
-    answer: 'Yes. You control which account and sheet are connected, and you can disconnect access anytime. Your lead data remains private to your workspace and authorized integrations.',
-  },
-  {
-    question: 'How does the AI reply feature work?',
-    answer: 'Our AI analyzes the full conversation context and your business description to suggest relevant replies. You can edit the suggestions before sending. The AI learns from your business to provide better suggestions over time.',
+    question: 'Is LeadBuddie only for large teams?',
+    answer: 'No. It works well for founder-led sales teams, growing service businesses, and larger teams that need a more structured social CRM setup.',
   },
   {
     question: 'What happens during the free trial?',
-    answer: 'You get full access to all features for 7 days. No credit card required. After the trial, you can choose a plan that fits your needs. If you don\'t continue, your account will be paused.',
+    answer: 'You get full access to the product so you can experience the inbox, lead management flow, and collaboration setup before committing to a paid plan.',
+  },
+  {
+    question: 'Is our data secure?',
+    answer: 'Yes. LeadBuddie is built around secure access, workspace-level visibility, and a structured CRM workflow for customer conversations.',
   },
   {
     question: 'Can I cancel anytime?',
-    answer: 'Yes, you can cancel your subscription anytime from the billing page. Your service will remain active until the end of your current billing period. No cancellation fees apply.',
+    answer: 'Yes. You can cancel your subscription at any time and your access continues through the end of your active billing period.',
   },
   {
-    question: 'Is my data secure?',
-    answer: 'Absolutely. We use industry-standard encryption, secure data isolation between businesses, and comply with data protection regulations. Your WhatsApp conversations and lead data are private and secure.',
-  },
-  {
-    question: 'What support do you offer?',
-    answer: 'All plans include email support. Growth and above plans get priority support. Enterprise plans include dedicated account management and SLA-backed support.',
+    question: 'How do I book a demo?',
+    answer: 'Use any Book Demo button on the site and our team will reach out to schedule a walkthrough based on your use case.',
   },
 ]
 
 export function FAQSection() {
   return (
-    <Section background="gray">
+    <Section>
       <SectionHeader
         label="FAQ"
-        title="Frequently Asked Questions"
-        description="Everything you need to know about LeadBuddie"
+        title="Questions teams ask before switching to a better CRM"
+        description="Everything you need to know about moving social conversations into LeadBuddie."
         centered
         className="mb-12"
       />
-      <div className="max-w-3xl mx-auto">
+      <div className="mx-auto max-w-3xl">
         <FAQAccordion items={faqItems} />
       </div>
     </Section>
   )
 }
-

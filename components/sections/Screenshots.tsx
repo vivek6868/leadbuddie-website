@@ -43,7 +43,7 @@ export function Screenshots() {
           Get started in 3 simple steps
         </h2>
         <p className="text-base text-gray-600 md:text-lg">
-          Set up your WhatsApp CRM and start closing leads faster.
+          Set up your WhatsApp + Instagram CRM and start closing leads faster.
         </p>
       </div>
 

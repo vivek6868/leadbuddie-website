@@ -25,7 +25,7 @@ export default function RefundPolicyPage() {
               <div>
                 <h2 className="text-2xl font-semibold mb-4">Overview</h2>
                 <p className="text-dark-300 mb-4">
-                  {BRAND.name} is a subscription-based SaaS product providing WhatsApp CRM and automation 
+                  {BRAND.name} is a subscription-based SaaS product providing WhatsApp + Instagram CRM and automation 
                   tools for businesses. Since our service is delivered instantly upon activation, we follow 
                   the policy below.
                 </p>

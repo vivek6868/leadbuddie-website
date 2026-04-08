@@ -6,7 +6,7 @@ import { Section } from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'Features - LeadBuddie',
-  description: 'AI-powered lead scoring, WhatsApp integration, smart follow-ups, and more. Everything you need to manage WhatsApp leads effectively.',
+  description: 'AI-powered inbox, automation, smart follow-ups, and collaboration for WhatsApp + Instagram CRM teams.',
 }
 
 export default function FeaturesPage() {

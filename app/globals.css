@@ -2,12 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
 :root {
-  --foreground-rgb: 15, 23, 42;
-  --background-rgb: 255, 255, 255;
+  --color-bg-primary: #08080f;
+  --color-bg-secondary: #0f0f1a;
+  --color-bg-elevated: #16161f;
+  --color-bg-card: #1a1a28;
+  --color-border: #252535;
+  --color-border-light: #32324a;
+  --color-text-primary: #eeeef5;
+  --color-text-secondary: #8888a8;
+  --color-text-muted: #55556a;
+  --color-brand: #7c3aed;
+  --color-brand-hover: #6d28d9;
+  --color-brand-light: #8b5cf6;
+  --color-brand-subtle: rgba(124, 58, 237, 0.12);
+  --color-brand-glow: rgba(124, 58, 237, 0.2);
+  --color-wa: #25d366;
+  --color-wa-dark: #128c7e;
+  --color-wa-subtle: rgba(37, 211, 102, 0.1);
+  --color-wa-glow: rgba(37, 211, 102, 0.18);
+  --color-ig-1: #f58529;
+  --color-ig-2: #dd2a7b;
+  --color-ig-3: #515bd4;
+  --color-ig-subtle: rgba(221, 42, 123, 0.1);
+  --color-ig-glow: rgba(221, 42, 123, 0.18);
 }
 
 * {
@@ -21,12 +39,35 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-text-primary);
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(221, 42, 123, 0.14), transparent 24%),
+    linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  font-family: var(--font-body), system-ui, sans-serif;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading), sans-serif;
+  }
+
+  body,
+  p,
+  span,
+  li,
+  nav a,
+  button,
+  input,
+  textarea,
+  label {
+    font-family: var(--font-body), system-ui, sans-serif;
+  }
 }
 
 @layer utilities {
@@ -50,23 +91,23 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--color-bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--color-border-light);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--color-text-muted);
 }
 
 /* Ensure contact form input and textarea text is visible (light backgrounds) */
 input[type="text"],
 input[type="email"],
 textarea {
-  color: #0f172a !important;
+  color: var(--color-text-primary) !important;
 }
 
 /* Demo request modal: light text on dark background */
@@ -92,7 +133,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-text-fill-color: #0f172a !important;
+  -webkit-text-fill-color: var(--color-text-primary) !important;
 }
 
 /* Hero Graphics Animations */
@@ -233,10 +274,10 @@ input:-webkit-autofill:active {
 .text-gradient-shimmer {
   background: linear-gradient(
     90deg,
-    #14b8a6 0%,
-    #22d3ee 35%,
-    #d4ff00 70%,
-    #22d3ee 100%
+    #25d366 0%,
+    #7c3aed 40%,
+    #dd2a7b 75%,
+    #515bd4 100%
   );
   background-size: 200% auto;
   background-clip: text;

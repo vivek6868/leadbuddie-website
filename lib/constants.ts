@@ -1,6 +1,6 @@
 export const BRAND = {
   name: 'LeadBuddie',
-  tagline: 'WhatsApp Lead Management System for Growing Businesses',
+  tagline: 'WhatsApp + Instagram CRM for Growing Businesses',
   company: 'Hutliv Technologies',
   founded: 2025,
 } as const
@@ -146,7 +146,7 @@ export const PRICING_PLANS = [
     price: 499,
     currency: '₹',
     period: 'month',
-    description: 'Single-number WhatsApp inbox with AI replies and summaries.',
+    description: 'Social CRM starter for WhatsApp conversations, AI replies, and team visibility.',
     features: PLAN_VISIBLE_FEATURES.starter,
     cta: 'Start Free Trial',
     highlighted: false,
@@ -157,7 +157,7 @@ export const PRICING_PLANS = [
     price: 999,
     currency: '₹',
     period: 'month',
-    description: 'Campaigns + templates + unlimited AI messages for growing teams.',
+    description: 'Automation, templates, and unlimited AI messages for growing teams.',
     features: PLAN_VISIBLE_FEATURES.growth,
     cta: 'Start Free Trial',
     highlighted: true,
@@ -179,7 +179,7 @@ export const PRICING_PLANS = [
     price: 4999,
     currency: '₹',
     period: 'month',
-    description: 'Custom deployments with multi-number WhatsApp and priority support.',
+    description: 'Custom deployments with advanced channel operations and priority support.',
     features: PLAN_VISIBLE_FEATURES.enterprise,
     cta: 'Contact Us',
     highlighted: false,
@@ -220,7 +220,7 @@ export const HOW_IT_WORKS_STEPS = [
 ] as const
 
 export const COMPLIANCE_STATEMENTS = [
-  'We help you manage and organize WhatsApp leads',
+  'We help you manage and organize WhatsApp and Instagram leads',
   'We receive leads from your WhatsApp Business number',
   'We organize conversations in a CRM',
   'We generate AI insights from conversations',
@@ -324,9 +324,9 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — WhatsApp Lead Management for Growing Businesses',
-  description: 'Never miss a WhatsApp customer again. Track, assign, and follow up on every lead using your existing number. Lead management and follow-ups first — AI supports you.',
-  keywords: 'WhatsApp CRM, lead management system, WhatsApp lead management, AI lead scoring, WhatsApp Business API, CRM, growing businesses',
+  title: 'LeadBuddie — WhatsApp & Instagram CRM for Growing Businesses',
+  description: 'Convert WhatsApp and Instagram conversations into paying customers with one premium CRM for inbox, follow-ups, automation, and team collaboration.',
+  keywords: 'WhatsApp Instagram CRM, WhatsApp CRM, Instagram CRM, social CRM, AI follow-ups, WhatsApp Business API, Instagram DM CRM',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection) */

@@ -47,7 +47,7 @@ export function FeatureHighlights() {
     <Section background="gray">
       <SectionHeader
         title="Everything You Need to Manage WhatsApp Leads"
-        description="A complete WhatsApp CRM and AI automation platform for businesses"
+        description="A complete WhatsApp + Instagram CRM and AI automation platform for businesses"
         centered
         className="mb-16"
       />

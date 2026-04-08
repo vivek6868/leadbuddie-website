@@ -17,43 +17,49 @@ export function BlogCard({ post, compact = false }: BlogCardProps) {
 
   if (compact) {
     return (
-      <Link href={href} className="group block bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md hover:border-teal-200 transition-all">
-        <div className="aspect-video relative bg-gray-100">
+      <Link
+        href={href}
+        className="group block overflow-hidden rounded-[24px] border border-border bg-bg-card/92 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all hover:-translate-y-1 hover:border-border-light hover:shadow-[0_28px_80px_rgba(0,0,0,0.32)]"
+      >
+        <div className="relative aspect-video bg-bg-elevated">
           {post.image ? (
             <Image src={post.image} alt={post.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
           ) : (
-            <div className="absolute inset-0 bg-teal-100" />
+            <div className="absolute inset-0 bg-brand-subtle" />
           )}
         </div>
         <div className="p-4">
-          <h3 className="font-semibold text-ink group-hover:text-teal-600 transition-colors line-clamp-2">{post.title}</h3>
+          <h3 className="line-clamp-2 font-semibold text-text-primary transition-colors group-hover:text-brand-light">{post.title}</h3>
         </div>
       </Link>
     )
   }
 
   return (
-    <Link href={href} className="group block h-full bg-white rounded-xl border border-[#EAEAEA] shadow-sm overflow-hidden hover:shadow-md hover:border-teal-200 transition-all">
-      <div className="aspect-video relative bg-gray-100">
+    <Link
+      href={href}
+      className="group block h-full overflow-hidden rounded-[26px] border border-border bg-bg-card/94 shadow-[0_22px_60px_rgba(0,0,0,0.24)] transition-all hover:-translate-y-1 hover:border-border-light hover:shadow-[0_30px_90px_rgba(0,0,0,0.34)]"
+    >
+      <div className="relative aspect-video bg-bg-elevated">
         {post.image ? (
           <Image src={post.image} alt={post.title} fill className="object-cover" sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw" />
         ) : (
-          <div className="absolute inset-0 bg-teal-100 flex items-center justify-center">
-            <span className="text-teal-600/50 text-sm font-medium">Blog</span>
+          <div className="absolute inset-0 flex items-center justify-center bg-brand-subtle">
+            <span className="text-sm font-medium text-brand-light/80">Blog</span>
           </div>
         )}
       </div>
       <div className="p-5">
-        <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-50 text-teal-600 mb-2">
+        <span className="mb-3 inline-flex rounded-full border border-brand/25 bg-brand-subtle px-2.5 py-1 text-xs font-medium text-brand-light">
           {post.category}
         </span>
-        <h3 className="text-lg font-semibold text-ink mb-2 group-hover:text-teal-600 transition-colors line-clamp-2">
+        <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-text-primary transition-colors group-hover:text-brand-light">
           {post.title}
         </h3>
-        <p className="text-gray-600 text-sm line-clamp-2 mb-3">{post.description}</p>
-        <div className="flex items-center gap-3 text-xs text-gray-500">
+        <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-text-secondary">{post.description}</p>
+        <div className="flex items-center gap-3 text-xs text-text-muted">
           <span>{post.readTimeMinutes} min read</span>
-          <span>·</span>
+          <span>•</span>
           <time dateTime={post.date}>{formatDate(post.date)}</time>
         </div>
       </div>

@@ -14,10 +14,10 @@ export default function ContactPage() {
     <Section className="pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-ink font-display">
+          <h1 className="mb-4 text-4xl font-bold text-text-primary md:text-5xl">
             Contact Us
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-text-secondary">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
@@ -25,24 +25,24 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Send us a Message</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-text-primary">Send us a Message</h2>
             <ContactForm />
           </div>
 
           {/* Contact Information */}
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-ink">Contact Information</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-text-primary">Contact Information</h2>
             <div className="space-y-6">
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+              <div className="rounded-[28px] border border-border bg-bg-card/90 p-6 shadow-[0_24px_90px_rgba(0,0,0,0.28)]">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-primary-400" size={20} />
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-subtle">
+                    <Mail className="text-brand-light" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1 text-ink">Email Us</h3>
+                    <h3 className="mb-1 font-semibold text-text-primary">Email Us</h3>
                     <a
                       href={`mailto:${CONTACT.general}`}
-                      className="text-primary-400 hover:text-primary-300 transition-colors block"
+                      className="block text-brand-light transition-colors hover:text-text-primary"
                     >
                       {CONTACT.general}
                     </a>
@@ -50,44 +50,44 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+              <div className="rounded-[28px] border border-border bg-bg-card/90 p-6 shadow-[0_24px_90px_rgba(0,0,0,0.28)]">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Building2 className="text-primary-400" size={20} />
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-subtle">
+                    <Building2 className="text-brand-light" size={20} />
                   </div>
                   <div className="space-y-4">
-                    <h3 className="font-semibold mb-3 text-ink">Company Information</h3>
-                    <div className="space-y-3 text-gray-700">
+                    <h3 className="mb-3 font-semibold text-text-primary">Company Information</h3>
+                    <div className="space-y-3 text-text-secondary">
                       <p className="flex items-start gap-2">
-                        <span className="font-medium text-ink min-w-[4.5rem]">Company:</span>
+                        <span className="min-w-[4.5rem] font-medium text-text-primary">Company:</span>
                         {BRAND.company}
                       </p>
                       <p className="flex items-start gap-2">
-                        <MapPin size={18} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                        <MapPin size={18} className="mt-0.5 flex-shrink-0 text-brand-light" />
                         <span>
-                          <span className="font-medium text-ink">Address:</span>{' '}
+                          <span className="font-medium text-text-primary">Address:</span>{' '}
                           {CONTACT.address}
                         </span>
                       </p>
                       <p className="flex items-start gap-2">
-                        <Mail size={18} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                        <Mail size={18} className="mt-0.5 flex-shrink-0 text-brand-light" />
                         <span>
-                          <span className="font-medium text-ink">Email:</span>{' '}
+                          <span className="font-medium text-text-primary">Email:</span>{' '}
                           <a
                             href={`mailto:${CONTACT.general}`}
-                            className="text-primary-400 hover:text-primary-300 transition-colors"
+                            className="text-brand-light transition-colors hover:text-text-primary"
                           >
                             {CONTACT.general}
                           </a>
                         </span>
                       </p>
                       <p className="flex items-start gap-2">
-                        <Phone size={18} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                        <Phone size={18} className="mt-0.5 flex-shrink-0 text-brand-light" />
                         <span>
-                          <span className="font-medium text-ink">Phone / WhatsApp:</span>{' '}
+                          <span className="font-medium text-text-primary">Phone / WhatsApp:</span>{' '}
                           <a
                             href={CONTACT.whatsappUrl}
-                            className="text-primary-400 hover:text-primary-300 transition-colors"
+                            className="text-brand-light transition-colors hover:text-text-primary"
                           >
                             {CONTACT.phone}
                           </a>

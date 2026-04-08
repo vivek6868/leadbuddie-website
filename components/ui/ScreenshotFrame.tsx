@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { Badge } from './Badge'
-import { Monitor } from 'lucide-react'
 
 interface ScreenshotFrameProps {
   src?: string
@@ -79,21 +78,19 @@ export function ScreenshotFrame({
       <div
         className={[
           'group relative overflow-hidden rounded-2xl',
-          'shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3),0_10px_30px_-10px_rgba(0,0,0,0.2)]',
+          'border border-border bg-bg-elevated shadow-[0_24px_90px_rgba(0,0,0,0.34)]',
           'transition-all duration-300',
           !disableHover
-            ? 'hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4),0_15px_40px_-15px_rgba(0,0,0,0.3)] hover:scale-[1.02]'
+            ? 'hover:-translate-y-1 hover:border-border-light hover:shadow-[0_32px_120px_rgba(0,0,0,0.42)]'
             : '',
         ].join(' ')}
         style={{ transformStyle: 'preserve-3d' }}
       >
-        {/* Subtle gradient glow on hover */}
         <div className="pointer-events-none absolute -inset-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-200/20 via-transparent to-slate-200/20 blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-glow via-transparent to-wa-glow blur-3xl" />
         </div>
 
-        {/* Image Container - No browser frame, just the image */}
-        <div className="relative w-full bg-transparent" style={aspectStyle}>
+        <div className="relative w-full bg-bg-elevated" style={aspectStyle}>
           {src && !imageError ? (
             <Image
               src={src}

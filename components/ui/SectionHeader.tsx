@@ -18,15 +18,15 @@ export function SectionHeader({
   return (
     <div className={`${centered ? 'text-center' : ''} ${className}`}>
       {label && (
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-4">
+        <div className="inline-flex items-center rounded-full border border-brand/30 bg-brand-subtle px-3 py-1 text-sm font-medium text-brand-light mb-4">
           {label}
         </div>
       )}
-      <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-4 ${centered ? 'mx-auto' : ''} max-w-4xl`}>
+      <h2 className={`font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4 ${centered ? 'mx-auto' : ''} max-w-4xl`}>
         {title}
       </h2>
       {description && (
-        <p className={`text-lg text-gray-600 ${centered ? 'mx-auto' : ''} max-w-2xl`}>
+        <p className={`text-lg text-text-secondary ${centered ? 'mx-auto' : ''} max-w-2xl`}>
           {description}
         </p>
       )}

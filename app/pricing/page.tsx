@@ -6,7 +6,7 @@ import { PricingGrid } from '@/components/pricing/PricingGrid'
 
 export const metadata: Metadata = {
   title: 'Pricing - LeadBuddie',
-  description: 'Simple, India-first pricing for WhatsApp CRM and AI chat automation. Start with a 7-day free trial. No credit card required.',
+  description: 'Simple pricing for WhatsApp + Instagram CRM teams. Start with a 7-day free trial and scale your social sales workflow.',
 }
 
 export default function PricingPage() {
@@ -25,10 +25,10 @@ export default function PricingPage() {
       {/* CTA */}
       <Section background="gray" className="py-16">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-ink mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-text-primary">
             Ready to get started?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="mb-8 text-lg text-text-secondary">
             Start your 7-day free trial. No credit card required.
           </p>
           <Button href="https://app.leadbuddie.com" size="lg">

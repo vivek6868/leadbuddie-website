@@ -17,14 +17,15 @@ export function Button({
   href,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 inline-block text-center'
+  const baseStyles =
+    'inline-flex items-center justify-center rounded-xl text-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand/60 focus:ring-offset-2 focus:ring-offset-bg-primary'
   
   const variants = {
-    primary: 'bg-ink hover:bg-ink-800 text-white focus:ring-teal-500 shadow-sm hover:shadow-md',
-    secondary: 'bg-teal-500 hover:bg-teal-600 text-white focus:ring-teal-500 shadow-sm hover:shadow-md',
-    lime: 'bg-accent-lime hover:bg-accent-lime-dark text-ink font-bold shadow-lg hover:shadow-xl transition-all',
-    outline: 'border-2 border-white/20 text-white hover:bg-white/10 focus:ring-white/50',
-    ghost: 'text-teal-600 hover:bg-teal-50 focus:ring-teal-500',
+    primary: 'bg-brand text-white shadow-[0_12px_40px_rgba(124,58,237,0.35)] hover:bg-brand-hover',
+    secondary: 'bg-wa text-bg-primary shadow-[0_12px_40px_rgba(37,211,102,0.22)] hover:bg-wa-dark hover:text-white',
+    lime: 'bg-brand text-white shadow-[0_12px_40px_rgba(124,58,237,0.35)] hover:bg-brand-hover',
+    outline: 'border border-border-light bg-white/5 text-text-primary hover:border-brand-light hover:bg-brand-subtle',
+    ghost: 'text-brand-light hover:bg-brand-subtle',
   }
   
   const sizes = {

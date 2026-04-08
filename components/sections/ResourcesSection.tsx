@@ -9,7 +9,7 @@ const resources = [
     type: 'video',
     icon: Video,
     title: 'Complete Product Demo',
-    description: 'See how LeadBuddie helps Indian businesses manage WhatsApp leads and close more deals.',
+    description: 'See how LeadBuddie helps teams manage WhatsApp & Instagram leads and close more deals.',
     featured: true,
     href: '/demo',
   },
@@ -40,8 +40,8 @@ const resources = [
   {
     type: 'guide',
     icon: BookOpen,
-    title: 'Best Practices for WhatsApp Lead Management',
-    description: 'Tips and strategies for managing WhatsApp leads effectively.',
+    title: 'Best Practices for Social Lead Management',
+    description: 'Tips and strategies for managing WhatsApp & Instagram leads effectively.',
     featured: false,
     href: '/resources',
   },
@@ -64,7 +64,7 @@ export function ResourcesSection() {
       <SectionHeader
         label="Insights worth stealing"
         title="500+ businesses. Thousands of leads. One report."
-        description="Learn from real businesses using LeadBuddie to manage WhatsApp leads"
+        description="Learn from real businesses using LeadBuddie to manage WhatsApp & Instagram leads"
         centered
         className="mb-16"
       />
