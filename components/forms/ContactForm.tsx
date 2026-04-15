@@ -2,12 +2,13 @@
 
 import { useState, FormEvent } from 'react'
 import { Button } from '@/components/ui/Button'
-import { Mail, Send, CheckCircle2, AlertCircle } from 'lucide-react'
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react'
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
     website: '',
   })
@@ -30,7 +31,7 @@ export function ContactForm() {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', message: '', website: '' })
+        setFormData({ name: '', email: '', phone: '', message: '', website: '' })
         setTimeout(() => setStatus('idle'), 5000)
       } else {
         setStatus('error')
@@ -98,6 +99,24 @@ export function ContactForm() {
         </div>
 
         <div>
+          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-text-primary">
+            Mobile number *
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            autoComplete="tel"
+            inputMode="tel"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full rounded-xl border border-border-light bg-bg-elevated px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+            placeholder="+91 98765 43210"
+          />
+        </div>
+
+        <div>
           <label htmlFor="message" className="mb-2 block text-sm font-medium text-text-primary">
             Message *
           </label>
@@ -138,7 +157,7 @@ export function ContactForm() {
           ) : (
             <>
               Send Message
-              <Send className="ml-2 inline-block group-hover:translate-x-1 transition-transform" size={20} />
+              <Send className="ml-2 inline-block transition-transform group-hover:translate-x-1" size={20} />
             </>
           )}
         </Button>

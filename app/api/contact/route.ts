@@ -29,6 +29,15 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
+/** Accepts common international formats; requires 8–15 digits (E.164-style). */
+function isValidPhone(phone: string): boolean {
+  const trimmed = phone.trim()
+  if (trimmed.length < 8 || trimmed.length > 25) return false
+  if (!/^[\d\s+().-]+$/.test(trimmed)) return false
+  const digits = trimmed.replace(/\D/g, '')
+  return digits.length >= 8 && digits.length <= 15
+}
+
 function escapeHtml(input: string): string {
   return input
     .replace(/&/g, '&amp;')
@@ -49,9 +58,10 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { name, email, message, subjectType, website } = body as {
+    const { name, email, phone, message, subjectType, website } = body as {
       name?: string
       email?: string
+      phone?: string
       message?: string
       subjectType?: string
       // Honeypot (should remain empty)
@@ -82,9 +92,10 @@ export async function POST(request: NextRequest) {
     const isDemoRequest = subjectType === 'demo'
     const messageText = (message && message.trim()) || (isDemoRequest ? 'I would like to request a demo.' : '')
 
-    // Validate input (message required only for general contact)
+    // Validate input (message required for general contact; demo gets a default message)
     const safeName = typeof name === 'string' ? name.trim() : ''
     const safeEmail = typeof email === 'string' ? email.trim() : ''
+    const safePhone = typeof phone === 'string' ? phone.trim() : ''
     if (!safeName || !safeEmail) {
       return NextResponse.json(
         { error: 'Name and email are required' },
@@ -97,13 +108,25 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+    if (!safePhone) {
+      return NextResponse.json(
+        { error: 'Mobile number is required' },
+        { status: 400 }
+      )
+    }
+    if (!isValidPhone(safePhone)) {
+      return NextResponse.json(
+        { error: 'Please enter a valid mobile number' },
+        { status: 400 }
+      )
+    }
     if (!isDemoRequest && !messageText) {
       return NextResponse.json(
         { error: 'Message is required' },
         { status: 400 }
       )
     }
-    if (safeName.length > 120 || safeEmail.length > 254 || messageText.length > 5000) {
+    if (safeName.length > 120 || safeEmail.length > 254 || safePhone.length > 25 || messageText.length > 5000) {
       return NextResponse.json(
         { error: 'Message is too long' },
         { status: 400 }
@@ -133,6 +156,7 @@ export async function POST(request: NextRequest) {
           <h2>${internalTitle}</h2>
           <p><strong>Name:</strong> ${escapeHtml(safeName)}</p>
           <p><strong>Email:</strong> ${escapeHtml(safeEmail)}</p>
+          <p><strong>Mobile:</strong> ${escapeHtml(safePhone)}</p>
           <p><strong>Message:</strong></p>
           <p>${safeMessageHtml}</p>
           <hr style="margin: 20px 0; border: none; border-top: 1px solid #e5e7eb;">

@@ -11,7 +11,7 @@ interface DemoRequestModalProps {
 }
 
 export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -24,6 +24,7 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           message: formData.message.trim() || undefined,
           subjectType: 'demo',
         }),
@@ -31,7 +32,7 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
       const data = await response.json()
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
+        setFormData({ name: '', email: '', phone: '', message: '' })
         setTimeout(() => {
           onClose()
           setStatus('idle')
@@ -116,6 +117,23 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
                 onChange={handleChange}
                 className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
                 placeholder="your@email.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="demo-phone" className="mb-1 block text-sm font-medium text-white/90">
+                Mobile number *
+              </label>
+              <input
+                type="tel"
+                id="demo-phone"
+                name="phone"
+                required
+                autoComplete="tel"
+                inputMode="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-white placeholder-white/50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-teal-400"
+                placeholder="+91 98765 43210"
               />
             </div>
             <div>
