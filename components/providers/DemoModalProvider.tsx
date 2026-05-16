@@ -37,7 +37,6 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       // Respect new-tab and modifier-key gestures — let the browser navigate
-      if (e.defaultPrevented) return
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
       if (e.button !== 0) return // only intercept primary-button clicks
 
@@ -49,16 +48,26 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
       if (anchor.target === '_blank') return
 
       const href = anchor.getAttribute('href') || ''
-      // Match /demo or /demo/ — anywhere (relative or absolute as long as the path ends with /demo)
-      const isDemoLink = /(^|\/)demo\/?(\?.*)?$/.test(href)
+      // Match `/demo` or `/demo/` with optional query/hash. Works for both
+      // relative hrefs (Next <Link>) and absolute URLs ending at /demo.
+      const isDemoLink = /(^|\/)demo\/?(\?[^#]*)?(#.*)?$/.test(href)
       if (!isDemoLink) return
 
+      // Run in capture phase — Next.js's <Link> registers a bubble-phase
+      // handler that calls preventDefault to perform client-side routing. If
+      // we ran in bubble phase, the router would already have navigated and
+      // our listener would see e.defaultPrevented === true. Capturing lets us
+      // stop the navigation before any of that runs.
       e.preventDefault()
+      e.stopPropagation()
+      if (typeof e.stopImmediatePropagation === 'function') {
+        e.stopImmediatePropagation()
+      }
       setIsOpen(true)
     }
 
-    document.addEventListener('click', handleClick)
-    return () => document.removeEventListener('click', handleClick)
+    document.addEventListener('click', handleClick, true)
+    return () => document.removeEventListener('click', handleClick, true)
   }, [])
 
   // Lock body scroll while modal is open

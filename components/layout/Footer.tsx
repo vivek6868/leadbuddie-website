@@ -114,7 +114,10 @@ export function Footer() {
               AI co-pilot built on official Meta messaging infrastructure. Made in India, for Indian SMBs.
             </p>
             <p className="text-gray-500 text-sm">
-              © 2025 {BRAND.name} — Powered by {BRAND.company}
+              © {new Date().getFullYear()} {BRAND.name} — A product of {BRAND.company}
+            </p>
+            <p className="text-gray-400 text-xs">
+              Hutliv Technologies LLP · Registered in India · Made in India
             </p>
           </div>
         </div>

@@ -16,58 +16,58 @@ import { CheckCheck, Sparkles, Target, CalendarClock, CircleCheck, FileText, typ
  */
 export function WhatsAppFlowDemo() {
   return (
-    <Section background="gray">
+    <Section>
       <SectionHeader
         label="See it happen"
         title="Your AI sales agent — live on a real WhatsApp thread."
         description="Not a screenshot. Not a mockup. This is what your buyer sees when LeadBuddie is awake on your WhatsApp at 11 PM."
         centered
-        className="mb-16"
+        className="mb-12 md:mb-16"
       />
 
-      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-        {/* Left: explainer */}
-        <div className="lg:col-span-5 space-y-6">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        {/* Phone first on mobile for visual impact, second on desktop */}
+        <div className="order-1 flex justify-center lg:order-2 lg:col-span-7">
+          <Phone />
+        </div>
+
+        {/* Explainer second on mobile, first on desktop */}
+        <div className="order-2 space-y-5 lg:order-1 lg:col-span-5">
           <ExplainerStep
             number="01"
-            tone="bg-teal-100 text-teal-700"
+            tone="border-teal-400/30 bg-teal-400/10 text-teal-300"
             icon={Sparkles}
             title="Reads the question. Drafts the right reply."
-            body="Pulls the customer’s history, model installed, AMC plan, last conversation. Sends a relevant, on-tone reply — or queues it for your approval. You choose the autonomy level."
+            body="Pulls the customer's history, model installed, AMC plan, last conversation. Sends a relevant, on-tone reply — or queues it for your approval."
           />
           <ExplainerStep
             number="02"
-            tone="bg-violet-100 text-violet-700"
+            tone="border-violet-400/30 bg-violet-400/10 text-violet-300"
             icon={FileText}
             title="Sends the right asset — instantly."
-            body="Catalog PDF, AMC plan brochure, product image, install video — your AI agent picks the right asset for what the customer asked and attaches it. Works on both WhatsApp and Instagram."
+            body="Catalog PDF, AMC plan brochure, product image, install video — your AI agent picks the right asset for what the customer asked."
           />
           <ExplainerStep
             number="03"
-            tone="bg-cyan-100 text-cyan-700"
+            tone="border-cyan-400/30 bg-cyan-400/10 text-cyan-300"
             icon={Target}
             title="Qualifies the lead the moment it lands."
-            body="Detects intent — price enquiry, ready to buy, complaint, AMC renewal. Tags the conversation. Drops it on the right pipeline so you spend time on hot leads."
+            body="Detects intent — price enquiry, ready to buy, complaint, AMC renewal. Tags it. Surfaces it on the right pipeline."
           />
           <ExplainerStep
             number="04"
-            tone="bg-amber-100 text-amber-700"
+            tone="border-amber-400/30 bg-amber-400/10 text-amber-300"
             icon={CalendarClock}
             title="Books your follow-up before you forget."
-            body="“Call me next week” turns into a real callback on the right date with the customer’s note attached. No sticky notes. No forgotten promises."
+            body="&ldquo;Call me next week&rdquo; turns into a real callback on the right date with the customer's note attached."
           />
           <ExplainerStep
             number="05"
-            tone="bg-emerald-100 text-emerald-700"
+            tone="border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
             icon={CircleCheck}
-            title="Closes the loop and sets next year’s reminder."
-            body="When the AMC renews, the activity is logged, lifetime revenue increments, and the next renewal reminder is set automatically — a year out."
+            title="Closes the loop and sets next year's reminder."
+            body="When the AMC renews, the activity is logged and the next renewal reminder is set automatically — a year out."
           />
-        </div>
-
-        {/* Right: animated WhatsApp phone */}
-        <div className="lg:col-span-7 flex justify-center">
-          <Phone />
         </div>
       </div>
     </Section>
@@ -89,13 +89,13 @@ function ExplainerStep({
 }) {
   return (
     <div className="flex gap-4">
-      <div className={`flex-shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-xl ${tone}`}>
+      <div className={`flex-shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-xl border ${tone}`}>
         <Icon className="h-5 w-5" strokeWidth={1.8} />
       </div>
       <div className="min-w-0 flex-1">
-        <div className="text-[11px] font-bold tracking-[0.16em] text-gray-400 mb-1">{number}</div>
-        <h3 className="text-base font-semibold text-ink leading-snug mb-1">{title}</h3>
-        <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+        <div className="text-[11px] font-bold tracking-[0.16em] text-text-muted mb-1">{number}</div>
+        <h3 className="text-base font-semibold text-text-primary leading-snug mb-1">{title}</h3>
+        <p className="text-[15px] text-text-secondary leading-relaxed">{body}</p>
       </div>
     </div>
   )
@@ -119,7 +119,7 @@ function Phone() {
 
       {/* Phone frame */}
       <div
-        className="relative w-[320px] sm:w-[340px] rounded-[44px] bg-ink p-2.5 shadow-[0_30px_80px_-20px_rgba(11,31,51,0.6)] ring-1 ring-ink/20"
+        className="relative w-[300px] sm:w-[340px] rounded-[44px] bg-ink p-2.5 shadow-[0_30px_80px_-20px_rgba(11,31,51,0.6)] ring-1 ring-ink/20"
         style={{ aspectRatio: '320 / 640' }}
       >
         {/* Inner screen */}
@@ -146,7 +146,7 @@ function Phone() {
 
             <div className="relative h-full px-3 pt-4 pb-3 flex flex-col justify-end gap-2 wa-thread">
               {/* Timestamp */}
-              <div className="self-center mb-2 px-2 py-0.5 rounded-md bg-white/85 text-[10px] text-gray-600 font-medium shadow-sm wa-msg" style={{ animationDelay: '0.2s' }}>
+              <div className="self-center mb-2 px-2 py-0.5 rounded-md bg-white/85 text-[11px] text-slate-600 font-medium shadow-sm wa-msg" style={{ animationDelay: '0.2s' }}>
                 Today, 11:04 PM
               </div>
 
@@ -188,7 +188,7 @@ function Phone() {
 
           {/* WhatsApp bottom input (decorative) */}
           <div className="absolute bottom-0 inset-x-0 h-14 bg-[#F0F0F0] flex items-center gap-2 px-3 z-20">
-            <div className="flex-1 h-9 rounded-full bg-white border border-gray-200" />
+            <div className="flex-1 h-9 rounded-full bg-white border border-slate-200" />
             <div className="h-9 w-9 rounded-full bg-[#075E54]" />
           </div>
         </div>
@@ -262,8 +262,8 @@ function DocBubble({
             <FileText className="h-5 w-5" strokeWidth={1.8} />
           </div>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-[12px] font-semibold text-gray-800 leading-tight">{title}</p>
-            <p className="truncate text-[10px] text-gray-500 leading-tight mt-0.5">{meta}</p>
+            <p className="truncate text-[13px] font-semibold text-slate-900 leading-tight">{title}</p>
+            <p className="truncate text-[11px] text-slate-600 leading-tight mt-0.5">{meta}</p>
           </div>
           <div className="flex-shrink-0 inline-flex items-center justify-center h-7 w-7 rounded-full bg-[#075E54]/10 text-[#075E54]">
             <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -290,10 +290,10 @@ function Bubble({
   return (
     <div className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
       <div
-        className={`wa-bubble max-w-[78%] rounded-2xl px-3 py-2 text-[12.5px] leading-snug shadow-sm ${
+        className={`wa-bubble max-w-[80%] rounded-2xl px-3 py-2 text-[13.5px] leading-[1.4] shadow-sm ${
           isMe
-            ? 'bg-[#DCF8C6] text-gray-800 rounded-tr-md'
-            : 'bg-white text-gray-800 rounded-tl-md'
+            ? 'bg-[#DCF8C6] text-slate-900 rounded-tr-md'
+            : 'bg-white text-slate-900 rounded-tl-md'
         }`}
         style={{ animationDelay: delay }}
       >
@@ -312,7 +312,7 @@ function BubbleMeta({ time, sentByAi }: { time: string; sentByAi?: boolean }) {
           AI
         </span>
       )}
-      <span className="text-[10px] text-gray-500">{time}</span>
+      <span className="text-[10.5px] text-slate-600">{time}</span>
       <CheckCheck className="h-3 w-3 text-[#4FC3F7]" strokeWidth={2.2} />
     </div>
   )
@@ -327,9 +327,9 @@ function TypingIndicator({ delay }: { delay: string }) {
           AI typing
         </span>
         <span className="flex items-center gap-0.5">
-          <span className="wa-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-gray-400" style={{ animationDelay: '0s' }} />
-          <span className="wa-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-gray-400" style={{ animationDelay: '0.15s' }} />
-          <span className="wa-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-gray-400" style={{ animationDelay: '0.3s' }} />
+          <span className="wa-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-slate-400" style={{ animationDelay: '0s' }} />
+          <span className="wa-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-slate-400" style={{ animationDelay: '0.15s' }} />
+          <span className="wa-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-slate-400" style={{ animationDelay: '0.3s' }} />
         </span>
       </div>
     </div>

@@ -9,22 +9,22 @@ export function BeforeAfterSection() {
     <Section background="gray">
       <h2 className="mb-10 text-center text-3xl font-bold text-text-primary md:text-4xl">Before and after a real conversation CRM</h2>
       <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-        <div className="rounded-[28px] border border-border bg-bg-elevated/70 p-7">
+        <div className="rounded-[28px] border border-border bg-bg-elevated/70 p-7" data-reveal style={{ ['--reveal-delay' as any]: '0.05s' }}>
           <h3 className="mb-5 text-xl font-semibold text-text-primary">Before LeadBuddie</h3>
           <ul className="space-y-4">
-            {beforeItems.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-text-secondary">
+            {beforeItems.map((item, i) => (
+              <li key={item} className="flex items-start gap-3 text-text-secondary" data-reveal style={{ ['--reveal-delay' as any]: `${0.1 + i * 0.08}s` }}>
                 <X className="mt-0.5 h-5 w-5 shrink-0 text-[#f87171]" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div className="rounded-[28px] border border-brand/30 bg-brand-subtle p-7">
+        <div className="rounded-[28px] border border-brand/30 bg-brand-subtle p-7" data-reveal style={{ ['--reveal-delay' as any]: '0.15s' }}>
           <h3 className="mb-5 text-xl font-semibold text-text-primary">After LeadBuddie</h3>
           <ul className="space-y-4">
-            {afterItems.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-text-primary">
+            {afterItems.map((item, i) => (
+              <li key={item} className="flex items-start gap-3 text-text-primary" data-reveal style={{ ['--reveal-delay' as any]: `${0.2 + i * 0.08}s` }}>
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-wa" />
                 <span>{item}</span>
               </li>

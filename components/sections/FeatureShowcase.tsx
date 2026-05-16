@@ -122,38 +122,39 @@ const features = [
 export function FeatureShowcase() {
   return (
     <Section>
-      <h2 className="text-3xl md:text-4xl font-bold text-ink text-center mb-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-text-primary text-center mb-4">
         From first message to closed deal — your co-pilot has it.
       </h2>
-      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+      <p className="text-center text-text-secondary max-w-2xl mx-auto mb-16">
         Every capability below works alongside the human on your team. The co-pilot handles the routine; you stay in control of every decision that matters.
       </p>
       <div className="space-y-32">
         {features.map((feature) => (
           <div
             key={feature.id}
+            data-reveal
             className={`grid lg:grid-cols-2 gap-12 items-center ${
               feature.reverse ? 'lg:flex-row-reverse' : ''
             }`}
           >
             <div className={feature.reverse ? 'lg:order-2' : ''}>
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-500/15 text-teal-300 text-sm font-medium mb-4 border border-teal-400/20">
                 {feature.title}
               </div>
-              <h3 className="text-4xl md:text-5xl font-bold text-ink mb-4">
+              <h3 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
                 {feature.title}
               </h3>
-              <p className="text-lg text-gray-600 mb-6">{feature.description}</p>
+              <p className="text-lg text-text-secondary mb-6">{feature.description}</p>
               {'stripBullets' in feature && feature.stripBullets && (
-                <p className="text-sm text-gray-500 mb-6">{feature.stripBullets}</p>
+                <p className="text-sm text-text-muted mb-6">{feature.stripBullets}</p>
               )}
               <ul className="space-y-3">
                 {feature.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
-                    <div className="w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
-                      <div className="w-2 h-2 rounded-full bg-teal-600"></div>
+                    <div className="w-5 h-5 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <div className="w-2 h-2 rounded-full bg-teal-400"></div>
                     </div>
-                    <span className="text-gray-700">{benefit}</span>
+                    <span className="text-text-secondary">{benefit}</span>
                   </li>
                 ))}
               </ul>

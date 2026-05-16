@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(npx next *)",
+      "Bash(PORT=3007 npx next start --port 3007)",
+      "Bash(curl -s http://localhost:3007/ -o /tmp/lb-home.html)",
+      "Read(//tmp/**)",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(pkill -f \"next start --port 3007\")",
+      "Bash(lsof -ti:3007)",
+      "Bash(xargs kill -9)",
+      "Bash(echo \"ts=$?\")"
+    ]
+  }
+}

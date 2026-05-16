@@ -5,20 +5,27 @@ interface SectionProps {
   children: ReactNode
   className?: string
   id?: string
-  background?: 'white' | 'gray'
+  /**
+   * Dark theme variants:
+   * - "default": transparent — body gradient shows through
+   * - "elevated": subtle dark tint that lifts the section from the body
+   */
+  background?: 'default' | 'elevated' | 'white' | 'gray'
 }
 
-export function Section({ children, className, id, background = 'white' }: SectionProps) {
+export function Section({ children, className, id, background = 'default' }: SectionProps) {
+  // "white" and "gray" are kept for backwards compatibility — both map to
+  // dark-theme equivalents now that the site has a single dark surface system.
   const bgClass =
-    background === 'gray'
-      ? 'bg-bg-secondary/80'
+    background === 'elevated' || background === 'gray'
+      ? 'bg-bg-secondary/40'
       : 'bg-transparent'
-  
+
   return (
-    <section 
+    <section
       id={id}
       className={cn(
-        'relative py-24 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8',
+        'relative py-20 md:py-28 px-4 sm:px-6 lg:px-8',
         bgClass,
         className
       )}
@@ -29,4 +36,3 @@ export function Section({ children, className, id, background = 'white' }: Secti
     </section>
   )
 }
-

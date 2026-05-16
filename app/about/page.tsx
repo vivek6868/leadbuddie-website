@@ -6,7 +6,7 @@ import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
   title: 'About LeadBuddie — AI co-pilot for WhatsApp & Instagram',
-  description: 'LeadBuddie is built by Hutliv Technologies — an Indian software company building an AI co-pilot for SMBs that sell over WhatsApp and Instagram.',
+  description: 'LeadBuddie is built by Hutliv Technologies LLP — an Indian software company building an AI co-pilot for SMBs that sell over WhatsApp and Instagram.',
 }
 
 export default function AboutPage() {

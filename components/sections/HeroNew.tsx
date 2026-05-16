@@ -21,7 +21,7 @@ const TONE_CLASSES: Record<'emerald' | 'amber' | 'cyan', string> = {
 
 export function HeroNew() {
   return (
-    <section className="relative bg-ink pt-32 pb-24 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative bg-ink pt-28 pb-16 md:pt-36 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Professional Gradient Backdrop */}
       <div className="absolute inset-0 z-0">
         {/* Base gradient */}
@@ -37,18 +37,22 @@ export function HeroNew() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="relative z-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6 backdrop-blur-sm animate-fade-in-up">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-accent-lime opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-lime" />
+              </span>
               AI co-pilot for WhatsApp + Instagram
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight font-sans">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight font-sans animate-fade-in-up delay-300">
               Reply to every lead — even when you can&apos;t.
             </h1>
-            <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-xl">
-              LeadBuddie replies, qualifies the lead, and schedules the follow-up while you&apos;re with another customer. Built for Indian SMBs.
+            <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-xl animate-fade-in-up delay-500">
+              LeadBuddie replies, qualifies the lead, and schedules the follow-up while you&apos;re with another customer. Built for Indian SMBs by a small team in India.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-700">
               <Button href="https://app.leadbuddie.com" variant="lime" size="lg" className="w-full sm:w-auto">
                 Get Started
               </Button>

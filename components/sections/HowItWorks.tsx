@@ -41,8 +41,13 @@ export function HowItWorks() {
       />
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {steps.map(({ step, title, copy, icon: Icon }) => (
-          <div key={step} className="rounded-[28px] border border-border bg-bg-card/90 p-6">
+        {steps.map(({ step, title, copy, icon: Icon }, i) => (
+          <div
+            key={step}
+            data-reveal
+            style={{ ['--reveal-delay' as any]: `${i * 0.1}s` }}
+            className="rounded-[28px] border border-border bg-bg-card/90 p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-brand/40"
+          >
             <div className="mb-6 flex items-center justify-between">
               <span className="text-sm font-semibold tracking-[0.18em] text-brand-light">STEP {step}</span>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-subtle text-brand-light">

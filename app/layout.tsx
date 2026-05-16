@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { DemoModalProvider } from '@/components/providers/DemoModalProvider'
+import { ScrollRevealClient } from '@/components/ui/ScrollRevealClient'
 import { SEO } from '@/lib/constants'
 
 const bricolage = Bricolage_Grotesque({
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
   title: SEO.title,
   description: SEO.description,
   keywords: SEO.keywords,
-  authors: [{ name: 'Hutliv Technologies' }],
-  creator: 'Hutliv Technologies',
-  publisher: 'Hutliv Technologies',
+  authors: [{ name: 'Hutliv Technologies LLP' }],
+  creator: 'Hutliv Technologies LLP',
+  publisher: 'Hutliv Technologies LLP',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -120,6 +121,7 @@ export default function RootLayout({
       <body className="bg-bg-primary text-text-primary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <DemoModalProvider>
+            <ScrollRevealClient />
             <Navbar />
             <main className="min-h-screen">
               {children}

@@ -23,8 +23,13 @@ export function ValuePropositions() {
   return (
     <Section>
       <div className="grid gap-6 md:grid-cols-3">
-        {valueProps.map(({ icon: Icon, title, copy }) => (
-          <div key={title} className="rounded-[28px] border border-border bg-bg-card/90 p-7">
+        {valueProps.map(({ icon: Icon, title, copy }, i) => (
+          <div
+            key={title}
+            data-reveal
+            style={{ ['--reveal-delay' as any]: `${i * 0.1}s` }}
+            className="rounded-[28px] border border-border bg-bg-card/90 p-7 transition-transform duration-300 hover:-translate-y-1 hover:border-brand/40"
+          >
             <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-subtle text-brand-light">
               <Icon className="h-7 w-7" />
             </div>

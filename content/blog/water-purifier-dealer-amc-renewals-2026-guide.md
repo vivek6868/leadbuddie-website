@@ -10,126 +10,105 @@ readTimeMinutes: 10
 isPublished: true
 ---
 
-If you run a water purifier dealership in India in 2026, your single most under-managed revenue stream is sitting in plain sight: **the AMC renewal**.
+If you run a water purifier dealership in India in 2026, your single most under-managed revenue stream is sitting in plain sight — **the AMC renewal**.
 
-You already sold the customer. They already trust the brand. They already paid for the unit. The renewal is the cheapest sale in your entire business. And yet — for most dealers we talk to — somewhere between 25% and 40% of AMC contracts walk out the door every year because nobody followed up.
+You already sold the customer. They already trust the brand. They already paid for the unit. The renewal is the cheapest sale in your entire business. And yet — for most dealers we talk to — somewhere between **25% and 40% of AMC contracts walk out the door every year** because nobody followed up.
 
 This is not a sales problem. It is an **operations problem**. And it is the most fixable problem in the entire water purifier business.
 
-This guide breaks down where renewals leak, what a good 2026 workflow looks like, and how Mastec Water Purifier — one of our pilot dealers — rebuilt their renewal process this year. There is a 30-day playbook at the bottom you can take to your team on Monday.
+This guide breaks down where renewals leak, what a good 2026 workflow looks like, and how **Mastec Water Purifier** — one of our pilot dealers — rebuilt their renewal process this year. There is a 30-day playbook at the bottom you can take to your team on Monday.
 
 ---
 
 ## The math: why AMC renewals are your highest-margin revenue
 
-Let us assume the simplest possible water purifier dealer. You have:
+Take the simplest possible dealer — 120 active AMCs, ₹2,499 average plan, industry-standard 30% leak. Here is what that costs you.
 
-- **120 active customers** with running AMCs
-- **Average AMC value of ₹2,499 per customer per year**
-- **Industry-standard renewal leak rate of ~30%**
+| Dealer size | Active AMCs | Avg AMC value | Annual AMC revenue | Revenue lost @ 30% leak |
+| --- | ---: | ---: | ---: | ---: |
+| Small | 120 | ₹2,499 | ₹2,99,880 | **₹89,964** |
+| Mid-sized | 350 | ₹2,499 | ₹8,74,650 | **₹2,62,395** |
+| Large | 800 | ₹2,499 | ₹19,99,200 | **₹5,99,760** |
+| Multi-branch | 1,500 | ₹2,499 | ₹37,48,500 | **₹11,24,550** |
 
-That works out to ₹3,00,000 in annual AMC revenue, of which ₹90,000 walks away every year because of forgotten callbacks, missed expiries, and customers who quietly switch to a cheaper local technician because nobody from your team rang them on time.
+A mid-sized dealer is leaking **₹2–3 lakhs a month**. A multi-branch dealer is closer to **₹7–10 lakhs a month**. None of this is theoretical — we have looked at the books with three dealers in 2026 and the pattern repeats.
 
-Multiply that by five years of cumulative customer history and the leak is closer to **₹4–5 lakhs that should have been in your pocket and is not**.
-
-Now scale up. A mid-sized dealer with 350 customers is leaking ₹2–3 lakhs a month. A larger dealer with 800+ customers — closer to ₹7–10 lakhs a month. None of this is theoretical. We have looked at the books with three water purifier dealers in 2026. The pattern repeats.
-
-The brutal part: **AMC revenue is your highest-margin revenue**. There is no acquisition cost. There is no new install. There is no commission to a sales rep. Most renewals cost you a single phone call. Lose them and you have lost almost-pure profit.
+The brutal part: **AMC revenue is your highest-margin revenue**. No acquisition cost. No new install. No commission to a sales rep. Most renewals cost you a single phone call. Lose them and you have lost almost-pure profit.
 
 ---
 
 ## The five places where AMC renewals leak
 
-Before you can fix the leak you need to know exactly where it is happening. Across the dealers we have worked with, the same five gaps show up again and again.
+Before you fix the leak you need to know exactly where it is happening. Across the dealers we have worked with, the same five gaps show up again and again.
 
-### 1. The "I'll call later" customer
+| # | The leak | What it looks like | The fix |
+| :-: | --- | --- | --- |
+| 1 | The "I'll call later" customer | "Send me the plan details, I will let you know." You send. They go quiet. Two months later their AMC has expired and they are on a cheaper local technician. | Every "let me know" needs a hard scheduled callback with the customer's note attached — *"wife to approve"*, *"call after salary on 20th"*. |
+| 2 | The expiring AMC nobody noticed | AMC quietly expired three weeks ago. Customer calls in with a filter complaint and now you are negotiating from weakness. | Every AMC surfaces on someone's screen **30 days before expiry** — not after. |
+| 3 | The 11 PM WhatsApp | Customer messages at 10:47 PM. You see it next morning. By then they have two competing quotes. | After-hours messages get an automatic, on-brand reply — acknowledge, attach the right plan PDF, book a callback. |
+| 4 | The service-complaint renewal | Customer messages about strange-tasting water. Technician fixes it. Nobody marks the customer for a renewal touchpoint — even though service moments convert 2–3× better. | Every service visit pushes a renewal touchpoint forward by 30 days. Catch them at that moment. |
+| 5 | The lost callback | You called last Tuesday. They asked for a Monday callback. Monday came. You forgot. Three weeks later, they have moved on. | Every promised callback lands on a real list on the real day — not a notebook, not a phone reminder. |
 
-The customer says on WhatsApp: "Send me the plan details, I will let you know in two days."
-
-You send the brochure. They go quiet. You move on to the next conversation. Two months later their AMC has expired and they are now calling the technician next door who quoted ₹500 less.
-
-**The fix:** every "I'll let you know" conversation needs a hard scheduled callback. Not a mental note. Not a sticky note. A real reminder on a real date with the customer's note attached — *"Said wife needs to approve"* or *"Asked us to call after salary on 20th"*. When the date comes, you see them on a list. You call. You convert.
-
-### 2. The expiring AMC nobody noticed
-
-The customer's AMC quietly expired three weeks ago. Service issues are starting to happen. They call you complaining about a filter problem. Now you are negotiating from a position of weakness — they are annoyed, they feel ignored, and they are wondering why they should renew with a company that did not even remind them.
-
-**The fix:** every customer's AMC needs to surface on someone's screen **at least 30 days before expiry**, not after. The renewal call should happen *before* the customer notices they have lapsed.
-
-### 3. The 11 PM WhatsApp message
-
-A customer messages you at 10:47 PM: *"Hi, my Kent RO AMC is expiring next week. What are the renewal options?"*
-
-You see it the next morning. By then they have looked at two other quotes from local technicians. The half-converted lead is now a price-shopping lead.
-
-**The fix:** after-hours conversations need an automatic, on-brand reply that does three things: acknowledges the customer, drops a relevant plan PDF in the chat, and books a follow-up call. This is exactly what an AI sales agent like [LeadBuddie](/) does — drafts a reply with your AMC plans, attaches the right brochure based on what the customer asked, schedules a callback. You wake up to a qualified, half-closed renewal instead of a half-cold one.
-
-### 4. The service-complaint renewal
-
-A customer messages you because the water is tasting strange. Your team logs the complaint, sends a technician, fixes the issue. But nobody marks the customer's AMC for a renewal reminder — even though service complaints are *the highest-converting renewal moment* you have.
-
-**The fix:** every service visit should automatically push a renewal touchpoint forward by 30 days. A customer who just experienced your service team solving their problem is two-to-three times more likely to renew. Catch them at that moment.
-
-### 5. The lost callback
-
-This is the most common one. You called the customer last Tuesday. They asked you to call back next Monday. Monday came. You forgot. You remembered three weeks later — by which point they have moved on.
-
-**The fix:** every promised callback needs to land on a real list on the real day. Not a notebook. Not a phone reminder you ignore. A central screen that shows *"4 callbacks due today"* and is the first thing your team opens when they sit down.
+The fixes are not glamorous. They are operational. And every one of them is the difference between a renewed AMC and a lost customer.
 
 ---
 
 ## What a good AMC renewal workflow looks like in 2026
 
-Forget the old way — sticky notes, spreadsheets, three different staff members each tracking different things. Here is the workflow that actually works:
+Forget the old way — sticky notes, spreadsheets, three different staff members each tracking different things. Here is the workflow that actually works.
 
 ### Step 1 — All customers and their AMCs in one place
 
-Every customer record should hold their installed product, AMC plan, AMC expiry date, renewal history, service-visit history, and conversation history *in one drawer you open with a tap*. If your team has to switch between Excel, the brand portal, the technician's notebook, and the WhatsApp chat to answer "when does this customer's AMC expire?" — you have already lost.
+Every customer record holds their installed product, AMC plan, AMC expiry date, renewal history, service-visit history, and conversation history — *in one drawer you open with a tap*. If your team has to switch between Excel, the brand portal, the technician's notebook and WhatsApp to answer "when does this customer's AMC expire?" — you have already lost.
 
 ### Step 2 — A renewals page sorted by urgency
 
-A single screen that shows you:
+A single screen, opened first thing every morning.
 
-- Customers whose AMCs expire **this week**
-- Customers whose AMCs expire **in the next 14 days**
-- Customers whose AMCs expire **in the next 30 days**
-- **Callbacks scheduled** for today and the upcoming week
-- AMCs that **already lapsed** but might still be salvageable
+| Bucket | What it shows | Why it matters |
+| --- | --- | --- |
+| Expiring this week | AMCs ending in the next 7 days | The highest-priority calls — make these first |
+| Expiring in 14 days | AMCs ending in 8–14 days | Catch them before they start price-shopping |
+| Expiring in 30 days | AMCs ending in 15–30 days | The healthy renewal window — easy conversions |
+| Callbacks today | Promised callbacks for today | Trust signal — never miss a promised call |
+| Lapsed (salvage) | AMCs that already expired | Still recoverable if you call within 30 days |
 
-This is the first screen your team opens every morning. Five minutes of reviewing this list is worth two hours of "who needs follow-up today?" meetings.
+Five minutes of reviewing this list is worth two hours of *"who needs follow-up today?"* meetings.
 
 ### Step 3 — WhatsApp + AI handling after-hours
 
 You are not awake at 11 PM. Your AI sales agent is. When a customer messages about a renewal after-hours, the agent should:
 
-- Read the question
-- Pull the customer's history (model installed, AMC plan, last conversation)
-- Send a relevant reply on your tone
-- Attach the right asset — catalog PDF, AMC plan brochure, product comparison
-- Offer to book a callback the next morning
+- Read the question.
+- Pull the customer's history (model installed, AMC plan, last conversation).
+- Send a relevant reply in your tone.
+- Attach the right asset — catalog PDF, plan brochure, product comparison.
+- Offer to book a callback the next morning.
 
 By the time you open WhatsApp at 8 AM, the conversation has moved three steps forward without you typing a single message. Read more about how this works on the [LeadBuddie product page](/product).
 
 ### Step 4 — Outcome logging on every call
 
-After every renewal call, the dealer must log the outcome. Four options:
+After every renewal call, log the outcome. Four options:
 
-- **Renewed** — payment captured, next year's reminder set automatically
-- **Call back** — date scheduled with the customer's note attached
-- **No answer** — attempt counted, next touch scheduled
-- **Not interested** — recorded with reason, kept in win-back queue
+| Outcome | What gets recorded | What happens next |
+| --- | --- | --- |
+| **Renewed** | Payment captured, plan + amount logged | Next year's reminder set automatically |
+| **Call back** | Date + customer's note | Surfaces on that date's callback list |
+| **No answer** | Attempt counted | Next touch scheduled (12–24 hrs) |
+| **Not interested** | Reason recorded | Stays in win-back queue for next quarter |
 
 Without outcome logging you have no idea which customers were tried twice and which were tried six times. You also have no idea what your renewal rate actually is.
 
 ### Step 5 — Activity timeline visible to everyone
 
-Every customer's activity timeline should be visible to the entire team. Last call: 3 days ago. Last WhatsApp: 1 day ago. Last service visit: 15 days ago. Last AMC renewal: 9 months ago. That timeline is what stops two staff members from calling the same customer or — worse — both of them assuming the *other* one called.
+Every customer's activity timeline should be visible to the entire team. *Last call: 3 days ago. Last WhatsApp: 1 day ago. Last service visit: 15 days ago. Last AMC renewal: 9 months ago.* That timeline is what stops two staff members from calling the same customer or — worse — both of them assuming the *other* one called.
 
 ---
 
 ## How Mastec Water Purifier rebuilt their renewal process in 2026
 
-Mastec is one of our pilot dealers. They handle 60–100 leads per day. Before they moved to a structured workflow, their renewal process looked like every other dealer's: a notebook, WhatsApp screenshots saved as photos, and the owner remembering most things.
+Mastec is one of our pilot dealers. They handle 60–100 leads per day. Before they moved to a structured workflow, their renewal process looked like every other dealer's — a notebook, WhatsApp screenshots saved as photos, and the owner remembering most things.
 
 When we sat down with them in early 2026, three things changed.
 
@@ -149,27 +128,15 @@ The result is still being measured — we will publish the full case study at th
 
 If you run a water purifier dealership and you want to fix your AMC renewal leak, here is the smallest concrete plan you can execute over the next 30 days.
 
-### Days 1–3: Get all your customers and AMCs in one system
+| Days | Focus | The single concrete action |
+| :-: | --- | --- |
+| 1–3 | **Centralise** | Export customers from wherever they live — Excel, WhatsApp Business, brand portal, technician's notebook — and import into one system with products + AMCs attached. |
+| 4–7 | **Measure the leak** | Pull every AMC that expired in the last 12 months. How many renewed? That is your baseline renewal rate. Most dealers land between 60–75%. |
+| 8–14 | **Build the morning ritual** | One 10-minute slot every morning. Open the renewals page. Call in order of urgency. Log every outcome — no skipping. |
+| 15–21 | **Turn on after-hours** | Configure your AI sales agent to handle after-hours renewal queries. Approve templates and assets. Watch overnight conversations move themselves forward. |
+| 22–30 | **Measure & adjust** | Compare renewal rate vs. baseline. Look for patterns in *"not interested"*. Audit missed callbacks. Tighten the workflow for next month. |
 
-Export your customer list from wherever it currently lives — Excel, WhatsApp Business contacts, the brand portal, the technician's notebook. Import them into a proper system with installed products, AMC plans, and AMC expiry dates captured together. If you are using LeadBuddie, this is a single CSV upload — customer + product + AMC contract committed in one transaction. ([See how the customer import works →](/product))
-
-### Days 4–7: Identify your renewal leak
-
-Look at every AMC that expired in the last 12 months. Of those, how many renewed? That is your current renewal rate. Most dealers are between 60% and 75%. Every percentage point you move that number up — for a 200-customer dealer at ₹2,500 average AMC — is **₹5,000 a year in pure profit**.
-
-### Days 8–14: Set up your renewals discipline
-
-Pick a 10-minute slot every morning. Open the renewals page. Look at who expires this week and who has a callback scheduled. Call them in order of urgency. Log every outcome — renewed, call back, no answer, not interested. Do not skip the logging.
-
-### Days 15–21: Add the after-hours layer
-
-If you have an AI sales agent set up, configure it to handle after-hours renewal queries. Approve the templates. Approve the assets it can send. Watch what conversations it handles overnight while you sleep.
-
-### Days 22–30: Measure and adjust
-
-Compare your renewal rate over the last 30 days to your baseline. Look at the customers who said "not interested" — were there patterns? Were there callbacks you missed? Were there service complaints that should have converted into a renewal but did not? Adjust the workflow for next month.
-
-By day 30 you should see your renewal rate climb by 5–10 percentage points. Hold that for 12 months. That is your AMC revenue going up by ₹15,000 to ₹30,000 a month for a 200-customer dealer — and *more* than that as your customer base grows.
+By day 30, your renewal rate should climb **5–10 percentage points**. Hold that for 12 months and — for a 200-customer dealer at ₹2,500 average AMC — that is **₹15,000 to ₹30,000 a month** in pure profit, growing as your customer base grows.
 
 ---
 

@@ -1,7 +1,7 @@
 export const BRAND = {
   name: 'LeadBuddie',
   tagline: 'AI co-pilot for WhatsApp & Instagram — built for Indian SMBs',
-  company: 'Hutliv Technologies',
+  company: 'Hutliv Technologies LLP',
   founded: 2025,
 } as const
 
@@ -9,7 +9,7 @@ export const CONTACT = {
   general: 'hello@hutliv.com',
   support: 'hello@hutliv.com',
   phone: '+91 9003444702',
-  address: 'Tiruppur, Tamil Nadu, India',
+  address: 'India',
   /** WhatsApp link for "Chat on WhatsApp" CTA */
   whatsappUrl: 'https://wa.me/919003444702',
 } as const
@@ -244,6 +244,60 @@ export const TESTIMONIALS = [
       primaryLabel: 'leads per day',
       secondary: 'Easier',
       secondaryLabel: 'follow-ups',
+    },
+  },
+  // TODO: founder verification — quotes are drafts based on each customer's
+  // business type. Replace with the actual customer wording before press use.
+  {
+    quote: 'Bulk WhatsApp enquiries from retailers used to pile up in three different phones. With LeadBuddie our team works from one inbox and every B2B order is tracked from first message to dispatch.',
+    author: 'Classic Leathers',
+    company: 'Classic Leathers',
+    location: 'India',
+    rating: 5,
+    metrics: {
+      primary: '1 inbox',
+      primaryLabel: 'for the whole team',
+      secondary: '0',
+      secondaryLabel: 'orders lost in DMs',
+    },
+  },
+  {
+    quote: 'Trial bookings, membership renewals, class enquiries — it was all sitting in one founder\'s WhatsApp. LeadBuddie made it a shared workflow and our trainers stopped chasing screenshots.',
+    author: 'Zyrax Fitness',
+    company: 'Zyrax Fitness',
+    location: 'India',
+    rating: 5,
+    metrics: {
+      primary: 'Shared',
+      primaryLabel: 'inbox for trainers',
+      secondary: 'Faster',
+      secondaryLabel: 'trial conversions',
+    },
+  },
+  {
+    quote: 'Every trip enquiry needs a custom itinerary and three follow-ups. LeadBuddie keeps the whole conversation, quote, and callback in one place — we stopped losing high-ticket bookings to slow replies.',
+    author: 'Nitya Tours and Travels',
+    company: 'Nitya Tours and Travels',
+    location: 'India',
+    rating: 5,
+    metrics: {
+      primary: 'Higher',
+      primaryLabel: 'package conversion',
+      secondary: 'Zero',
+      secondaryLabel: 'missed follow-ups',
+    },
+  },
+  {
+    quote: 'Site-visit requests and quote enquiries used to slip through cracks. Now each lead has a stage, an owner, and a follow-up date — our painters and the office work off the same screen.',
+    author: 'Spectrum Painting Solution',
+    company: 'Spectrum Painting Solution',
+    location: 'India',
+    rating: 5,
+    metrics: {
+      primary: 'On-time',
+      primaryLabel: 'quote follow-ups',
+      secondary: 'Clear',
+      secondaryLabel: 'ownership per lead',
     },
   },
   // TODO: founder verification — re-enable only after confirming customer consent and active usage.

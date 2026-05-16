@@ -22,8 +22,13 @@ export function WhoIsThisFor() {
         </div>
 
         <ul className="space-y-4">
-          {items.map((item) => (
-            <li key={item} className="flex items-start gap-4 rounded-2xl border border-border bg-bg-card/85 p-5">
+          {items.map((item, i) => (
+            <li
+              key={item}
+              data-reveal
+              style={{ ['--reveal-delay' as any]: `${0.1 + i * 0.08}s` }}
+              className="flex items-start gap-4 rounded-2xl border border-border bg-bg-card/85 p-5 transition-colors duration-300 hover:border-wa/50"
+            >
               <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-wa" />
               <span className="text-base leading-relaxed text-text-secondary md:text-lg">{item}</span>
             </li>

@@ -119,9 +119,9 @@ export function IndustryEarlyAccess() {
       </div>
 
       {/* Honest framing strip */}
-      <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-ink/10 bg-ink/[0.02] px-6 py-5">
-        <p className="text-sm text-gray-700 leading-relaxed text-center">
-          <strong className="text-ink">Why "founding dealer"?</strong> These packs are not generic templates we copy-pasted from water purifiers. We build each one alongside three to five real dealers in that vertical, ship the workflows they need, and lock the pack only after it earns them revenue. If your industry should be next, talk to us.
+      <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-5 backdrop-blur-sm">
+        <p className="text-sm text-text-secondary leading-relaxed text-center">
+          <strong className="text-text-primary">Why &ldquo;founding dealer&rdquo;?</strong> These packs are not generic templates we copy-pasted from water purifiers. We build each one alongside three to five real dealers in that vertical, ship the workflows they need, and lock the pack only after it earns them revenue. If your industry should be next, talk to us.
         </p>
       </div>
     </Section>

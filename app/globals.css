@@ -270,10 +270,11 @@ input:-webkit-autofill:active {
   opacity: 0;
 }
 
-/* Reveal-on-scroll utility — controlled by IntersectionObserver in flow sections.
- * Element starts hidden via [data-reveal]; when in view, [data-reveal="visible"]
- * triggers the fade-in-up animation with a per-element delay from --reveal-delay. */
-[data-reveal] {
+/* Reveal-on-scroll utility — controlled by IntersectionObserver mounted in the
+ * root layout (ScrollRevealClient). The hidden state ONLY applies once the
+ * client has booted (html.js-reveal is set on mount), so there is no flash of
+ * invisible content for users on slow networks or without JS. */
+html.js-reveal [data-reveal]:not([data-reveal="visible"]) {
   opacity: 0;
   transform: translateY(20px);
 }
@@ -293,7 +294,7 @@ input:-webkit-autofill:active {
 
 /* Respect users who prefer reduced motion — kill custom animations. */
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; }
+  html.js-reveal [data-reveal] { opacity: 1; transform: none; }
   [data-reveal="visible"] { animation: none; }
   .animate-flow-arrow,
   .animate-pulse-slow,
