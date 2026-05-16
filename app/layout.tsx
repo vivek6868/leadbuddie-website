@@ -4,6 +4,7 @@ import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import { DemoModalProvider } from '@/components/providers/DemoModalProvider'
 import { SEO } from '@/lib/constants'
 
 const bricolage = Bricolage_Grotesque({
@@ -118,11 +119,13 @@ export default function RootLayout({
       </head>
       <body className="bg-bg-primary text-text-primary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
+          <DemoModalProvider>
+            <Navbar />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+          </DemoModalProvider>
         </ThemeProvider>
         <script
           src="https://app.leadbuddie.com/widget.js"

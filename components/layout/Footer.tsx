@@ -5,50 +5,68 @@ import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBad
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-bg-secondary/90">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-50 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <MetaTechProviderBadge variant="footer" />
-        <div className="mb-8 grid grid-cols-1 gap-8 pt-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 pt-4">
+          {/* Product Links */}
           <div>
-            <h3 className="mb-4 font-heading font-semibold text-text-primary">Product</h3>
+            <h3 className="text-gray-900 font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
-              {NAVIGATION.filter((item) => ['Product', 'Pricing', 'Demo', 'Blog'].includes(item.name)).map((item) => (
+              {NAVIGATION.filter(item => ['Product', 'Pricing', 'Demo', 'Blog'].includes(item.name)).map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-text-secondary transition-colors hover:text-text-primary">
+                  <Link
+                    href={item.href}
+                    className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/blog/rss.xml" className="text-sm text-text-secondary transition-colors hover:text-text-primary">
+                <Link
+                  href="/blog/rss.xml"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                >
                   RSS
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Company Links */}
           <div>
-            <h3 className="mb-4 font-heading font-semibold text-text-primary">Company</h3>
+            <h3 className="text-gray-900 font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-text-secondary transition-colors hover:text-text-primary">
+                <Link
+                  href="/about"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-text-secondary transition-colors hover:text-text-primary">
+                <Link
+                  href="/contact"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                >
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Legal Links */}
           <div>
-            <h3 className="mb-4 font-heading font-semibold text-text-primary">Legal</h3>
+            <h3 className="text-gray-900 font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               {LEGAL_LINKS.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-text-secondary transition-colors hover:text-text-primary">
+                  <Link
+                    href={item.href}
+                    className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                  >
                     {item.name}
                   </Link>
                 </li>
@@ -56,26 +74,33 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
-            <h3 className="mb-4 font-heading font-semibold text-text-primary">Contact</h3>
-            <p className="mb-3 text-sm font-medium text-text-primary">{BRAND.company}</p>
+            <h3 className="text-gray-900 font-semibold mb-4">Contact</h3>
+            <p className="text-gray-900 font-medium text-sm mb-3">{BRAND.company}</p>
             <ul className="space-y-3">
               {CONTACT.address && (
                 <li>
-                  <div className="flex items-start space-x-2 text-sm text-text-secondary">
+                  <div className="flex items-start space-x-2 text-gray-600 text-sm">
                     <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                     <span>{CONTACT.address}</span>
                   </div>
                 </li>
               )}
               <li>
-                <a href={`mailto:${CONTACT.general}`} className="flex items-center space-x-2 text-sm text-text-secondary transition-colors hover:text-text-primary">
+                <a
+                  href={`mailto:${CONTACT.general}`}
+                  className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                >
                   <Mail size={16} />
                   <span>{CONTACT.general}</span>
                 </a>
               </li>
               <li>
-                <a href={CONTACT.whatsappUrl} className="text-sm text-text-secondary transition-colors hover:text-text-primary">
+                <a
+                  href={CONTACT.whatsappUrl}
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                >
                   Phone / WhatsApp: {CONTACT.phone}
                 </a>
               </li>
@@ -83,9 +108,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8">
-          <div className="text-center">
-            <p className="text-sm text-text-secondary">© 2026 {BRAND.name} — Powered by {BRAND.company}</p>
+        <div className="border-t border-gray-200 pt-8">
+          <div className="text-center space-y-2">
+            <p className="text-gray-700 text-sm font-medium">
+              AI co-pilot built on official Meta messaging infrastructure. Made in India, for Indian SMBs.
+            </p>
+            <p className="text-gray-500 text-sm">
+              © 2025 {BRAND.name} — Powered by {BRAND.company}
+            </p>
           </div>
         </div>
       </div>

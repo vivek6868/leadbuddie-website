@@ -39,10 +39,20 @@ export async function generateMetadata({ params }: Props) {
     alternates: { canonical },
     robots: post.isPublished ? { index: true, follow: true } : { index: false, follow: false },
     openGraph: {
+      type: 'article',
       title,
       description,
       url: canonical,
+      publishedTime: post.date,
+      authors: [post.author],
+      section: post.category,
       ...(ogImage && { images: [{ url: ogImage }] }),
+    },
+    twitter: {
+      card: ogImage ? 'summary_large_image' : 'summary',
+      title,
+      description,
+      ...(ogImage && { images: [ogImage] }),
     },
   }
 }
@@ -61,8 +71,54 @@ export default async function BlogPostPage({ params }: Props) {
     { label: post.title },
   ]
 
+  // Article JSON-LD — improves Google rich snippets and category coverage
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'LeadBuddie',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/images/logo.png`,
+      },
+    },
+    image: post.image ? `${BASE_URL}${post.image}` : `${BASE_URL}/images/logo.png`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}/blog/${slug}`,
+    },
+    articleSection: post.category,
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Blog', item: `${BASE_URL}/blog` },
+      { '@type': 'ListItem', position: 2, name: post.category, item: `${BASE_URL}/blog?category=${encodeURIComponent(post.category)}` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE_URL}/blog/${slug}` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <article className="pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={breadcrumbItems} />

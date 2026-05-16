@@ -7,8 +7,8 @@ import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'How It Works - LeadBuddie',
-  description: 'Get started with LeadBuddie in 5 simple steps and turn WhatsApp + Instagram conversations into an organized CRM workflow.',
+  title: 'How LeadBuddie works — AI co-pilot for WhatsApp & Instagram',
+  description: 'Get started in 5 simple steps. Connect your WhatsApp Business number, let your AI co-pilot reply, qualify, and follow up.',
 }
 
 export default function HowItWorksPage() {
@@ -18,10 +18,10 @@ export default function HowItWorksPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              How LeadBuddie Works
+              How LeadBuddie works
             </h1>
             <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-              Get started in minutes. Manage all your WhatsApp & Instagram leads from one powerful dashboard.
+              Connect your WhatsApp Business number. Turn on the capabilities you want. Your AI co-pilot starts working in minutes.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
       <ComplianceSection />
       <CTASection 
         title="Ready to Get Started?"
-        description="Start your 7-day free trial and see how easy it is to manage your WhatsApp & Instagram leads."
+        description="Start your 7-day free trial and see how easy it is to manage your WhatsApp leads."
       />
     </>
   )

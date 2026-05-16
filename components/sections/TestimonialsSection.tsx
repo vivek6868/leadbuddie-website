@@ -8,13 +8,13 @@ export function TestimonialsSection() {
   return (
     <Section>
       <SectionHeader
-        label="Success Stories"
-        title="Making WhatsApp work for 500+ Indian businesses (and growing daily!)"
-        description="Real results from real businesses using LeadBuddie"
+        label="Customer story"
+        title="The dealer that put our AI co-pilot to work first."
+        description="Mastec Water Purifier handles 60–100 leads a day. Here’s what changed when LeadBuddie became their co-pilot."
         centered
         className="mb-16"
       />
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className={`grid ${TESTIMONIALS.length === 1 ? 'max-w-3xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
         {TESTIMONIALS.map((testimonial, index) => (
           <Card key={index} hover className="flex flex-col h-full p-8">
             {/* Metrics Display */}

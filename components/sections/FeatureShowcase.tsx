@@ -1,84 +1,177 @@
 import { Section } from '@/components/ui/Section'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
-import { MessageSquare, Kanban, Sparkles, Zap, BarChart, Users, type LucideIcon } from 'lucide-react'
+import { MessageSquare, Kanban, Sparkles, Zap, Send, BarChart, Clock, LayoutGrid } from 'lucide-react'
 
-const features: { title: string; description: string; bullets: string[]; icon: LucideIcon; screenshot: string }[] = [
+const features = [
   {
-    title: 'Shared WhatsApp & Instagram inbox',
-    description: 'Work every conversation from one interface with assignments, notes, and channel visibility baked in.',
-    bullets: ['Unified team inbox', 'Ownership and assignments', 'Conversation history', 'Fast internal collaboration'],
+    id: 'inbox',
     icon: MessageSquare,
+    title: 'Shared WhatsApp & Instagram inbox',
+    description: 'Your AI co-pilot and your team work from the same inbox. The co-pilot handles routine messages; humans close the deals.',
+    benefits: [
+      'Unified inbox across WhatsApp and Instagram',
+      'Real-time sync and notifications',
+      'Team assignment and collaboration',
+      'Mobile and desktop views',
+    ],
     screenshot: '/graphics/features/whatsapp-team-inbox.svg',
+    reverse: false,
   },
   {
-    title: 'Lead pipeline that matches the conversation',
-    description: 'Your team sees what stage each lead is in without leaving the chat they are working on.',
-    bullets: ['Custom stages', 'Follow-up dates', 'Tags and priorities', 'Deal visibility'],
+    id: 'leads',
     icon: Kanban,
+    title: 'Pipeline that matches the conversation',
+    description: 'Your co-pilot qualifies and stages leads automatically. You see what is hot, what is cold, and what needs a nudge.',
+    benefits: [
+      'Auto-qualification by detected intent',
+      'Tags, budget, and source captured from the chat',
+      'Stage moves you can approve or accept',
+      'Follow-up reminders never forgotten',
+    ],
     screenshot: '/graphics/features/lead-pipeline-crm.svg',
+    reverse: true,
   },
   {
-    title: 'AI that helps without taking over',
-    description: 'Summaries and suggestions give your team speed while keeping every response in your control.',
-    bullets: ['Smart summaries', 'Suggested replies', 'Context retention', 'Faster onboarding for teammates'],
+    id: 'followups',
+    icon: Clock,
+    title: 'Never miss a follow-up. Close more deals on time.',
+    description: 'LeadBuddie helps you stay on top of every lead with smart, flexible follow-ups built for WhatsApp-first businesses.',
+    stripBullets: 'Smart scheduling & reminders • Calendar & list views • Team assignment with full context • AI-powered & automated follow-ups (Growth+)',
+    benefits: [
+      'Smart scheduling & reminders',
+      'Calendar & list views',
+      'Team assignment with full context',
+      'AI-powered & automated follow-ups (Growth+)',
+    ],
+    screenshot: '/graphics/features/follow-ups.png',
+    reverse: false,
+  },
+  {
+    id: 'pipeline',
+    icon: LayoutGrid,
+    title: 'Visualize your sales. Move leads faster.',
+    description: 'Track every lead from first message to closed deal with a powerful, mobile-friendly pipeline.',
+    stripBullets: 'Visual Kanban pipeline • Drag-and-drop stages • Custom stages, priorities & teams • List + pipeline views (mobile-ready)',
+    benefits: [
+      'Visual Kanban pipeline',
+      'Drag-and-drop stages',
+      'Custom stages, priorities & teams',
+      'List + pipeline views (mobile-ready)',
+    ],
+    screenshot: '/graphics/features/pipeline.png',
+    reverse: true,
+  },
+  {
+    id: 'ai',
     icon: Sparkles,
+    title: 'AI that drafts, sends, or steps back — your call',
+    description: 'Most CRMs offer “AI suggestions” you still have to send. LeadBuddie’s co-pilot can reply, qualify, and follow up on its own — with the autonomy level you set per capability.',
+    benefits: [
+      'Approve every reply, or auto-send routine ones',
+      'Context from full conversation + lead history',
+      'Tone learned from your business',
+      'Transparent — every action is logged',
+    ],
     screenshot: '/graphics/features/ai-insights-smart-replies.svg',
+    reverse: false,
   },
   {
-    title: 'Automation for modern lead ops',
-    description: 'Route conversations, assign owners, and trigger next steps without creating process debt.',
-    bullets: ['Auto-assignment', 'Routing rules', 'Lead source logic', 'Operational consistency'],
+    id: 'automation',
     icon: Zap,
+    title: 'Routing handled by your co-pilot',
+    description: 'Auto-assign leads by source (website, Instagram, Facebook). No rule engines to maintain — the co-pilot handles routing, follow-up timing, and team handoff.',
+    benefits: [
+      'Source-based auto-assignment',
+      'Smart follow-up timing',
+      'Auto-welcome messages',
+      'Hand-off to the right team member',
+    ],
     screenshot: '/graphics/features/automations-routing.svg',
+    reverse: true,
   },
   {
-    title: 'Performance you can actually act on',
-    description: 'Measure team responsiveness and pipeline health instead of guessing what is working.',
-    bullets: ['Response visibility', 'Team insights', 'Lead source trends', 'Conversion reporting'],
+    id: 'campaigns',
+    icon: Send,
+    title: 'Campaigns',
+    description: 'Schedule messages, retry failed sends, and track campaign performance. Send to multiple recipients with analytics.',
+    benefits: [
+      'Schedule messages for later',
+      'Retry failed sends',
+      'Campaign analytics',
+      'Recipient management',
+    ],
+    screenshot: '/graphics/features/campaigns.svg',
+    reverse: false,
+  },
+  {
+    id: 'analytics',
     icon: BarChart,
+    title: 'Analytics & Team Performance',
+    description: 'Track response times, conversion rates, and team performance. See which team members are closing the most deals.',
+    benefits: [
+      'Response time metrics',
+      'Conversion tracking',
+      'Team performance dashboards',
+      'Lead source analytics',
+    ],
     screenshot: '/graphics/features/analytics-team-performance.svg',
-  },
-  {
-    title: 'Built for teams, not solo inboxes',
-    description: 'LeadBuddie gives your whole team the context to move quickly without stepping on each other.',
-    bullets: ['Team roles', 'Shared visibility', 'Notes and context', 'Cleaner handoffs'],
-    icon: Users,
-    screenshot: '/graphics/features/team-collaboration.svg',
+    reverse: true,
   },
 ]
 
 export function FeatureShowcase() {
   return (
     <Section>
-      <h2 className="mb-14 text-center text-3xl font-bold text-text-primary md:text-5xl">Everything your team needs to sell inside conversations</h2>
-      <div className="space-y-14">
-        {features.map((feature, index) => {
-          const Icon = feature.icon
-
-          return (
-            <div key={feature.title} className="grid items-center gap-8 rounded-[32px] border border-border bg-bg-card/90 p-8 lg:grid-cols-2 lg:p-10">
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-subtle text-brand-light">
-                  <Icon className="h-7 w-7" />
-                </div>
-                <h3 className="text-3xl font-bold text-text-primary">{feature.title}</h3>
-                <p className="mt-4 text-lg leading-relaxed text-text-secondary">{feature.description}</p>
-                <ul className="mt-6 space-y-3">
-                  {feature.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-3 text-text-secondary">
-                      <span className="h-2 w-2 rounded-full bg-brand-light" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
+      <h2 className="text-3xl md:text-4xl font-bold text-ink text-center mb-4">
+        From first message to closed deal — your co-pilot has it.
+      </h2>
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        Every capability below works alongside the human on your team. The co-pilot handles the routine; you stay in control of every decision that matters.
+      </p>
+      <div className="space-y-32">
+        {features.map((feature) => (
+          <div
+            key={feature.id}
+            className={`grid lg:grid-cols-2 gap-12 items-center ${
+              feature.reverse ? 'lg:flex-row-reverse' : ''
+            }`}
+          >
+            <div className={feature.reverse ? 'lg:order-2' : ''}>
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-4">
+                {feature.title}
               </div>
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <ScreenshotFrame src={feature.screenshot} alt={feature.title} aspect="3/2" disableHover />
-              </div>
+              <h3 className="text-4xl md:text-5xl font-bold text-ink mb-4">
+                {feature.title}
+              </h3>
+              <p className="text-lg text-gray-600 mb-6">{feature.description}</p>
+              {'stripBullets' in feature && feature.stripBullets && (
+                <p className="text-sm text-gray-500 mb-6">{feature.stripBullets}</p>
+              )}
+              <ul className="space-y-3">
+                {feature.benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <div className="w-2 h-2 rounded-full bg-teal-600"></div>
+                    </div>
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          )
-        })}
+            <div className={feature.reverse ? 'lg:order-1' : ''}>
+              <ScreenshotFrame
+                src={feature.screenshot}
+                alt={feature.title}
+                status={feature.id === 'inbox' ? 'connected' : undefined}
+                aspect="3/2"
+                fit="cover"
+                className="md:animate-float-slow"
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </Section>
   )
 }
+

@@ -5,8 +5,8 @@ import { Building2, Target, Users, MapPin } from 'lucide-react'
 import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
-  title: 'About Us - LeadBuddie',
-  description: 'LeadBuddie is built by Hutliv Technologies, an Indian software company serving businesses worldwide.',
+  title: 'About LeadBuddie — AI co-pilot for WhatsApp & Instagram',
+  description: 'LeadBuddie is built by Hutliv Technologies — an Indian software company building an AI co-pilot for SMBs that sell over WhatsApp and Instagram.',
 }
 
 export default function AboutPage() {
@@ -43,9 +43,7 @@ export default function AboutPage() {
                     of disorganized lead management, missed follow-ups, and lack of prioritization.
                   </p>
                   <p className="text-dark-300">
-                    Today, {BRAND.name} helps businesses worldwide, including contractors, 
-                    service providers, and agencies. Our platform helps them manage their WhatsApp 
-                    leads more effectively, close more deals, and grow their businesses.
+                    Today, {BRAND.name} is an AI co-pilot for WhatsApp and Instagram conversations. It replies on your behalf, qualifies leads automatically, and follows up so you never lose a customer to a missed message. First built deeply with Mastec Water Purifier; expanding into adjacent appliance and home-service verticals next.
                   </p>
                 </div>
               </div>
@@ -146,9 +144,9 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
-      <CTASection 
-        title="Ready to Transform Your Lead Management?"
-        description="Join businesses worldwide using LeadBuddie to never lose a lead again."
+      <CTASection
+        title="Put an AI co-pilot in your WhatsApp inbox."
+        description="Join Indian SMBs using LeadBuddie to reply, qualify, and follow up — even when they cannot."
       />
     </>
   )

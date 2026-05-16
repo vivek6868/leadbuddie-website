@@ -5,8 +5,8 @@ import { CONTACT, BRAND } from '@/lib/constants'
 import { Mail, Phone, MapPin, Building2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - LeadBuddie',
-  description: 'Contact LeadBuddie support. Email hello@hutliv.com.',
+  title: 'Contact LeadBuddie — AI co-pilot for WhatsApp & Instagram',
+  description: 'Questions about the AI co-pilot, vertical packs, or pricing? Email hello@hutliv.com or message us on WhatsApp.',
 }
 
 export default function ContactPage() {

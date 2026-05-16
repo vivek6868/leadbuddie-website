@@ -270,6 +270,42 @@ input:-webkit-autofill:active {
   opacity: 0;
 }
 
+/* Reveal-on-scroll utility — controlled by IntersectionObserver in flow sections.
+ * Element starts hidden via [data-reveal]; when in view, [data-reveal="visible"]
+ * triggers the fade-in-up animation with a per-element delay from --reveal-delay. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+[data-reveal="visible"] {
+  animation: fade-in-up 0.7s ease-out forwards;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+/* Animated flow connector — a flowing dashed line between flow steps. */
+@keyframes flow-pulse {
+  0%, 100% { opacity: 0.45; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(2px); }
+}
+.animate-flow-arrow {
+  animation: flow-pulse 1.8s ease-in-out infinite;
+}
+
+/* Respect users who prefer reduced motion — kill custom animations. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; }
+  [data-reveal="visible"] { animation: none; }
+  .animate-flow-arrow,
+  .animate-pulse-slow,
+  .animate-float-slow,
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-slide-in-left,
+  .animate-bounce-slow {
+    animation: none !important;
+  }
+}
+
 /* Hero value card headline: gradient text with shimmer */
 .text-gradient-shimmer {
   background: linear-gradient(

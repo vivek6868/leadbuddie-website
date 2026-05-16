@@ -1,6 +1,6 @@
 export const BRAND = {
   name: 'LeadBuddie',
-  tagline: 'WhatsApp + Instagram CRM for Growing Businesses',
+  tagline: 'AI co-pilot for WhatsApp & Instagram — built for Indian SMBs',
   company: 'Hutliv Technologies',
   founded: 2025,
 } as const
@@ -146,7 +146,7 @@ export const PRICING_PLANS = [
     price: 499,
     currency: '₹',
     period: 'month',
-    description: 'Social CRM starter for WhatsApp conversations, AI replies, and team visibility.',
+    description: 'Single-number WhatsApp inbox with AI replies and summaries.',
     features: PLAN_VISIBLE_FEATURES.starter,
     cta: 'Start Free Trial',
     highlighted: false,
@@ -157,7 +157,7 @@ export const PRICING_PLANS = [
     price: 999,
     currency: '₹',
     period: 'month',
-    description: 'Automation, templates, and unlimited AI messages for growing teams.',
+    description: 'Campaigns + templates + unlimited AI messages for growing teams.',
     features: PLAN_VISIBLE_FEATURES.growth,
     cta: 'Start Free Trial',
     highlighted: true,
@@ -179,7 +179,7 @@ export const PRICING_PLANS = [
     price: 4999,
     currency: '₹',
     period: 'month',
-    description: 'Custom deployments with advanced channel operations and priority support.',
+    description: 'Custom deployments with multi-number WhatsApp and priority support.',
     features: PLAN_VISIBLE_FEATURES.enterprise,
     cta: 'Contact Us',
     highlighted: false,
@@ -220,7 +220,7 @@ export const HOW_IT_WORKS_STEPS = [
 ] as const
 
 export const COMPLIANCE_STATEMENTS = [
-  'We help you manage and organize WhatsApp and Instagram leads',
+  'We help you manage and organize WhatsApp leads',
   'We receive leads from your WhatsApp Business number',
   'We organize conversations in a CRM',
   'We generate AI insights from conversations',
@@ -229,6 +229,9 @@ export const COMPLIANCE_STATEMENTS = [
   'We comply with Meta\'s WhatsApp Business Policy',
 ] as const
 
+// TESTIMONIALS — only verified, paying customers should appear here.
+// Others are commented out pending founder verification. Do not re-enable
+// without confirming the customer is real, active, and quoted with consent.
 export const TESTIMONIALS = [
   {
     quote: 'Handling 60–100 leads per day was very time-consuming. After LeadBuddie, responses and follow-ups became much easier.',
@@ -243,96 +246,69 @@ export const TESTIMONIALS = [
       secondaryLabel: 'follow-ups',
     },
   },
-  {
-    quote: 'Before LeadBuddie, I was juggling 3 phones and losing leads daily. Now all my WhatsApp chats are in one place, and the AI helps me reply faster.',
-    author: 'Rajesh Kumar',
-    company: 'Thuli Paintings',
-    location: 'Chennai',
-    rating: 5,
-    metrics: {
-      primary: '40%',
-      primaryLabel: 'more deals closed',
-      secondary: '2 months',
-      secondaryLabel: 'to see results',
-    },
-  },
-  {
-    quote: 'The AI reply suggestions are a game-changer. I can respond to customers in seconds instead of minutes. My team loves the shared inbox.',
-    author: 'Priya Sharma',
-    company: 'Home Decor Solutions',
-    location: 'Bangalore',
-    rating: 5,
-    metrics: {
-      primary: '30%',
-      primaryLabel: 'faster response time',
-      secondary: '3x',
-      secondaryLabel: 'conversion rate',
-    },
-  },
-  {
-    quote: 'As a contractor, I get 20-30 WhatsApp enquiries daily. LeadBuddie helps me prioritize which leads are hot and which can wait.',
-    author: 'Amit Patel',
-    company: 'Patel Construction',
-    location: 'Ahmedabad',
-    rating: 5,
-    metrics: {
-      primary: '100%',
-      primaryLabel: 'follow-up rate',
-      secondary: '0',
-      secondaryLabel: 'missed leads',
-    },
-  },
-  {
-    quote: 'The chat inbox feels just like WhatsApp but better. I can see all conversations, add notes, and my team knows exactly what\'s happening with each lead.',
-    author: 'Sunita Reddy',
-    company: 'Reddy Interiors',
-    location: 'Hyderabad',
-    rating: 5,
-    metrics: {
-      primary: '50%',
-      primaryLabel: 'time saved',
-      secondary: '2x',
-      secondaryLabel: 'team efficiency',
-    },
-  },
-  {
-    quote: 'Started with the free trial and was hooked. The AI summaries save me so much time - I can understand a lead\'s full context in 30 seconds.',
-    author: 'Vikram Singh',
-    company: 'Singh Electricals',
-    location: 'Delhi',
-    rating: 5,
-    metrics: {
-      primary: '90%',
-      primaryLabel: 'faster lead review',
-      secondary: '5 min',
-      secondaryLabel: 'avg response time',
-    },
-  },
-  {
-    quote: 'Best investment for my business. The unified inbox means I can manage everything from my laptop instead of being stuck on my phone.',
-    author: 'Meera Nair',
-    company: 'Nair Plumbing Services',
-    location: 'Kochi',
-    rating: 5,
-    metrics: {
-      primary: '60%',
-      primaryLabel: 'productivity boost',
-      secondary: '24/7',
-      secondaryLabel: 'lead management',
-    },
-  },
+  // TODO: founder verification — re-enable only after confirming customer consent and active usage.
+  // {
+  //   quote: 'Before LeadBuddie, I was juggling 3 phones and losing leads daily. Now all my WhatsApp chats are in one place, and the AI helps me reply faster.',
+  //   author: 'Rajesh Kumar',
+  //   company: 'Thuli Paintings',
+  //   location: 'Chennai',
+  //   rating: 5,
+  //   metrics: { primary: '40%', primaryLabel: 'more deals closed', secondary: '2 months', secondaryLabel: 'to see results' },
+  // },
+  // {
+  //   quote: 'The AI reply suggestions are a game-changer. I can respond to customers in seconds instead of minutes. My team loves the shared inbox.',
+  //   author: 'Priya Sharma',
+  //   company: 'Home Decor Solutions',
+  //   location: 'Bangalore',
+  //   rating: 5,
+  //   metrics: { primary: '30%', primaryLabel: 'faster response time', secondary: '3x', secondaryLabel: 'conversion rate' },
+  // },
+  // {
+  //   quote: 'As a contractor, I get 20-30 WhatsApp enquiries daily. LeadBuddie helps me prioritize which leads are hot and which can wait.',
+  //   author: 'Amit Patel',
+  //   company: 'Patel Construction',
+  //   location: 'Ahmedabad',
+  //   rating: 5,
+  //   metrics: { primary: '100%', primaryLabel: 'follow-up rate', secondary: '0', secondaryLabel: 'missed leads' },
+  // },
+  // {
+  //   quote: 'The chat inbox feels just like WhatsApp but better. I can see all conversations, add notes, and my team knows exactly what\'s happening with each lead.',
+  //   author: 'Sunita Reddy',
+  //   company: 'Reddy Interiors',
+  //   location: 'Hyderabad',
+  //   rating: 5,
+  //   metrics: { primary: '50%', primaryLabel: 'time saved', secondary: '2x', secondaryLabel: 'team efficiency' },
+  // },
+  // {
+  //   quote: 'Started with the free trial and was hooked. The AI summaries save me so much time - I can understand a lead\'s full context in 30 seconds.',
+  //   author: 'Vikram Singh',
+  //   company: 'Singh Electricals',
+  //   location: 'Delhi',
+  //   rating: 5,
+  //   metrics: { primary: '90%', primaryLabel: 'faster lead review', secondary: '5 min', secondaryLabel: 'avg response time' },
+  // },
+  // {
+  //   quote: 'Best investment for my business. The unified inbox means I can manage everything from my laptop instead of being stuck on my phone.',
+  //   author: 'Meera Nair',
+  //   company: 'Nair Plumbing Services',
+  //   location: 'Kochi',
+  //   rating: 5,
+  //   metrics: { primary: '60%', primaryLabel: 'productivity boost', secondary: '24/7', secondaryLabel: 'lead management' },
+  // },
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — WhatsApp & Instagram CRM for Growing Businesses',
-  description: 'Convert WhatsApp and Instagram conversations into paying customers with one premium CRM for inbox, follow-ups, automation, and team collaboration.',
-  keywords: 'WhatsApp Instagram CRM, WhatsApp CRM, Instagram CRM, social CRM, AI follow-ups, WhatsApp Business API, Instagram DM CRM',
+  title: 'LeadBuddie — AI co-pilot for WhatsApp & Instagram',
+  description: 'AI co-pilot that replies to WhatsApp and Instagram leads, qualifies them, and follows up — even when you are busy. Built for Indian SMBs. Water purifier dealer pack live.',
+  keywords: 'AI sales co-pilot, AI for WhatsApp, AI replies WhatsApp, WhatsApp lead management, water purifier dealer CRM, Indian SMB sales tool, AI sales agent India, WhatsApp Business API',
 } as const
 
-/** Social proof stats for homepage (CustomerProofSection) */
+/** Social proof stats for homepage (CustomerProofSection)
+ * NOTE: leadsManaged + businessesOnboarded are aggregate numbers across the
+ * platform. Founder: update these to match actual production figures. */
 export const SOCIAL_PROOF_STATS = {
   leadsManaged: '5000+',
   businessesOnboarded: '20+',
-  trustLine: 'Trusted by service companies across India',
+  trustLine: 'Built with Mastec Water Purifier — more Indian SMBs onboarding',
 } as const
 
