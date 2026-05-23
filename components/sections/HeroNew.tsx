@@ -2,15 +2,15 @@ import { Button } from '@/components/ui/Button'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
 
 const TRUST_STRIPS = [
-  'Replies within seconds, even after hours',
+  'Runs on your existing WhatsApp number',
   'Official Meta tech provider · DPDP-ready',
-  'Built with Mastec Water Purifier',
+  'Trusted by Mastec Water Purifier',
 ]
 
 const HERO_ANNOTATIONS: { text: string; tone: 'emerald' | 'amber' | 'cyan'; placement: string }[] = [
-  { text: 'AI reply suggested', tone: 'emerald', placement: 'top-4 right-4 md:top-6 md:right-6' },
-  { text: 'Lead auto-qualified', tone: 'cyan', placement: 'bottom-4 left-4 md:bottom-6 md:left-6' },
-  { text: 'Follow-up triggered', tone: 'amber', placement: 'top-1/2 -translate-y-1/2 right-2 md:right-4' },
+  { text: 'Lead captured', tone: 'cyan', placement: 'top-4 right-4 md:top-6 md:right-6' },
+  { text: 'Renewal tracked', tone: 'emerald', placement: 'bottom-4 left-4 md:bottom-6 md:left-6' },
+  { text: 'Callback scheduled', tone: 'amber', placement: 'top-1/2 -translate-y-1/2 right-2 md:right-4' },
 ]
 
 const TONE_CLASSES: Record<'emerald' | 'amber' | 'cyan', string> = {
@@ -44,13 +44,13 @@ export function HeroNew() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-accent-lime opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-lime" />
               </span>
-              AI co-pilot for WhatsApp + Instagram
+              Customer operations, run on WhatsApp
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight font-sans animate-fade-in-up delay-300">
-              Reply to every lead — even when you can&apos;t.
+              Customer Operations Platform for WhatsApp-first businesses.
             </h1>
             <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-xl animate-fade-in-up delay-500">
-              LeadBuddie replies, qualifies the lead, and schedules the follow-up while you&apos;re with another customer. Built for Indian SMBs by a small team in India.
+              Capture every lead, run the full customer lifecycle, and never lose a renewal — all on the WhatsApp number your customers already message. Built for operational businesses in India, starting with water purifier dealers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-700">
               <Button href="https://app.leadbuddie.com" variant="lime" size="lg" className="w-full sm:w-auto">
@@ -87,7 +87,7 @@ export function HeroNew() {
             <div className="relative">
               <ScreenshotFrame
                 src="/graphics/hero/hero-dashboard.svg"
-                alt="LeadBuddie AI co-pilot dashboard"
+                alt="LeadBuddie customer operations dashboard"
                 aspect="3/2"
               />
               {HERO_ANNOTATIONS.map((a) => (

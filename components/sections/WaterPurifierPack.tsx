@@ -1,8 +1,9 @@
 'use client'
 
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
+import { Reveal, motion, useReducedMotion, EASE_OUT } from '@/components/ui/motion'
 import {
   Droplets,
   RefreshCcw,
@@ -17,7 +18,11 @@ import {
   CircleCheck,
   FileText,
   Package,
-  ChevronRight,
+  Sparkles,
+  CheckCheck,
+  Target,
+  UserPlus,
+  IndianRupee,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -374,106 +379,496 @@ const WORKFLOWS: Workflow[] = [
 ]
 
 /* ------------------------------------------------------------------------- */
+/*  Operational lifecycle — the flow the pack runs end to end                */
+/* ------------------------------------------------------------------------- */
+
+type FlowStep = {
+  number: string
+  icon: LucideIcon
+  tone: string
+  title: string
+  caption: string
+}
+
+const FLOW_STEPS: FlowStep[] = [
+  {
+    number: '01',
+    icon: MessageCircle,
+    tone: 'border-teal-400/30 bg-teal-400/10 text-teal-300',
+    title: 'Customer messages on WhatsApp',
+    caption: 'A buyer or existing customer pings your normal WhatsApp number — an enquiry, a complaint, an AMC question.',
+  },
+  {
+    number: '02',
+    icon: Target,
+    tone: 'border-cyan-400/30 bg-cyan-400/10 text-cyan-300',
+    title: 'Lead captured automatically',
+    caption: 'The conversation lands on your pipeline as a lead — no copy-paste, no missed message after hours.',
+  },
+  {
+    number: '03',
+    icon: UserPlus,
+    tone: 'border-violet-400/30 bg-violet-400/10 text-violet-300',
+    title: 'Convert to customer in one tap',
+    caption: 'When they buy, promote the lead to a customer with the installed model, install date and AMC plan attached.',
+  },
+  {
+    number: '04',
+    icon: RefreshCcw,
+    tone: 'border-teal-400/30 bg-teal-400/10 text-teal-300',
+    title: 'AMC tracked — surfaced before it lapses',
+    caption: 'Every contract sits on the renewals page sorted by urgency, so the renewal window never quietly passes.',
+  },
+  {
+    number: '05',
+    icon: PhoneCall,
+    tone: 'border-amber-400/30 bg-amber-400/10 text-amber-300',
+    title: 'Callbacks — none forgotten',
+    caption: '“Call me next week” becomes a real follow-up on the right date, with the customer’s note attached.',
+  },
+  {
+    number: '06',
+    icon: IndianRupee,
+    tone: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300',
+    title: 'Revenue tracked per renewal',
+    caption: 'Renewed contracts and service revenue roll up on the dashboard, so you see what the pack recovered.',
+  },
+  {
+    number: '07',
+    icon: Sparkles,
+    tone: 'border-violet-400/30 bg-violet-400/10 text-violet-300',
+    title: 'Buddie flags customers you’re not tracking',
+    caption: 'Buddie, your AI sales agent, reviews your leads and surfaces people who look like installed customers you haven’t added yet. You confirm each one — it never acts on its own.',
+  },
+]
+
+/* ------------------------------------------------------------------------- */
+/*  Cinematic — animated WhatsApp thread (Buddie working a renewal at 11 PM) */
+/* ------------------------------------------------------------------------- */
+
+function PhoneThread() {
+  return (
+    <div className="relative mx-auto">
+      {/* Soft glow behind phone */}
+      <div
+        className="pointer-events-none absolute -inset-8 rounded-[48px] bg-gradient-to-tr from-teal-300/20 via-cyan-200/10 to-transparent blur-3xl"
+        aria-hidden="true"
+      />
+
+      {/* Phone frame */}
+      <div
+        className="relative w-[270px] sm:w-[300px] rounded-[44px] bg-ink p-2.5 shadow-[0_30px_80px_-20px_rgba(11,31,51,0.6)] ring-1 ring-ink/20"
+        style={{ aspectRatio: '320 / 640' }}
+      >
+        <div className="relative h-full w-full rounded-[36px] overflow-hidden bg-[#ECE5DD]">
+          {/* Notch */}
+          <div className="absolute top-1.5 left-1/2 -translate-x-1/2 h-5 w-28 rounded-full bg-ink z-30" aria-hidden="true" />
+
+          {/* WhatsApp top bar */}
+          <div className="absolute top-0 left-0 right-0 h-14 bg-[#075E54] flex items-center px-4 z-20 pt-3">
+            <div className="flex items-center gap-2.5">
+              <div className="h-8 w-8 rounded-full bg-white/15 flex items-center justify-center text-white font-semibold text-xs">
+                PD
+              </div>
+              <div className="text-white">
+                <p className="text-[13px] font-semibold leading-tight">Priya Desai</p>
+                <p className="text-[10px] opacity-80 leading-tight">online · last seen now</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Chat area */}
+          <div className="absolute inset-x-0 top-14 bottom-14 overflow-hidden">
+            <div className="relative h-full px-3 pt-4 pb-3 flex flex-col justify-end gap-2 wt-thread">
+              <div className="self-center mb-2 px-2 py-0.5 rounded-md bg-white/85 text-[11px] text-slate-600 font-medium shadow-sm wt-msg" style={{ animationDelay: '0.2s' }}>
+                Today, 11:04 PM
+              </div>
+
+              <ChatBubble side="left" delay="0.6s">
+                Hi, my Kent RO AMC is expiring next week. What are the options?
+              </ChatBubble>
+
+              <ChatTyping delay="1.8s" />
+
+              <ChatDoc delay="3.4s" title="AMC Plans 2026.pdf" meta="2 pages · 1.2 MB" time="11:04 PM" />
+
+              <ChatBubble side="right" delay="4.2s">
+                <p className="leading-snug">Hi Priya! Your <strong>Annual AMC Gold (₹2,499)</strong> includes priority service + 4 filter changes. Shall I book a quick call tomorrow to confirm?</p>
+                <ChatMeta time="11:04 PM" sentByAi />
+              </ChatBubble>
+
+              <ChatBubble side="left" delay="6.0s">
+                Tomorrow 11am works.
+              </ChatBubble>
+
+              <ChatTyping delay="7.0s" />
+              <ChatBubble side="right" delay="8.2s">
+                <p className="leading-snug">Done — callback scheduled for tomorrow 11 AM. You’ll get a reminder.</p>
+                <ChatMeta time="11:05 PM" sentByAi />
+              </ChatBubble>
+            </div>
+          </div>
+
+          {/* WhatsApp bottom input (decorative) */}
+          <div className="absolute bottom-0 inset-x-0 h-14 bg-[#F0F0F0] flex items-center gap-2 px-3 z-20">
+            <div className="flex-1 h-9 rounded-full bg-white border border-slate-200" />
+            <div className="h-9 w-9 rounded-full bg-[#075E54]" />
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes wt-fade-in {
+          0%, 5% { opacity: 0; transform: translateY(8px); }
+          12%, 92% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(0); }
+        }
+        @keyframes wt-typing-show {
+          0%, 12% { opacity: 0; transform: translateY(4px); }
+          15%, 22% { opacity: 1; transform: translateY(0); }
+          25%, 100% { opacity: 0; transform: translateY(-4px); }
+        }
+        @keyframes wt-typing-dot {
+          0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+          30% { transform: translateY(-3px); opacity: 1; }
+        }
+        :global(.wt-msg),
+        :global(.wt-bubble) {
+          animation: wt-fade-in 11s ease-in-out infinite;
+          opacity: 0;
+        }
+        :global(.wt-typing) {
+          animation: wt-typing-show 11s ease-in-out infinite;
+          opacity: 0;
+        }
+        :global(.wt-typing-dot) {
+          animation: wt-typing-dot 1s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          :global(.wt-msg),
+          :global(.wt-bubble),
+          :global(.wt-typing) {
+            animation: none;
+            opacity: 1;
+          }
+          :global(.wt-typing) { display: none; }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+function ChatDoc({ delay, title, meta, time }: { delay: string; title: string; meta: string; time: string }) {
+  return (
+    <div className="flex justify-end">
+      <div className="wt-bubble max-w-[80%] rounded-2xl rounded-tr-md bg-[#DCF8C6] p-2 shadow-sm" style={{ animationDelay: delay }}>
+        <div className="flex items-center gap-2.5 rounded-xl bg-white/70 px-2.5 py-2.5">
+          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-rose-100 text-rose-700">
+            <FileText className="h-5 w-5" strokeWidth={1.8} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-[13px] font-semibold text-slate-900 leading-tight">{title}</p>
+            <p className="truncate text-[11px] text-slate-600 leading-tight mt-0.5">{meta}</p>
+          </div>
+        </div>
+        <ChatMeta time={time} sentByAi />
+      </div>
+    </div>
+  )
+}
+
+function ChatBubble({ side, delay, children }: { side: 'left' | 'right'; delay: string; children: React.ReactNode }) {
+  const isMe = side === 'right'
+  return (
+    <div className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
+      <div
+        className={`wt-bubble max-w-[80%] rounded-2xl px-3 py-2 text-[13.5px] leading-[1.4] shadow-sm ${
+          isMe ? 'bg-[#DCF8C6] text-slate-900 rounded-tr-md' : 'bg-white text-slate-900 rounded-tl-md'
+        }`}
+        style={{ animationDelay: delay }}
+      >
+        {children}
+      </div>
+    </div>
+  )
+}
+
+function ChatMeta({ time, sentByAi }: { time: string; sentByAi?: boolean }) {
+  return (
+    <div className="mt-1 flex items-center justify-end gap-1.5">
+      {sentByAi && (
+        <span className="inline-flex items-center gap-1 rounded-full bg-teal-100 text-teal-700 px-1.5 py-[1px] text-[9px] font-semibold uppercase tracking-wide">
+          <Sparkles className="h-2.5 w-2.5" strokeWidth={2.4} />
+          Buddie
+        </span>
+      )}
+      <span className="text-[10.5px] text-slate-600">{time}</span>
+      <CheckCheck className="h-3 w-3 text-[#4FC3F7]" strokeWidth={2.2} />
+    </div>
+  )
+}
+
+function ChatTyping({ delay }: { delay: string }) {
+  return (
+    <div className="wt-typing flex justify-end" style={{ animationDelay: delay }}>
+      <div className="rounded-2xl bg-white px-3 py-2.5 shadow-sm flex items-center gap-1.5">
+        <span className="inline-flex items-center gap-1 rounded-full bg-teal-100 text-teal-700 px-1.5 py-[1px] text-[9px] font-semibold uppercase tracking-wide">
+          <Sparkles className="h-2.5 w-2.5" strokeWidth={2.4} />
+          Buddie typing
+        </span>
+        <span className="flex items-center gap-0.5">
+          <span className="wt-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-slate-400" style={{ animationDelay: '0s' }} />
+          <span className="wt-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-slate-400" style={{ animationDelay: '0.15s' }} />
+          <span className="wt-typing-dot inline-block h-1.5 w-1.5 rounded-full bg-slate-400" style={{ animationDelay: '0.3s' }} />
+        </span>
+      </div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------------- */
+/*  Auto-playing lifecycle flow — steps light up one by one                  */
+/* ------------------------------------------------------------------------- */
+
+function AutoFlow() {
+  const reduce = useReducedMotion()
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    if (reduce) {
+      setActive(FLOW_STEPS.length - 1)
+      return
+    }
+    const id = setInterval(() => {
+      setActive((a) => (a + 1) % FLOW_STEPS.length)
+    }, 2400)
+    return () => clearInterval(id)
+  }, [reduce])
+
+  return (
+    <ol className="relative">
+      {FLOW_STEPS.map(({ number, icon: Icon, tone, title, caption }, i) => {
+        const isActive = i === active
+        const isDone = i < active
+        const isLast = i === FLOW_STEPS.length - 1
+        return (
+          <li key={number} className="flex gap-4">
+            {/* Rail: node + connector */}
+            <div className="flex flex-col items-center">
+              <motion.div
+                className={`relative z-10 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border ${tone}`}
+                animate={{
+                  scale: isActive ? 1.12 : 1,
+                  opacity: isActive || isDone ? 1 : 0.5,
+                }}
+                transition={{ duration: 0.4, ease: EASE_OUT }}
+              >
+                <Icon className="h-5 w-5" strokeWidth={1.8} />
+                {isActive && !reduce && (
+                  <motion.span
+                    className="absolute inset-0 rounded-xl ring-2 ring-current"
+                    animate={{ opacity: [0.7, 0, 0.7], scale: [1, 1.45, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  />
+                )}
+              </motion.div>
+
+              {!isLast && (
+                <div className="relative my-1 w-[2px] flex-1 overflow-hidden rounded-full bg-white/8">
+                  <motion.div
+                    className="absolute inset-x-0 top-0 h-full origin-top rounded-full bg-gradient-to-b from-teal-400 via-cyan-400 to-violet-400"
+                    initial={false}
+                    animate={{ scaleY: isDone ? 1 : isActive ? 0.5 : 0 }}
+                    transition={{ duration: 0.5, ease: EASE_OUT }}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Content */}
+            <motion.div
+              className="min-w-0 flex-1 pb-7"
+              animate={{ opacity: isActive ? 1 : isDone ? 0.75 : 0.4 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="mb-1 flex items-center gap-2">
+                <span className="text-[11px] font-bold tracking-[0.16em] text-text-muted">{number}</span>
+                <motion.span
+                  className="inline-flex items-center gap-1 rounded-full bg-teal-400/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-teal-300"
+                  animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : -2 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <span className="h-1 w-1 rounded-full bg-teal-300" />
+                  Now
+                </motion.span>
+              </div>
+              <h4 className="mb-1 text-base font-semibold leading-snug text-text-primary">{title}</h4>
+              <p className="text-[15px] leading-relaxed text-text-secondary">{caption}</p>
+            </motion.div>
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+/* ------------------------------------------------------------------------- */
+/*  Workflow showcase — modern alternating immersive rows                    */
+/* ------------------------------------------------------------------------- */
+
+function WorkflowRow({
+  index,
+  flip,
+  icon: Icon,
+  title,
+  description,
+  Mockup,
+}: {
+  index: number
+  flip: boolean
+  icon: LucideIcon
+  title: string
+  description: string
+  Mockup: () => JSX.Element
+}) {
+  const reduce = useReducedMotion()
+  const fromText = flip ? 40 : -40
+  const fromMock = flip ? -40 : 40
+
+  return (
+    <div className="grid items-center gap-8 md:grid-cols-2 md:gap-14">
+      {/* Copy */}
+      <motion.div
+        className={flip ? 'md:order-2' : ''}
+        initial={reduce ? false : { opacity: 0, x: fromText }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7, ease: EASE_OUT }}
+      >
+        <div className="mb-5 flex items-center gap-3">
+          <span className="text-6xl font-bold leading-none text-white/[0.07]">{`0${index + 1}`}</span>
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-teal-400/30 bg-teal-400/10 text-teal-300">
+            <Icon className="h-6 w-6" strokeWidth={1.7} />
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-emerald-300">
+            <Check className="h-3 w-3" strokeWidth={3} />
+            Shipped
+          </span>
+        </div>
+        <h4 className="text-2xl font-bold leading-snug text-text-primary md:text-3xl">{title}</h4>
+        <p className="mt-3 max-w-md text-base leading-relaxed text-text-secondary">{description}</p>
+      </motion.div>
+
+      {/* Mockup */}
+      <motion.div
+        className={flip ? 'md:order-1' : ''}
+        initial={reduce ? false : { opacity: 0, x: fromMock, scale: 0.95 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8, ease: EASE_OUT }}
+      >
+        <div className="relative">
+          <div className="pointer-events-none absolute -inset-6 rounded-[40px] bg-gradient-to-br from-teal-400/15 via-cyan-400/8 to-transparent blur-3xl" />
+          <div className="relative mx-auto max-w-md rounded-3xl border border-white/10 bg-bg-card/40 p-3 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] backdrop-blur-sm">
+            <Mockup />
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  )
+}
+
+function WorkflowShowcase() {
+  return (
+    <div className="space-y-14 md:space-y-24">
+      {WORKFLOWS.map((w, i) => (
+        <WorkflowRow
+          key={w.title}
+          index={i}
+          flip={i % 2 === 1}
+          icon={w.icon}
+          title={w.title}
+          description={w.description}
+          Mockup={w.Mockup}
+        />
+      ))}
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------------- */
 /*  Section                                                                  */
 /* ------------------------------------------------------------------------- */
 
 export function WaterPurifierPack() {
   return (
     <Section background="elevated">
-      <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Left: pack identity + outcome framing */}
-        <div className="lg:col-span-5 lg:sticky lg:top-24">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-[11px] font-semibold uppercase tracking-wide px-3 py-1.5 mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse" aria-hidden="true" />
-            Live now · Water purifier pack
-          </div>
-
-          <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-teal-400/30 bg-teal-400/10 text-teal-300 mb-6">
-            <Droplets className="h-8 w-8" strokeWidth={1.6} />
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary leading-tight mb-4">
-            The pack built with water purifier dealers — for water purifier dealers.
-          </h2>
-
-          <p className="text-base text-text-secondary leading-relaxed mb-6">
-            Generic CRMs do not understand AMC renewals, service visits, or callback discipline. We do. The water purifier pack adds the workflows a dealer actually runs, on top of the AI co-pilot, on top of your existing WhatsApp number.
-          </p>
-
-          <div className="rounded-2xl border border-teal-400/20 bg-teal-400/[0.04] px-5 py-4 mb-6 backdrop-blur-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-teal-300 mb-2">Where the money is</p>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              Most water purifier dealers leak revenue at one place: the AMC renewal nobody followed up on. ₹1,999–₹3,500 per customer per year, walking out the door because the callback got lost. LeadBuddie closes that leak.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-bg-card/70 px-5 py-4 mb-8 backdrop-blur-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-text-muted mb-2">In production with</p>
-            <p className="text-base font-semibold text-text-primary">Mastec Water Purifier</p>
-            <p className="text-sm text-text-secondary mt-1 leading-relaxed">
-              Handles 60–100 leads a day. The water purifier pack is built and tested with their workflow.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button href="/case-study" variant="lime" size="lg">
-              Read the Mastec story
-            </Button>
-            <Button href="/demo" variant="outline" size="lg">
-              Book a dealer demo
-            </Button>
-          </div>
+      {/* Outcome header — the line a dealer decides on */}
+      <Reveal className="max-w-3xl">
+        <div className="inline-flex items-center gap-1.5 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-[11px] font-semibold uppercase tracking-wide px-3 py-1.5 mb-6">
+          <span className="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse" aria-hidden="true" />
+          Live now · Flagship operational pack
         </div>
 
-        {/* Right: animated workflow rows */}
+        <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-teal-400/30 bg-teal-400/10 text-teal-300 mb-6">
+          <Droplets className="h-7 w-7" strokeWidth={1.6} />
+        </div>
+
+        <h2 className="text-3xl md:text-5xl font-bold text-text-primary leading-[1.08] mb-5">
+          Built for water treatment businesses.
+        </h2>
+
+        <p className="text-base md:text-lg text-text-secondary leading-relaxed">
+          Track every installation, AMC renewal, callback and customer follow-up from one operational workflow. ₹1,999–₹3,500 per customer per year leaks out of every dealership through the renewal nobody chased. The Water Treatment Pack runs the whole lifecycle — capture, convert, renew, service — on the WhatsApp number your customers already message, so nothing slips.
+        </p>
+      </Reveal>
+
+      {/* Cinematic — see the lifecycle happen on a real thread */}
+      <div className="mt-14 md:mt-20 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Phone thread */}
+        <div className="lg:col-span-5 flex justify-center lg:sticky lg:top-24">
+          <PhoneThread />
+        </div>
+
+        {/* Operational flow steps */}
         <div className="lg:col-span-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-300 mb-4">What you get</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-300 mb-3">The flow, end to end</p>
           <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-8 leading-snug">
-            Four workflows on top of the AI co-pilot
+            One message in. A tracked customer out.
           </h3>
 
-          <ol className="space-y-5">
-            {WORKFLOWS.map(({ icon: Icon, title, description, Mockup }, i) => (
-              <li
-                key={title}
-                data-reveal
-                style={{ ['--reveal-delay' as any]: `${i * 0.08}s` }}
-                className="group relative rounded-3xl border border-white/[0.08] bg-bg-card/80 p-5 md:p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-bg-card"
-              >
-                <div className="grid sm:grid-cols-[1fr,220px] gap-5 items-start">
-                  {/* Text side */}
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2 mb-3 flex-wrap">
-                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-teal-400/30 bg-teal-400/10 text-teal-300">
-                        <Icon className="h-5 w-5" strokeWidth={1.8} />
-                      </div>
-                      <span className="text-[11px] font-bold tracking-[0.16em] text-text-muted">{`0${i + 1}`}</span>
-                      <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide">
-                        <Check className="h-2.5 w-2.5" strokeWidth={3} />
-                        Shipped
-                      </span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-text-primary leading-snug mb-2">{title}</h4>
-                    <p className="text-sm text-text-secondary leading-relaxed">{description}</p>
-                  </div>
+          <AutoFlow />
+        </div>
+      </div>
 
-                  {/* Animated mockup */}
-                  <div className="w-full">
-                    <Mockup />
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
+      {/* What you get — shipped workflows as immersive alternating rows */}
+      <div className="mt-20 md:mt-32">
+        <Reveal className="mb-12 max-w-2xl md:mb-20">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-teal-300">What you get</p>
+          <h3 className="text-2xl font-bold leading-snug text-text-primary md:text-4xl">
+            Four dealer workflows — all shipped, all running today.
+          </h3>
+        </Reveal>
 
-          <div className="mt-8 rounded-2xl border border-dashed border-teal-400/30 bg-teal-400/[0.04] p-5 text-center backdrop-blur-sm">
-            <p className="text-sm text-text-secondary leading-relaxed">
-              Run a water purifier business and want to see how the pack maps to your workflow?{' '}
-              <Link href="/demo" className="font-semibold text-teal-300 hover:text-teal-200 underline-offset-2 hover:underline">
-                Book a 20-minute dealer demo →
-              </Link>
-            </p>
-          </div>
+        <WorkflowShowcase />
+      </div>
+
+      {/* Proof + CTA */}
+      <div className="mt-16 md:mt-20 grid lg:grid-cols-12 gap-8 items-center rounded-3xl border border-white/10 bg-bg-card/70 p-6 md:p-8 backdrop-blur-sm">
+        <div className="lg:col-span-8">
+          <p className="text-xs font-semibold uppercase tracking-wide text-text-muted mb-2">In production with</p>
+          <p className="text-xl font-bold text-text-primary">Mastec Water Purifier</p>
+          <p className="text-sm md:text-base text-text-secondary mt-2 leading-relaxed">
+            Runs the Water Purifier Pack every day for 60–100 leads — real renewals, service visits and callbacks, not a demo dataset.
+          </p>
+        </div>
+        <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+          <Button href="/case-study" variant="lime" size="lg" className="w-full">
+            Read the Mastec story
+          </Button>
+          <Button href="/demo" variant="outline" size="lg" className="w-full">
+            Book a dealer demo
+          </Button>
         </div>
       </div>
     </Section>

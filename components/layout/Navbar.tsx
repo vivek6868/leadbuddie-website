@@ -46,7 +46,7 @@ export function Navbar() {
             ) : (
               <span className="font-heading text-xl font-bold text-text-primary">LeadBuddie</span>
             )}
-            <div className="hidden items-center gap-1 rounded-full border border-border bg-bg-elevated/80 px-2.5 py-1 text-[11px] font-medium text-text-secondary sm:inline-flex">
+            <div className="hidden items-center gap-1 rounded-full border border-border bg-bg-elevated/80 px-2.5 py-1 text-[11px] font-medium text-text-secondary lg:inline-flex">
               <span className="h-2 w-2 rounded-full bg-wa" />
               <span
                 className="h-2 w-2 rounded-full"
