@@ -6,7 +6,9 @@ import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { DemoModalProvider } from '@/components/providers/DemoModalProvider'
 import { ScrollRevealClient } from '@/components/ui/ScrollRevealClient'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { SEO } from '@/lib/constants'
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, SITE_URL } from '@/lib/seo'
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -23,6 +25,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: SEO.title,
   description: SEO.description,
   keywords: SEO.keywords,
@@ -47,11 +50,13 @@ export const metadata: Metadata = {
     title: SEO.title,
     description: SEO.description,
     siteName: 'LeadBuddie',
+    // og:image is provided by app/opengraph-image.tsx (generated, branded 1200×630)
   },
   twitter: {
     card: 'summary_large_image',
     title: SEO.title,
     description: SEO.description,
+    // twitter:image is provided by app/opengraph-image.tsx
   },
   robots: {
     index: true,
@@ -119,6 +124,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-bg-primary text-text-primary">
+        <JsonLd data={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA]} />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <DemoModalProvider>
             <ScrollRevealClient />

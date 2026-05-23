@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <MetaTechProviderBadge variant="footer" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8 pt-4">
           {/* Product Links */}
           <div>
             <h3 className="text-gray-900 font-semibold mb-4">Product</h3>
@@ -29,6 +29,43 @@ export function Footer() {
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
                 >
                   RSS
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Solutions Links — niche SEO landing pages */}
+          <div>
+            <h3 className="text-gray-900 font-semibold mb-4">Solutions</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/water-purifier-crm" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+                  Water Purifier CRM
+                </Link>
+              </li>
+              <li>
+                <Link href="/amc-renewal-software" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+                  AMC Renewal Software
+                </Link>
+              </li>
+              <li>
+                <Link href="/ro-service-management" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+                  RO Service Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/water-purifier-lead-management" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+                  Lead Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/amc-revenue-calculator" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+                  AMC Revenue Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/case-study" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+                  Case Study
                 </Link>
               </li>
             </ul>

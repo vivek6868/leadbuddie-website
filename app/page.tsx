@@ -10,10 +10,20 @@ import { PricingPreviewNew } from '@/components/sections/PricingPreviewNew'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { FinalCTACinematic } from '@/components/sections/FinalCTACinematic'
 import { FounderSection } from '@/components/sections/FounderSection'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { softwareApplicationSchema, faqSchema } from '@/lib/seo'
+import { HOMEPAGE_FAQ } from '@/lib/faq'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={[softwareApplicationSchema(), faqSchema(HOMEPAGE_FAQ)]} />
+
       {/* 1 — Cinematic hero: the living operational workspace */}
       <HeroCinematic />
 

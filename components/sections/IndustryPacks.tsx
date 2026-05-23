@@ -28,7 +28,7 @@ const PACKS: Pack[] = [
     tagline: 'Installations, AMC renewals, service visits and callbacks — the full dealer lifecycle.',
     tone: 'from-teal-400/20 text-teal-300 border-teal-400/25',
     status: 'live',
-    href: '/case-study',
+    href: '/water-purifier-crm',
   },
   {
     icon: Building2,
