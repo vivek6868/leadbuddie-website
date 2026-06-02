@@ -128,7 +128,9 @@ export function PricingGrid() {
                   ))}
                 </ul>
                 <Button
-                  href={plan.cta === 'Contact Us' ? '/contact' : 'https://app.leadbuddie.com'}
+                  // After the 2026 pricing refresh, all visible tiers route to self-serve signup.
+                  // Enterprise/Contact Us is handled via /contact link in the page footer.
+                  href="https://app.leadbuddie.com"
                   variant={plan.highlighted ? 'primary' : 'outline'}
                   className="w-full"
                 >

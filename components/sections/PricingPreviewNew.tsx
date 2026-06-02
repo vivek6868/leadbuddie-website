@@ -59,7 +59,8 @@ export function PricingPreviewNew() {
 
             <div className="mt-8 pt-2">
               <Button
-                href={plan.cta === 'Contact Us' ? '/contact' : 'https://app.leadbuddie.com'}
+                // After the 2026 pricing refresh, all visible tiers route to self-serve signup.
+                href="https://app.leadbuddie.com"
                 variant={plan.highlighted ? 'primary' : 'outline'}
                 className="w-full"
               >

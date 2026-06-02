@@ -173,18 +173,26 @@ function MiniChip({
 function BuddieCard() {
   return (
     <div className="relative overflow-hidden rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/20 via-bg-card/95 to-bg-card/95 p-3.5 shadow-[0_24px_60px_-20px_rgba(124,58,237,0.5)] backdrop-blur-xl">
-      <div className="mb-1.5 flex items-center gap-1.5">
-        <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-brand text-white">
-          <Sparkles className="h-3.5 w-3.5" strokeWidth={2.2} />
+      <div className="mb-1.5 flex items-center justify-between">
+        <div className="flex items-center gap-1.5">
+          <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-brand text-white">
+            <Sparkles className="h-3.5 w-3.5" strokeWidth={2.2} />
+          </span>
+          <span className="text-[10px] font-bold uppercase tracking-wide text-brand-light">Buddie</span>
+        </div>
+        <span className="rounded-full bg-emerald-400/15 px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-emerald-300">
+          On · auto
         </span>
-        <span className="text-[10px] font-bold uppercase tracking-wide text-brand-light">Buddie</span>
       </div>
-      <p className="text-[12px] font-medium leading-snug text-white">
-        Found <span className="font-bold text-brand-light">12 customers</span> worth tracking from your chats.
+      <p className="text-[11px] leading-snug text-white/85">
+        <span className="font-bold text-white">14 leads handled today</span> —{' '}
+        <span className="text-emerald-300">11 replied</span>,{' '}
+        <span className="text-amber-300">2 awaiting approval</span>,{' '}
+        <span className="text-rose-300">1 escalated</span>.
       </p>
       <div className="mt-2.5 flex gap-2">
-        <span className="rounded-lg bg-brand px-2.5 py-1 text-[10px] font-semibold text-white">Review</span>
-        <span className="rounded-lg border border-white/15 px-2.5 py-1 text-[10px] font-medium text-white/70">Later</span>
+        <span className="rounded-lg bg-brand px-2.5 py-1 text-[10px] font-semibold text-white">Open queue</span>
+        <span className="rounded-lg border border-white/15 px-2.5 py-1 text-[10px] font-medium text-white/70">View activity</span>
       </div>
     </div>
   )
@@ -398,27 +406,28 @@ export function HeroCinematic() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-light opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-light" />
             </span>
-            Customer operations, run on WhatsApp
+            AI sales employee for WhatsApp
           </motion.div>
 
           <motion.h1
             {...copyIn(0.12)}
             className="text-balance text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Customer Operations Platform for{' '}
+            Your{' '}
             <span className="bg-gradient-to-r from-brand-light via-white to-teal-300 bg-clip-text text-transparent">
-              WhatsApp-first
+              AI sales employee
             </span>{' '}
-            businesses
+            on WhatsApp
           </motion.h1>
 
           <motion.p
             {...copyIn(0.24)}
             className="mt-6 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg"
           >
-            Track leads, customers, renewals, follow-ups and operational
-            workflows from one intelligent workspace — on the number your
-            customers already message.
+            Buddie replies to your WhatsApp leads in seconds, sends brochures,
+            follows up quiet customers, and hands off the hot ones. Plus the
+            full operational workspace — leads, customers, AMC renewals,
+            follow-ups — on the number your customers already message.
           </motion.p>
 
           <motion.div
