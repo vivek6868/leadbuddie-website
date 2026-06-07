@@ -11,8 +11,41 @@ import { BlogCard } from '@/components/blog/BlogCard'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { FinalCTA } from '@/components/sections/FinalCTA'
 import { ReadingProgress } from '@/components/blog/ReadingProgress'
+import { TableOfContents } from '@/components/blog/TableOfContents'
 
 const BASE_URL = 'https://leadbuddie.com'
+
+interface TocItem {
+  id: string
+  text: string
+  level: number
+}
+
+function getPlainText(node: any): string {
+  if (typeof node === 'string') return node
+  if (Array.isArray(node)) return node.map(getPlainText).join('')
+  if (node && node.props && node.props.children) return getPlainText(node.props.children)
+  return ''
+}
+
+function extractToc(content: string): TocItem[] {
+  const headingRegex = /^(##|###) (.*)$/gm
+  const items: TocItem[] = []
+  let match
+  // Remove markdown code blocks first to avoid matching code block comments
+  const cleanContent = content.replace(/```[\s\S]*?```/g, '')
+  while ((match = headingRegex.exec(cleanContent)) !== null) {
+    const level = match[1].length
+    const text = match[2].trim()
+    const id = text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+    items.push({ id, text, level })
+  }
+  return items
+}
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-IN', {
@@ -70,6 +103,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = getRelatedPosts(slug, 4)
   const moreInCategory = getRelatedPostsByCategory(slug, post.category, 3)
+  const tocItems = extractToc(post.content)
 
   const breadcrumbItems = [
     { label: 'Blog', href: '/blog' },
@@ -131,53 +165,55 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="absolute -bottom-20 left-0 h-72 w-72 rounded-full bg-teal-400/15 blur-3xl" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={breadcrumbItems} />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Breadcrumb items={breadcrumbItems} />
 
-          <Link
-            href="/blog"
-            className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Back to blog
-          </Link>
-
-          <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
-              href={`/blog?category=${encodeURIComponent(post.category)}`}
-              className="inline-flex items-center rounded-full border border-brand/30 bg-brand/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-light transition-colors hover:bg-brand/25"
+              href="/blog"
+              className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
             >
-              {post.category}
+              <ArrowLeft className="h-3.5 w-3.5" />
+              Back to blog
             </Link>
-            <span className="inline-flex items-center gap-1.5 text-xs text-text-muted">
-              <Clock className="h-3.5 w-3.5" />
-              {post.readTimeMinutes} min read
-            </span>
-          </div>
 
-          <h1 className="mt-5 font-display text-3xl font-bold leading-[1.1] tracking-tight text-text-primary md:text-5xl">
-            {post.title}
-          </h1>
-          <p className="mt-5 text-base leading-relaxed text-text-secondary md:text-lg">
-            {post.description}
-          </p>
-
-          <div className="mt-7 flex flex-wrap items-center gap-3 border-t border-white/[0.08] pt-5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-brand/15 text-sm font-bold text-text-primary">
-              {post.author
-                .split(' ')
-                .map((p) => p[0])
-                .slice(0, 2)
-                .join('')}
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm font-semibold text-text-primary">
-                <User className="mr-1 inline h-3.5 w-3.5 -mt-0.5 text-text-muted" />
-                {post.author}
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link
+                href={`/blog?category=${encodeURIComponent(post.category)}`}
+                className="inline-flex items-center rounded-full border border-brand/30 bg-brand/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-light transition-colors hover:bg-brand/25"
+              >
+                {post.category}
+              </Link>
+              <span className="inline-flex items-center gap-1.5 text-xs text-text-muted">
+                <Clock className="h-3.5 w-3.5" />
+                {post.readTimeMinutes} min read
               </span>
-              <time className="text-xs text-text-muted" dateTime={post.date}>
-                Published {formatDate(post.date)}
-              </time>
+            </div>
+
+            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.1] tracking-tight text-text-primary md:text-5xl">
+              {post.title}
+            </h1>
+            <p className="mt-5 text-base leading-relaxed text-text-secondary md:text-lg">
+              {post.description}
+            </p>
+
+            <div className="mt-7 flex flex-wrap items-center gap-3 border-t border-white/[0.08] pt-5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-brand/15 text-sm font-bold text-text-primary">
+                {post.author
+                  .split(' ')
+                  .map((p) => p[0])
+                  .slice(0, 2)
+                  .join('')}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold text-text-primary">
+                  <User className="mr-1 inline h-3.5 w-3.5 -mt-0.5 text-text-muted" />
+                  {post.author}
+                </span>
+                <time className="text-xs text-text-muted" dateTime={post.date}>
+                  Published {formatDate(post.date)}
+                </time>
+              </div>
             </div>
           </div>
         </div>
@@ -186,103 +222,202 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ============ COVER IMAGE ============ */}
       {post.image && (
         <div className="relative -mt-2 px-4 sm:px-6 lg:px-8">
-          <div className="relative mx-auto aspect-[16/9] max-w-4xl overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-elevated shadow-[0_30px_90px_-20px_rgba(0,0,0,0.6)]">
+          <div className="relative mx-auto aspect-[21/9] max-w-7xl overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-elevated shadow-[0_30px_90px_-20px_rgba(0,0,0,0.6)]">
             <Image
               src={post.image}
               alt={post.title}
               fill
               className="object-cover"
               priority
-              sizes="(max-width:1024px) 100vw, 896px"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 via-transparent to-transparent" />
           </div>
         </div>
       )}
 
-      {/* ============ ARTICLE BODY ============ */}
-      <article className="mx-auto max-w-3xl px-4 pt-12 pb-16 sm:px-6 lg:px-8 md:pt-16 md:pb-20">
-        <div
-          className={[
-            'blog-content font-sans text-[1.125rem] leading-[1.95] text-text-primary/90 space-y-8',
-            // Headings
-            '[&_h2]:mt-16 [&_h2]:mb-6 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-white',
-            '[&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-white/10',
-            '[&_h3]:mt-12 [&_h3]:mb-4 [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:text-white',
-            // Body
-            '[&_p]:text-text-secondary/90 [&_p]:leading-[1.95] [&_p]:mb-8',
-            '[&_strong]:text-white [&_strong]:font-semibold',
-            '[&_em]:text-white/95',
-            // Lists
-            '[&_ul]:list-none [&_ul]:pl-0 [&_ul]:space-y-4 [&_ul]:my-6',
-            '[&_ul>li]:relative [&_ul>li]:pl-6 [&_ul>li]:text-text-secondary/90',
-            '[&_ul>li]:before:content-[""] [&_ul>li]:before:absolute [&_ul>li]:before:left-0 [&_ul>li]:before:top-[0.65em] [&_ul>li]:before:h-2 [&_ul>li]:before:w-2 [&_ul>li]:before:rounded-full [&_ul>li]:before:bg-brand-light',
-            '[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-4 [&_ol]:my-6 [&_ol_li]:text-text-secondary/90 [&_ol_li]:pl-1 [&_ol_li::marker]:text-brand-light [&_ol_li::marker]:font-semibold',
-            // Links
-            '[&_a]:text-brand-light [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-brand-light/40 hover:[&_a]:text-white hover:[&_a]:decoration-white/70 transition-colors',
-            // Quotes, separators
-            '[&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:bg-white/[0.02] [&_blockquote]:pl-6 [&_blockquote]:py-4 [&_blockquote]:my-8 [&_blockquote]:rounded-r-2xl [&_blockquote]:italic [&_blockquote]:text-text-primary/95',
-            '[&_hr]:my-16 [&_hr]:border-white/10',
-            // Inline code
-            '[&_code]:rounded [&_code]:bg-white/10 [&_code]:px-2 [&_code]:py-0.5 [&_code]:text-[0.95em] [&_code]:text-white font-mono',
-          ].join(' ')}
-        >
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              table: ({ node, ...props }) => (
-                <div className="my-8 -mx-2 overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] sm:mx-0">
-                  <table {...props} className="w-full min-w-[560px] border-collapse text-[0.95rem]" />
-                </div>
-              ),
-              thead: ({ node, ...props }) => <thead {...props} className="bg-white/[0.06]" />,
-              th: ({ node, style, ...props }) => (
-                <th
-                  {...props}
-                  style={style}
-                  className="border-b border-white/10 px-5 py-3.5 text-left text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white/95"
-                />
-              ),
-              tr: ({ node, ...props }) => (
-                <tr
-                  {...props}
-                  className="border-b border-white/[0.06] last:border-b-0 transition-colors hover:bg-white/[0.04]"
-                />
-              ),
-              td: ({ node, style, ...props }) => (
-                <td
-                  {...props}
-                  style={style}
-                  className="px-5 py-4 align-top text-text-secondary [&_strong]:text-white"
-                />
-              ),
-            }}
-          >
-            {post.content}
-          </ReactMarkdown>
-        </div>
+      {/* ============ ARTICLE BODY & SIDEBAR ============ */}
+      <div className="mx-auto max-w-7xl px-4 pt-12 pb-16 sm:px-6 lg:px-8 md:pt-16 md:pb-20">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_300px]">
+          {/* Main article content */}
+          <div className="min-w-0">
+            <div
+              className={[
+                'blog-content font-sans text-[1.125rem] leading-[1.95] text-text-primary/95 space-y-8',
+              ].join(' ')}
+            >
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h2: ({ node, children, ...props }) => {
+                    const text = getPlainText(children)
+                    const id = text
+                      .toLowerCase()
+                      .replace(/[^\w\s-]/g, '')
+                      .replace(/\s+/g, '-')
+                      .replace(/-+/g, '-')
+                    return (
+                      <h2
+                        id={id}
+                        className="scroll-mt-24 mt-14 mb-5 font-display text-2xl font-bold tracking-tight text-white border-b border-white/10 pb-3"
+                        {...props}
+                      >
+                        {children}
+                      </h2>
+                    )
+                  },
+                  h3: ({ node, children, ...props }) => {
+                    const text = getPlainText(children)
+                    const id = text
+                      .toLowerCase()
+                      .replace(/[^\w\s-]/g, '')
+                      .replace(/\s+/g, '-')
+                      .replace(/-+/g, '-')
+                    return (
+                      <h3
+                        id={id}
+                        className="scroll-mt-24 mt-10 mb-3 text-xl font-semibold text-white"
+                        {...props}
+                      >
+                        {children}
+                      </h3>
+                    )
+                  },
+                  p: ({ node, ...props }) => (
+                    <p {...props} className="text-text-secondary/90 leading-[1.95] mb-6" />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul {...props} className="list-none pl-0 space-y-4 my-6" />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="relative pl-7 text-text-secondary/90">
+                      <span className="absolute left-0 top-[0.65em] h-2 w-2 rounded-full bg-brand-light" />
+                      {props.children}
+                    </li>
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol
+                      {...props}
+                      className="list-decimal pl-6 space-y-4 my-6 text-text-secondary/90 marker:text-brand-light marker:font-semibold"
+                    />
+                  ),
+                  blockquote: ({ node, ...props }) => (
+                    <blockquote
+                      {...props}
+                      className="border-l-4 border-brand bg-white/[0.02] pl-6 py-4 my-8 rounded-r-2xl italic text-text-primary/95"
+                    />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code
+                      {...props}
+                      className="rounded bg-white/10 px-2 py-0.5 text-[0.9em] text-white font-mono"
+                    />
+                  ),
+                  table: ({ node, ...props }) => (
+                    <div className="my-8 -mx-2 overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] sm:mx-0">
+                      <table {...props} className="w-full min-w-[560px] border-collapse text-[0.95rem]" />
+                    </div>
+                  ),
+                  thead: ({ node, ...props }) => <thead {...props} className="bg-white/[0.06]" />,
+                  th: ({ node, style, ...props }) => (
+                    <th
+                      {...props}
+                      style={style}
+                      className="border-b border-white/10 px-5 py-3.5 text-left text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white/95"
+                    />
+                  ),
+                  tr: ({ node, ...props }) => (
+                    <tr
+                      {...props}
+                      className="border-b border-white/[0.06] last:border-b-0 transition-colors hover:bg-white/[0.04]"
+                    />
+                  ),
+                  td: ({ node, style, ...props }) => (
+                    <td
+                      {...props}
+                      style={style}
+                      className="px-5 py-4 align-top text-text-secondary [&_strong]:text-white"
+                    />
+                  ),
+                }}
+              >
+                {post.content}
+              </ReactMarkdown>
+            </div>
 
-        {/* Author signature card */}
-        <div className="mt-12 flex flex-wrap items-center gap-5 rounded-3xl border border-white/[0.08] bg-bg-card/80 p-6 backdrop-blur-sm md:p-7">
-          <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-brand/15 text-base font-bold text-text-primary">
-            {post.author
-              .split(' ')
-              .map((p) => p[0])
-              .slice(0, 2)
-              .join('')}
+            {/* Author signature card */}
+            <div className="mt-16 flex flex-wrap items-center gap-5 rounded-3xl border border-white/[0.08] bg-bg-card/40 p-6 backdrop-blur-sm md:p-7">
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-brand/15 text-base font-bold text-text-primary">
+                {post.author
+                  .split(' ')
+                  .map((p) => p[0])
+                  .slice(0, 2)
+                  .join('')}
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs uppercase tracking-[0.14em] text-text-muted">Written by</p>
+                <p className="mt-0.5 text-base font-semibold text-text-primary">{post.author}</p>
+                <p className="mt-1 text-sm leading-relaxed text-text-secondary">
+                  Working with Indian SMBs to fix how leads move through WhatsApp and Instagram.
+                </p>
+              </div>
+              <Button href="/demo" variant="lime" size="md">
+                Book a demo
+              </Button>
+            </div>
           </div>
-          <div className="min-w-0 flex-1">
-            <p className="text-xs uppercase tracking-[0.14em] text-text-muted">Written by</p>
-            <p className="mt-0.5 text-base font-semibold text-text-primary">{post.author}</p>
-            <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-              Working with Indian SMBs to fix how leads move through WhatsApp and Instagram.
-            </p>
-          </div>
-          <Button href="/demo" variant="lime" size="md">
-            Book a demo
-          </Button>
+
+          {/* Sticky Sidebar */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-8">
+              {/* Table of Contents */}
+              <div className="rounded-2xl border border-white/[0.08] bg-bg-card/40 p-5 backdrop-blur-sm">
+                <TableOfContents items={tocItems} />
+              </div>
+
+              {/* Author Widget */}
+              <div className="rounded-2xl border border-white/[0.08] bg-bg-card/40 p-5 backdrop-blur-sm">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/10 bg-brand/15">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/founder.png"
+                      alt={post.author}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-text-primary">{post.author}</p>
+                    <p className="text-[10px] text-text-muted">Founder, LeadBuddie</p>
+                  </div>
+                </div>
+                <p className="mt-3 text-xs leading-relaxed text-text-secondary">
+                  Helping Indian SMBs and RO dealers plug leaks, recover recurring AMC revenue, and automate CRM follow-ups.
+                </p>
+                <div className="mt-4">
+                  <Button href="/demo" variant="outline" size="sm" className="w-full text-xs">
+                    Book free setup
+                  </Button>
+                </div>
+              </div>
+
+              {/* LeadBuddie Banner CTA */}
+              <div className="relative overflow-hidden rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/20 via-bg-card/95 to-bg-card/95 p-5 shadow-lg">
+                <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-brand/20 blur-xl" />
+                <h4 className="text-sm font-bold text-text-primary">Ready to scale?</h4>
+                <p className="mt-2 text-xs leading-relaxed text-text-secondary">
+                  Get WhatsApp auto-replies, automated AMC renewals, and a multi-agent team inbox on your own number.
+                </p>
+                <div className="mt-4">
+                  <Button href="https://app.leadbuddie.com" variant="lime" size="sm" className="w-full text-xs">
+                    Start 1-Month Trial
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
-      </article>
+      </div>
 
       {/* ============ MORE IN CATEGORY ============ */}
       {moreInCategory.length > 0 && (
