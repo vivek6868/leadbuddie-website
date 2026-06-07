@@ -8,10 +8,29 @@ export const BRAND = {
 export const CONTACT = {
   general: 'hello@hutliv.com',
   support: 'hello@hutliv.com',
-  phone: '+91 9003444702',
+  // Official LeadBuddie WhatsApp + call number. If customers WhatsApp this number, they reach
+  // the LeadBuddie team. Keep display + URL in sync — Google's tel: handler uses the display
+  // string; wa.me uses the digits-only country-code-prefixed form.
+  phone: '+91 88707 33673',
   address: 'India',
   /** WhatsApp link for "Chat on WhatsApp" CTA */
-  whatsappUrl: 'https://wa.me/919003444702',
+  whatsappUrl: 'https://wa.me/918870733673',
+} as const
+
+/**
+ * Android Play Store presence.
+ *
+ * TODO when the direct app URL is available: replace `url` with
+ * `https://play.google.com/store/apps/details?id=<actual.package.id>`. The search URL below
+ * works (lands users on Play Store search results) but a direct URL gives rich previews,
+ * "Install" deep-link behaviour from Chrome, and better attribution. The current search URL
+ * also includes `hl=en_SG` (Singapore locale) — fine for Indian SMBs reading English, but
+ * dropping the hl param entirely would defer to the user's device locale, which is friendlier.
+ */
+export const PLAY_STORE = {
+  url: 'https://play.google.com/store/search?q=leadbuddie&c=apps&hl=en_SG',
+  appName: 'LeadBuddie',
+  developer: 'Hutliv Technologies LLP',
 } as const
 
 export const NAVIGATION = [

@@ -3,12 +3,13 @@ import { Bricolage_Grotesque, Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { WhatsAppFloatingButton } from '@/components/layout/WhatsAppFloatingButton'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { DemoModalProvider } from '@/components/providers/DemoModalProvider'
 import { ScrollRevealClient } from '@/components/ui/ScrollRevealClient'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SEO } from '@/lib/constants'
-import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, SITE_URL } from '@/lib/seo'
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, MOBILE_APPLICATION_SCHEMA, SITE_URL } from '@/lib/seo'
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -131,7 +132,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-bg-primary text-text-primary">
-        <JsonLd data={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA]} />
+        <JsonLd data={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, MOBILE_APPLICATION_SCHEMA]} />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <DemoModalProvider>
             <ScrollRevealClient />
@@ -140,6 +141,9 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            {/* Persistent "Chat on WhatsApp" bubble — hides itself on the /contact page where
+                the same CTA already lives. Renders once, follows the user across navigation. */}
+            <WhatsAppFloatingButton />
           </DemoModalProvider>
         </ThemeProvider>
         <script

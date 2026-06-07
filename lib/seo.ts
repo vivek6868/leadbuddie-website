@@ -32,10 +32,38 @@ export const ORGANIZATION_SCHEMA = {
   areaServed: { '@type': 'Country', name: 'India' },
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+91-9003444702',
+    // Mirror of CONTACT.phone in lib/constants.ts, in E.164 with hyphen format that
+    // schema.org's ContactPoint expects. Update both when the number changes.
+    telephone: '+91-88707-33673',
     contactType: 'customer support',
     areaServed: 'IN',
     availableLanguage: ['en', 'hi'],
+  },
+}
+
+/**
+ * MobileApplication — describes the LeadBuddie Android app on Google Play. Adds rich Search
+ * results when someone queries "LeadBuddie app" / "LeadBuddie android" and tells Google our
+ * brand entity has a published mobile app. Truthful: no fabricated ratings; price reflects
+ * the public free signup (the in-app trial is what the website-side bootstrap creates).
+ */
+export const MOBILE_APPLICATION_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  '@id': `${SITE_URL}/#mobile-app-android`,
+  name: 'LeadBuddie',
+  operatingSystem: 'ANDROID',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'CRM',
+  url: 'https://play.google.com/store/search?q=leadbuddie&c=apps&hl=en_SG',
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  description:
+    'LeadBuddie for Android — Customer Operations Platform for WhatsApp-first businesses. Manage leads, customers, AMC renewals and follow-ups from your phone.',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'INR',
+    description: 'Free to download. 30-day Growth trial on signup; ₹2,499/month after.',
   },
 }
 

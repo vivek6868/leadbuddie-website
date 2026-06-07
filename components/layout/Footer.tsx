@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { NAVIGATION, LEGAL_LINKS, CONTACT, BRAND } from '@/lib/constants'
 import { Mail, MapPin } from 'lucide-react'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
+import { PlayStoreBadge } from '@/components/layout/PlayStoreBadge'
 
 export function Footer() {
   return (
@@ -143,6 +144,13 @@ export function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Get the LeadBuddie Android app — sits above the legal/copyright line, between the
+            navigation columns and the legal footer. Server-rendered (badge + QR generated at
+            render time). */}
+        <div className="border-t border-gray-200 pt-8 pb-6">
+          <PlayStoreBadge />
         </div>
 
         <div className="border-t border-gray-200 pt-8">
