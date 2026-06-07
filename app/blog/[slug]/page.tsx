@@ -202,66 +202,64 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* ============ ARTICLE BODY ============ */}
       <article className="mx-auto max-w-3xl px-4 pt-12 pb-16 sm:px-6 lg:px-8 md:pt-16 md:pb-20">
-        <div className="rounded-[28px] border border-white/10 bg-black px-6 py-8 shadow-[0_30px_100px_rgba(0,0,0,0.5)] md:px-10 md:py-12">
-          <div
-            className={[
-              'blog-content font-sans text-[1.05rem] leading-[1.85] text-white/85 space-y-6',
-              // Headings
-              '[&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-white',
-              '[&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-white/10',
-              '[&_h3]:mt-10 [&_h3]:mb-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-white',
-              // Body
-              '[&_p]:text-white/80 [&_p]:leading-[1.85]',
-              '[&_strong]:text-white [&_strong]:font-semibold',
-              '[&_em]:text-white/90',
-              // Lists
-              '[&_ul]:list-none [&_ul]:pl-0 [&_ul]:space-y-3',
-              '[&_ul>li]:relative [&_ul>li]:pl-6 [&_ul>li]:text-white/80',
-              '[&_ul>li]:before:content-[""] [&_ul>li]:before:absolute [&_ul>li]:before:left-0 [&_ul>li]:before:top-[0.7em] [&_ul>li]:before:h-1.5 [&_ul>li]:before:w-1.5 [&_ul>li]:before:rounded-full [&_ul>li]:before:bg-brand-light',
-              '[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-3 [&_ol_li]:text-white/80 [&_ol_li]:pl-1 [&_ol_li::marker]:text-brand-light [&_ol_li::marker]:font-semibold',
-              // Links
-              '[&_a]:text-brand-light [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-brand-light/40 hover:[&_a]:text-white hover:[&_a]:decoration-white/70',
-              // Quotes, separators
-              '[&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:bg-white/[0.03] [&_blockquote]:pl-5 [&_blockquote]:py-3 [&_blockquote]:rounded-r-xl [&_blockquote]:italic [&_blockquote]:text-white/90',
-              '[&_hr]:my-12 [&_hr]:border-white/10',
-              // Inline code
-              '[&_code]:rounded [&_code]:bg-white/10 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[0.92em] [&_code]:text-white',
-            ].join(' ')}
+        <div
+          className={[
+            'blog-content font-sans text-[1.125rem] leading-[1.95] text-text-primary/90 space-y-8',
+            // Headings
+            '[&_h2]:mt-16 [&_h2]:mb-6 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-white',
+            '[&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-white/10',
+            '[&_h3]:mt-12 [&_h3]:mb-4 [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:text-white',
+            // Body
+            '[&_p]:text-text-secondary/90 [&_p]:leading-[1.95] [&_p]:mb-8',
+            '[&_strong]:text-white [&_strong]:font-semibold',
+            '[&_em]:text-white/95',
+            // Lists
+            '[&_ul]:list-none [&_ul]:pl-0 [&_ul]:space-y-4 [&_ul]:my-6',
+            '[&_ul>li]:relative [&_ul>li]:pl-6 [&_ul>li]:text-text-secondary/90',
+            '[&_ul>li]:before:content-[""] [&_ul>li]:before:absolute [&_ul>li]:before:left-0 [&_ul>li]:before:top-[0.65em] [&_ul>li]:before:h-2 [&_ul>li]:before:w-2 [&_ul>li]:before:rounded-full [&_ul>li]:before:bg-brand-light',
+            '[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-4 [&_ol]:my-6 [&_ol_li]:text-text-secondary/90 [&_ol_li]:pl-1 [&_ol_li::marker]:text-brand-light [&_ol_li::marker]:font-semibold',
+            // Links
+            '[&_a]:text-brand-light [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-brand-light/40 hover:[&_a]:text-white hover:[&_a]:decoration-white/70 transition-colors',
+            // Quotes, separators
+            '[&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:bg-white/[0.02] [&_blockquote]:pl-6 [&_blockquote]:py-4 [&_blockquote]:my-8 [&_blockquote]:rounded-r-2xl [&_blockquote]:italic [&_blockquote]:text-text-primary/95',
+            '[&_hr]:my-16 [&_hr]:border-white/10',
+            // Inline code
+            '[&_code]:rounded [&_code]:bg-white/10 [&_code]:px-2 [&_code]:py-0.5 [&_code]:text-[0.95em] [&_code]:text-white font-mono',
+          ].join(' ')}
+        >
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              table: ({ node, ...props }) => (
+                <div className="my-8 -mx-2 overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] sm:mx-0">
+                  <table {...props} className="w-full min-w-[560px] border-collapse text-[0.95rem]" />
+                </div>
+              ),
+              thead: ({ node, ...props }) => <thead {...props} className="bg-white/[0.06]" />,
+              th: ({ node, style, ...props }) => (
+                <th
+                  {...props}
+                  style={style}
+                  className="border-b border-white/10 px-5 py-3.5 text-left text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white/95"
+                />
+              ),
+              tr: ({ node, ...props }) => (
+                <tr
+                  {...props}
+                  className="border-b border-white/[0.06] last:border-b-0 transition-colors hover:bg-white/[0.04]"
+                />
+              ),
+              td: ({ node, style, ...props }) => (
+                <td
+                  {...props}
+                  style={style}
+                  className="px-5 py-4 align-top text-text-secondary [&_strong]:text-white"
+                />
+              ),
+            }}
           >
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                table: ({ node, ...props }) => (
-                  <div className="my-8 -mx-2 overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] sm:mx-0">
-                    <table {...props} className="w-full min-w-[560px] border-collapse text-[0.95rem]" />
-                  </div>
-                ),
-                thead: ({ node, ...props }) => <thead {...props} className="bg-white/[0.06]" />,
-                th: ({ node, style, ...props }) => (
-                  <th
-                    {...props}
-                    style={style}
-                    className="border-b border-white/10 px-5 py-3.5 text-left text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white/95"
-                  />
-                ),
-                tr: ({ node, ...props }) => (
-                  <tr
-                    {...props}
-                    className="border-b border-white/[0.06] last:border-b-0 transition-colors hover:bg-white/[0.04]"
-                  />
-                ),
-                td: ({ node, style, ...props }) => (
-                  <td
-                    {...props}
-                    style={style}
-                    className="px-5 py-4 align-top text-white/85 [&_strong]:text-white"
-                  />
-                ),
-              }}
-            >
-              {post.content}
-            </ReactMarkdown>
-          </div>
+            {post.content}
+          </ReactMarkdown>
         </div>
 
         {/* Author signature card */}

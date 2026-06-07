@@ -24,7 +24,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
     return (
       <Link
         href={href}
-        className="group relative grid h-full overflow-hidden rounded-[28px] border border-white/[0.08] bg-bg-card/80 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-bg-card md:grid-cols-2"
+        className="group relative grid h-full overflow-hidden rounded-[28px] border border-white/[0.08] bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(124,58,237,0.1)] md:grid-cols-2"
       >
         <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[320px]">
           {post.image ? (
@@ -80,7 +80,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
     return (
       <Link
         href={href}
-        className="group block h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-card/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-bg-card"
+        className="group block h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_20px_rgba(124,58,237,0.08)]"
       >
         <div className="relative aspect-video bg-bg-elevated">
           {post.image ? (
@@ -114,7 +114,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
   return (
     <Link
       href={href}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-card/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-bg-card"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_20px_rgba(124,58,237,0.08)]"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-bg-elevated">
         {post.image ? (

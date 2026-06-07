@@ -193,17 +193,17 @@ function CategoryPill({
   return (
     <Link
       href={href}
-      className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-all ${
+      className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-300 ${
         active
-          ? 'border-brand/60 bg-brand/20 text-text-primary shadow-[0_0_0_1px_rgba(124,58,237,0.25)]'
-          : 'border-white/10 bg-bg-card/60 text-text-secondary hover:border-white/25 hover:bg-bg-card hover:text-text-primary'
+          ? 'border-brand bg-brand/10 text-white shadow-[0_0_15px_rgba(124,58,237,0.2)]'
+          : 'border-white/[0.08] bg-white/[0.02] text-text-secondary hover:border-white/20 hover:bg-white/[0.06] hover:text-white'
       }`}
     >
       <span>{label}</span>
       {typeof count === 'number' && (
         <span
-          className={`rounded-full px-1.5 text-[10px] font-semibold ${
-            active ? 'bg-brand/30 text-text-primary' : 'bg-white/[0.06] text-text-muted'
+          className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold transition-colors duration-300 ${
+            active ? 'bg-brand/25 text-white' : 'bg-white/10 text-text-muted group-hover:text-text-secondary'
           }`}
         >
           {count}

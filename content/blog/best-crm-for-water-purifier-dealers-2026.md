@@ -5,7 +5,7 @@ slug: best-crm-for-water-purifier-dealers-2026
 date: 2026-05-23T00:00:00.000Z
 author: Vivek D
 category: CRM
-image: '/images/blog/ro-scheduling.png'
+image: '/images/blog/best-crm-water-purifier.png'
 readTimeMinutes: 9
 isPublished: true
 ---

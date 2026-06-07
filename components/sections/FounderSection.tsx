@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button'
 import { useState } from 'react'
 
 /** Replace with real founder image: public/images/founder.jpg */
-const FOUNDER_IMAGE = '/images/founder.jpg'
+const FOUNDER_IMAGE = '/images/founder.png'
 
 export function FounderSection() {
   const [imgError, setImgError] = useState(false)

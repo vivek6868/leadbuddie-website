@@ -5,7 +5,7 @@ slug: whatsapp-for-water-purifier-business-2026
 date: 2026-05-23T00:00:00.000Z
 author: Vivek D
 category: WhatsApp
-image: '/images/blog/ro-scheduling.png'
+image: '/images/blog/whatsapp-water-purifier.png'
 readTimeMinutes: 8
 isPublished: true
 ---
