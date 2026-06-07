@@ -350,9 +350,9 @@ type Workflow = {
 const WORKFLOWS: Workflow[] = [
   {
     icon: RefreshCcw,
-    title: 'AMC renewals surfaced before they lapse',
+    title: 'Automated AMC renewals by Buddie',
     description:
-      'Every customer’s annual maintenance contract sits on the renewals page sorted by urgency. Filter by this-week / next-14 / next-30 / callbacks-scheduled / lapsed.',
+      'Buddie automatically follows up with customers on WhatsApp 60, 30, 15, and 7 days before their AMC expires. One-tap reactivation for lapsed AMCs prevents recurring revenue from walking out the door.',
     Mockup: RenewalsDashboardMockup,
   },
   {
@@ -416,15 +416,15 @@ const FLOW_STEPS: FlowStep[] = [
     number: '04',
     icon: RefreshCcw,
     tone: 'border-teal-400/30 bg-teal-400/10 text-teal-300',
-    title: 'AMC tracked — surfaced before it lapses',
-    caption: 'Every contract sits on the renewals page sorted by urgency, so the renewal window never quietly passes.',
+    title: 'Automated AMC reminders by Buddie',
+    caption: 'Buddie runs the 60/30/15/7-day reminder plays on WhatsApp to secure renewals. Watch or Approval mode lets you review before sending.',
   },
   {
     number: '05',
     icon: PhoneCall,
     tone: 'border-amber-400/30 bg-amber-400/10 text-amber-300',
-    title: 'Callbacks — none forgotten',
-    caption: '“Call me next week” becomes a real follow-up on the right date, with the customer’s note attached.',
+    title: 'Callbacks & dormant leads revived',
+    caption: '“Call me next week” schedules a callback. Buddie also reaches out automatically to cold leads (30+ days quiet).',
   },
   {
     number: '06',
@@ -437,8 +437,8 @@ const FLOW_STEPS: FlowStep[] = [
     number: '07',
     icon: Sparkles,
     tone: 'border-violet-400/30 bg-violet-400/10 text-violet-300',
-    title: 'Buddie flags customers you’re not tracking',
-    caption: 'Buddie, your AI sales agent, reviews your leads and surfaces people who look like installed customers you haven’t added yet. You confirm each one — it never acts on its own.',
+    title: 'Buddie flags untracked customers',
+    caption: 'Buddie reviews your chat history and flags customers who look like installed users but haven’t been added to your database yet.',
   },
 ]
 

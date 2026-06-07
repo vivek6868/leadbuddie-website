@@ -42,19 +42,19 @@ const MODES: { icon: LucideIcon; label: string; copy: string; accent: string }[]
   {
     icon: Eye,
     label: 'Watch',
-    copy: 'I draft, you send. Nothing goes out.',
+    copy: 'Try risk-free. I watch, learn, and draft — sending nothing until you say so. Free on every plan.',
     accent: 'border-sky-400/30 bg-sky-400/[0.06] text-sky-300',
   },
   {
     icon: Hand,
     label: 'Approval',
-    copy: 'I queue replies for approve, edit, or reject.',
+    copy: 'I draft the reply and queue it. You tap approve, edit, or reject, and it goes out. Speed + control.',
     accent: 'border-amber-400/30 bg-amber-400/[0.06] text-amber-300',
   },
   {
     icon: Zap,
     label: 'Auto',
-    copy: 'I reply on my own, in your rules.',
+    copy: 'Autopilot. I reply instantly to WhatsApp leads on my own, respecting your tone and pricing guardrails.',
     accent: 'border-emerald-400/30 bg-emerald-400/[0.06] text-emerald-300',
   },
 ]
@@ -63,26 +63,26 @@ const MODES: { icon: LucideIcon; label: string; copy: string; accent: string }[]
 const TRUST: { icon: LucideIcon; title: string; copy: string; tone: string }[] = [
   {
     icon: Sparkles,
-    title: 'Fast first reply, always',
-    copy: 'When a brand-new lead messages — or one returns after 7+ quiet days — Buddie replies in seconds, even on Watch or Approve.',
+    title: 'Replies under 10 seconds',
+    copy: 'Every WhatsApp lead gets an answer in under 10 seconds, even at 2 AM and on Sundays. No missed enquiries.',
     tone: 'text-brand-light bg-brand/10 border-brand/25',
   },
   {
     icon: AlertTriangle,
-    title: 'Hot buyers come to you',
-    copy: 'Buying intent, complaints, or refund language hands off automatically — Buddie does not reply, you take it from there.',
+    title: 'Human takeover & pause',
+    copy: 'Reply manually to a lead and Buddie steps back automatically. Need Buddie off for a tricky lead? One tap in the chat.',
     tone: 'text-rose-300 bg-rose-400/10 border-rose-400/25',
   },
   {
     icon: ShieldCheck,
-    title: 'Never invents a price',
-    copy: 'If you haven\'t set pricing, Buddie defers: "Let me check the latest pricing and share shortly." It will not make up numbers.',
+    title: 'Pricing guardrails',
+    copy: 'Buddie never invents a price. If pricing isn\'t set in your profile, he politely defers. Your numbers, your control.',
     tone: 'text-teal-300 bg-teal-400/10 border-teal-400/25',
   },
   {
     icon: Clock,
-    title: 'Full audit, every action',
-    copy: 'Every reply, draft, escalation, and follow-up is logged with the reason. Open the activity feed any time and see why.',
+    title: 'Full history & desk audit',
+    copy: 'Every reply drafted or sent lands in the Approval Desk. View the full history of exactly what your AI employee did today.',
     tone: 'text-violet-300 bg-violet-400/10 border-violet-400/25',
   },
 ]
@@ -310,10 +310,10 @@ export function BuddieAgent() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mx-auto mt-5 max-w-2xl text-balance text-base leading-relaxed text-white/60 md:text-lg">
-              Replies to leads in seconds. Sends brochures and catalogs. Follows up quiet customers.
-              Hands off the hot ones. Three trust modes — <strong className="text-white/85">Watch</strong>,{' '}
-              <strong className="text-white/85">Approval</strong>, or <strong className="text-white/85">Auto</strong> —
-              you choose how much rope to give.
+              Every lead gets an answer in <strong className="text-white/85">under 10 seconds</strong> — even at 2 AM and on Sundays.
+              Buddie drafts replies, follows up quiet customers, and revives dormant leads. Start risk-free with
+              three trust modes: <strong className="text-white/85">Watch</strong> (free on every plan),{' '}
+              <strong className="text-white/85">Approval</strong>, or <strong className="text-white/85">Auto</strong>.
             </p>
           </Reveal>
         </div>
@@ -416,9 +416,9 @@ export function BuddieAgent() {
 
               <Stagger className="mt-6 space-y-3" stagger={0.1}>
                 {[
-                  { icon: Languages, copy: 'Detects English, Hindi, Tamil, Tanglish — escalates buying intent and complaints in any of them.' },
-                  { icon: Send, copy: 'Follow-up cron pokes quiet leads at 1h / 6h / 18h inside the 24-hour WhatsApp window — toggle each timing independently.' },
-                  { icon: ShieldCheck, copy: 'Append-only audit log: every decision explains itself. No black boxes.' },
+                  { icon: Sparkles, copy: 'Dashboard suggestions: See exactly which job to turn on for leads waiting today. Activate plays with a single tap.' },
+                  { icon: Send, copy: 'Proactive plays: AMC reminders (60/30/15/7 days), win back lapsed AMCs, revive dormant leads (30+ days quiet), and quiet-lead nudges.' },
+                  { icon: ShieldCheck, copy: 'Unified Inbox: WhatsApp + Instagram + missed calls in one view. Mark all as read to clear a 99+ unread backlog in 5 seconds.' },
                 ].map(({ icon: Icon, copy }) => (
                   <StaggerItem key={copy} className="flex items-start gap-2.5">
                     <Icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-light" strokeWidth={2} />

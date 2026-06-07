@@ -40,27 +40,27 @@ const FAQ = [
   {
     question: 'What is the best CRM for water purifier dealers in India?',
     answer:
-      'LeadBuddie is a CRM built specifically for water purifier and RO dealers. Unlike generic CRMs, it runs your full dealer lifecycle — WhatsApp lead capture, customer records with installed model and install date, AMC renewal tracking, service visit scheduling and callbacks — on the WhatsApp number your customers already message.',
+      'LeadBuddie is a CRM built specifically for water purifier and RO dealers. Unlike generic CRMs, it runs your full dealer lifecycle — WhatsApp lead capture, customer records with installed model and install date, automated AMC renewal reminders, service visit scheduling and callbacks — on the WhatsApp number your customers already message.',
   },
   {
-    question: 'Does it work with my existing WhatsApp number?',
+    question: 'How does Buddie automate AMC renewals?',
     answer:
-      'Yes. LeadBuddie runs on your existing WhatsApp Business number using official Meta infrastructure. Customers keep messaging the same number; your team manages everything from one shared inbox and CRM.',
+      'Buddie is your AI sales employee. He automatically sends friendly, Meta-compliant WhatsApp messages to customers 60, 30, 15, and 7 days before their AMC expires. He can also reactivate lapsed customers in one tap.',
   },
   {
-    question: 'Can it track AMC renewals and service visits?',
+    question: 'Is it safe to let an AI reply to my customers?',
     answer:
-      'Yes. Every customer’s AMC sits on a renewals page sorted by urgency, and service visits booked from chat are logged on the customer record. Nothing slips through the cracks.',
+      'Yes, you are in complete control. Buddie has three trust modes: Watch Mode (drafts replies but sends nothing until you say so — free on all plans), Approval Mode (you review and tap approve in one click), and Auto Mode (fully automated). Plus, pricing guardrails prevent him from inventing numbers, and manual replies trigger a human takeover automatically.',
   },
   {
-    question: 'How much does a water purifier dealer CRM cost?',
+    question: 'Can customers request service visits on WhatsApp?',
     answer:
-      'LeadBuddie starts free, with paid plans from ₹499/month as you add WhatsApp inbox, AI replies and campaigns. You can start free and upgrade only when you need more.',
+      'Yes. When a customer messages about a filter issue or service request, you or Buddie can log it, and you can schedule a service visit in one tap. The history is saved to the customer drawer so your technicians always have context.',
   },
   {
-    question: 'Is my customer data secure?',
+    question: 'How much does LeadBuddie cost?',
     answer:
-      'Yes. LeadBuddie is built on official Meta messaging infrastructure with secure, workspace-level access and is DPDP-ready for Indian businesses.',
+      'LeadBuddie starts with a Free plan. Paid plans featuring Buddie AI, automated AMC engines, campaigns, and team seats start at ₹999/month. You can start a free trial of any plan without a credit card.',
   },
 ]
 
@@ -90,11 +90,11 @@ export default function WaterPurifierCrmPage() {
       <NicheLanding
         eyebrow="Built for water purifier & RO dealers"
         h1="The CRM built for water purifier dealers"
-        intro="Capture every WhatsApp enquiry, convert it to a tracked customer, and never lose an AMC renewal — all on the number your customers already message. Purpose-built for RO and water purifier dealerships in India."
+        intro="Capture every WhatsApp enquiry, convert it to a tracked customer, and automate AMC renewals — all on the number your customers already message. Purpose-built for RO and water purifier dealerships in India."
         trustPoints={[
-          'Runs on your WhatsApp number',
-          'Official Meta tech provider',
-          'In production with Mastec',
+          'Instant 10s WhatsApp reply',
+          'Automated AMC reminders',
+          'Watch/Approval modes for safety',
         ]}
         problem={{
           heading: 'Generic CRMs weren’t built for how a water purifier dealership actually runs.',
@@ -106,19 +106,19 @@ export default function WaterPurifierCrmPage() {
         }}
         featuresHeading="Everything a water purifier dealership needs in one workspace"
         features={[
-          { icon: MessageCircle, title: 'WhatsApp lead capture', desc: 'Every enquiry on your WhatsApp number becomes a tracked lead — no copy-paste, no missed message after hours.' },
-          { icon: Users, title: 'Customer records', desc: 'Installed model, install date, warranty and AMC plan — the full history on one customer drawer.' },
-          { icon: RefreshCcw, title: 'AMC renewal tracking', desc: 'Every contract on a renewals page sorted by urgency, so the renewal window never quietly passes.' },
-          { icon: Wrench, title: 'Service visit scheduling', desc: 'Book a visit from the chat in one tap. Visit history travels with the customer record.' },
-          { icon: PhoneCall, title: 'Callbacks that don’t get forgotten', desc: '“Call me next week” becomes a real follow-up on the right date, with the customer’s note attached.' },
-          { icon: IndianRupee, title: 'Revenue tracking', desc: 'Renewed contracts and service revenue roll up on the dashboard, so you see what was recovered.' },
+          { icon: MessageCircle, title: 'Instant WhatsApp replies', desc: 'Buddie replies in under 10 seconds, 24/7. Never miss an enquiry from a hot lead, even at 2 AM or on Sundays.' },
+          { icon: Users, title: 'Customer 360 records', desc: 'Installed model, install date, warranty, and AMC plan — the full history stored on one interactive drawer.' },
+          { icon: RefreshCcw, title: 'Automated AMC reminders', desc: 'Buddie messages every customer 60, 30, 15, and 7 days before their AMC expires. Recurring revenue stays recurring.' },
+          { icon: Wrench, title: 'Service visits & handoff', desc: 'Book visits from chat in one tap. Complaints and hot leads are routed to your review queue automatically.' },
+          { icon: PhoneCall, title: 'Callbacks & lapsed win-backs', desc: '“Call me next week” schedules a callback. Reactivate lapsed AMCs with a one-tap reactivation message.' },
+          { icon: IndianRupee, title: 'Dashboard suggestions', desc: 'See exactly which play or job to turn on for leads waiting today. Activate plays with a single tap.' },
         ]}
         stepsHeading="From WhatsApp message to renewing customer"
         steps={[
-          { title: 'A customer messages your WhatsApp', desc: 'An enquiry, a complaint or an AMC question lands on your normal number and becomes a lead automatically.' },
-          { title: 'Convert the lead to a customer', desc: 'When they buy, promote the lead to a customer with the installed model, install date and AMC plan attached.' },
-          { title: 'AMC and service track themselves', desc: 'Renewals surface before they lapse; service visits and callbacks are logged on the customer record.' },
-          { title: 'Repeat revenue stops leaking', desc: 'Every renewal due is surfaced and followed up, so the cheapest sale in your business — the renewal — actually closes.' },
+          { title: 'A customer messages your WhatsApp', desc: 'An enquiry, complaint, or AMC question lands on your normal number. Buddie replies instantly (under 10 seconds).' },
+          { title: 'Convert the lead to a customer', desc: 'Promote the lead to a customer with the installed model and AMC plan. Buddie reviews chats and flags untracked users.' },
+          { title: 'Buddie handles reminders and follow-ups', desc: 'Watch/Approval modes let you review drafts before they send. Buddie nudges quiet leads and runs AMC reminder sequences.' },
+          { title: 'Repeat revenue is recovered', desc: 'Lapsed contracts are reactivated and renewals are automated, so your recurring service revenue grows on autopilot.' },
         ]}
         faq={FAQ}
         related={[

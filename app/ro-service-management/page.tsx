@@ -40,27 +40,27 @@ const FAQ = [
   {
     question: 'What is RO service management software?',
     answer:
-      'RO service management software helps water purifier dealers handle service requests, schedule visits, track complaints, and keep a full service history for every customer. LeadBuddie does this from the WhatsApp number customers already message.',
+      'RO service management software helps water purifier dealers handle service requests, schedule visits, track complaints, and keep a full service history for every customer. LeadBuddie does this automatically on WhatsApp, responding in under 10 seconds.',
   },
   {
-    question: 'Can customers request service on WhatsApp?',
+    question: 'How does Buddie handle customer complaints?',
     answer:
-      'Yes. When a customer messages about a problem or asks for a visit, you book it on their record in one tap. The visit and its history travel with the customer, so the next technician has full context.',
+      'Buddie is your AI employee. When a customer messages about a leak, noise, or malfunction, Buddie identifies the complaint and routes it directly to your human review queue. It pauses automated replies for that lead and ensures you take over.',
   },
   {
-    question: 'Does it keep a service history per customer?',
+    question: 'Can I schedule service visits from WhatsApp chat?',
     answer:
-      'Yes. Every customer drawer shows the installed model, install date, AMC plan, past service visits and notes — so anyone on your team can pick up the conversation without asking the customer to repeat themselves.',
+      'Yes. When a customer requests a visit, you or your team can book it on their record in one tap from their chat. The confirmation is automatically sent back in the same thread.',
   },
   {
-    question: 'Can I track complaints and follow-ups?',
+    question: 'Does it keep a full service history per customer?',
     answer:
-      'Yes. Complaints become tracked items with owners and follow-up dates, and any “call me back” promise resurfaces automatically on the right day so nothing is forgotten.',
+      'Yes. Every customer’s record shows their installed model, warranty, AMC plan, past service visits, and notes, giving your office team and on-field technicians complete context.',
   },
   {
-    question: 'How much does RO service management software cost?',
+    question: 'How much does it cost?',
     answer:
-      'LeadBuddie starts free, with paid plans from ₹499/month as you add WhatsApp inbox, AI replies and campaigns. Start free and upgrade only when you need more.',
+      'LeadBuddie starts with a Free plan. Paid plans featuring Buddie AI, routing, and campaigns start at ₹999/month. A 7-day free trial is available.',
   },
 ]
 
@@ -90,11 +90,11 @@ export default function RoServiceManagementPage() {
       <NicheLanding
         eyebrow="Service & complaints, organised"
         h1="RO service management that runs from WhatsApp"
-        intro="Turn every service request and complaint into a scheduled visit with full customer history attached — booked from the same WhatsApp chat your customers already use. No more lost requests or repeat questions."
+        intro="Turn every service request and complaint into a scheduled visit with full customer history attached. Buddie replies under 10 seconds, routes urgent complaints to you, and updates records in a tap."
         trustPoints={[
+          'Instant 10s reply & routing',
           'Book visits from chat',
-          'Full service history',
-          'Callbacks never missed',
+          'Full service history drawers',
         ]}
         problem={{
           heading: 'Service requests scattered across phones and chats are how dealers lose customers.',
@@ -106,19 +106,19 @@ export default function RoServiceManagementPage() {
         }}
         featuresHeading="Service operations, all in one place"
         features={[
-          { icon: MessageCircle, title: 'Requests from WhatsApp', desc: 'A complaint or visit request in chat becomes a tracked item — nothing gets buried in the inbox.' },
+          { icon: MessageCircle, title: 'Instant WhatsApp replies', desc: 'Buddie replies in under 10 seconds, 24/7. Friendly template-based answers keep prospects warm.' },
           { icon: CalendarCheck, title: 'One-tap visit scheduling', desc: 'Book the visit on the customer’s record in a tap, with date, time and reason captured.' },
           { icon: History, title: 'Full service history', desc: 'Installed model, install date, AMC, past visits and notes — all on one customer drawer.' },
-          { icon: Wrench, title: 'Complaint tracking', desc: 'Every complaint has an owner and a follow-up date, so issues get closed, not forgotten.' },
-          { icon: Users, title: 'Team handoff', desc: 'Assign visits and chats so any technician or staff member can pick up with full context.' },
-          { icon: MapPin, title: 'Visit-aware records', desc: 'Visit history travels with the customer, so the next service call starts with everything known.' },
+          { icon: Wrench, title: 'Complaint routing', desc: 'Urgent complaints are flagged and sent to your review desk, stopping automated replies for human takeover.' },
+          { icon: Users, title: 'Team assignment & roles', desc: 'Assign visits and chats so any technician or staff member can pick up with full context.' },
+          { icon: MapPin, title: 'Dashboard suggestions', desc: 'See exactly which follow-up play or pending service task needs your attention today.' },
         ]}
         stepsHeading="From service request to satisfied, renewing customer"
         steps={[
-          { title: 'Customer messages on WhatsApp', desc: 'A complaint or service request lands on your normal number and becomes a tracked item instantly.' },
-          { title: 'Book the visit in one tap', desc: 'Schedule the visit on the customer’s record with the reason and time — confirmed back in the same chat.' },
-          { title: 'Technician arrives with context', desc: 'The full customer and service history is on the record, so no time is wasted re-asking the basics.' },
-          { title: 'Follow-ups and renewals stay linked', desc: 'Service feeds into the customer lifecycle, so the relationship — and the AMC renewal — keeps going.' },
+          { title: 'Customer messages on WhatsApp', desc: 'An enquiry, service request, or complaint lands on your number. Buddie replies instantly (under 10 seconds).' },
+          { title: 'Complaints escalated to you', desc: 'If the customer mentions a malfunction or asks for a refund, Buddie pauses and alerts you for human takeover.' },
+          { title: 'Book the visit in one tap', desc: 'Schedule the service visit directly from the chat. The confirmation is sent back to the customer automatically.' },
+          { title: 'Technician arrives with full history', desc: 'The technician has the model, install date, past visits, and AMC history on their screen — zero guess work.' },
         ]}
         faq={FAQ}
         related={[

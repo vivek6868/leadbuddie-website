@@ -40,27 +40,27 @@ const FAQ = [
   {
     question: 'What is water purifier lead management software?',
     answer:
-      'It captures every enquiry from your WhatsApp number as a tracked lead, gives each one a status and an owner, and makes sure none go cold. LeadBuddie does this for water purifier and RO dealers on the number customers already message.',
+      'It captures every enquiry from your WhatsApp number as a tracked lead, assigns statuses and owners, and uses AI to reply instantly so no customer goes cold. LeadBuddie does this on the WhatsApp number your customers already message.',
   },
   {
-    question: 'Can my whole team work from one inbox?',
+    question: 'How fast does Buddie reply to new leads?',
     answer:
-      'Yes. Instead of leads being trapped on one person’s phone, your team works from a shared inbox — assigning chats, adding notes and seeing exactly who owns the next step.',
+      'Buddie replies to new WhatsApp enquiries in under 10 seconds, 24/7, even at 2 AM or on Sundays. This ensures you are always the first to respond when a customer is looking to buy.',
   },
   {
-    question: 'How does it stop leads from being lost?',
+    question: 'Do I lose control over what the AI says?',
     answer:
-      'Every enquiry becomes a tracked lead automatically — no copy-paste, no message lost after hours. Follow-up reminders and lead stages mean nothing sits forgotten in a chat scroll.',
+      'No. LeadBuddie has three trust modes: Watch Mode (drafts but sends nothing without approval), Approval Mode (you review drafts and tap to send), and Auto Mode (autopilot). Pricing guardrails prevent him from inventing numbers.',
   },
   {
-    question: 'Does it work with my existing WhatsApp number?',
+    question: 'Can my team work from one shared inbox?',
     answer:
-      'Yes. LeadBuddie runs on your existing WhatsApp Business number using official Meta infrastructure, so customers keep messaging the same number while your team gets a real CRM behind it.',
+      'Yes. Your team can view all chats, assign leads, and collaborate on responses. If a human agent sends a manual message, Buddie steps back automatically.',
   },
   {
     question: 'How much does it cost?',
     answer:
-      'LeadBuddie starts free, with paid plans from ₹499/month as you add WhatsApp inbox, AI replies and campaigns. Start free and upgrade only when you need more.',
+      'LeadBuddie starts with a Free plan. Paid plans featuring Buddie AI, campaign tools, and team seats start at ₹999/month. A 7-day free trial is available.',
   },
 ]
 
@@ -90,35 +90,35 @@ export default function WaterPurifierLeadManagementPage() {
       <NicheLanding
         eyebrow="Stop losing enquiries"
         h1="Lead management for water purifier dealers"
-        intro="Capture every WhatsApp enquiry as a tracked lead, work it from one shared team inbox, and follow up before it goes cold — on the number your customers already message. No more leads lost across three phones."
+        intro="Capture WhatsApp enquiries automatically and reply in under 10 seconds. Assign leads to your team, run automated follow-ups, and convert more sales — on the number your customers already use."
         trustPoints={[
-          'Every enquiry captured',
-          'One shared team inbox',
-          'Follow-ups never missed',
+          'Instant 10s reply, 24/7',
+          'Shared team inbox',
+          'Watch/Approval safety modes',
         ]}
         problem={{
           heading: 'Leads don’t die from lack of demand — they die in the inbox.',
           body: [
             'Enquiries land across two or three phones, get a quick reply, and then vanish into a scroll. By the time anyone remembers to follow up, the customer has already bought from whoever replied first.',
-            'LeadBuddie turns every enquiry into a tracked lead with a status, an owner and a follow-up date — so the leads you already paid to generate actually convert.',
+            'LeadBuddie replies instantly and tracks every lead with a status, an owner and a follow-up date — so the leads you already paid to generate actually convert.',
           ],
           stat: { value: '0', label: 'leads should fall through the cracks — every enquiry tracked, every follow-up owned' },
         }}
         featuresHeading="Everything you need to convert more enquiries"
         features={[
-          { icon: MessageCircle, title: 'Automatic lead capture', desc: 'Every WhatsApp enquiry becomes a tracked lead — no copy-paste, no message lost after hours.' },
+          { icon: MessageCircle, title: 'Instant WhatsApp replies', desc: 'Buddie replies to new enquiries in under 10 seconds, 24/7, even at 2 AM or on Sundays.' },
           { icon: Inbox, title: 'Shared team inbox', desc: 'Your whole team works from one inbox instead of leads being trapped on one person’s phone.' },
-          { icon: Filter, title: 'Lead stages & status', desc: 'New, quoted, follow-up, won — always know where every enquiry stands at a glance.' },
-          { icon: Clock, title: 'Follow-up reminders', desc: 'Know which leads are hot, overdue or due soon, so none sit forgotten in a chat scroll.' },
+          { icon: Filter, title: 'Watch/Approval safety', desc: 'Review Buddie’s draft replies in your Approval Desk before they go out, or set him to Auto Mode.' },
+          { icon: Clock, title: 'Day 1/3/7 follow-ups', desc: 'Three honest, non-spam follow-ups when a lead goes quiet, plus nudges before they go to a competitor.' },
           { icon: Users, title: 'Assignment & ownership', desc: 'Assign chats so every lead has a clear owner and the next step is never anyone’s guess.' },
-          { icon: BarChart3, title: 'See what’s working', desc: 'Track conversion across your pipeline so you know where enquiries are won or lost.' },
+          { icon: BarChart3, title: 'Revive dormant leads', desc: 'Buddie automatically reaches out to cold leads (30+ days quiet) to spark new sales conversations.' },
         ]}
         stepsHeading="From WhatsApp enquiry to closed sale"
         steps={[
-          { title: 'Enquiry lands on your WhatsApp', desc: 'A new message on your business number becomes a tracked lead automatically, with source and time captured.' },
-          { title: 'Assign and qualify', desc: 'Give the lead an owner, add notes and a budget, and set its stage so the team knows what’s next.' },
-          { title: 'Follow up on time', desc: 'Reminders surface hot and overdue leads, so you reach out while the customer is still deciding.' },
-          { title: 'Convert to a tracked customer', desc: 'When they buy, promote the lead to a customer with installed model, install date and AMC — ready for renewals.' },
+          { title: 'Enquiry lands on WhatsApp', desc: 'A new message on your number becomes a lead automatically. Buddie sends a first reply in under 10 seconds.' },
+          { title: 'Assign and qualify', desc: 'Give the lead an owner, set its stage, and review drafts drafted by Buddie in your Approval Desk.' },
+          { title: 'Buddie follow-up sequences', desc: 'If a hot lead goes quiet, Buddie sends gentle follow-ups at Day 1, 3, and 7 to keep them engaged.' },
+          { title: 'Convert to a tracked customer', desc: 'Promote won leads to customers with model, install date, and AMC plan to automate future renewals.' },
         ]}
         faq={FAQ}
         related={[

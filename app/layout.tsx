@@ -63,7 +63,14 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    // Add your verification codes here when available
+    // Facebook (Meta) Business domain verification — required to enable WhatsApp Business API
+    // domain claims, Conversions API, ad attribution, etc. Next.js renders this server-side as
+    // <meta name="facebook-domain-verification" content="..." /> inside <head> on every page.
+    // Static SSR — Facebook's scraper will see it (the JS-injected path their docs warn about
+    // would not have worked).
+    other: {
+      'facebook-domain-verification': 'fjj2o4b7g8hqpc6d3cgg3c93wkt2go',
+    },
   },
 }
 
