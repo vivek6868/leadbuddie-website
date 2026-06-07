@@ -5,7 +5,7 @@ slug: autonomy-ladder-whatsapp-ai-watch-mode
 date: 2026-06-07T00:00:00.000Z
 author: Vivek D
 category: WhatsApp
-image: '/images/blog/manage-whatsapp-leads-enquires.png'
+image: '/images/blog/autonomy-ladder.png'
 readTimeMinutes: 5
 isPublished: true
 ---

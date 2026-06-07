@@ -20,6 +20,7 @@ import {
 import { Button } from '@/components/ui/Button'
 import { EASE_OUT, Float } from '@/components/ui/motion'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 /* ------------------------------------------------------------------------- */
 /*  Animated revenue counter                                                 */
@@ -373,6 +374,13 @@ export function HeroCinematic() {
     >
       {/* Ambient cinematic backdrop */}
       <div className="pointer-events-none absolute inset-0 z-0">
+        <Image
+          src="/images/hero-bg.png"
+          alt="LeadBuddie Tech Background"
+          fill
+          priority
+          className="object-cover opacity-20"
+        />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(124,58,237,0.22),transparent_45%),radial-gradient(circle_at_85%_30%,rgba(37,211,102,0.12),transparent_40%)]" />
         {/* Soft animated light streaks */}
         {!reduce && (

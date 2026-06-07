@@ -5,7 +5,7 @@ slug: water-purifier-dealer-amc-renewals-2026-guide
 date: 2026-05-16T00:00:00.000Z
 author: Vivek D
 category: CRM
-image: '/images/blog/my-cover.png'
+image: '/images/blog/amc-automation.png'
 readTimeMinutes: 10
 isPublished: true
 ---

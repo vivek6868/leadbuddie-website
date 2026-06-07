@@ -5,7 +5,7 @@ slug: water-purifier-amc-renewals-whatsapp-automation
 date: 2026-06-07T00:00:00.000Z
 author: Vivek D
 category: Automation
-image: '/images/blog/my-cover.png'
+image: '/images/blog/amc-automation.png'
 readTimeMinutes: 6
 isPublished: true
 ---

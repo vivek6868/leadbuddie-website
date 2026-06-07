@@ -5,7 +5,7 @@ slug: how-to-manage-whatsapp-leads
 date: 2026-01-28T00:00:00.000Z
 author: Vivek D 
 category: WhatsApp
-image: '/images/blog/my-cover.png'
+image: '/images/blog/ten-second-rule.png'
 readTimeMinutes: 6
 isPublished: true
 ---

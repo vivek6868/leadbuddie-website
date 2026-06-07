@@ -5,7 +5,7 @@ slug: top-whatsapp-crms-2026-comparison
 date: 2026-02-23T00:00:00.000Z
 author: LeadBuddie Team
 category: CRM
-image: '/images/blog/top5crm.png'
+image: '/images/blog/ten-second-rule.png'
 readTimeMinutes: 11
 isPublished: true
 ---

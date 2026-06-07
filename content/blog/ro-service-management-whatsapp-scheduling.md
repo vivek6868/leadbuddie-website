@@ -5,7 +5,7 @@ slug: ro-service-management-whatsapp-scheduling
 date: 2026-06-07T00:00:00.000Z
 author: Vivek D
 category: CRM
-image: '/images/blog/manage-whatsapp-leads-enquires.png'
+image: '/images/blog/ro-scheduling.png'
 readTimeMinutes: 5
 isPublished: true
 ---

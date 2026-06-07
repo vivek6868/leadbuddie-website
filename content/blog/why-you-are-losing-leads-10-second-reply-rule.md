@@ -5,7 +5,7 @@ slug: why-you-are-losing-leads-10-second-reply-rule
 date: 2026-06-07T00:00:00.000Z
 author: Vivek D
 category: Case Study
-image: '/images/blog/top5crm.png'
+image: '/images/blog/ten-second-rule.png'
 readTimeMinutes: 5
 isPublished: true
 ---

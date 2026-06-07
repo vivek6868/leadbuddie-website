@@ -5,7 +5,7 @@ slug: ro-service-callbacks-water-purifier-dealers-2026
 date: 2026-05-23T00:00:00.000Z
 author: Vivek D
 category: CRM
-image: '/images/blog/my-cover.png'
+image: '/images/blog/ro-scheduling.png'
 readTimeMinutes: 8
 isPublished: true
 ---

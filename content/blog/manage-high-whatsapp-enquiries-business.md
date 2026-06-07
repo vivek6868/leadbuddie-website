@@ -5,7 +5,7 @@ slug: manage-high-whatsapp-enquiries-business
 date: 2026-02-22T00:00:00.000Z
 author: Vivek D
 category: CRM
-image: '/images/blog/manage-whatsapp-leads-enquires.png'
+image: '/images/blog/ten-second-rule.png'
 readTimeMinutes: 8
 isPublished: true
 ---

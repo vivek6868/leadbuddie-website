@@ -5,7 +5,7 @@ slug: top-whatsapp-instagram-crm-2026
 date: 2026-04-08T00:00:00.000Z
 author: LeadBuddie Team
 category: CRM
-image: '/images/blog/top5crm.png'
+image: '/images/blog/ten-second-rule.png'
 readTimeMinutes: 9
 isPublished: true
 ---
