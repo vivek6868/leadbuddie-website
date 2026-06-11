@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
 import { Reveal, motion, useReducedMotion, EASE_OUT } from '@/components/ui/motion'
+import Image from 'next/image'
 import {
   Droplets,
   RefreshCcw,
@@ -345,6 +346,7 @@ type Workflow = {
   title: string
   description: string
   Mockup: () => JSX.Element
+  backgroundImage: string
 }
 
 const WORKFLOWS: Workflow[] = [
@@ -354,6 +356,7 @@ const WORKFLOWS: Workflow[] = [
     description:
       'Buddie automatically follows up with customers on WhatsApp 60, 30, 15, and 7 days before their AMC expires. One-tap reactivation for lapsed AMCs prevents recurring revenue from walking out the door.',
     Mockup: RenewalsDashboardMockup,
+    backgroundImage: '/images/workflows/amc-renewals.png',
   },
   {
     icon: Wrench,
@@ -361,6 +364,7 @@ const WORKFLOWS: Workflow[] = [
     description:
       'When a customer complains or asks for a visit on WhatsApp, you book it on their record in one tap. Visit history travels with the customer.',
     Mockup: ChatToVisitMockup,
+    backgroundImage: '/images/workflows/service-visits.png',
   },
   {
     icon: PhoneCall,
@@ -368,6 +372,7 @@ const WORKFLOWS: Workflow[] = [
     description:
       '"Call me next week" becomes a real follow-up on the right date with the customer’s note attached. Surfaces under the Callbacks pill on the renewals page.',
     Mockup: CallbackLandingMockup,
+    backgroundImage: '/images/workflows/callbacks.png',
   },
   {
     icon: History,
@@ -375,6 +380,7 @@ const WORKFLOWS: Workflow[] = [
     description:
       'Installed model, install date, AMC history, prior service visits, prior notes — all on one drawer when you tap the customer.',
     Mockup: CustomerDrawerMockup,
+    backgroundImage: '/images/workflows/customer-history.png',
   },
 ]
 
@@ -723,6 +729,7 @@ function WorkflowRow({
   title,
   description,
   Mockup,
+  backgroundImage,
 }: {
   index: number
   flip: boolean
@@ -730,6 +737,7 @@ function WorkflowRow({
   title: string
   description: string
   Mockup: () => JSX.Element
+  backgroundImage: string
 }) {
   const reduce = useReducedMotion()
   const fromText = flip ? 40 : -40
@@ -752,14 +760,14 @@ function WorkflowRow({
           </span>
           <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-emerald-300">
             <Check className="h-3 w-3" strokeWidth={3} />
-            Shipped
+            Active play
           </span>
         </div>
         <h4 className="text-2xl font-bold leading-snug text-text-primary md:text-3xl">{title}</h4>
         <p className="mt-3 max-w-md text-base leading-relaxed text-text-secondary">{description}</p>
       </motion.div>
 
-      {/* Mockup */}
+      {/* Mockup with Landscape Background Image & Content on Top */}
       <motion.div
         className={flip ? 'md:order-1' : ''}
         initial={reduce ? false : { opacity: 0, x: fromMock, scale: 0.95 }}
@@ -767,10 +775,25 @@ function WorkflowRow({
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.8, ease: EASE_OUT }}
       >
-        <div className="relative">
-          <div className="pointer-events-none absolute -inset-6 rounded-[40px] bg-gradient-to-br from-teal-400/15 via-cyan-400/8 to-transparent blur-3xl" />
-          <div className="relative mx-auto max-w-md rounded-3xl border border-white/10 bg-bg-card/40 p-3 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] backdrop-blur-sm">
-            <Mockup />
+        <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-bg-card/30 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] backdrop-blur-sm">
+          {/* Landscape background image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={backgroundImage}
+              alt={`${title} context`}
+              fill
+              className="object-cover opacity-25 group-hover:scale-105 transition-transform duration-700 ease-out"
+              sizes="(max-width: 768px) 100vw, 500px"
+            />
+            {/* Ambient vignette gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08080f] via-slate-950/70 to-slate-950/40" />
+          </div>
+
+          {/* Foreground content card (mockup on top) */}
+          <div className="relative z-10 p-6 sm:p-8 flex items-center justify-center min-h-[300px] sm:min-h-[340px]">
+            <div className="w-full max-w-[340px] rounded-2xl border border-white/10 bg-[#0d0d18]/85 p-3 shadow-2xl backdrop-blur-md transform group-hover:translate-y-[-4px] transition-transform duration-500 ease-out">
+              <Mockup />
+            </div>
           </div>
         </div>
       </motion.div>
@@ -790,6 +813,7 @@ function WorkflowShowcase() {
           title={w.title}
           description={w.description}
           Mockup={w.Mockup}
+          backgroundImage={w.backgroundImage}
         />
       ))}
     </div>
