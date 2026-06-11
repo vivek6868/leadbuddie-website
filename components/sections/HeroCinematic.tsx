@@ -21,6 +21,8 @@ import { Button } from '@/components/ui/Button'
 import { EASE_OUT, Float } from '@/components/ui/motion'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
+import QRCode from 'qrcode'
+import { PLAY_STORE } from '@/lib/constants'
 
 /* ------------------------------------------------------------------------- */
 /*  Animated revenue counter                                                 */
@@ -92,7 +94,7 @@ function StreamingThread() {
           className={`flex ${m.side === 'out' ? 'justify-end' : 'justify-start'}`}
         >
           <div
-            className={`max-w-[82%] rounded-2xl px-3 py-2 text-[12px] leading-snug shadow-sm ${
+            className={`max-w-[85%] rounded-xl px-2.5 py-1.5 text-[10px] leading-snug shadow-sm ${
               m.side === 'out'
                 ? 'rounded-tr-sm bg-[#DCF8C6] text-slate-900'
                 : 'rounded-tl-sm bg-white text-slate-900'
@@ -100,14 +102,14 @@ function StreamingThread() {
           >
             <p>{m.text}</p>
             {m.side === 'out' && (
-              <div className="mt-1 flex items-center justify-end gap-1">
+              <div className="mt-0.5 flex items-center justify-end gap-1">
                 {m.ai && (
-                  <span className="inline-flex items-center gap-0.5 rounded-full bg-violet-100 px-1.5 py-px text-[8px] font-bold uppercase tracking-wide text-violet-700">
-                    <Sparkles className="h-2 w-2" strokeWidth={2.6} />
+                  <span className="inline-flex items-center gap-0.5 rounded-full bg-violet-100 px-1 py-px text-[7px] font-bold uppercase tracking-wide text-violet-700">
+                    <Sparkles className="h-1.5 w-1.5" strokeWidth={2.6} />
                     Buddie
                   </span>
                 )}
-                <CheckCheck className="h-3 w-3 text-sky-500" strokeWidth={2.2} />
+                <CheckCheck className="h-2 w-2 text-sky-500" strokeWidth={2.2} />
               </div>
             )}
           </div>
@@ -118,99 +120,21 @@ function StreamingThread() {
 }
 
 /* ------------------------------------------------------------------------- */
-/*  The living operational workspace                                         */
+/*  Mini components for floating layouts                                     */
 /* ------------------------------------------------------------------------- */
-
-/* --- presentational cards (shared between mobile + desktop layouts) ------ */
-
-function ChatCard() {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-[#0d0d18]/90 p-3 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] backdrop-blur-xl">
-      <div className="mb-2.5 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#25d366]/15 text-[#25d366]">
-            <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.2} />
-          </span>
-          <div>
-            <p className="text-[11px] font-semibold leading-tight text-white">Priya Desai</p>
-            <p className="text-[9px] leading-tight text-white/40">online · WhatsApp</p>
-          </div>
-        </div>
-        <span className="rounded-full bg-emerald-400/10 px-2 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-emerald-300">
-          Live
-        </span>
-      </div>
-      <div className="rounded-xl bg-[#0a0a12] p-2.5">
-        <StreamingThread />
-      </div>
-    </div>
-  )
-}
-
-function MiniChip({
-  icon: Icon,
-  tone,
-  title,
-  sub,
-}: {
-  icon: typeof MessageCircle
-  tone: string
-  title: string
-  sub: string
-}) {
-  return (
-    <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-bg-card/90 px-3 py-2 shadow-xl backdrop-blur-xl">
-      <span className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg ${tone}`}>
-        <Icon className="h-4 w-4" strokeWidth={2.2} />
-      </span>
-      <div className="min-w-0">
-        <p className="truncate text-[11px] font-semibold leading-tight text-white">{title}</p>
-        <p className="truncate text-[9px] leading-tight text-white/45">{sub}</p>
-      </div>
-    </div>
-  )
-}
-
-function BuddieCard() {
-  return (
-    <div className="relative overflow-hidden rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/20 via-bg-card/95 to-bg-card/95 p-3.5 shadow-[0_24px_60px_-20px_rgba(124,58,237,0.5)] backdrop-blur-xl">
-      <div className="mb-1.5 flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
-          <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-brand text-white">
-            <Sparkles className="h-3.5 w-3.5" strokeWidth={2.2} />
-          </span>
-          <span className="text-[10px] font-bold uppercase tracking-wide text-brand-light">Buddie</span>
-        </div>
-        <span className="rounded-full bg-emerald-400/15 px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-emerald-300">
-          On · auto
-        </span>
-      </div>
-      <p className="text-[11px] leading-snug text-white/85">
-        <span className="font-bold text-white">14 leads handled today</span> —{' '}
-        <span className="text-emerald-300">11 replied</span>,{' '}
-        <span className="text-amber-300">2 awaiting approval</span>,{' '}
-        <span className="text-rose-300">1 escalated</span>.
-      </p>
-      <div className="mt-2.5 flex gap-2">
-        <span className="rounded-lg bg-brand px-2.5 py-1 text-[10px] font-semibold text-white">Open queue</span>
-        <span className="rounded-lg border border-white/15 px-2.5 py-1 text-[10px] font-medium text-white/70">View activity</span>
-      </div>
-    </div>
-  )
-}
 
 function MetricCard() {
   const reduce = useReducedMotion()
   return (
-    <div className="rounded-2xl border border-emerald-400/20 bg-bg-card/92 p-3.5 shadow-xl backdrop-blur-xl">
-      <div className="mb-1 flex items-center justify-between">
-        <span className="text-[9px] font-semibold uppercase tracking-wide text-white/45">Renewals recovered</span>
-        <TrendingUp className="h-3.5 w-3.5 text-emerald-300" strokeWidth={2.2} />
+    <div className="rounded-2xl border border-emerald-400/20 bg-bg-card/92 p-3 shadow-xl backdrop-blur-xl">
+      <div className="mb-0.5 flex items-center justify-between">
+        <span className="text-[8px] font-semibold uppercase tracking-wide text-white/45">Renewals saved</span>
+        <TrendingUp className="h-3 w-3 text-emerald-300" strokeWidth={2.2} />
       </div>
-      <p className="text-2xl font-bold text-white">
+      <p className="text-lg font-bold text-white leading-none">
         <RevenueCounter to={184500} />
       </p>
-      <div className="mt-2 flex items-center gap-1.5">
+      <div className="mt-1.5 flex items-center gap-1">
         <div className="h-1 flex-1 overflow-hidden rounded-full bg-white/10">
           <motion.div
             className="h-full rounded-full bg-gradient-to-r from-teal-400 to-emerald-400"
@@ -220,7 +144,7 @@ function MetricCard() {
             transition={{ duration: 1.8, delay: 0.6, ease: EASE_OUT }}
           />
         </div>
-        <span className="text-[9px] font-semibold text-emerald-300">+78%</span>
+        <span className="text-[8px] font-semibold text-emerald-300">+78%</span>
       </div>
     </div>
   )
@@ -228,14 +152,18 @@ function MetricCard() {
 
 function CallbackPill() {
   return (
-    <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/25 bg-bg-card/90 px-2.5 py-1.5 shadow-lg backdrop-blur-xl">
-      <PhoneCall className="h-3 w-3 text-amber-300" strokeWidth={2.2} />
-      <span className="text-[10px] font-medium text-white">3 callbacks pending</span>
+    <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/25 bg-bg-card/90 px-2.5 py-1 shadow-lg backdrop-blur-xl">
+      <PhoneCall className="h-2.5 w-2.5 text-amber-300" strokeWidth={2.2} />
+      <span className="text-[9px] font-medium text-white">3 callbacks pending</span>
     </div>
   )
 }
 
-function Workspace() {
+/* ------------------------------------------------------------------------- */
+/*  The Double Mockup Showcase Component                                     */
+/* ------------------------------------------------------------------------- */
+
+function DoubleProductShowcase() {
   const reduce = useReducedMotion()
 
   const cardIn = (delay: number) => ({
@@ -245,110 +173,88 @@ function Workspace() {
   })
 
   return (
-    <div className="relative mx-auto w-full max-w-[560px]">
-      {/* ---------- Mobile + tablet: clean stacked flow ---------- */}
-      <div className="space-y-3 lg:hidden">
-        <motion.div {...cardIn(0.15)}>
-          <ChatCard />
+    <div className="relative mx-auto w-full max-w-[560px] lg:max-w-none aspect-[1.3/1] lg:aspect-square flex items-center justify-center">
+      {/* 1. Main browser window (desktop web app) */}
+      <motion.div
+        {...cardIn(0.15)}
+        className="absolute right-0 top-6 w-[88%] z-10"
+      >
+        <div className="relative rounded-2xl border border-white/10 bg-[#0d0d18]/90 p-2 shadow-[0_30px_100px_rgba(0,0,0,0.85)] backdrop-blur-xl">
+          {/* Browser header */}
+          <div className="flex items-center justify-between pb-2 px-2 border-b border-white/[0.06] mb-2">
+            <div className="flex items-center gap-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-500/80" />
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500/80" />
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
+            </div>
+            <div className="h-4 w-1/3 rounded bg-white/[0.04] border border-white/[0.04] flex items-center justify-center text-[7px] text-white/30 font-mono">
+              app.leadbuddie.com/dashboard
+            </div>
+            <div className="w-8 h-2 bg-transparent" />
+          </div>
+
+          {/* Main Dashboard Image */}
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-lg bg-slate-950">
+            <Image
+              src="/images/dashboard-overview.png"
+              alt="LeadBuddie CRM Dashboard"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 600px"
+              priority
+            />
+          </div>
+        </div>
+      </motion.div>
+
+      {/* 2. Overlapping smartphone (WhatsApp experience) */}
+      <Float amplitude={6} duration={8} delay={0.2} className="absolute left-0 bottom-4 z-20 w-[42%] max-w-[210px] sm:max-w-[230px]">
+        <motion.div {...cardIn(0.4)}>
+          <div className="relative rounded-[32px] bg-slate-950 p-2 shadow-[0_30px_70px_rgba(0,0,0,0.9)] border border-white/15">
+            <div className="relative rounded-[26px] overflow-hidden bg-[#ECE5DD] aspect-[9/19]">
+              {/* Camera Notch */}
+              <div className="absolute top-1 left-1/2 -translate-x-1/2 h-3 w-14 rounded-full bg-slate-950 z-30" />
+
+              {/* WhatsApp header */}
+              <div className="bg-[#075E54] px-2.5 pb-1.5 pt-3.5 flex items-center justify-between z-20 relative">
+                <div className="flex items-center gap-1.5">
+                  <div className="h-4.5 w-4.5 rounded-full bg-white/10 flex items-center justify-center text-white font-semibold text-[7px]">PD</div>
+                  <div>
+                    <p className="text-white text-[8px] font-semibold leading-none">Priya Desai</p>
+                    <p className="text-[#25d366] text-[6px] leading-none mt-0.5 font-medium">online</p>
+                  </div>
+                </div>
+                <span className="rounded-full bg-emerald-400/20 px-1 py-px text-[5px] font-semibold uppercase text-emerald-300">Live</span>
+              </div>
+
+              {/* WhatsApp Messages */}
+              <div className="p-1.5 space-y-1.5 h-[calc(100%-42px)] flex flex-col justify-end overflow-hidden">
+                <StreamingThread />
+              </div>
+            </div>
+          </div>
         </motion.div>
-        <motion.div {...cardIn(0.3)} className="grid grid-cols-2 gap-3">
-          <MiniChip icon={ArrowUpRight} tone="bg-cyan-400/15 text-cyan-300" title="Lead captured" sub="Auto-added" />
-          <MiniChip icon={RefreshCcw} tone="bg-teal-400/15 text-teal-300" title="4 renewals due" sub="This week" />
-        </motion.div>
-        <motion.div {...cardIn(0.45)} className="grid grid-cols-[1.3fr_1fr] gap-3">
-          <BuddieCard />
+      </Float>
+
+      {/* 3. Floating metric card (context overlay) */}
+      <Float amplitude={8} duration={7} delay={0.6} className="absolute right-[4%] bottom-[8%] z-30 w-[35%] max-w-[160px]">
+        <motion.div {...cardIn(0.7)}>
           <MetricCard />
         </motion.div>
-        <motion.div {...cardIn(0.6)} className="flex justify-center pt-1">
+      </Float>
+
+      {/* 4. Floating callback badge */}
+      <Float amplitude={5} duration={6} delay={1.1} className="absolute right-[10%] top-[8%] z-20">
+        <motion.div {...cardIn(0.9)}>
           <CallbackPill />
         </motion.div>
-      </div>
-
-      {/* ---------- Desktop: cinematic floating composition ---------- */}
-      <div className="relative hidden lg:block">
-        {/* Animated connector lines behind the cards */}
-        <svg
-          className="pointer-events-none absolute inset-0 h-full w-full"
-          viewBox="0 0 560 520"
-          fill="none"
-          aria-hidden="true"
-        >
-          <motion.path
-            d="M150 130 C 250 130, 250 250, 360 250"
-            stroke="url(#heroLine)"
-            strokeWidth="1.5"
-            strokeDasharray="4 6"
-            initial={reduce ? { pathLength: 1 } : { pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.6, delay: 1.2, ease: EASE_OUT }}
-          />
-          <motion.path
-            d="M360 300 C 250 320, 230 410, 150 410"
-            stroke="url(#heroLine)"
-            strokeWidth="1.5"
-            strokeDasharray="4 6"
-            initial={reduce ? { pathLength: 1 } : { pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.6, delay: 1.8, ease: EASE_OUT }}
-          />
-          <defs>
-            <linearGradient id="heroLine" x1="0" y1="0" x2="560" y2="520">
-              <stop stopColor="#7C3AED" stopOpacity="0.1" />
-              <stop offset="0.5" stopColor="#8b5cf6" stopOpacity="0.7" />
-              <stop offset="1" stopColor="#25d366" stopOpacity="0.2" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        {/* Main WhatsApp inbox card */}
-        <motion.div {...cardIn(0.2)} className="relative z-20 ml-auto w-[68%]">
-          <ChatCard />
-        </motion.div>
-
-        {/* Lead captured chip */}
-        <Float amplitude={8} duration={7} className="absolute left-0 top-[12%] z-30">
-          <motion.div {...cardIn(0.6)}>
-            <MiniChip icon={ArrowUpRight} tone="bg-cyan-400/15 text-cyan-300" title="Lead captured" sub="Auto-added to pipeline" />
-          </motion.div>
-        </Float>
-
-        {/* Buddie suggestion card */}
-        <Float amplitude={11} duration={8} delay={0.5} className="absolute left-2 bottom-[16%] z-30 w-[230px]">
-          <motion.div {...cardIn(1.0)}>
-            <BuddieCard />
-          </motion.div>
-        </Float>
-
-        {/* Renewal due chip */}
-        <Float amplitude={9} duration={6.5} delay={0.2} className="absolute right-0 top-[2%] z-10">
-          <motion.div {...cardIn(0.8)}>
-            <MiniChip icon={RefreshCcw} tone="bg-teal-400/15 text-teal-300" title="4 renewals due" sub="Surfaced this week" />
-          </motion.div>
-        </Float>
-
-        {/* Revenue metric card */}
-        <Float amplitude={10} duration={7.5} delay={0.8} className="absolute bottom-[2%] right-1 z-30 w-[180px]">
-          <motion.div {...cardIn(1.2)}>
-            <MetricCard />
-          </motion.div>
-        </Float>
-
-        {/* Callback chip */}
-        <Float amplitude={7} duration={6} delay={1.1} className="absolute right-[20%] top-[42%] z-30">
-          <motion.div {...cardIn(1.0)}>
-            <CallbackPill />
-          </motion.div>
-        </Float>
-
-        {/* Spacer to give the absolute-positioned composition height */}
-        <div className="h-[520px] w-full" aria-hidden="true" />
-      </div>
+      </Float>
     </div>
   )
 }
 
 /* ------------------------------------------------------------------------- */
-/*  Section                                                                  */
+/*  Main Section export                                                      */
 /* ------------------------------------------------------------------------- */
 
 const TRUST = [
@@ -360,6 +266,21 @@ const TRUST = [
 export function HeroCinematic() {
   const reduce = useReducedMotion()
   const ref = useRef<HTMLDivElement>(null)
+  const [qrUrl, setQrUrl] = useState<string>('')
+
+  useEffect(() => {
+    // Generate QR code client-side to link to Google Play Store
+    QRCode.toDataURL(PLAY_STORE.url, {
+      margin: 1,
+      width: 120,
+      color: {
+        dark: '#0f172a', // slate-900 (highly visible dark color)
+        light: '#ffffff',
+      },
+    })
+      .then((url) => setQrUrl(url))
+      .catch((err) => console.error('Error generating QR code', err))
+  }, [])
 
   const copyIn = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 24 },
@@ -465,11 +386,79 @@ export function HeroCinematic() {
               </li>
             ))}
           </motion.ul>
+
+          {/* Android App Promotion Card */}
+          <motion.div
+            {...copyIn(0.55)}
+            className="mt-9 p-4 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm max-w-lg shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+          >
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex-1 text-center sm:text-left">
+                <span className="inline-flex items-center gap-1 rounded-full bg-teal-400/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-teal-300 mb-1 border border-teal-400/15">
+                  LeadBuddie Mobile App
+                </span>
+                <h4 className="text-sm font-semibold text-white mb-3">Manage customer operations on the go</h4>
+                
+                {/* Play Store Link Badge */}
+                <a
+                  href={PLAY_STORE.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-2 hover:bg-white/10 hover:border-white/20 transition-all group shadow-inner"
+                >
+                  <svg aria-hidden viewBox="0 0 96 96" className="h-6 w-6 shrink-0">
+                    <defs>
+                      <linearGradient id="gph-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00C0F1" />
+                        <stop offset="100%" stopColor="#005FB0" />
+                      </linearGradient>
+                      <linearGradient id="gph-red" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#FF3B3B" />
+                        <stop offset="100%" stopColor="#E60022" />
+                      </linearGradient>
+                      <linearGradient id="gph-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#FFD400" />
+                        <stop offset="100%" stopColor="#FFA700" />
+                      </linearGradient>
+                      <linearGradient id="gph-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00E472" />
+                        <stop offset="100%" stopColor="#00A140" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M14 14 L48 48 L14 82 Z" fill="url(#gph-blue)" />
+                    <path d="M14 14 L48 48 L82 28 Z" fill="url(#gph-red)" />
+                    <path d="M82 28 L48 48 L82 68 Z" fill="url(#gph-yellow)" />
+                    <path d="M14 82 L48 48 L82 68 Z" fill="url(#gph-green)" />
+                  </svg>
+                  <div className="text-left">
+                    <p className="text-[8px] uppercase tracking-wider text-white/55 leading-none">Download on</p>
+                    <p className="text-xs font-bold text-white leading-tight mt-0.5 group-hover:text-teal-300 transition-colors">Google Play</p>
+                  </div>
+                </a>
+              </div>
+
+              {/* QR Code Container */}
+              {qrUrl ? (
+                <div className="hidden sm:flex flex-col items-center gap-1.5 shrink-0 bg-white p-2.5 rounded-xl border border-white/10 shadow-lg">
+                  <Image
+                    src={qrUrl}
+                    alt="Scan to install LeadBuddie App"
+                    width={84}
+                    height={84}
+                    className="object-contain"
+                  />
+                  <span className="text-[8px] font-bold text-slate-800 uppercase tracking-wide">Scan to Install</span>
+                </div>
+              ) : (
+                <div className="hidden sm:flex h-24 w-24 bg-white/5 animate-pulse rounded-xl" />
+              )}
+            </div>
+          </motion.div>
         </div>
 
-        {/* Living workspace */}
+        {/* Double mockup showcase: web app browser overlapping WhatsApp chat phone */}
         <div className="relative">
-          <Workspace />
+          <DoubleProductShowcase />
         </div>
       </div>
     </section>

@@ -28,7 +28,7 @@ export const CONTACT = {
  * dropping the hl param entirely would defer to the user's device locale, which is friendlier.
  */
 export const PLAY_STORE = {
-  url: 'https://play.google.com/store/search?q=leadbuddie&c=apps&hl=en_SG',
+  url: 'https://play.google.com/store/search?q=leadbuddie&c=apps&hl=en',
   appName: 'LeadBuddie',
   developer: 'Hutliv Technologies LLP',
 } as const

@@ -1,6 +1,7 @@
 import { HeroCinematic } from '@/components/sections/HeroCinematic'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
 import { WorkflowStory } from '@/components/sections/WorkflowStory'
+import { ProductTour } from '@/components/sections/ProductTour'
 import { WaterPurifierPack } from '@/components/sections/WaterPurifierPack'
 import { BuddieAgent } from '@/components/sections/BuddieAgent'
 import { IndustryPacks } from '@/components/sections/IndustryPacks'
@@ -31,6 +32,9 @@ export default function HomePage() {
 
       {/* 2 — Workflow story: one message becomes the whole lifecycle */}
       <WorkflowStory />
+
+      {/* Interactive tour of real product screens */}
+      <ProductTour />
 
       {/* 3 — Flagship operational pack (visual centerpiece) */}
       <WaterPurifierPack />
