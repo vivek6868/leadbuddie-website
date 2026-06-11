@@ -13,7 +13,7 @@ export function PricingPreview() {
           Simple, Transparent Pricing
         </h2>
         <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-          Start with a 7-day free trial. No credit card required.
+          Start with a 30-day free trial. No credit card required.
         </p>
       </div>
       

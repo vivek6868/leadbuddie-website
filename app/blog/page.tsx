@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'WhatsApp & Instagram CRM Insights | LeadBuddie Blog',
   description:
     'Guides for teams using WhatsApp and Instagram to manage leads, automate follow-ups, and close more deals with LeadBuddie.',
+  alternates: { canonical: '/blog' },
 }
 
 const VALID_CATEGORIES: BlogCategory[] = ['CRM', 'WhatsApp', 'Automation', 'Case Study']

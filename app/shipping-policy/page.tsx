@@ -4,8 +4,9 @@ import { CONTACT } from '@/lib/constants'
 import { Package, Zap, CheckCircle2, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Shipping & Delivery Policy - LeadBuddie',
+  title: 'Shipping & Delivery Policy — LeadBuddie',
   description: 'Shipping and delivery policy for LeadBuddie digital SaaS product.',
+  alternates: { canonical: '/shipping-policy' },
 }
 
 export default function ShippingPolicyPage() {

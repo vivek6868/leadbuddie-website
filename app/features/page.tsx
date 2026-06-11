@@ -5,8 +5,9 @@ import { CTASection } from '@/components/sections/CTASection'
 import { Section } from '@/components/ui/Section'
 
 export const metadata: Metadata = {
-  title: 'Features - LeadBuddie',
+  title: 'Features — LeadBuddie AI Sales Employee for WhatsApp',
   description: 'AI-powered inbox, automation, smart follow-ups, and collaboration for WhatsApp + Instagram CRM teams.',
+  alternates: { canonical: '/features' },
 }
 
 export default function FeaturesPage() {

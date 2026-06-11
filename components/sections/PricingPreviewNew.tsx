@@ -10,7 +10,7 @@ export function PricingPreviewNew() {
       <SectionHeader
         label="Pricing"
         title="Choose the plan that fits your social sales flow"
-        description="Every plan is built for WhatsApp + Instagram CRM workflows, with a 7-day free trial to get started."
+        description="Every plan is built for WhatsApp + Instagram CRM workflows, with a 30-day free Growth trial to get started."
         centered
         className="mb-14 md:mb-16"
       />

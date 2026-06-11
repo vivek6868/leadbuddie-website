@@ -8,8 +8,8 @@ export function TestimonialsSection() {
     <Section>
       <SectionHeader
         label="Customer story"
-        title="The dealer that put our AI co-pilot to work first."
-        description="Mastec Water Purifier handles 60–100 leads a day. Here's what changed when LeadBuddie became their co-pilot."
+        title="The dealer that put our AI Sales Employee to work first."
+        description="Mastec Water Purifier handles 60–100 leads a day. Here's what changed when LeadBuddie became their AI Sales Employee."
         centered
         className="mb-12 md:mb-16"
       />

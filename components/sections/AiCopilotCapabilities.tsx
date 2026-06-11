@@ -58,7 +58,7 @@ const CAPABILITIES: Capability[] = [
     tone: 'from-indigo-400/20 to-indigo-500/5 text-indigo-300 border-indigo-400/30',
     title: 'Voice calls',
     description:
-      'Same co-pilot, picking up calls when you cannot. Phone and chat under one assistant — one customer history, one tone.',
+      'Same AI Sales Employee, picking up calls when you cannot. Phone and chat under one assistant — one customer history, one tone.',
   },
 ]
 
@@ -66,7 +66,7 @@ export function AiCopilotCapabilities() {
   return (
     <Section>
       <SectionHeader
-        label="What your AI co-pilot does"
+        label="What your AI Sales Employee does"
         title="Five capabilities. One assistant that lives inside your inbox."
         description="Each capability is opt-in and transparent. You stay in control of what auto-sends and what comes to you for approval."
         centered

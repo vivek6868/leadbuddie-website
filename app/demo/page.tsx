@@ -1,9 +1,17 @@
+import { Metadata } from 'next'
 import { Section } from '@/components/ui/Section'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { TESTIMONIALS } from '@/lib/constants'
 import { Star } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Demo — See LeadBuddie in Action on WhatsApp',
+  description:
+    'Watch LeadBuddie reply to WhatsApp leads, follow up automatically, and chase AMC renewals. Product demo videos plus real customer stories from Indian SMBs.',
+  alternates: { canonical: '/demo' },
+}
 
 export default function DemoPage() {
   return (
@@ -86,7 +94,7 @@ export default function DemoPage() {
             Ready to try it yourself?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Start your 7-day free trial. No credit card required.
+            Start your 30-day free trial — full Growth plan access. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="https://app.leadbuddie.com" size="lg">

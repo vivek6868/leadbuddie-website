@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/Button'
 import { PricingGrid } from '@/components/pricing/PricingGrid'
 
 export const metadata: Metadata = {
-  title: 'Pricing - LeadBuddie',
-  description: 'Simple pricing for WhatsApp + Instagram CRM teams. Start with a 7-day free trial and scale your social sales workflow.',
+  title: 'Pricing — LeadBuddie AI Sales Employee for WhatsApp',
+  description: 'Simple, transparent pricing for Indian SMBs. Start with a 30-day free trial of the Growth plan — no credit card required. Plans from ₹999/month.',
+  alternates: { canonical: '/pricing' },
 }
 
 export default function PricingPage() {
@@ -15,7 +16,7 @@ export default function PricingPage() {
       <Section className="pt-32 pb-16">
         <SectionHeader
           title="Simple, Transparent Pricing"
-          description="Choose the plan that fits your business. All plans include a 7-day free trial."
+          description="Choose the plan that fits your business. Every signup starts with a 30-day free trial of the Growth plan — no credit card required."
           centered
         />
       </Section>
@@ -29,7 +30,7 @@ export default function PricingPage() {
             Ready to get started?
           </h2>
           <p className="mb-8 text-lg text-text-secondary">
-            Start your 7-day free trial. No credit card required.
+            Start your 30-day free trial — full Growth plan access. No credit card required.
           </p>
           <Button href="https://app.leadbuddie.com" size="lg">
             Start Free Trial

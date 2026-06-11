@@ -60,7 +60,7 @@ const FAQ = [
   {
     question: 'How much does LeadBuddie cost?',
     answer:
-      'LeadBuddie starts with a Free plan. Paid plans featuring the automated AMC renewal engine, campaigns, and AI agents start at ₹999/month. A 7-day free trial is available.',
+      'LeadBuddie starts with a Free plan. Paid plans featuring the automated AMC renewal engine, campaigns, and AI agents start at ₹999/month. Every new signup includes a 30-day free trial of the Growth plan.',
   },
 ]
 

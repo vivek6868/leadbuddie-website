@@ -13,7 +13,7 @@ const pricingFAQ = [
   {
     question: 'What happens after my free trial?',
     answer:
-      "After your 7-day free trial, you can choose to continue with any paid plan. If you don't want to continue, simply cancel - no charges will be made.",
+      "Every new signup gets the Growth plan free for 30 days. After your trial, you can continue with any paid plan or stay on the Free plan. If you don't want to continue, simply cancel — no charges will be made.",
   },
   {
     question: 'Can I change plans later?',

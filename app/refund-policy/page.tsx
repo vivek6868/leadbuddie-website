@@ -4,8 +4,9 @@ import { BRAND, CONTACT } from '@/lib/constants'
 import { FileText, XCircle, CreditCard, Calendar } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Cancellation & Refund Policy - LeadBuddie',
+  title: 'Cancellation & Refund Policy — LeadBuddie',
   description: 'Cancellation and refund policy for LeadBuddie subscription service.',
+  alternates: { canonical: '/refund-policy' },
 }
 
 export default function RefundPolicyPage() {

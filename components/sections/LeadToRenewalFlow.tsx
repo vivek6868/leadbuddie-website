@@ -80,7 +80,7 @@ export function LeadToRenewalFlow() {
       <SectionHeader
         label="See it work end-to-end"
         title="One WhatsApp message. Five steps. One closed renewal."
-        description="Capabilities work better together. Here is how a single lead flows from a late-night WhatsApp to a paid AMC renewal — with your AI co-pilot at every touchpoint."
+        description="Capabilities work better together. Here is how a single lead flows from a late-night WhatsApp to a paid AMC renewal — with your AI Sales Employee at every touchpoint."
         centered
         className="mb-14 md:mb-16"
       />

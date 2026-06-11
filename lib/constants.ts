@@ -1,6 +1,6 @@
 export const BRAND = {
   name: 'LeadBuddie',
-  tagline: 'AI co-pilot for WhatsApp & Instagram — built for Indian SMBs',
+  tagline: 'Your AI Sales Employee for WhatsApp & Instagram — built for Indian SMBs',
   company: 'Hutliv Technologies LLP',
   founded: 2025,
 } as const
@@ -131,7 +131,7 @@ export const FEATURES = [
 export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
   basic: [
     'WhatsApp inbox + lead CRM (read-only AI)',
-    'Up to 50 leads',
+    'Up to 10 leads',
     'Manual replies only — Buddie not included',
     'No campaigns, no automation',
   ],
@@ -219,7 +219,7 @@ export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
     title: 'Sign Up for Free Trial',
-    description: 'Create your account in under 2 minutes. No credit card required.',
+    description: 'Create your account in under 2 minutes. Every signup gets the Growth plan free for 30 days — no credit card required.',
     icon: 'UserPlus',
   },
   {
@@ -236,8 +236,8 @@ export const HOW_IT_WORKS_STEPS = [
   },
   {
     step: 4,
-    title: 'AI Analyzes and Scores Leads',
-    description: 'Our AI analyzes conversations and scores leads based on intent and engagement.',
+    title: 'Buddie Replies and Follows Up',
+    description: 'Buddie drafts instant replies in your customer’s own language, follows up quiet leads, and chases AMC renewals — approve each reply or let it run on auto.',
     icon: 'Brain',
   },
   {
@@ -381,9 +381,9 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — AI co-pilot for WhatsApp & Instagram',
-  description: 'AI co-pilot that replies to WhatsApp and Instagram leads, qualifies them, and follows up — even when you are busy. Built for Indian SMBs. Water purifier dealer pack live.',
-  keywords: 'AI sales co-pilot, AI for WhatsApp, AI replies WhatsApp, WhatsApp lead management, water purifier dealer CRM, Indian SMB sales tool, AI sales agent India, WhatsApp Business API',
+  title: 'LeadBuddie — AI Sales Employee for WhatsApp & Instagram',
+  description: 'Buddie replies to your WhatsApp and Instagram leads in seconds, qualifies them, and follows up — even while you are busy. Built for Indian SMBs. 30-day free trial.',
+  keywords: 'AI sales employee, AI for WhatsApp, AI replies WhatsApp, WhatsApp lead management, water purifier dealer CRM, Indian SMB sales tool, AI sales agent India, WhatsApp Business API',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection)

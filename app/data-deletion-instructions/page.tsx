@@ -3,8 +3,9 @@ import { Section } from '@/components/ui/Section'
 import { Shield, Mail, Trash2, CheckCircle2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Delete Your LeadBuddie Account - LeadBuddie',
+  title: 'Delete Your LeadBuddie Account — LeadBuddie',
   description: 'Learn how to request permanent deletion of your LeadBuddie account and associated data.',
+  alternates: { canonical: '/data-deletion-instructions' },
 }
 
 export default function DataDeletionInstructionsPage() {

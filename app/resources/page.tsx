@@ -6,8 +6,9 @@ import { Button } from '@/components/ui/Button'
 import { FileText, BookOpen, HelpCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Resources - LeadBuddie',
+  title: 'Resources — LeadBuddie',
   description: 'Helpful resources, guides, and documentation for LeadBuddie',
+  alternates: { canonical: '/resources' },
 }
 
 const resources = [

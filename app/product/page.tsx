@@ -27,9 +27,10 @@ import { FinalCTA } from '@/components/sections/FinalCTA'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
 
 export const metadata: Metadata = {
-  title: 'Product — LeadBuddie AI co-pilot for WhatsApp & Instagram',
+  title: 'Product — LeadBuddie AI Sales Employee for WhatsApp & Instagram',
   description:
     'Everything inside LeadBuddie — unified WhatsApp + Instagram inbox, AI replies, lead pipeline, follow-up discipline, automations, campaigns and team analytics. Built for Indian SMBs.',
+  alternates: { canonical: '/product' },
 }
 
 /* ---------- 8 module bento ---------- */
@@ -57,7 +58,7 @@ const MODULES: Module[] = [
   {
     id: 'ai',
     icon: Sparkles,
-    title: 'AI co-pilot',
+    title: 'AI Sales Employee',
     caption: 'Reads, replies, qualifies, attaches the right asset.',
     tone: 'border-violet-400/30 bg-violet-400/10 text-violet-300',
     span: 'lg:col-span-2',
@@ -133,7 +134,7 @@ const DEEP_DIVES: DeepDive[] = [
     label: 'Unified Inbox',
     title: 'One inbox for WhatsApp, Instagram and your website.',
     description:
-      'Bring every conversation into one workspace — the AI co-pilot and your team work from the same place. Filter by assigned, unassigned, or my chats. Search the entire history in a tap.',
+      'Bring every conversation into one workspace — the AI Sales Employee and your team work from the same place. Filter by assigned, unassigned, or my chats. Search the entire history in a tap.',
     screenshot: '/graphics/features/whatsapp-team-inbox.svg',
     status: 'connected',
     accent: 'teal',
@@ -238,7 +239,7 @@ export default function ProductPage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg animate-fade-in-up delay-500">
-            A unified inbox for WhatsApp, Instagram and your website. An AI co-pilot that replies, qualifies and follows up.
+            A unified inbox for WhatsApp, Instagram and your website. An AI Sales Employee that replies, qualifies and follows up.
             A pipeline that surfaces every callback on the right day. Built for Indian SMBs.
           </p>
 
@@ -255,7 +256,7 @@ export default function ProductPage() {
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 sm:gap-8" data-reveal>
             <Stat value="5,000+" label="Leads managed" />
             <Stat value="60–100" label="Leads / day at Mastec" />
-            <Stat value="7-day" label="Free trial · no card" />
+            <Stat value="30-day" label="Free trial · no card" />
           </div>
         </div>
       </section>

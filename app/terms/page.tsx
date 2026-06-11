@@ -3,8 +3,9 @@ import { Section } from '@/components/ui/Section'
 import { BRAND, CONTACT } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - LeadBuddie',
+  title: 'Terms of Service — LeadBuddie',
   description: 'Terms of Service for LeadBuddie. Read our terms and conditions for using our lead management platform.',
+  alternates: { canonical: '/terms' },
 }
 
 export default function TermsPage() {
@@ -37,7 +38,7 @@ export default function TermsPage() {
             </p>
             <ul className="list-disc list-inside space-y-2 text-dark-300 mb-4 ml-4">
               <li>Lead organization and management tools</li>
-              <li>AI-powered lead scoring and summaries</li>
+              <li>AI-powered replies, lead insights and summaries</li>
               <li>WhatsApp Business API integration</li>
               <li>Follow-up reminders and automation</li>
               <li>Communication timeline and notes</li>
@@ -148,9 +149,10 @@ export default function TermsPage() {
               <strong>6.2 Free Trial</strong>
             </p>
             <p className="text-dark-300 mb-4">
-              We offer a 7-day free trial period. During the trial, you have full access to the Service. 
-              No payment information is required to start the trial. At the end of the trial period, you may 
-              choose to subscribe to a paid plan or your account will be suspended.
+              We offer a 30-day free trial period on the Growth plan for every new signup. During the trial,
+              you have full access to the Growth plan features. No payment information is required to start
+              the trial. At the end of the trial period, you may choose to subscribe to a paid plan or your
+              account will be moved to the Free plan.
             </p>
 
             <p className="text-dark-300 mb-4">

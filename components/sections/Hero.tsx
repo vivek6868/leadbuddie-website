@@ -36,7 +36,7 @@ export function Hero() {
             Made in India | Trusted Worldwide
           </span>
           <span>•</span>
-          <span>7-day free trial</span>
+          <span>30-day free trial</span>
           <span>•</span>
           <span>No credit card required</span>
         </div>

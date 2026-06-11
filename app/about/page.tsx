@@ -5,8 +5,9 @@ import { Building2, Target, Users, MapPin } from 'lucide-react'
 import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
-  title: 'About LeadBuddie — AI co-pilot for WhatsApp & Instagram',
-  description: 'LeadBuddie is built by Hutliv Technologies LLP — an Indian software company building an AI co-pilot for SMBs that sell over WhatsApp and Instagram.',
+  title: 'About LeadBuddie — AI Sales Employee for WhatsApp & Instagram',
+  description: 'LeadBuddie is built by Hutliv Technologies LLP — an Indian software company building an AI Sales Employee for SMBs that sell over WhatsApp and Instagram.',
+  alternates: { canonical: '/about' },
 }
 
 export default function AboutPage() {
@@ -43,7 +44,7 @@ export default function AboutPage() {
                     of disorganized lead management, missed follow-ups, and lack of prioritization.
                   </p>
                   <p className="text-dark-300">
-                    Today, {BRAND.name} is an AI co-pilot for WhatsApp and Instagram conversations. It replies on your behalf, qualifies leads automatically, and follows up so you never lose a customer to a missed message. First built deeply with Mastec Water Purifier; expanding into adjacent appliance and home-service verticals next.
+                    Today, {BRAND.name} is an AI Sales Employee for WhatsApp and Instagram conversations. It replies on your behalf, qualifies leads automatically, and follows up so you never lose a customer to a missed message. First built deeply with Mastec Water Purifier; expanding into adjacent appliance and home-service verticals next.
                   </p>
                 </div>
               </div>
@@ -145,7 +146,7 @@ export default function AboutPage() {
         </div>
       </Section>
       <CTASection
-        title="Put an AI co-pilot in your WhatsApp inbox."
+        title="Put an AI Sales Employee in your WhatsApp inbox."
         description="Join Indian SMBs using LeadBuddie to reply, qualify, and follow up — even when they cannot."
       />
     </>

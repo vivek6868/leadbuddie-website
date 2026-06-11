@@ -12,6 +12,7 @@ import {
   Droplets,
   ArrowRight,
 } from 'lucide-react'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
@@ -56,6 +57,25 @@ export const metadata: Metadata = {
   title: 'Case Study: Mastec Water Purifier | LeadBuddie',
   description:
     'How Mastec Water Purifier handles 60–100 WhatsApp leads per day with LeadBuddie — easier responses, faster follow-ups, one shared inbox.',
+  alternates: { canonical: '/case-study' },
+}
+
+const ARTICLE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Case Study: Mastec Water Purifier',
+  description:
+    'How Mastec Water Purifier handles 60–100 WhatsApp leads per day with LeadBuddie — easier responses, faster follow-ups, one shared inbox.',
+  url: 'https://leadbuddie.com/case-study',
+  datePublished: '2026-02-28',
+  dateModified: '2026-05-16',
+  author: { '@type': 'Organization', name: 'LeadBuddie', url: 'https://leadbuddie.com' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'LeadBuddie',
+    url: 'https://leadbuddie.com',
+    logo: { '@type': 'ImageObject', url: 'https://leadbuddie.com/images/logo.png' },
+  },
 }
 
 export default function CaseStudyPage() {
@@ -67,6 +87,7 @@ export default function CaseStudyPage() {
 
   return (
     <>
+      <JsonLd data={ARTICLE_SCHEMA} />
       {/* ============ HERO ============ */}
       <header className="relative overflow-hidden bg-ink px-4 pt-28 pb-12 sm:px-6 lg:px-8 md:pt-36 md:pb-16">
         <div className="pointer-events-none absolute inset-0 z-0">

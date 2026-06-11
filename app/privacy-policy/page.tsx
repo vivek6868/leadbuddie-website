@@ -6,8 +6,9 @@ import { BRAND, CONTACT } from '@/lib/constants'
 const LAST_UPDATED = 'April 15, 2026'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - LeadBuddie',
+  title: 'Privacy Policy — LeadBuddie',
   description: 'Privacy Policy for LeadBuddie. Learn how we collect, use, and protect your data.',
+  alternates: { canonical: '/privacy-policy' },
 }
 
 export default function PrivacyPolicyPage() {
@@ -83,7 +84,7 @@ export default function PrivacyPolicyPage() {
             <ul className="list-disc list-inside space-y-2 text-gray-100 mb-4 ml-4 leading-relaxed">
               <li><strong>Service Provision:</strong> To provide, maintain, and improve our lead management platform</li>
               <li><strong>Lead Management:</strong> To organize, score, and manage your leads and customer communications</li>
-              <li><strong>AI Processing:</strong> To generate AI-powered summaries, insights, and lead scoring using machine learning algorithms</li>
+              <li><strong>AI Processing:</strong> To generate AI-powered summaries, insights, and reply drafts using machine learning algorithms</li>
               <li><strong>Communication:</strong> To send you service-related notifications, updates, and support communications</li>
               <li><strong>Billing:</strong> To process payments and manage your subscription</li>
               <li><strong>Analytics:</strong> To analyze usage patterns and improve our Service</li>

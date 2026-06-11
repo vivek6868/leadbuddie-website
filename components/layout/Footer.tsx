@@ -156,7 +156,7 @@ export function Footer() {
         <div className="border-t border-gray-200 pt-8">
           <div className="text-center space-y-2">
             <p className="text-gray-700 text-sm font-medium">
-              AI co-pilot built on official Meta messaging infrastructure. Made in India, for Indian SMBs.
+              Your AI Sales Employee, built on official Meta messaging infrastructure. Made in India, for Indian SMBs.
             </p>
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} {BRAND.name} — A product of {BRAND.company}

@@ -7,7 +7,7 @@ const features = [
     id: 'inbox',
     icon: MessageSquare,
     title: 'Shared WhatsApp & Instagram inbox',
-    description: 'Your AI co-pilot and your team work from the same inbox. The co-pilot handles routine messages; humans close the deals.',
+    description: 'Your AI Sales Employee and your team work from the same inbox. Buddie handles routine messages; humans close the deals.',
     benefits: [
       'Unified inbox across WhatsApp and Instagram',
       'Real-time sync and notifications',
@@ -21,7 +21,7 @@ const features = [
     id: 'leads',
     icon: Kanban,
     title: 'Pipeline that matches the conversation',
-    description: 'Your co-pilot qualifies and stages leads automatically. You see what is hot, what is cold, and what needs a nudge.',
+    description: 'Buddie qualifies and stages leads automatically. You see what is hot, what is cold, and what needs a nudge.',
     benefits: [
       'Auto-qualification by detected intent',
       'Tags, budget, and source captured from the chat',
@@ -65,7 +65,7 @@ const features = [
     id: 'ai',
     icon: Sparkles,
     title: 'AI that drafts, sends, or steps back — your call',
-    description: 'Most CRMs offer “AI suggestions” you still have to send. LeadBuddie’s co-pilot can reply, qualify, and follow up on its own — with the autonomy level you set per capability.',
+    description: 'Most CRMs offer “AI suggestions” you still have to send. Buddie — LeadBuddie’s AI Sales Employee — can reply, qualify, and follow up on its own — with the autonomy level you set per capability.',
     benefits: [
       'Approve every reply, or auto-send routine ones',
       'Context from full conversation + lead history',
@@ -78,8 +78,8 @@ const features = [
   {
     id: 'automation',
     icon: Zap,
-    title: 'Routing handled by your co-pilot',
-    description: 'Auto-assign leads by source (website, Instagram, Facebook). No rule engines to maintain — the co-pilot handles routing, follow-up timing, and team handoff.',
+    title: 'Routing handled by Buddie',
+    description: 'Auto-assign leads by source (website, Instagram, Facebook). No rule engines to maintain — Buddie handles routing, follow-up timing, and team handoff.',
     benefits: [
       'Source-based auto-assignment',
       'Smart follow-up timing',
@@ -123,10 +123,10 @@ export function FeatureShowcase() {
   return (
     <Section>
       <h2 className="text-3xl md:text-4xl font-bold text-text-primary text-center mb-4">
-        From first message to closed deal — your co-pilot has it.
+        From first message to closed deal — Buddie has it.
       </h2>
       <p className="text-center text-text-secondary max-w-2xl mx-auto mb-16">
-        Every capability below works alongside the human on your team. The co-pilot handles the routine; you stay in control of every decision that matters.
+        Every capability below works alongside the human on your team. Buddie handles the routine; you stay in control of every decision that matters.
       </p>
       <div className="space-y-32">
         {features.map((feature) => (
