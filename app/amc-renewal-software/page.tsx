@@ -18,15 +18,15 @@ import {
 } from 'lucide-react'
 
 const PATH = '/amc-renewal-software'
-const TITLE = 'AMC Renewal Software for Water Purifier Dealers | LeadBuddie'
+const TITLE = 'AMC Renewal Software — Automate Renewals on WhatsApp | LeadBuddie'
 const DESCRIPTION =
-  'AMC renewal tracking and reminder software for water purifier and RO dealers. Surface every contract before it lapses, send WhatsApp reminders, schedule callbacks, and stop losing renewal revenue. Free to start.'
+  'AMC renewal tracking and reminder software for service businesses — water purifiers, AC & HVAC, appliances, pest control, CCTV and more. Surface every contract before it lapses, send WhatsApp reminders, and stop losing renewal revenue. Free to start.'
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords:
-    'AMC renewal software, water purifier AMC reminder software, AMC management software India, RO AMC tracking, water purifier annual maintenance contract software, AMC renewal reminder WhatsApp',
+    'AMC renewal software, AMC management software India, annual maintenance contract software, AMC renewal reminder WhatsApp, AC AMC management software, appliance service AMC tracking, pest control AMC software, water purifier AMC reminder software, RO AMC tracking',
   alternates: { canonical: PATH },
   openGraph: {
     title: TITLE,
@@ -41,6 +41,11 @@ const FAQ = [
     question: 'What is AMC renewal software?',
     answer:
       'AMC renewal software tracks every customer’s annual maintenance contract, surfaces the ones due for renewal, and helps you follow up before they lapse. LeadBuddie does this automatically on WhatsApp using your official business number.',
+  },
+  {
+    question: 'Which businesses can use LeadBuddie for AMC renewals?',
+    answer:
+      'Any business that earns recurring revenue from annual maintenance contracts — water purifier and RO dealers, AC sales & service, appliance repair, pest control, CCTV & security, solar, lifts and more. The renewal engine is the same everywhere: contracts with end dates, automated WhatsApp reminders, callbacks and win-backs. Pick the business type closest to yours at signup, and our team will help you set it up for your industry.',
   },
   {
     question: 'How does LeadBuddie automate AMC renewals?',
@@ -71,7 +76,7 @@ export default function AmcRenewalSoftwarePage() {
         data={[
           serviceSchema({
             name: 'AMC Renewal Software',
-            serviceType: 'AMC renewal tracking and reminder software for water purifier dealers',
+            serviceType: 'AMC renewal tracking and reminder software for service businesses',
             description: DESCRIPTION,
             url: `${SITE_URL}${PATH}`,
           }),
@@ -90,19 +95,19 @@ export default function AmcRenewalSoftwarePage() {
       <NicheLanding
         eyebrow="Stop losing renewal revenue"
         h1="AMC renewal software that never lets a contract lapse"
-        intro="Automate your water purifier AMC renewals on WhatsApp. Surface expiring contracts, run auto-reminder sequences, and win back lapsed customers. The cheapest sale in your business shouldn't walk out the door."
+        intro="Automate AMC renewals on WhatsApp — for water purifier dealers, AC & appliance service, pest control, CCTV and every business that runs annual maintenance contracts. Surface expiring contracts, run auto-reminder sequences, and win back lapsed customers."
         trustPoints={[
           'Automated WhatsApp reminders',
           'Watch/Approval safety modes',
           'One-tap lapsed AMC win-backs',
         ]}
         problem={{
-          heading: 'The AMC renewal is the cheapest sale you have — and the one most dealers lose.',
+          heading: 'The AMC renewal is the cheapest sale you have — and the one most service businesses lose.',
           body: [
-            'The customer already trusts you, already paid for the unit, and already knows your team. Renewing their AMC should be effortless. Instead, manual reminders get forgotten, callbacks get lost, and contracts quietly lapse.',
+            'The customer already trusts you, already paid for the unit or service, and already knows your team. Renewing their AMC should be effortless. Instead, manual reminders get forgotten, callbacks get lost, and contracts quietly lapse.',
             'LeadBuddie automates the entire sequence on WhatsApp, sending reminders 60, 30, 15, and 7 days before expiry. It drafts the perfect message and lets you approve or send on autopilot.',
           ],
-          stat: { value: '₹2–3 L', label: 'a month in renewals leaks out of a typical dealership when follow-up is manual' },
+          stat: { value: '₹2–3 L', label: 'a month in renewals leaks out of a typical service business when follow-up is manual' },
         }}
         featuresHeading="A renewals workflow that runs on autopilot"
         features={[
@@ -115,7 +120,7 @@ export default function AmcRenewalSoftwarePage() {
         ]}
         stepsHeading="How LeadBuddie closes more renewals"
         steps={[
-          { title: 'Import or convert your customers', desc: 'Upload your rough Excel list or add customers. Each profile tracks their model and AMC end-date.' },
+          { title: 'Import or convert your customers', desc: 'Upload your rough Excel list or add customers. Each profile tracks their equipment, contract value and AMC end-date.' },
           { title: 'Buddie drafts reminder messages', desc: 'When a renewal date gets close, Buddie automatically drafts the WhatsApp message and templates.' },
           { title: 'Review or auto-send on WhatsApp', desc: 'Confirm the draft in your Approval Desk, or let Auto Mode handle the sending. All replies are logged.' },
           { title: 'Reactivate lapsed AMC accounts', desc: 'One tap triggers win-back plays for customers who slipped away, instantly recovering lost revenue.' },
