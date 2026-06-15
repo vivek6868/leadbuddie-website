@@ -19,7 +19,9 @@
   --color-text-muted: #94a3b8;
   --color-brand: #25d366;
   --color-brand-hover: #1fb855;
-  --color-brand-light: #5ee499;
+  /* Readable on white: brand-light is used mostly as link/icon text across the
+     site, so it must stay legible (the old pale #5EE499 vanished on light). */
+  --color-brand-light: #15a34a;
   --color-brand-subtle: rgba(37, 211, 102, 0.1);
   --color-brand-glow: rgba(37, 211, 102, 0.2);
   --color-wa: #25d366;
@@ -306,6 +308,13 @@ html.js-reveal [data-reveal]:not([data-reveal="visible"]) {
   .animate-bounce-slow {
     animation: none !important;
   }
+}
+
+/* Hide floating CTAs (our WhatsApp button + the embedded chat widget) while the
+   mobile menu drawer is open, so nothing floats over the modal. */
+.lb-drawer-open [data-lb-fab],
+.lb-drawer-open [aria-label="Open chat"] {
+  display: none !important;
 }
 
 /* ── Buddie avatar + homepage redesign animations ───────────────────────── */

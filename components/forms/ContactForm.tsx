@@ -52,7 +52,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-[28px] border border-border bg-bg-card/92 p-6 shadow-[0_24px_90px_rgba(0,0,0,0.28)] md:p-8">
+    <div className="rounded-[28px] border border-border bg-bg-card/92 p-6 shadow-[0_18px_50px_-20px_rgba(15,23,42,0.15)] md:p-8">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="hidden" aria-hidden="true">
           <label htmlFor="website">Website</label>

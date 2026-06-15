@@ -7,7 +7,7 @@ const TRUSTED_BY = ['Real estate teams', 'Clinics', 'Service brands', 'Agencies'
 export function CustomerProofSection() {
   return (
     <Section background="gray" className="pt-10 pb-8 md:pt-14">
-      <div className="rounded-[28px] border border-border bg-bg-card/85 p-8 text-center shadow-[0_24px_90px_rgba(0,0,0,0.28)]">
+      <div className="rounded-[28px] border border-border bg-bg-card/85 p-8 text-center shadow-[0_18px_50px_-20px_rgba(15,23,42,0.15)]">
         <p className="text-sm uppercase tracking-[0.24em] text-text-muted">Trusted momentum</p>
         <h2 className="mt-4 text-2xl font-bold text-text-primary md:text-3xl">Built for fast-moving teams that sell in chats</h2>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-text-secondary md:text-base">

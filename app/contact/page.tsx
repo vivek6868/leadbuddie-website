@@ -34,7 +34,7 @@ export default function ContactPage() {
           <div>
             <h2 className="mb-6 text-2xl font-semibold text-text-primary">Contact Information</h2>
             <div className="space-y-6">
-              <div className="rounded-[28px] border border-border bg-bg-card/90 p-6 shadow-[0_24px_90px_rgba(0,0,0,0.28)]">
+              <div className="rounded-[28px] border border-border bg-bg-card/90 p-6 shadow-[0_18px_50px_-20px_rgba(15,23,42,0.15)]">
                 <div className="flex items-start space-x-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-subtle">
                     <Mail className="text-brand-light" size={20} />
@@ -51,7 +51,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="rounded-[28px] border border-border bg-bg-card/90 p-6 shadow-[0_24px_90px_rgba(0,0,0,0.28)]">
+              <div className="rounded-[28px] border border-border bg-bg-card/90 p-6 shadow-[0_18px_50px_-20px_rgba(15,23,42,0.15)]">
                 <div className="flex items-start space-x-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-subtle">
                     <Building2 className="text-brand-light" size={20} />
