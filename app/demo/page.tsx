@@ -9,14 +9,14 @@ import { Star } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Demo — See LeadBuddie in Action on WhatsApp',
   description:
-    'Watch LeadBuddie reply to WhatsApp leads, follow up automatically, and chase AMC renewals. Product demo videos plus real customer stories from Indian SMBs.',
+    'Watch LeadBuddie reply to WhatsApp leads, follow up automatically, and chase AMC renewals. Product demo videos plus real customer stories from growing businesses worldwide.',
   alternates: { canonical: '/demo' },
 }
 
 export default function DemoPage() {
   return (
     <>
-      <Section className="pt-32 pb-16">
+      <Section className="pt-32 pb-16 bg-bg-primary">
         <SectionHeader
           title="See LeadBuddie in Action"
           description="Watch product demos and learn how to get the most out of LeadBuddie"
@@ -25,9 +25,9 @@ export default function DemoPage() {
       </Section>
 
       {/* Featured Videos */}
-      <Section>
+      <Section className="bg-bg-primary">
         <div className="mb-16 max-w-4xl mx-auto space-y-8">
-          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-sm border border-border bg-bg-card">
             <iframe
               width="100%"
               height="100%"
@@ -35,10 +35,10 @@ export default function DemoPage() {
               title="How to connect your existing WhatsApp number to LeadBuddie"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 w-full h-full border-0"
             />
           </div>
-          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-sm border border-border bg-bg-card">
             <iframe
               width="100%"
               height="100%"
@@ -46,10 +46,10 @@ export default function DemoPage() {
               title="LeadBuddie Product Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 w-full h-full border-0"
             />
           </div>
-          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-sm border border-border bg-bg-card">
             <iframe
               width="100%"
               height="100%"
@@ -58,28 +58,28 @@ export default function DemoPage() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 w-full h-full border-0"
             />
           </div>
         </div>
 
         {/* Testimonials */}
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">What Indian Businesses Say</h2>
-          <p className="text-center text-gray-600 mb-8">Trusted by businesses, contractors, and service providers</p>
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl font-bold text-text-primary mb-2 text-center font-heading">What Business Owners Say</h2>
+          <p className="text-center text-text-secondary mb-8">Trusted by businesses, contractors, and service providers globally</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TESTIMONIALS.map((testimonial, index) => (
-              <Card key={index} hover className="flex flex-col h-full">
-                <div className="flex items-center gap-1 mb-4">
+              <Card key={index} hover className="flex flex-col h-full bg-bg-card border border-border shadow-sm">
+                <div className="flex items-center gap-0.5 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="text-yellow-400 fill-yellow-400" size={18} />
+                    <Star key={i} className="text-amber-400 fill-amber-400" size={16} />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 flex-1 italic leading-relaxed">"{testimonial.quote}"</p>
-                <div className="border-t border-gray-200 pt-4 mt-auto">
-                  <p className="font-semibold text-gray-900 text-base">{testimonial.author}</p>
-                  <p className="text-sm text-gray-600 mt-1">{testimonial.company}</p>
-                  <p className="text-xs text-gray-500 mt-1">{testimonial.location}, India</p>
+                <p className="text-text-secondary mb-6 flex-1 italic leading-relaxed">"{testimonial.quote}"</p>
+                <div className="border-t border-border pt-4 mt-auto">
+                  <p className="font-semibold text-text-primary text-base">{testimonial.author}</p>
+                  <p className="text-sm text-text-secondary mt-1">{testimonial.company}</p>
+                  <p className="text-xs text-text-muted mt-1">{testimonial.location}</p>
                 </div>
               </Card>
             ))}
@@ -88,12 +88,12 @@ export default function DemoPage() {
       </Section>
 
       {/* CTA */}
-      <Section background="gray" className="py-16">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+      <Section className="py-16 bg-bg-secondary border-t border-border">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-text-primary mb-4 font-heading">
             Ready to try it yourself?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-text-secondary mb-8">
             Start your 30-day free trial — full Growth plan access. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -109,4 +109,3 @@ export default function DemoPage() {
     </>
   )
 }
-

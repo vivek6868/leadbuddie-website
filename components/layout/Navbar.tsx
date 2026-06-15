@@ -72,7 +72,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setDemoModalOpen(true)}
-              className="rounded-xl border border-border-light bg-white/5 px-4 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-brand-light hover:bg-brand-subtle"
+              className="rounded-xl border border-border-light bg-bg-card px-4 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-brand hover:bg-brand-subtle"
             >
               Book Demo
             </button>

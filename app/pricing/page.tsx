@@ -6,7 +6,7 @@ import { PricingGrid } from '@/components/pricing/PricingGrid'
 
 export const metadata: Metadata = {
   title: 'Pricing — LeadBuddie AI Sales Employee for WhatsApp',
-  description: 'Simple, transparent pricing for Indian SMBs. Start with a 30-day free trial of the Growth plan — no credit card required. Plans from ₹999/month.',
+  description: 'Simple, transparent pricing for growing businesses. Start with a 30-day free trial of the Growth plan — no credit card required. Plans from ₹999/month.',
   alternates: { canonical: '/pricing' },
 }
 

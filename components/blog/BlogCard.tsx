@@ -24,7 +24,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
     return (
       <Link
         href={href}
-        className="group relative grid h-full overflow-hidden rounded-[28px] border border-white/[0.08] bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(124,58,237,0.1)] md:grid-cols-2"
+        className="group relative grid h-full overflow-hidden rounded-[28px] border border-border bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:shadow-[0_20px_50px_rgba(15,23,42,0.08),0_0_30px_rgba(37,211,102,0.06)] md:grid-cols-2"
       >
         <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[320px]">
           {post.image ? (
@@ -47,7 +47,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
         </div>
 
         <div className="flex flex-col justify-center p-7 md:p-10">
-          <span className="mb-4 inline-flex w-fit rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-light">
+          <span className="mb-4 inline-flex w-fit rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-hover">
             {post.category}
           </span>
           <h2 className="font-display text-2xl font-bold leading-tight text-text-primary md:text-3xl">
@@ -66,7 +66,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
               {post.readTimeMinutes} min read
             </span>
           </div>
-          <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light transition-colors group-hover:text-text-primary">
+          <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-hover transition-colors group-hover:text-text-primary">
             Read the guide
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
@@ -80,7 +80,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
     return (
       <Link
         href={href}
-        className="group block h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_20px_rgba(124,58,237,0.08)]"
+        className="group block h-full overflow-hidden rounded-2xl border border-border bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(15,23,42,0.06),0_0_20px_rgba(37,211,102,0.05)]"
       >
         <div className="relative aspect-video bg-bg-elevated">
           {post.image ? (
@@ -96,10 +96,10 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
           )}
         </div>
         <div className="p-4">
-          <span className="mb-2 inline-flex rounded-full border border-brand/25 bg-brand/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-light">
+          <span className="mb-2 inline-flex rounded-full border border-brand/25 bg-brand/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-hover">
             {post.category}
           </span>
-          <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-text-primary transition-colors group-hover:text-brand-light">
+          <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-text-primary transition-colors group-hover:text-brand-hover">
             {post.title}
           </h3>
           <div className="mt-2 text-[11px] text-text-muted">
@@ -114,7 +114,7 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
   return (
     <Link
       href={href}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_20px_rgba(124,58,237,0.08)]"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-bg-card/75 backdrop-blur-sm transition-all duration-500 hover:border-brand/40 hover:bg-bg-card hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(15,23,42,0.06),0_0_20px_rgba(37,211,102,0.05)]"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-bg-elevated">
         {post.image ? (
@@ -127,16 +127,16 @@ export function BlogCard({ post, compact = false, featured = false }: BlogCardPr
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand/20 to-bg-elevated">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-light/80">Blog</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-hover/80">Blog</span>
           </div>
         )}
       </div>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <span className="mb-3 inline-flex w-fit rounded-full border border-brand/30 bg-brand/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-light">
+        <span className="mb-3 inline-flex w-fit rounded-full border border-brand/30 bg-brand/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-hover">
           {post.category}
         </span>
-        <h3 className="line-clamp-2 text-lg font-semibold leading-snug text-text-primary transition-colors group-hover:text-brand-light">
+        <h3 className="line-clamp-2 text-lg font-semibold leading-snug text-text-primary transition-colors group-hover:text-brand-hover">
           {post.title}
         </h3>
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-text-secondary">

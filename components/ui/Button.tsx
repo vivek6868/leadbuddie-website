@@ -21,11 +21,11 @@ export function Button({
     'inline-flex items-center justify-center rounded-xl text-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand/60 focus:ring-offset-2 focus:ring-offset-bg-primary'
   
   const variants = {
-    primary: 'bg-brand text-white shadow-[0_12px_40px_rgba(124,58,237,0.35)] hover:bg-brand-hover',
-    secondary: 'bg-wa text-bg-primary shadow-[0_12px_40px_rgba(37,211,102,0.22)] hover:bg-wa-dark hover:text-white',
-    lime: 'bg-brand text-white shadow-[0_12px_40px_rgba(124,58,237,0.35)] hover:bg-brand-hover',
-    outline: 'border border-border-light bg-white/5 text-text-primary hover:border-brand-light hover:bg-brand-subtle',
-    ghost: 'text-brand-light hover:bg-brand-subtle',
+    primary: 'bg-brand text-white shadow-[0_12px_40px_rgba(37,211,102,0.32)] hover:bg-brand-hover',
+    secondary: 'bg-brand text-white shadow-[0_12px_40px_rgba(37,211,102,0.32)] hover:bg-brand-hover',
+    lime: 'bg-brand text-white shadow-[0_12px_40px_rgba(37,211,102,0.32)] hover:bg-brand-hover',
+    outline: 'border border-border-light bg-bg-card text-text-primary hover:border-brand hover:bg-brand-subtle',
+    ghost: 'text-brand hover:bg-brand-subtle',
   }
   
   const sizes = {

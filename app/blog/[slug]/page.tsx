@@ -180,7 +180,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
                 href={`/blog?category=${encodeURIComponent(post.category)}`}
-                className="inline-flex items-center rounded-full border border-brand/30 bg-brand/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-light transition-colors hover:bg-brand/25"
+                className="inline-flex items-center rounded-full border border-brand/30 bg-brand/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-hover transition-colors hover:bg-brand/25"
               >
                 {post.category}
               </Link>
@@ -197,8 +197,8 @@ export default async function BlogPostPage({ params }: Props) {
               {post.description}
             </p>
 
-            <div className="mt-7 flex flex-wrap items-center gap-3 border-t border-white/[0.08] pt-5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-brand/15 text-sm font-bold text-text-primary">
+            <div className="mt-7 flex flex-wrap items-center gap-3 border-t border-border pt-5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-brand/20 bg-brand/10 text-sm font-bold text-text-primary">
                 {post.author
                   .split(' ')
                   .map((p) => p[0])
@@ -222,7 +222,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ============ COVER IMAGE ============ */}
       {post.image && (
         <div className="relative -mt-2 px-4 sm:px-6 lg:px-8">
-          <div className="relative mx-auto aspect-[21/9] max-w-7xl overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-elevated shadow-[0_30px_90px_-20px_rgba(0,0,0,0.6)]">
+          <div className="relative mx-auto aspect-[21/9] max-w-7xl overflow-hidden rounded-2xl border border-border bg-bg-elevated shadow-[0_20px_60px_-15px_rgba(15,23,42,0.08)]">
             <Image
               src={post.image}
               alt={post.title}
@@ -259,7 +259,7 @@ export default async function BlogPostPage({ params }: Props) {
                     return (
                       <h2
                         id={id}
-                        className="scroll-mt-24 mt-14 mb-5 font-display text-2xl font-bold tracking-tight text-white border-b border-white/10 pb-3"
+                        className="scroll-mt-24 mt-14 mb-5 font-display text-2xl font-bold tracking-tight text-text-primary border-b border-border pb-3"
                         {...props}
                       >
                         {children}
@@ -276,7 +276,7 @@ export default async function BlogPostPage({ params }: Props) {
                     return (
                       <h3
                         id={id}
-                        className="scroll-mt-24 mt-10 mb-3 text-xl font-semibold text-white"
+                        className="scroll-mt-24 mt-10 mb-3 text-xl font-semibold text-text-primary"
                         {...props}
                       >
                         {children}
@@ -291,52 +291,52 @@ export default async function BlogPostPage({ params }: Props) {
                   ),
                   li: ({ node, ...props }) => (
                     <li className="relative pl-7 text-text-secondary/90">
-                      <span className="absolute left-0 top-[0.65em] h-2 w-2 rounded-full bg-brand-light" />
+                      <span className="absolute left-0 top-[0.65em] h-2 w-2 rounded-full bg-brand" />
                       {props.children}
                     </li>
                   ),
                   ol: ({ node, ...props }) => (
                     <ol
                       {...props}
-                      className="list-decimal pl-6 space-y-4 my-6 text-text-secondary/90 marker:text-brand-light marker:font-semibold"
+                      className="list-decimal pl-6 space-y-4 my-6 text-text-secondary/90 marker:text-brand-hover marker:font-semibold"
                     />
                   ),
                   blockquote: ({ node, ...props }) => (
                     <blockquote
                       {...props}
-                      className="border-l-4 border-brand bg-white/[0.02] pl-6 py-4 my-8 rounded-r-2xl italic text-text-primary/95"
+                      className="border-l-4 border-brand bg-bg-secondary/40 pl-6 py-4 my-8 rounded-r-2xl italic text-text-primary/95"
                     />
                   ),
                   code: ({ node, ...props }) => (
                     <code
                       {...props}
-                      className="rounded bg-white/10 px-2 py-0.5 text-[0.9em] text-white font-mono"
+                      className="rounded bg-bg-secondary text-text-primary px-1.5 py-0.5 text-[0.9em] font-mono"
                     />
                   ),
                   table: ({ node, ...props }) => (
-                    <div className="my-8 -mx-2 overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] sm:mx-0">
+                    <div className="my-8 -mx-2 overflow-x-auto rounded-2xl border border-border bg-bg-card/50 sm:mx-0">
                       <table {...props} className="w-full min-w-[560px] border-collapse text-[0.95rem]" />
                     </div>
                   ),
-                  thead: ({ node, ...props }) => <thead {...props} className="bg-white/[0.06]" />,
+                  thead: ({ node, ...props }) => <thead {...props} className="bg-bg-secondary/70" />,
                   th: ({ node, style, ...props }) => (
                     <th
                       {...props}
                       style={style}
-                      className="border-b border-white/10 px-5 py-3.5 text-left text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white/95"
+                      className="border-b border-border px-5 py-3.5 text-left text-[0.72rem] font-bold uppercase tracking-[0.12em] text-text-primary"
                     />
                   ),
                   tr: ({ node, ...props }) => (
                     <tr
                       {...props}
-                      className="border-b border-white/[0.06] last:border-b-0 transition-colors hover:bg-white/[0.04]"
+                      className="border-b border-border/60 last:border-b-0 transition-colors hover:bg-bg-secondary/30"
                     />
                   ),
                   td: ({ node, style, ...props }) => (
                     <td
                       {...props}
                       style={style}
-                      className="px-5 py-4 align-top text-text-secondary [&_strong]:text-white"
+                      className="px-5 py-4 align-top text-text-secondary [&_strong]:text-text-primary"
                     />
                   ),
                 }}
@@ -346,8 +346,8 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
 
             {/* Author signature card */}
-            <div className="mt-16 flex flex-wrap items-center gap-5 rounded-3xl border border-white/[0.08] bg-bg-card/40 p-6 backdrop-blur-sm md:p-7">
-              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-brand/15 text-base font-bold text-text-primary">
+            <div className="mt-16 flex flex-wrap items-center gap-5 rounded-3xl border border-border bg-bg-card/40 p-6 backdrop-blur-sm md:p-7">
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border border-brand/20 bg-brand/10 text-base font-bold text-text-primary">
                 {post.author
                   .split(' ')
                   .map((p) => p[0])
@@ -361,7 +361,7 @@ export default async function BlogPostPage({ params }: Props) {
                   Working with Indian SMBs to fix how leads move through WhatsApp and Instagram.
                 </p>
               </div>
-              <Button href="/demo" variant="lime" size="md">
+              <Button href="/demo" variant="primary" size="md">
                 Book a demo
               </Button>
             </div>
@@ -371,14 +371,14 @@ export default async function BlogPostPage({ params }: Props) {
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-8">
               {/* Table of Contents */}
-              <div className="rounded-2xl border border-white/[0.08] bg-bg-card/40 p-5 backdrop-blur-sm">
+              <div className="rounded-2xl border border-border bg-bg-card/40 p-5 backdrop-blur-sm">
                 <TableOfContents items={tocItems} />
               </div>
 
               {/* Author Widget */}
-              <div className="rounded-2xl border border-white/[0.08] bg-bg-card/40 p-5 backdrop-blur-sm">
+              <div className="rounded-2xl border border-border bg-bg-card/40 p-5 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
-                  <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/10 bg-brand/15">
+                  <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-border bg-brand/10">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/founder.png"
@@ -402,14 +402,14 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
 
               {/* LeadBuddie Banner CTA */}
-              <div className="relative overflow-hidden rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/20 via-bg-card/95 to-bg-card/95 p-5 shadow-lg">
-                <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-brand/20 blur-xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-brand/35 bg-gradient-to-br from-brand/10 via-bg-card/95 to-bg-card/95 p-5 shadow-lg">
+                <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-brand/15 blur-xl" />
                 <h4 className="text-sm font-bold text-text-primary">Ready to scale?</h4>
                 <p className="mt-2 text-xs leading-relaxed text-text-secondary">
                   Get WhatsApp auto-replies, automated AMC renewals, and a multi-agent team inbox on your own number.
                 </p>
                 <div className="mt-4">
-                  <Button href="https://app.leadbuddie.com" variant="lime" size="sm" className="w-full text-xs">
+                  <Button href="https://app.leadbuddie.com" variant="primary" size="sm" className="w-full text-xs">
                     Start 1-Month Trial
                   </Button>
                 </div>
@@ -428,7 +428,7 @@ export default async function BlogPostPage({ params }: Props) {
             </h2>
             <Link
               href={`/blog?category=${encodeURIComponent(post.category)}`}
-              className="text-xs font-semibold text-brand-light hover:text-text-primary"
+              className="text-xs font-semibold text-brand-hover hover:text-text-primary"
             >
               View all →
             </Link>
@@ -450,7 +450,7 @@ export default async function BlogPostPage({ params }: Props) {
             </h2>
             <Link
               href="/blog"
-              className="text-xs font-semibold text-brand-light hover:text-text-primary"
+              className="text-xs font-semibold text-brand-hover hover:text-text-primary"
             >
               All posts →
             </Link>

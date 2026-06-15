@@ -11,21 +11,21 @@ export const metadata: Metadata = {
 
 export default function RefundPolicyPage() {
   return (
-    <Section className="pt-24 pb-16 md:pt-32 md:pb-24">
+    <Section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-bg-secondary">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Cancellation & Refund Policy</h1>
+        <div className="mb-10 text-center">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-4">Cancellation & Refund Policy</h1>
         </div>
 
-        <div className="prose prose-invert max-w-none space-y-8">
-          <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-primary-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FileText className="text-primary-400" size={24} />
+        <div className="space-y-8">
+          <div className="bg-bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center flex-shrink-0 border border-brand/20">
+                <FileText className="text-brand" size={24} />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-                <p className="text-dark-300 mb-4">
+                <h2 className="text-xl font-bold text-text-primary mb-3">Overview</h2>
+                <p className="text-text-secondary leading-relaxed">
                   {BRAND.name} is a subscription-based SaaS product providing WhatsApp + Instagram CRM and automation 
                   tools for businesses. Since our service is delivered instantly upon activation, we follow 
                   the policy below.
@@ -34,18 +34,18 @@ export default function RefundPolicyPage() {
             </div>
           </div>
 
-          <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <CreditCard className="text-red-400" size={24} />
+          <div className="bg-bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-red-500/10 rounded-2xl flex items-center justify-center flex-shrink-0 border border-red-500/20">
+                <CreditCard className="text-red-600" size={24} />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Refunds</h2>
-                <ul className="list-disc list-inside space-y-3 text-dark-300 mb-4 ml-4">
+                <h2 className="text-xl font-bold text-text-primary mb-3">Refunds</h2>
+                <ul className="list-disc list-inside space-y-2.5 text-text-secondary mb-4 ml-4 leading-relaxed font-medium">
                   <li>We do not offer refunds for subscription payments after successful activation.</li>
                   <li>Refunds are only applicable in case of duplicate payments or billing errors.</li>
                   <li>All refund requests must be emailed to{' '}
-                    <a href={`mailto:${CONTACT.support}`} className="text-primary-400 hover:text-primary-300">
+                    <a href={`mailto:${CONTACT.support}`} className="text-brand-hover hover:text-brand font-semibold underline underline-offset-2">
                       {CONTACT.support}
                     </a>{' '}
                     within 7 days.
@@ -56,14 +56,14 @@ export default function RefundPolicyPage() {
             </div>
           </div>
 
-          <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <XCircle className="text-yellow-400" size={24} />
+          <div className="bg-bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center flex-shrink-0 border border-amber-500/20">
+                <XCircle className="text-amber-600" size={24} />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Cancellations</h2>
-                <ul className="list-disc list-inside space-y-3 text-dark-300 mb-4 ml-4">
+                <h2 className="text-xl font-bold text-text-primary mb-3">Cancellations</h2>
+                <ul className="list-disc list-inside space-y-2.5 text-text-secondary mb-4 ml-4 leading-relaxed font-medium">
                   <li>You can cancel your subscription at any time from the Billing page.</li>
                   <li>After cancellation, the service will remain active until the end of the paid billing cycle.</li>
                   <li>No cancellation fees apply.</li>
@@ -72,29 +72,29 @@ export default function RefundPolicyPage() {
             </div>
           </div>
 
-          <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Calendar className="text-green-400" size={24} />
+          <div className="bg-bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center flex-shrink-0 border border-emerald-500/20">
+                <Calendar className="text-emerald-600" size={24} />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Trial Period</h2>
-                <p className="text-dark-300">
+                <h2 className="text-xl font-bold text-text-primary mb-3">Trial Period</h2>
+                <p className="text-text-secondary leading-relaxed">
                   If you cancel during the free trial, your card will not be charged.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
-            <h2 className="text-2xl font-semibold mb-4">Contact for Refunds</h2>
-            <p className="text-dark-300 mb-4">
+          <div className="bg-bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-text-primary mb-4">Contact for Refunds</h2>
+            <p className="text-text-secondary mb-4 leading-relaxed">
               For refund requests or questions about this policy, please contact us:
             </p>
-            <ul className="list-none space-y-2 text-dark-300">
+            <ul className="list-none space-y-2.5 text-text-secondary font-medium leading-relaxed">
               <li>
                 <strong>Email:</strong>{' '}
-                <a href={`mailto:${CONTACT.support}`} className="text-primary-400 hover:text-primary-300">
+                <a href={`mailto:${CONTACT.support}`} className="text-brand-hover hover:text-brand font-semibold underline underline-offset-2">
                   {CONTACT.support}
                 </a>
               </li>
@@ -108,4 +108,3 @@ export default function RefundPolicyPage() {
     </Section>
   )
 }
-

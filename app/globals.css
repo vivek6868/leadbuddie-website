@@ -2,30 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * WhatsApp Premium — light theme.
+ * Single WhatsApp green (#25D366) brand, slate ink, warm-white surfaces.
+ * Replaces the old dark/purple direction site-wide (see Claude Design handoff).
+ */
 :root {
-  --color-bg-primary: #08080f;
-  --color-bg-secondary: #0f0f1a;
-  --color-bg-elevated: #16161f;
-  --color-bg-card: #1a1a28;
-  --color-border: #252535;
-  --color-border-light: #32324a;
-  --color-text-primary: #eeeef5;
-  --color-text-secondary: #8888a8;
-  --color-text-muted: #55556a;
-  --color-brand: #7c3aed;
-  --color-brand-hover: #6d28d9;
-  --color-brand-light: #8b5cf6;
-  --color-brand-subtle: rgba(124, 58, 237, 0.12);
-  --color-brand-glow: rgba(124, 58, 237, 0.2);
+  --color-bg-primary: #f8fafc;
+  --color-bg-secondary: #eef2f6;
+  --color-bg-elevated: #f1f5f9;
+  --color-bg-card: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-light: #cbd5e1;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-brand: #25d366;
+  --color-brand-hover: #1fb855;
+  --color-brand-light: #5ee499;
+  --color-brand-subtle: rgba(37, 211, 102, 0.1);
+  --color-brand-glow: rgba(37, 211, 102, 0.2);
   --color-wa: #25d366;
-  --color-wa-dark: #128c7e;
+  --color-wa-dark: #1fb855;
   --color-wa-subtle: rgba(37, 211, 102, 0.1);
   --color-wa-glow: rgba(37, 211, 102, 0.18);
+  /* Instagram accents kept for niche landing pages that still reference them. */
   --color-ig-1: #f58529;
   --color-ig-2: #dd2a7b;
   --color-ig-3: #515bd4;
   --color-ig-subtle: rgba(221, 42, 123, 0.1);
   --color-ig-glow: rgba(221, 42, 123, 0.18);
+
+  /* Homepage redesign extras — chip / sunk / success tokens. */
+  --color-chip: #ecfdf3;
+  --color-chip-border: rgba(37, 211, 102, 0.3);
+  --color-sunk: #f1f5f9;
+  --color-success: #16a34a;
+  --color-success-soft: rgba(22, 163, 74, 0.1);
+  --color-danger: #dc2626;
+  --color-danger-soft: rgba(220, 38, 38, 0.1);
+  --color-warn: #d97706;
+  --color-warn-soft: rgba(217, 119, 6, 0.1);
 }
 
 * {
@@ -41,9 +58,9 @@ html {
 body {
   color: var(--color-text-primary);
   background:
-    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 28%),
-    radial-gradient(circle at top right, rgba(221, 42, 123, 0.14), transparent 24%),
-    linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+    radial-gradient(circle at 78% 6%, rgba(37, 211, 102, 0.07), transparent 42%),
+    radial-gradient(circle at 12% 30%, rgba(37, 211, 102, 0.04), transparent 40%),
+    var(--color-bg-primary);
   font-family: var(--font-body), system-ui, sans-serif;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -110,23 +127,7 @@ textarea {
   color: var(--color-text-primary) !important;
 }
 
-/* Demo request modal: light text on dark background */
-.demo-request-modal input[type="text"],
-.demo-request-modal input[type="email"],
-.demo-request-modal textarea {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-}
-.demo-request-modal input::placeholder,
-.demo-request-modal textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-.demo-request-modal input:-webkit-autofill,
-.demo-request-modal input:-webkit-autofill:hover,
-.demo-request-modal input:-webkit-autofill:focus,
-.demo-request-modal input:-webkit-autofill:active {
-  -webkit-text-fill-color: #fff !important;
-}
+
 
 /* Ensure autofill doesn't override text color */
 input:-webkit-autofill,
@@ -303,6 +304,40 @@ html.js-reveal [data-reveal]:not([data-reveal="visible"]) {
   .animate-fade-in-up,
   .animate-slide-in-left,
   .animate-bounce-slow {
+    animation: none !important;
+  }
+}
+
+/* ── Buddie avatar + homepage redesign animations ───────────────────────── */
+@keyframes lbPulse {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.06); opacity: 0.95; }
+}
+@keyframes lbBlink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95%, 97% { transform: scaleY(0.08); }
+}
+@keyframes lbDot {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-3px); opacity: 1; }
+}
+@keyframes lbBreathe {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+@keyframes lbFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.lb-live-dot { animation: lbBreathe 1.6s ease-in-out infinite; }
+.lb-halo { animation: lbPulse 2.6s ease-out infinite; }
+.lb-eye { animation: lbBlink 5s ease-in-out infinite; transform-origin: center; }
+.lb-typing-dot { animation: lbDot 1.2s ease-in-out infinite; }
+.lb-float { animation: lbFloat 5s ease-in-out infinite; }
+.lb-float-fast { animation: lbFloat 4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-live-dot, .lb-halo, .lb-eye, .lb-typing-dot, .lb-float, .lb-float-fast {
     animation: none !important;
   }
 }

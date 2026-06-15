@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords:
-    'RO service management software, water purifier service software, RO service CRM, water purifier complaint management, service visit scheduling software India, RO service tracking WhatsApp',
+    'RO service management software, water purifier service software, RO service CRM, water purifier complaint management, service visit scheduling software, RO service tracking WhatsApp',
   alternates: { canonical: PATH },
   openGraph: {
     title: TITLE,
@@ -124,7 +124,7 @@ export default function RoServiceManagementPage() {
         related={[
           { label: 'Water purifier dealer CRM', href: '/water-purifier-crm' },
           { label: 'AMC renewal software', href: '/amc-renewal-software' },
-          { label: 'Read the Mastec story', href: '/case-study' },
+          { label: 'Read the case study', href: '/case-study' },
         ]}
         ctaHeading="Make every service visit organised"
         ctaSub="Start free on your existing WhatsApp number. Book your first visit from chat today."

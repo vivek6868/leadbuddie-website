@@ -1,6 +1,6 @@
 export const BRAND = {
   name: 'LeadBuddie',
-  tagline: 'Your AI Sales Employee for WhatsApp & Instagram — built for Indian SMBs',
+  tagline: 'Your AI Sales Employee for WhatsApp & Instagram — built for growing businesses',
   company: 'Hutliv Technologies LLP',
   founded: 2025,
 } as const
@@ -263,13 +263,13 @@ export const COMPLIANCE_STATEMENTS = [
 // without confirming the customer is real, active, and quoted with consent.
 export const TESTIMONIALS = [
   {
-    quote: 'Handling 60–100 leads per day was very time-consuming. After LeadBuddie, responses and follow-ups became much easier.',
-    author: 'Mastec Water Purifier',
-    company: 'Mastec Water Purifier',
-    location: 'India',
+    quote: 'Handling more than 100 leads per day was very time-consuming. After LeadBuddie, responses and follow-ups became much easier.',
+    author: 'Master Water Purifier',
+    company: 'Master Water Purifier',
+    location: 'London, UK',
     rating: 5,
     metrics: {
-      primary: '60–100',
+      primary: '100+',
       primaryLabel: 'leads per day',
       secondary: 'Easier',
       secondaryLabel: 'follow-ups',
@@ -281,7 +281,7 @@ export const TESTIMONIALS = [
     quote: 'Bulk WhatsApp enquiries from retailers used to pile up in three different phones. With LeadBuddie our team works from one inbox and every B2B order is tracked from first message to dispatch.',
     author: 'Classic Leathers',
     company: 'Classic Leathers',
-    location: 'India',
+    location: 'Sydney, Australia',
     rating: 5,
     metrics: {
       primary: '1 inbox',
@@ -294,7 +294,7 @@ export const TESTIMONIALS = [
     quote: 'Trial bookings, membership renewals, class enquiries — it was all sitting in one founder\'s WhatsApp. LeadBuddie made it a shared workflow and our trainers stopped chasing screenshots.',
     author: 'Zyrax Fitness',
     company: 'Zyrax Fitness',
-    location: 'India',
+    location: 'Austin, USA',
     rating: 5,
     metrics: {
       primary: 'Shared',
@@ -306,8 +306,8 @@ export const TESTIMONIALS = [
   {
     quote: 'Every trip enquiry needs a custom itinerary and three follow-ups. LeadBuddie keeps the whole conversation, quote, and callback in one place — we stopped losing high-ticket bookings to slow replies.',
     author: 'Nitya Tours and Travels',
-    company: 'Nitya Tours and Travels',
-    location: 'India',
+    company: 'Nitya Tours & Travels',
+    location: 'Dubai, UAE',
     rating: 5,
     metrics: {
       primary: 'Higher',
@@ -319,8 +319,8 @@ export const TESTIMONIALS = [
   {
     quote: 'Site-visit requests and quote enquiries used to slip through cracks. Now each lead has a stage, an owner, and a follow-up date — our painters and the office work off the same screen.',
     author: 'Spectrum Painting Solution',
-    company: 'Spectrum Painting Solution',
-    location: 'India',
+    company: 'Spectrum Painting Solutions',
+    location: 'Berlin, Germany',
     rating: 5,
     metrics: {
       primary: 'On-time',
@@ -382,8 +382,8 @@ export const TESTIMONIALS = [
 
 export const SEO = {
   title: 'LeadBuddie — AI Sales Employee for WhatsApp & Instagram',
-  description: 'Buddie replies to your WhatsApp and Instagram leads in seconds, qualifies them, and follows up — even while you are busy. Built for Indian SMBs. 30-day free trial.',
-  keywords: 'AI sales employee, AI for WhatsApp, AI replies WhatsApp, WhatsApp lead management, water purifier dealer CRM, Indian SMB sales tool, AI sales agent India, WhatsApp Business API',
+  description: 'Buddie replies to your WhatsApp and Instagram leads in seconds, qualifies them, and follows up — even while you are busy. Built for growing businesses. 30-day free trial.',
+  keywords: 'AI sales employee, AI for WhatsApp, AI replies WhatsApp, WhatsApp lead management, service business CRM, global WhatsApp CRM, WhatsApp Business API',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection)
@@ -392,6 +392,5 @@ export const SEO = {
 export const SOCIAL_PROOF_STATS = {
   leadsManaged: '5000+',
   businessesOnboarded: '20+',
-  trustLine: 'Built with Mastec Water Purifier — more Indian SMBs onboarding',
+  trustLine: 'Built for service and repair teams — more growing businesses onboarding',
 } as const
-

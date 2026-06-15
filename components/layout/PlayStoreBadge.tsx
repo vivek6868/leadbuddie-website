@@ -31,7 +31,7 @@ export async function PlayStoreBadge() {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="text-gray-900 font-semibold text-sm">Get the LeadBuddie app</h3>
+      <h3 className="text-text-primary font-semibold text-sm">Get the LeadBuddie app</h3>
       <div className="flex items-start gap-4">
         {/* Tap-to-install card */}
         <a
@@ -39,7 +39,7 @@ export async function PlayStoreBadge() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Download LeadBuddie on Google Play"
-          className="group flex items-center gap-3 rounded-xl border border-gray-300 bg-white px-4 py-2.5 transition-all hover:border-gray-400 hover:shadow-sm"
+          className="group flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-2.5 transition-all hover:border-gray-400 hover:shadow-sm"
         >
           {/* Google Play triangular play icon — multi-colored */}
           <svg
@@ -72,23 +72,23 @@ export async function PlayStoreBadge() {
             <path d="M14 82 L48 48 L82 68 Z"        fill="url(#gp-green)"  />
           </svg>
           <div className="flex flex-col">
-            <span className="text-[10px] uppercase tracking-wider text-gray-500">Get it on</span>
-            <span className="text-base font-semibold leading-tight text-gray-900">Google Play</span>
+            <span className="text-[10px] uppercase tracking-wider text-text-secondary">Get it on</span>
+            <span className="text-base font-semibold leading-tight text-text-primary">Google Play</span>
           </div>
         </a>
 
         {/* QR card — visible on desktop only (mobile users just tap the badge). Helps owners
             who view the site on a laptop scan with their phone, the most common conversion path
-            for Indian SMB software. */}
+            for business software. */}
         <div className="hidden flex-col items-center gap-1 sm:flex">
           <div
-            className="rounded-lg border border-gray-300 bg-white p-1.5"
+            className="rounded-lg border border-border bg-white p-1.5"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: qrSvgString }}
             aria-label="QR code to LeadBuddie on Google Play"
             role="img"
           />
-          <span className="text-[10px] text-gray-500">Scan to install</span>
+          <span className="text-[10px] text-text-secondary">Scan to install</span>
         </div>
       </div>
     </div>

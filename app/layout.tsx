@@ -133,7 +133,7 @@ export default function RootLayout({
       </head>
       <body className="bg-bg-primary text-text-primary">
         <JsonLd data={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, MOBILE_APPLICATION_SCHEMA]} />
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <DemoModalProvider>
             <ScrollRevealClient />
             <Navbar />

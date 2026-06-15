@@ -48,12 +48,12 @@ export function PricingGrid() {
       <Section>
         {/* Billing toggle */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center rounded-full border border-border bg-bg-card p-1 text-xs font-semibold shadow-[0_18px_50px_rgba(0,0,0,0.24)]">
+          <div className="inline-flex items-center rounded-full border border-border bg-bg-card p-1 text-xs font-semibold shadow-sm">
             <button
               type="button"
               onClick={() => setBillingPeriod('monthly')}
               className={`px-4 py-2 rounded-full transition-all ${
-                !isAnnual ? 'bg-brand text-white shadow-[0_8px_24px_rgba(124,58,237,0.35)]' : 'text-text-secondary'
+                !isAnnual ? 'bg-brand text-white shadow-[0_8px_24px_rgba(37,211,102,0.35)]' : 'text-text-secondary'
               }`}
             >
               Monthly
@@ -62,7 +62,7 @@ export function PricingGrid() {
               type="button"
               onClick={() => setBillingPeriod('annual')}
               className={`px-4 py-2 rounded-full transition-all flex items-center gap-1 ${
-                isAnnual ? 'bg-brand text-white shadow-[0_8px_24px_rgba(124,58,237,0.35)]' : 'text-text-secondary'
+                isAnnual ? 'bg-brand text-white shadow-[0_8px_24px_rgba(37,211,102,0.35)]' : 'text-text-secondary'
               }`}
             >
               Annual
@@ -74,7 +74,7 @@ export function PricingGrid() {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16 max-w-7xl mx-auto">
           {PRICING_PLANS.map((plan) => {
             const monthlyPrice = plan.price
             const annualPrice = monthlyPrice === 0 ? 0 : monthlyPrice * 10 // 2 months free (12 - 2 = 10)
@@ -86,7 +86,7 @@ export function PricingGrid() {
               <Card
                 key={plan.id}
                 className={`relative ${
-                  plan.highlighted ? 'border-brand border-2 shadow-[0_22px_80px_rgba(124,58,237,0.28)]' : ''
+                  plan.highlighted ? 'border-brand border-2 shadow-[0_22px_80px_rgba(37,211,102,0.22)]' : ''
                 }`}
                 hover
               >

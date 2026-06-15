@@ -35,39 +35,40 @@ export default async function BlogPage({ searchParams }: PageProps) {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden bg-ink px-4 pt-28 pb-16 sm:px-6 lg:px-8 md:pt-36 md:pb-24">
+      {/* ============ HERO ============ */}
+      <section className="relative overflow-hidden bg-bg-primary px-4 pt-28 pb-16 sm:px-6 lg:px-8 md:pt-36 md:pb-24">
         <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink-800 to-ink-900" />
-          <div className="absolute -top-20 right-0 h-80 w-80 rounded-full bg-brand/20 blur-3xl animate-pulse-slow" />
-          <div className="absolute -bottom-20 left-0 h-80 w-80 rounded-full bg-teal-400/15 blur-3xl animate-pulse-slow delay-500" />
-          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:64px_64px]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary" />
+          <div className="absolute -top-20 right-0 h-80 w-80 rounded-full bg-brand/10 blur-3xl animate-pulse-slow" />
+          <div className="absolute -bottom-20 left-0 h-80 w-80 rounded-full bg-teal-400/10 blur-3xl animate-pulse-slow delay-500" />
+          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:64px_64px]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85 backdrop-blur-sm animate-fade-in-up">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent-lime" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-hover backdrop-blur-sm animate-fade-in-up">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
             LeadBuddie field notes
           </div>
-          <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl animate-fade-in-up delay-300">
+          <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-text-primary md:text-6xl animate-fade-in-up delay-300">
             WhatsApp &amp; Instagram <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-teal-300 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-hover via-teal-600 to-indigo-600 bg-clip-text text-transparent">
               CRM insights for Indian SMBs.
             </span>
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg animate-fade-in-up delay-500">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg animate-fade-in-up delay-500">
             Practical guides on managing leads in DMs, fixing follow-up leaks, and building a calmer sales workflow — written from real dealer floors, not generic templates.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm animate-fade-in-up delay-700">
             <Link
               href="/blog/rss.xml"
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-white/85 transition-colors hover:bg-white/15"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-3 py-1.5 text-text-secondary transition-all hover:bg-bg-elevated hover:text-text-primary shadow-sm"
             >
-              <Rss className="h-3.5 w-3.5" />
+              <Rss className="h-3.5 w-3.5 text-text-muted" />
               RSS feed
             </Link>
-            <span className="text-white/40">·</span>
-            <span className="text-white/60">
+            <span className="text-text-muted">·</span>
+            <span className="text-text-secondary">
               {allPosts.length} {allPosts.length === 1 ? 'post' : 'posts'} published
             </span>
           </div>
@@ -75,7 +76,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
       </section>
 
       {/* ============ STICKY CATEGORY NAV ============ */}
-      <div className="sticky top-16 z-30 border-b border-white/[0.08] bg-bg-primary/85 backdrop-blur-md">
+      <div className="sticky top-16 z-30 border-b border-border bg-bg-primary/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-3 scrollbar-hide sm:px-6 lg:px-8">
           <CategoryPill href="/blog" label="All" active={!category} count={allPosts.length} />
           {categories.map((cat) => (
@@ -146,8 +147,8 @@ export default async function BlogPage({ searchParams }: PageProps) {
 
       {/* ============ NEWSLETTER / RSS CTA ============ */}
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8 md:pb-28">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(140deg,rgba(124,58,237,0.18),rgba(15,15,26,0.96)_55%,rgba(20,184,166,0.12))] px-6 py-10 text-center md:px-12 md:py-14">
-          <div className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:48px_48px]" />
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-bg-secondary/40 px-6 py-10 text-center md:px-12 md:py-14">
+          <div className="pointer-events-none absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:48px_48px]" />
           <div className="relative">
             <h2 className="font-display text-2xl font-bold leading-tight text-text-primary md:text-3xl">
               Get new playbooks the day they ship.
@@ -165,7 +166,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
               </Link>
               <Link
                 href="/demo"
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-5 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:bg-bg-secondary"
               >
                 Talk to us
                 <ArrowRight className="h-4 w-4" />
@@ -196,15 +197,15 @@ function CategoryPill({
       href={href}
       className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-300 ${
         active
-          ? 'border-brand bg-brand/10 text-white shadow-[0_0_15px_rgba(124,58,237,0.2)]'
-          : 'border-white/[0.08] bg-white/[0.02] text-text-secondary hover:border-white/20 hover:bg-white/[0.06] hover:text-white'
+          ? 'border-brand bg-brand/10 text-brand-hover font-semibold shadow-sm shadow-brand/10'
+          : 'border-border bg-bg-card text-text-secondary hover:border-brand/40 hover:bg-bg-elevated hover:text-text-primary'
       }`}
     >
       <span>{label}</span>
       {typeof count === 'number' && (
         <span
           className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold transition-colors duration-300 ${
-            active ? 'bg-brand/25 text-white' : 'bg-white/10 text-text-muted group-hover:text-text-secondary'
+            active ? 'bg-brand/20 text-brand-hover' : 'bg-bg-elevated text-text-muted group-hover:text-text-secondary'
           }`}
         >
           {count}

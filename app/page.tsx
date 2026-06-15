@@ -1,16 +1,17 @@
-import { HeroCinematic } from '@/components/sections/HeroCinematic'
-import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
-import { ProblemStatement } from '@/components/sections/ProblemStatement'
-import { BuddieAgent } from '@/components/sections/BuddieAgent'
-import { AutonomyModes } from '@/components/sections/AutonomyModes'
-import { RevenueCalculator } from '@/components/sections/RevenueCalculator'
+import { Hero } from '@/components/home/Hero'
+import {
+  TrustStrip,
+  NumbersBand,
+  MeetBuddie,
+  AutonomyModes,
+  BuiltForGlobal,
+  Pricing,
+  FinalCTA,
+} from '@/components/home/Sections'
 import { CustomerLifecycle } from '@/components/sections/CustomerLifecycle'
-import { IndustryPacks } from '@/components/sections/IndustryPacks'
+import { RevenueCalculator } from '@/components/sections/RevenueCalculator'
 import { Outcomes } from '@/components/sections/Outcomes'
-import { SocialProof } from '@/components/sections/SocialProof'
-import { PricingPreviewNew } from '@/components/sections/PricingPreviewNew'
 import { FAQSection } from '@/components/sections/FAQSection'
-import { FinalCTACinematic } from '@/components/sections/FinalCTACinematic'
 import { FounderSection } from '@/components/sections/FounderSection'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { softwareApplicationSchema, faqSchema } from '@/lib/seo'
@@ -26,40 +27,35 @@ export default function HomePage() {
     <>
       <JsonLd data={[softwareApplicationSchema(), faqSchema(HOMEPAGE_FAQ)]} />
 
-      {/* 1 — Cinematic Hero */}
-      <HeroCinematic />
-      <MetaTechProviderBadge />
-
-      {/* 2 — The Problem (Contrast) */}
-      <ProblemStatement />
-
-      {/* 3 — Meet Buddie Agent Work Queue */}
-      <BuddieAgent />
-
-      {/* 4 — Autonomy Modes */}
-      <AutonomyModes />
-
-      {/* 5 — Revenue Leak Calculator */}
-      <RevenueCalculator />
-
-      {/* 6 — Customer Lifecycle Flow */}
+      {/* WhatsApp Premium homepage — Claude Design handoff (light/green direction) */}
+      <Hero />
+      <TrustStrip />
+      <NumbersBand />
+      
+      {/* 1. Meet the AI Employee */}
+      <MeetBuddie />
+      
+      {/* 2. Interactive Customer Journey & screenshots */}
       <CustomerLifecycle />
-
-      {/* 7 — Industry Verticals */}
-      <IndustryPacks />
-
-      {/* 9 — Outcomes & Verified Testimonials */}
+      
+      {/* 3. The 3 Autonomy/Trust Modes */}
+      <AutonomyModes />
+      
+      {/* 4. ROI / AMC Revenue Leak Calculator */}
+      <RevenueCalculator />
+      
+      {/* 5. Metrics & Verified Customer Stories */}
       <Outcomes />
+      
+      {/* 6. Global multi-currency support */}
+      <BuiltForGlobal />
+      
+      <Pricing />
+      <FinalCTA />
 
-      {/* Trust & Conversion Essentials */}
-      <SocialProof />
-      <PricingPreviewNew />
+      {/* Retained shared sections */}
       <FAQSection />
-
-      {/* 10 — Final Cinematic CTA & Founder Story */}
-      <FinalCTACinematic />
       <FounderSection />
     </>
   )
 }
-

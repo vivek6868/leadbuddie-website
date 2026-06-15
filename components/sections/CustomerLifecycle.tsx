@@ -1,11 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Section } from '@/components/ui/Section'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { MessageSquare, UserCheck, RefreshCw, Wrench, Gift, ArrowRight, Check } from 'lucide-react'
-import { EASE_OUT } from '@/components/ui/motion'
+import { MessageSquare, UserCheck, RefreshCw, Wrench, Gift, Check } from 'lucide-react'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
 
 interface LifecycleStep {
@@ -15,6 +13,7 @@ interface LifecycleStep {
   subtitle: string
   icon: any
   actionDescription: string
+  highlights: string[]
   whatsappPreview: {
     sender: string
     text: string
@@ -33,12 +32,17 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     subtitle: 'Zero delay lead response',
     icon: MessageSquare,
     actionDescription: 'Buddie captures queries from Google Search or Meta Ads, immediately answers questions about availability, shares brochures, and drafts booking options.',
+    highlights: [
+      'Instant AI replies to customer questions on WhatsApp',
+      'Connects directly to Meta Ads & Google Search leads',
+      'Automatically shares price lists, brochures & schedules'
+    ],
     whatsappPreview: [
       { sender: 'Customer', text: 'Hi, I saw your ad. What are your installation packages?' },
-      { sender: 'Buddie AI', text: 'Hi there! We offer Standard Installation (₹999) and Premium (₹1,499) which includes 1yr extra warranty. Here is the list: leadbuddie.com/install-spec', badge: 'Draft reply prepared' }
+      { sender: 'Buddie AI', text: 'Hi there! We offer Standard Installation ($49) and Premium ($79) which includes 1yr extra warranty. Here is the list: leadbuddie.com/install-spec', badge: 'Draft reply prepared' }
     ],
     stats: '10s response time',
-    screenshotSrc: '/images/product-inbox.png',
+    screenshotSrc: '/images/lead-capture-flow.png',
     screenshotAlt: 'LeadBuddie WhatsApp Shared Team Inbox'
   },
   {
@@ -47,13 +51,18 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     title: '2. Auto-CRM Log',
     subtitle: 'Extract data from chats',
     icon: UserCheck,
-    actionDescription: 'No manual spreadsheets. Buddie automatically parses names, location pin codes, and requested models directly from the chat text, logging them to the sales pipeline.',
+    actionDescription: 'No manual spreadsheets. Buddie automatically parses names, location ZIP codes, and requested models directly from the chat text, logging them to the sales pipeline.',
+    highlights: [
+      'Reads names, addresses, and phone numbers automatically',
+      'Categorizes leads by location & interest in the CRM',
+      'Eliminates human error & copy-pasting'
+    ],
     whatsappPreview: [
-      { sender: 'System Log', text: 'Scanned WhatsApp contact: Ramesh Kulkarni' },
-      { sender: 'System Action', text: 'Created Customer Profile: Ramesh Kulkarni, PIN 560001, Product: Kent Grand' }
+      { sender: 'System Log', text: 'Scanned WhatsApp contact: Sarah Jenkins' },
+      { sender: 'System Action', text: 'Created Customer Profile: Sarah Jenkins, ZIP 10001, Product: AquaPure Pro' }
     ],
     stats: '100% manual logging removed',
-    screenshotSrc: '/images/product-leads.png',
+    screenshotSrc: '/images/onboarding-flow.png',
     screenshotAlt: 'LeadBuddie Lead CRM Kanban Board'
   },
   {
@@ -63,12 +72,17 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     subtitle: 'Prevent contract lapse',
     icon: RefreshCw,
     actionDescription: 'The subscription engine monitors active contracts. 7 days before expiration, Buddie drafts a friendly reminder, invoice, and payment link directly to their WhatsApp.',
+    highlights: [
+      'Automatic contract tracking & renewal alerts',
+      'Generates and sends WhatsApp-friendly payment links',
+      'Frictionless 1-tap payment for your customers'
+    ],
     whatsappPreview: [
-      { sender: 'Buddie AI', text: 'Hi Priya! Your Gold Service AMC expires in 5 days. Click here to renew in 1 tap: pay.leadbuddie.com/priya', badge: 'AMC Engine' },
+      { sender: 'Buddie AI', text: 'Hi Sarah! Your Gold Service AMC expires in 5 days. Click here to renew in 1 tap: pay.leadbuddie.com/sarah', badge: 'AMC Engine' },
       { sender: 'Customer', text: 'Done! Payment sent. Thanks.' }
     ],
     stats: 'Up to 92% renewal retention',
-    screenshotSrc: '/images/lead-detail-view.png',
+    screenshotSrc: '/images/renewal-chasing-flow.png',
     screenshotAlt: 'LeadBuddie Customer and AMC Detail View'
   },
   {
@@ -78,12 +92,17 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     subtitle: 'Close the loop on repairs',
     icon: Wrench,
     actionDescription: 'When repairs or check-ups are booked, Buddie schedules the slot, sends the customer the technician details, and logs the appointment in the field-force queue.',
+    highlights: [
+      'Live scheduling integrated with technician calendars',
+      'Sends technician profile name & tracking link on WhatsApp',
+      'Automatically logs visit completion and billing status'
+    ],
     whatsappPreview: [
       { sender: 'Customer', text: 'I need a filter change today.' },
-      { sender: 'Buddie AI', text: 'Booked for 3:00 PM today. Technician Amit (ID: AM492) will arrive. You can track him here: map.leadbuddie.com/t/amit', badge: 'Auto Scheduled' }
+      { sender: 'Buddie AI', text: 'Booked for 3:00 PM today. Technician Alex (ID: AX492) will arrive. You can track them here: map.leadbuddie.com/t/alex', badge: 'Auto Scheduled' }
     ],
     stats: '0 missed appointments',
-    screenshotSrc: '/images/product-automation.png',
+    screenshotSrc: '/images/service-visit-flow.png',
     screenshotAlt: 'LeadBuddie Service Visits Scheduling and Automation'
   },
   {
@@ -93,178 +112,177 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     subtitle: 'Re-engage dead accounts',
     icon: Gift,
     actionDescription: 'Buddie regularly audits your database to locate customer accounts that have not purchased in over 6 months, scheduling smart broadcasts with custom discount triggers.',
+    highlights: [
+      'Identifies inactive or old customers automatically',
+      'Sends smart, personalized WhatsApp coupon broadcasts',
+      'Turns dead database contacts into fresh revenue streams'
+    ],
     whatsappPreview: [
-      { sender: 'Buddie AI', text: 'Hey Vikram! It has been 6 months since your last filter check. Book today and get 15% off using code REVIVE15.', badge: 'Re-activation list' },
+      { sender: 'Buddie AI', text: 'Hey David! It has been 6 months since your last system check. Book today and get 15% off using code REVIVE15.', badge: 'Re-activation list' },
       { sender: 'Customer', text: 'Great. Please book me for tomorrow morning.' }
     ],
     stats: '15% recovery on cold databases',
-    screenshotSrc: '/images/product-campaigns.png',
+    screenshotSrc: '/images/winback-campaign-flow.png',
     screenshotAlt: 'LeadBuddie WhatsApp Campaign Broadcast Manager'
   }
 ]
 
 export function CustomerLifecycle() {
-  const [activeStepId, setActiveStepId] = useState('lead')
   const reduce = useReducedMotion()
 
-  const currentStep = LIFECYCLE_STEPS.find((s) => s.id === activeStepId)!
-  const ActiveIcon = currentStep.icon
-
   return (
-    <Section className="border-t border-white/[0.04] bg-[#08080f] relative overflow-hidden" id="customer-lifecycle">
+    <Section className="border-t border-border bg-bg-secondary relative overflow-hidden" id="customer-lifecycle">
       {/* Background decoration */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-light/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-brand/5 rounded-full blur-3xl pointer-events-none" />
 
       <SectionHeader
         label="Full Journey CRM"
         title="More than a chat bubble"
-        description="Most WhatsApp bots answer FAQs and stop there. LeadBuddie runs your entire operations lifecycle, from cold click to repeat renewals."
+        description="Most WhatsApp bots answer FAQs and stop there. LeadBuddie runs your entire operations lifecycle, from first click to repeat renewals."
         centered
-        className="mb-16"
+        className="mb-16 md:mb-24"
       />
 
-      {/* Horizontal / Vertical Stepper Container */}
-      <div className="max-w-5xl mx-auto mb-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 bg-white/[0.01] border border-white/[0.06] p-4 rounded-3xl backdrop-blur-xl relative">
-          
+      <div className="max-w-6xl mx-auto relative px-4 md:px-8">
+        {/* Vertical Pipeline line for Desktop */}
+        <div className="absolute left-[34px] lg:left-1/2 top-8 bottom-8 w-[2px] bg-gradient-to-b from-brand/50 via-border to-brand/10 transform lg:-translate-x-1/2 hidden md:block" />
+
+        {/* Lifecycle Steps Stack */}
+        <div className="space-y-20 md:space-y-32">
           {LIFECYCLE_STEPS.map((step, index) => {
             const StepIcon = step.icon
-            const isActive = activeStepId === step.id
+            const isEven = index % 2 === 0
+
             return (
-              <div key={step.id} className="flex-1 w-full flex items-center">
-                {/* Node Button */}
-                <button
-                  onClick={() => setActiveStepId(step.id)}
-                  className={`flex-1 flex flex-col items-center py-4 px-3 rounded-2xl transition-all duration-200 relative group cursor-pointer ${
-                    isActive 
-                      ? 'bg-white/[0.03] border border-white/[0.08] shadow-lg shadow-black/20' 
-                      : 'border border-transparent hover:bg-white/[0.01]'
-                  }`}
-                >
-                  <div className={`h-10 w-10 rounded-full flex items-center justify-center border transition-colors ${
-                    isActive 
-                      ? 'bg-teal-500/10 border-teal-500/50 text-teal-400' 
-                      : 'bg-white/[0.02] border-white/[0.06] text-[#8888a8] group-hover:text-white'
-                  }`}>
-                    <StepIcon className="h-5 w-5" />
-                  </div>
-                  <span className={`text-xs font-semibold mt-3 transition-colors ${
-                    isActive ? 'text-white' : 'text-[#8888a8] group-hover:text-white'
-                  }`}>
-                    {step.label}
-                  </span>
-                  <span className="text-[10px] text-teal-400 font-mono mt-1 opacity-80">{step.stats.split(' ')[0]} {step.stats.split(' ')[1] || ''}</span>
-                </button>
-
-                {/* Arrow Connector (Desktop only, omit for last item) */}
-                {index < LIFECYCLE_STEPS.length - 1 && (
-                  <div className="hidden md:flex items-center justify-center px-2 text-[#444466]">
-                    <ArrowRight className="h-4 w-4" />
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* Detail Block */}
-      <div className="max-w-5xl mx-auto">
-        <div className="bg-[#0f0f1b]/50 border border-white/[0.06] rounded-3xl p-6 md:p-8 backdrop-blur-xl relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeStepId}
-              initial={reduce ? {} : { opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={reduce ? {} : { opacity: 0, y: -15 }}
-              transition={{ duration: 0.3, ease: EASE_OUT }}
-              className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 items-center"
-            >
-              {/* Text Description */}
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[10px] text-teal-400 font-mono font-bold uppercase tracking-widest">{currentStep.label} Stage</span>
-                  <h3 className="text-2xl font-bold text-white mt-1 leading-none">{currentStep.title}</h3>
-                  <p className="text-xs text-text-secondary mt-1 font-semibold uppercase tracking-wider">{currentStep.subtitle}</p>
+              <motion.div
+                key={step.id}
+                initial={reduce ? {} : { opacity: 0, y: 25 }}
+                whileInView={reduce ? {} : { opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+              >
+                {/* Vertical Node Icon on Desktop */}
+                <div className="absolute left-0 lg:left-1/2 top-0 transform -translate-x-[7px] lg:-translate-x-1/2 hidden md:flex h-10 w-10 rounded-full bg-bg-card border-2 border-brand shadow-sm items-center justify-center z-10">
+                  <StepIcon className="h-4 w-4 text-brand" />
                 </div>
 
-                <p className="text-sm md:text-base text-[#8888a8] leading-relaxed">
-                  {currentStep.actionDescription}
-                </p>
+                {/* Text Description Column */}
+                <div className={`space-y-6 ${!isEven ? 'lg:order-last lg:pl-8' : 'lg:pr-8'}`}>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      {/* Mobile Step Icon & Label */}
+                      <div className="md:hidden h-8 w-8 rounded-full bg-brand/10 flex items-center justify-center border border-brand/20">
+                        <StepIcon className="h-4 w-4 text-brand" />
+                      </div>
+                      <span className="text-[11px] text-brand font-mono font-bold uppercase tracking-widest bg-brand/5 px-2 py-0.5 rounded-full border border-brand/10">
+                        Step 0{index + 1}: {step.label}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-extrabold text-text-primary tracking-tight">
+                      {step.title.split('. ')[1] || step.title}
+                    </h3>
+                    <p className="text-xs text-text-muted font-bold uppercase tracking-wider">
+                      {step.subtitle}
+                    </p>
+                  </div>
 
-                <div className="border-t border-white/[0.06] pt-6">
-                  <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
-                      <Check className="h-4 w-4 text-teal-400" />
+                  <p className="text-sm md:text-base text-text-secondary leading-relaxed">
+                    {step.actionDescription}
+                  </p>
+
+                  {/* Highlights bullet list */}
+                  <ul className="space-y-2.5">
+                    {step.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-text-secondary">
+                        <div className="h-4 w-4 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 border border-emerald-500/25 shrink-0 mt-0.5">
+                          <Check className="h-2.5 w-2.5" />
+                        </div>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Target Metric Boost Box */}
+                  <div className="bg-bg-card border border-border/80 rounded-2xl p-4 shadow-sm flex items-center gap-3.5 max-w-sm">
+                    <div className="h-10 w-10 rounded-xl bg-brand/10 flex items-center justify-center border border-brand/20 shrink-0">
+                      <Check className="h-5 w-5 text-brand" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-white">Target Metric Boost</h4>
-                      <p className="text-xs text-[#8888a8] mt-0.5 font-semibold font-mono">{currentStep.stats}</p>
+                      <h4 className="text-xs font-bold text-text-muted uppercase tracking-wider">Target Metric Boost</h4>
+                      <p className="text-sm font-extrabold text-brand font-mono mt-0.5">{step.stats}</p>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp Playbook Execution Logs (collapsible/compact visual) */}
+                  <div className="bg-bg-elevated border border-border rounded-2xl p-4 space-y-3.5 max-w-lg shadow-inner">
+                    <div className="flex items-center justify-between border-b border-border pb-2">
+                      <span className="text-[10px] font-bold text-text-secondary font-mono flex items-center gap-1.5">
+                        <StepIcon className="h-3 w-3 text-brand" />
+                        PLAYBOOK_EXECUTION
+                      </span>
+                      <div className="flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
+                        <span className="text-[9px] text-text-muted font-mono font-semibold">Active</span>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      {step.whatsappPreview.map((msg, i) => {
+                        const isSystem = msg.sender.includes('System')
+                        const isBuddie = msg.sender.includes('Buddie')
+                        
+                        return (
+                          <div
+                            key={i}
+                            className={`rounded-xl p-2.5 text-[11px] max-w-[85%] ${
+                              isSystem
+                                ? 'bg-bg-primary border border-border text-text-secondary font-mono text-[10px]'
+                                : isBuddie
+                                ? 'bg-brand/10 border border-brand/20 text-text-primary ml-auto shadow-sm'
+                                : 'bg-bg-card border border-border text-text-primary shadow-sm'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between mb-0.5">
+                              <span className={`text-[9px] font-bold ${
+                                isSystem ? 'text-text-muted' : isBuddie ? 'text-brand-hover' : 'text-text-secondary'
+                              }`}>
+                                {msg.sender}
+                              </span>
+                              {msg.badge && (
+                                <span className="bg-brand/15 text-brand-hover text-[7px] font-bold px-1.5 py-0.2 rounded border border-brand/20">
+                                  {msg.badge}
+                                </span>
+                              )}
+                            </div>
+                            <p className="leading-relaxed">{msg.text}</p>
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Product Dashboard Screenshot & Playbook Chat stream */}
-              <div className="space-y-6">
-                {/* Widescreen Browser Mockup */}
-                <ScreenshotFrame
-                  src={currentStep.screenshotSrc}
-                  alt={currentStep.screenshotAlt}
-                  aspect="16/9"
-                  fit="cover"
-                  label={`${currentStep.label} View`}
-                  className="w-full shadow-2xl"
-                />
-
-                {/* WhatsApp Playbook Execution Logs */}
-                <div className="bg-[#0b0b13] border border-white/[0.08] rounded-2xl p-5 space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/[0.06] pb-3 mb-1">
-                    <span className="text-xs font-bold text-white font-mono flex items-center gap-1.5">
-                      <ActiveIcon className="h-3.5 w-3.5 text-teal-400" />
-                      PLAYBOOK_EXECUTION
-                    </span>
-                    <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  </div>
-
-                  <div className="space-y-3">
-                    {currentStep.whatsappPreview.map((msg, i) => {
-                      const isSystem = msg.sender.includes('System')
-                      const isBuddie = msg.sender.includes('Buddie')
-                      
-                      return (
-                        <div
-                          key={i}
-                          className={`rounded-xl p-3 text-xs max-w-[85%] ${
-                            isSystem
-                              ? 'bg-white/[0.02] border border-white/[0.04] text-[#8888a8] font-mono text-[11px]'
-                              : isBuddie
-                              ? 'bg-[#091b14] border border-emerald-500/20 text-white ml-auto'
-                              : 'bg-white/[0.04] border border-white/[0.08] text-white'
-                          }`}
-                        >
-                          <div className="flex items-center justify-between mb-1">
-                            <span className={`text-[10px] font-bold ${
-                              isSystem ? 'text-[#666688]' : isBuddie ? 'text-teal-400' : 'text-text-secondary'
-                            }`}>
-                              {msg.sender}
-                            </span>
-                            {msg.badge && (
-                              <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-semibold px-1.5 py-0.2 rounded border border-emerald-500/20">
-                                {msg.badge}
-                              </span>
-                            )}
-                          </div>
-                          <p className="leading-relaxed">{msg.text}</p>
-                        </div>
-                      )
-                    })}
+                {/* Illustration Image Column */}
+                <div className={`flex items-center justify-center ${isEven ? 'lg:pl-8' : 'lg:pr-8'}`}>
+                  <div className="relative group w-full max-w-[480px]">
+                    {/* Ambient Glow behind the image */}
+                    <div className="absolute -inset-3 bg-gradient-to-tr from-brand-glow via-brand/10 to-wa-glow opacity-30 blur-2xl group-hover:opacity-50 transition-opacity duration-500 rounded-full" />
+                    
+                    <ScreenshotFrame
+                      src={step.screenshotSrc}
+                      alt={step.screenshotAlt}
+                      aspect="1/1"
+                      fit="contain"
+                      label={`${step.label} Flow`}
+                      className="w-full shadow-lg bg-white border border-border rounded-3xl overflow-hidden transform group-hover:-translate-y-1 transition-all duration-300"
+                    />
                   </div>
                 </div>
-              </div>
-
-            </motion.div>
-          </AnimatePresence>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </Section>

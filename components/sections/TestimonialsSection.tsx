@@ -26,7 +26,7 @@ export function TestimonialsSection() {
             key={index}
             data-reveal
             style={{ ['--reveal-delay' as any]: `${index * 0.1}s` }}
-            className="relative flex h-full flex-col rounded-3xl border border-white/[0.08] bg-bg-card/80 p-8 backdrop-blur-sm shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]"
+            className="relative flex h-full flex-col rounded-3xl border border-border bg-bg-card/80 p-8 backdrop-blur-sm shadow-sm"
           >
             <Quote
               className="absolute right-6 top-6 h-10 w-10 text-brand/15"
@@ -35,9 +35,9 @@ export function TestimonialsSection() {
             />
 
             {testimonial.metrics && (
-              <div className="mb-6 grid grid-cols-2 gap-4 border-b border-white/[0.08] pb-6">
+              <div className="mb-6 grid grid-cols-2 gap-4 border-b border-border pb-6">
                 <div>
-                  <div className="text-3xl font-bold text-teal-300 mb-1">
+                  <div className="text-3xl font-bold text-brand mb-1">
                     {testimonial.metrics.primary}
                   </div>
                   <div className="text-sm text-text-secondary">
@@ -69,7 +69,7 @@ export function TestimonialsSection() {
               &ldquo;{testimonial.quote}&rdquo;
             </p>
 
-            <div className="border-t border-white/[0.08] pt-4">
+            <div className="border-t border-border pt-4">
               <p className="text-base font-semibold text-text-primary">
                 {testimonial.author}
               </p>
@@ -79,9 +79,7 @@ export function TestimonialsSection() {
                 </p>
               )}
               <p className="mt-0.5 text-xs text-text-muted">
-                {testimonial.location === 'India'
-                  ? 'India'
-                  : `${testimonial.location}, India`}
+                {testimonial.location}
               </p>
             </div>
           </article>
