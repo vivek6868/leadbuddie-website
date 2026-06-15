@@ -2,10 +2,10 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 import {
-  Droplets,
-  Building2,
   Wrench,
-  Plus,
+  Compass,
+  Briefcase,
+  Users,
   ArrowRight,
   type LucideIcon,
 } from 'lucide-react'
@@ -23,33 +23,33 @@ type Pack = {
 
 const PACKS: Pack[] = [
   {
-    icon: Droplets,
-    name: 'Water Treatment Pack',
-    tagline: 'Installations, AMC renewals, service visits and callbacks — the full dealer lifecycle.',
+    icon: Wrench,
+    name: 'Water & Field Service',
+    tagline: 'AMC tracking, warranties, technician scheduling, and service callback reminders.',
     tone: 'from-teal-400/20 text-teal-300 border-teal-400/25',
     status: 'live',
     href: '/water-purifier-crm',
   },
   {
-    icon: Building2,
-    name: 'Real Estate Pack',
-    tagline: 'Site-visit enquiries, follow-ups, and buyer pipelines run from one workspace.',
+    icon: Compass,
+    name: 'Travel & Bookings',
+    tagline: 'Itinerary details, custom tour quotes, deposit collections, and tour follow-ups.',
     tone: 'from-violet-400/20 text-violet-300 border-violet-400/25',
-    status: 'soon',
+    status: 'live',
   },
   {
-    icon: Wrench,
-    name: 'Service Business Pack',
-    tagline: 'Job requests, scheduled visits, repeat maintenance and customer history.',
+    icon: Briefcase,
+    name: 'Professional Consultants',
+    tagline: 'Intake forms, calendar scheduling slots, meeting reminders, and payment link drafts.',
     tone: 'from-amber-400/20 text-amber-300 border-amber-400/25',
-    status: 'soon',
+    status: 'live',
   },
   {
-    icon: Plus,
-    name: 'More packs coming',
-    tagline: 'Each pack ships the workflows a specific operational business actually runs.',
-    tone: 'from-white/10 text-white/70 border-white/15',
-    status: 'soon',
+    icon: Users,
+    name: 'HR & Recruitment',
+    tagline: 'Applicant status updates, document collection checklists, and screening follow-ups.',
+    tone: 'from-blue-400/20 text-blue-300 border-blue-400/25',
+    status: 'live',
   },
 ]
 

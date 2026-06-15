@@ -1,12 +1,13 @@
 import { HeroCinematic } from '@/components/sections/HeroCinematic'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
-import { WorkflowStory } from '@/components/sections/WorkflowStory'
-import { ProductTour } from '@/components/sections/ProductTour'
-import { WaterPurifierPack } from '@/components/sections/WaterPurifierPack'
+import { ProblemStatement } from '@/components/sections/ProblemStatement'
 import { BuddieAgent } from '@/components/sections/BuddieAgent'
+import { AutonomyModes } from '@/components/sections/AutonomyModes'
+import { RevenueCalculator } from '@/components/sections/RevenueCalculator'
+import { CustomerLifecycle } from '@/components/sections/CustomerLifecycle'
 import { IndustryPacks } from '@/components/sections/IndustryPacks'
+import { Outcomes } from '@/components/sections/Outcomes'
 import { SocialProof } from '@/components/sections/SocialProof'
-import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 import { PricingPreviewNew } from '@/components/sections/PricingPreviewNew'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { FinalCTACinematic } from '@/components/sections/FinalCTACinematic'
@@ -25,37 +26,40 @@ export default function HomePage() {
     <>
       <JsonLd data={[softwareApplicationSchema(), faqSchema(HOMEPAGE_FAQ)]} />
 
-      {/* 1 — Cinematic hero: the living operational workspace */}
+      {/* 1 — Cinematic Hero */}
       <HeroCinematic />
-
       <MetaTechProviderBadge />
 
-      {/* 2 — Workflow story: one message becomes the whole lifecycle */}
-      <WorkflowStory />
+      {/* 2 — The Problem (Contrast) */}
+      <ProblemStatement />
 
-      {/* Interactive tour of real product screens */}
-      <ProductTour />
-
-      {/* 3 — Flagship operational pack (visual centerpiece) */}
-      <WaterPurifierPack />
-
-      {/* 4 — Buddie: calm operational intelligence */}
+      {/* 3 — Meet Buddie Agent Work Queue */}
       <BuddieAgent />
 
-      {/* 5 — Industry packs: built to scale */}
+      {/* 4 — Autonomy Modes */}
+      <AutonomyModes />
+
+      {/* 5 — Revenue Leak Calculator */}
+      <RevenueCalculator />
+
+      {/* 6 — Customer Lifecycle Flow */}
+      <CustomerLifecycle />
+
+      {/* 7 — Industry Verticals */}
       <IndustryPacks />
 
-      {/* 6 — Social proof / trust */}
-      <SocialProof />
-      <TestimonialsSection />
+      {/* 9 — Outcomes & Verified Testimonials */}
+      <Outcomes />
 
-      {/* Conversion essentials */}
+      {/* Trust & Conversion Essentials */}
+      <SocialProof />
       <PricingPreviewNew />
       <FAQSection />
 
-      {/* 7 — Cinematic final CTA */}
+      {/* 10 — Final Cinematic CTA & Founder Story */}
       <FinalCTACinematic />
       <FounderSection />
     </>
   )
 }
+

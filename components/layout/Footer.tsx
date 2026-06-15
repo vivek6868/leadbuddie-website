@@ -162,7 +162,7 @@ export function Footer() {
               © {new Date().getFullYear()} {BRAND.name} — A product of {BRAND.company}
             </p>
             <p className="text-gray-400 text-xs">
-              Hutliv Technologies LLP · Registered in India · Made in India
+              LeadBuddie Technologies · Registered in India · Made in India
             </p>
           </div>
         </div>
