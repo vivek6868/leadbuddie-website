@@ -383,7 +383,7 @@ export const TESTIMONIALS = [
 export const SEO = {
   title: 'LeadBuddie — AI CRM & AMC Renewal Software for WhatsApp',
   description: 'LeadBuddie is an AI CRM and AMC renewal tracking software that automates customer replies, contract reminders, and service follow-ups on WhatsApp Business API. Built for water treatment, purifier, HVAC, and service dealers. 30-day free trial.',
-  keywords: 'RO service software India, RO CRM software, water purifier dealer software, water treatment CRM, AMC renewal software India, RO billing software, AMC reminder app, water purifier lead management, complaint management software water purifier, RO technician app, annual maintenance contract CRM, AC service software India, service center software India',
+  keywords: 'AI employee for business, AI sales employee WhatsApp, AI sales agent, AI receptionist for business, WhatsApp AI employee, RO service software India, RO CRM software, water purifier dealer software, water treatment CRM, AMC renewal software India, RO billing software, AMC reminder app, water purifier lead management, complaint management software water purifier, RO technician app, annual maintenance contract CRM, AC service software India, service center software India',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection)

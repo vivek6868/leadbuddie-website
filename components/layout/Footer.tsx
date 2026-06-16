@@ -40,6 +40,12 @@ export function Footer() {
             <h3 className="text-gray-900 font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
               <li>
+                <Link href="/ai-employee" className="text-semibold text-brand hover:text-brand-hover transition-colors text-sm flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
+                  AI Sales Employee
+                </Link>
+              </li>
+              <li>
                 <Link href="/water-purifier-crm" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
                   Water Purifier CRM
                 </Link>
