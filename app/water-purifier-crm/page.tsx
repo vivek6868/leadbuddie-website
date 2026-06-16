@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords:
-    'water purifier dealer CRM, RO dealer CRM, water purifier CRM software, RO dealer lead management, water purifier business software India, Kent Aquaguard dealer software, WhatsApp CRM for water purifier',
+    'water purifier dealer CRM, RO dealer CRM, RO service CRM India, water purifier CRM software, RO dealer lead management, RO billing software, Kent Aquaguard dealer software, RO complaint software, WhatsApp CRM for water purifier, water purifier business software India',
   alternates: { canonical: PATH },
   openGraph: {
     title: TITLE,

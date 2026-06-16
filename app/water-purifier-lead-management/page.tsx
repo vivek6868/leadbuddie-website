@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords:
-    'water purifier lead management, RO dealer lead management, water purifier enquiry tracking, WhatsApp lead management software, RO lead tracking, water purifier sales follow-up software India',
+    'water purifier lead management, RO dealer lead management, water purifier lead crm, RO software free download, RO dealership CRM, water purifier enquiry tracking, WhatsApp lead management software, RO lead tracking, water purifier sales follow-up software India',
   alternates: { canonical: PATH },
   openGraph: {
     title: TITLE,

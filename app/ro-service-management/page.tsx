@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords:
-    'RO service management software, water purifier service software, RO service CRM, water purifier complaint management, service visit scheduling software, RO service tracking WhatsApp',
+    'RO service management software, water purifier service software, RO service CRM, RO billing app India, water purifier service register, RO service card app, water purifier complaint management, service visit scheduling software, RO service tracking WhatsApp',
   alternates: { canonical: PATH },
   openGraph: {
     title: TITLE,

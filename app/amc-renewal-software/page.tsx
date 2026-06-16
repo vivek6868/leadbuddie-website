@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords:
-    'AMC renewal software, AMC contract management software, annual maintenance contract software, AMC renewal reminder WhatsApp, AC AMC management software, appliance service AMC tracking, pest control AMC software, water purifier AMC reminder software, RO AMC tracking',
+    'AMC renewal software India, annual maintenance contract tracking software, AMC contract management software, AMC card management, AMC reminder app India, AMC renewal reminder WhatsApp, AC AMC management software, water purifier AMC reminder software, RO AMC tracking, pest control AMC software',
   alternates: { canonical: PATH },
   openGraph: {
     title: TITLE,

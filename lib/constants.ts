@@ -381,9 +381,9 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — AI Sales Employee for WhatsApp & Instagram',
-  description: 'Buddie replies to your WhatsApp and Instagram leads in seconds, qualifies them, and follows up — even while you are busy. Built for growing businesses. 30-day free trial.',
-  keywords: 'AI sales employee, AI for WhatsApp, AI replies WhatsApp, WhatsApp lead management, service business CRM, global WhatsApp CRM, WhatsApp Business API',
+  title: 'LeadBuddie — AI CRM & AMC Renewal Software for WhatsApp',
+  description: 'LeadBuddie is an AI CRM and AMC renewal tracking software that automates customer replies, contract reminders, and service follow-ups on WhatsApp Business API. Built for water treatment, purifier, HVAC, and service dealers. 30-day free trial.',
+  keywords: 'RO service software India, RO CRM software, water purifier dealer software, water treatment CRM, AMC renewal software India, RO billing software, AMC reminder app, water purifier lead management, complaint management software water purifier, RO technician app, annual maintenance contract CRM, AC service software India, service center software India',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection)
