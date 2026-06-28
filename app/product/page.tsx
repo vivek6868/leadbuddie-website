@@ -1,122 +1,69 @@
+/*
+ * Product page — reworked to match the homepage's WhatsApp-Premium design
+ * language (brand-green tokens + atoms) and the new positioning: an AI Sales
+ * Employee for WhatsApp that replies, follows up, qualifies, and books.
+ * Server component — uses the real app screenshots in /public/images.
+ */
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
 import {
   MessageSquare,
-  Kanban,
-  Clock,
-  Sparkles,
-  Zap,
+  RefreshCw,
+  Filter,
+  CalendarCheck,
+  Inbox,
   Send,
-  BarChart,
+  ClipboardList,
   Users,
-  Instagram,
-  ShieldCheck,
-  Workflow,
-  ArrowRight,
   Check,
-  FileText,
-  Target,
-  CalendarClock,
+  ShieldCheck,
+  BadgeCheck,
   type LucideIcon,
 } from 'lucide-react'
-import { Section } from '@/components/ui/Section'
-import { SectionHeader } from '@/components/ui/SectionHeader'
-import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
 import { Button } from '@/components/ui/Button'
+import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
 import { FinalCTA } from '@/components/sections/FinalCTA'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
+import { Pill, P } from '@/components/home/atoms'
 
 export const metadata: Metadata = {
-  title: 'Product — LeadBuddie AI Sales Employee for WhatsApp & Instagram',
+  title: 'Product — LeadBuddie AI Sales Employee for WhatsApp',
   description:
-    'Everything inside LeadBuddie — unified WhatsApp + Instagram inbox, AI replies, lead pipeline, follow-up discipline, automations, campaigns and team analytics. Built for growing businesses.',
+    'Everything inside LeadBuddie — AI replies, automatic follow-ups, lead qualification, a Bookings board for callbacks, demos and visits, shared WhatsApp inbox, campaigns, AMC renewals and multi-number support. Built for Indian businesses on the official WhatsApp Business API.',
+  keywords:
+    'WhatsApp CRM features, WhatsApp AI replies, WhatsApp follow up automation, WhatsApp appointment booking software, WhatsApp lead management, multi-number WhatsApp, AMC renewal software',
   alternates: { canonical: '/product' },
 }
 
-/* ---------- 8 module bento ---------- */
+/* ─── Capability grid (what's inside, in plain outcomes) ─────────────────── */
+type Capability = { icon: LucideIcon; title: string; caption: string }
 
-type Module = {
-  id: string
-  icon: LucideIcon
-  title: string
-  caption: string
-  tone: string
-  span?: string
-  anchor?: string
-}
-
-const MODULES: Module[] = [
-  {
-    id: 'inbox',
-    icon: MessageSquare,
-    title: 'Unified inbox',
-    caption: 'WhatsApp + Instagram + website chat in one workspace.',
-    tone: 'border-brand/30 bg-brand/10 text-brand-hover',
-    span: 'sm:col-span-2 lg:col-span-2',
-    anchor: 'inbox',
-  },
-  {
-    id: 'ai',
-    icon: Sparkles,
-    title: 'AI Sales Employee',
-    caption: 'Reads, replies, qualifies, attaches the right asset.',
-    tone: 'border-brand/35 bg-brand/10 text-brand-hover',
-    span: 'lg:col-span-2',
-    anchor: 'ai',
-  },
-  {
-    id: 'pipeline',
-    icon: Kanban,
-    title: 'Lead pipeline',
-    caption: 'Stages, tags, source, budget. Visual + list view.',
-    tone: 'border-brand/30 bg-brand/10 text-brand-hover',
-    anchor: 'pipeline',
-  },
-  {
-    id: 'followups',
-    icon: Clock,
-    title: 'Follow-ups',
-    caption: 'Never miss a callback — calendar + list discipline.',
-    tone: 'border-brand/30 bg-brand/10 text-brand-hover',
-    anchor: 'pipeline',
-  },
-  {
-    id: 'automation',
-    icon: Workflow,
-    title: 'Routing',
-    caption: 'Auto-assign by source. Smart handoffs.',
-    tone: 'border-brand/30 bg-brand/10 text-brand-hover',
-    anchor: 'ops',
-  },
-  {
-    id: 'campaigns',
-    icon: Send,
-    title: 'Campaigns',
-    caption: 'Scheduled sends, templates, retry-on-fail.',
-    tone: 'border-brand/30 bg-brand/10 text-brand-hover',
-    anchor: 'ops',
-  },
-  {
-    id: 'analytics',
-    icon: BarChart,
-    title: 'Analytics',
-    caption: 'Response time, conversion, team performance.',
-    tone: 'border-brand/30 bg-brand/10 text-brand-hover',
-    anchor: 'ops',
-  },
-  {
-    id: 'team',
-    icon: Users,
-    title: 'Team',
-    caption: 'Roles, assignments, shared inbox.',
-    tone: 'border-brand/30 bg-brand/10 text-brand-hover',
-    anchor: 'ops',
-  },
+const CAPABILITIES: Capability[] = [
+  { icon: MessageSquare, title: 'Instant AI replies', caption: 'Answers every WhatsApp enquiry in ~10 seconds — even at 2am or on a Sunday.' },
+  { icon: RefreshCw, title: 'Automatic follow-ups', caption: 'Chases silent leads on its own until they reply or book. Nothing is forgotten.' },
+  { icon: Filter, title: 'Lead qualification', caption: 'Filters serious buyers from time-wasters and flags the hot ones for you.' },
+  { icon: CalendarCheck, title: 'Bookings board', caption: 'Turns ready leads into booked callbacks, demos, site visits & appointments.' },
+  { icon: Inbox, title: 'Shared team inbox', caption: 'One inbox for the whole team — assign chats, add notes, see full history.' },
+  { icon: Send, title: 'Campaigns & broadcasts', caption: 'Scheduled WhatsApp campaigns with templates and retry-on-fail.' },
+  { icon: ClipboardList, title: 'AMC & renewals', caption: 'Tracks contracts and sends reminders with 1-tap payment links.' },
+  { icon: Users, title: 'Team & multi-number', caption: 'Roles for your team, analytics, and up to 5 WhatsApp numbers.' },
 ]
 
-/* ---------- Deep dives ---------- */
+/* ─── Bookings spotlight board ───────────────────────────────────────────── */
+const BOARD = [
+  { type: 'Demo', when: 'Tomorrow · 6:00 PM', who: 'Anjali R.' },
+  { type: 'Site Visit', when: 'Wed · 11:00 AM', who: 'Rohan M.' },
+  { type: 'Callback', when: 'Today · 5:30 PM', who: 'Priya S.' },
+]
 
+/* ─── Autonomy modes (compact) ───────────────────────────────────────────── */
+const MODES = [
+  { name: 'Watch', glyph: '◐', tagline: 'Observes silently.', desc: 'Learns your tone, tags warm leads. Sends nothing.', featured: false },
+  { name: 'Approve', glyph: '✓', tagline: 'Drafts. You tap to send.', desc: 'Buddie writes it, you approve in one tap.', featured: true },
+  { name: 'Auto', glyph: '✦', tagline: 'Replies & books on its own.', desc: 'Within your rules — replies, follows up, books.', featured: false },
+]
+
+/* ─── Deep dives (real app screenshots, brand-green styling) ─────────────── */
 type DeepDive = {
   id: string
   label: string
@@ -125,136 +72,126 @@ type DeepDive = {
   screenshot: string
   bullets: string[]
   reverse?: boolean
-  status?: 'connected'
-  accent: string
 }
 
 const DEEP_DIVES: DeepDive[] = [
   {
     id: 'inbox',
-    label: 'Unified Inbox',
-    title: 'One inbox for WhatsApp, Instagram and your website.',
+    label: 'Unified WhatsApp inbox',
+    title: 'Every WhatsApp lead in one shared workspace.',
     description:
-      'Bring every conversation into one workspace — the AI Sales Employee and your team work from the same place. Filter by assigned, unassigned, or my chats. Search the entire history in a tap.',
+      'Buddie and your team work from the same inbox — official WhatsApp Business API, with Instagram and website chat flowing in too. Filter by assigned, unassigned, or my chats, and search the whole history in a tap.',
     screenshot: '/images/product-inbox.png',
-    status: 'connected',
-    accent: 'teal',
     bullets: [
-      'Official Meta WhatsApp Business API + Instagram DMs',
+      'Official Meta WhatsApp Business API — not QR scraping',
+      'Assigned / Unassigned / My-chats filters',
+      'Conversation search + full message history',
+      'Quick replies + template messages in-chat',
       'Desktop split-view + mobile-optimised',
       'Real-time sync with instant notifications',
-      'Assigned / Unassigned / My-chats filters',
-      'Conversation search + message history',
-      'Quick replies + template messages in-chat',
     ],
   },
   {
     id: 'ai',
-    label: 'AI Co-pilot',
-    title: 'The AI that drafts, sends, or steps back — your call.',
+    label: 'Replies & follow-ups',
+    title: 'Replies that sound like you — and follow-ups that never stop.',
     description:
-      'Reads the conversation, pulls the customer\'s history, drafts a reply in your tone, attaches the right brochure, and qualifies the lead the moment it lands. You set the autonomy level per capability.',
-    screenshot: '/images/product-automation.png',
+      'Buddie reads the chat, pulls the customer’s history, drafts a reply in your tone, attaches the right brochure, qualifies the lead, and keeps following up until they reply or book. You choose how much to hand over.',
+    screenshot: '/images/product-ai.png',
     reverse: true,
-    accent: 'violet',
     bullets: [
-      'Approve every reply, or auto-send routine ones',
-      'Context from full conversation + customer history',
+      'Watch, Approve, or Auto — your autonomy, per business',
+      'Context from the full conversation + customer history',
       'Auto-attaches the right asset (PDF, brochure, video)',
-      'Detects intent: enquiry, ready-to-buy, complaint, AMC renewal',
-      'Tone learned from your business description',
+      'Detects intent: enquiry, ready-to-buy, complaint, AMC',
+      'Automatic follow-ups until a reply or booking',
       'Every action logged — fully transparent',
     ],
   },
   {
     id: 'pipeline',
-    label: 'Pipeline + Follow-ups',
-    title: 'A pipeline that matches how leads actually move.',
+    label: 'Pipeline + Bookings',
+    title: 'A pipeline and Bookings board that match how leads move.',
     description:
-      'Custom stages, tags, budget, source, and a callback discipline page that surfaces every promised follow-up on the right day. The owner sees the whole pipeline at a glance — and so does the team.',
+      'Custom stages, tags, budget and source — captured straight from the chat. Every booked callback, demo, site visit and appointment lands on the Bookings board on the right day, visible to the whole team.',
     screenshot: '/images/product-leads.png',
-    accent: 'cyan',
     bullets: [
       'Visual Kanban + list view, drag-and-drop stages',
-      'Custom stages, priorities, and tags per workspace',
-      'Tags, budget and source captured straight from the chat',
-      'Smart follow-up scheduling with calendar + list views',
-      'AI-powered + automated follow-ups (Growth+)',
+      'Custom stages, priorities and tags per workspace',
+      'Budget and source captured from the chat',
+      'Bookings board — callbacks, demos, visits, appointments',
+      'Follow-up calendar with reminders',
       'Activity timeline visible to the whole team',
     ],
   },
   {
     id: 'ops',
-    label: 'Operations',
-    title: 'Routing, campaigns and analytics — all in one place.',
+    label: 'Campaigns, analytics & team',
+    title: 'Campaigns, analytics and your team — all in one place.',
     description:
-      'Source-based auto-assignment, scheduled WhatsApp campaigns with retry-on-fail, conversion-rate and response-time dashboards. The operational layer most CRMs leave to spreadsheets.',
+      'Scheduled WhatsApp campaigns with retry-on-fail, response-time and conversion dashboards, source-based routing, and roles for the whole team across up to 5 WhatsApp numbers.',
     screenshot: '/images/product-campaigns.png',
     reverse: true,
-    accent: 'emerald',
     bullets: [
-      'Auto-assign leads by source (web, Instagram, Facebook)',
       'Scheduled campaigns + auto-retry on failed sends',
       'Recipient management with segmentation',
       'Response-time + conversion-rate dashboards',
-      'Lead-source analytics + team performance reports',
-      'Role-based team access — owner / admin / agent',
+      'Auto-assign leads by source (web, Instagram, Facebook)',
+      'Role-based access — owner / admin / agent',
+      'Up to 5 WhatsApp numbers on one workspace',
     ],
   },
 ]
 
-/* ---------- 5-bullet "AMC pack" callout ---------- */
-
 const PACK_HIGHLIGHTS = [
-  { icon: Sparkles, label: 'AI sales agent for AMC renewals & callbacks' },
-  { icon: FileText, label: 'Customer drawer with installed product + AMC history' },
-  { icon: CalendarClock, label: 'Renewals page sorted by urgency (this week / next 14 / lapsed)' },
-  { icon: Target, label: 'Service-visit booking straight from WhatsApp' },
+  'AI sales agent for AMC renewals & callbacks',
+  'Customer drawer with installed product + AMC history',
+  'Renewals sorted by urgency — this week / next 14 / lapsed',
+  'Service-visit booking straight from WhatsApp',
 ]
 
 export default function ProductPage() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden bg-bg-primary pt-28 pb-16 px-4 sm:px-6 lg:px-8 md:pt-36 md:pb-24 border-b border-border">
-        {/* Backdrop */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-brand/5 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brand/5 blur-3xl delay-500" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-5xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-card px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-text-secondary shadow-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-75 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-            </span>
-            Product
+      <section className="relative overflow-hidden border-b border-border">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(circle at 78% 20%, rgba(37,211,102,0.12), transparent 55%), radial-gradient(circle at 12% 80%, rgba(37,211,102,0.06), transparent 60%)',
+          }}
+        />
+        <div className="relative mx-auto max-w-4xl px-4 pb-16 pt-28 text-center sm:px-6 md:pt-32 lg:px-8">
+          <div className="flex justify-center">
+            <Pill dot dotColor={P.brand} className="border text-brand" style={{ background: P.chip, borderColor: P.chipBorder }}>
+              The product
+            </Pill>
           </div>
 
-          <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-text-primary md:text-6xl font-heading">
-            Everything LeadBuddie does, <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-brand-hover to-brand bg-clip-text text-transparent">under one roof.</span>
+          <h1 className="mt-5 font-heading text-[2.5rem] font-bold leading-[1.04] tracking-[-0.035em] text-text-primary text-balance sm:text-5xl lg:text-[3.5rem]">
+            Everything Buddie does for your <span className="text-brand">WhatsApp leads</span>.
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg">
-            A unified inbox for WhatsApp, Instagram and your website. An AI Sales Employee that replies, qualifies and follows up.
-            A pipeline that surfaces every callback on the right day. Built for growing businesses.
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
+            One AI sales employee that replies to every enquiry, follows up automatically, filters the
+            serious customers, and books them for calls, demos and visits — all on the official WhatsApp
+            Business API.
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href="https://app.leadbuddie.com" variant="primary" size="lg" className="w-full sm:w-auto">
-              Start free trial
+              Start free 30-day trial <span className="ml-1">→</span>
             </Button>
             <Button href="/demo" variant="outline" size="lg" className="w-full sm:w-auto">
-              Book a 20-min demo
+              <span className="mr-1.5 text-brand">▶</span> Watch Buddie book a lead
             </Button>
           </div>
 
-          {/* Quick stats strip */}
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8 sm:gap-8">
-            <Stat value="5,000+" label="Leads managed" />
-            <Stat value="100+" label="Leads / day (Master)" />
+            <Stat value="5,000+" label="Leads handled" />
+            <Stat value="100+" label="Leads / day · Master" />
             <Stat value="30-day" label="Free trial · no card" />
           </div>
         </div>
@@ -263,169 +200,232 @@ export default function ProductPage() {
       {/* ============ COMPLIANCE STRIP ============ */}
       <MetaTechProviderBadge />
 
-      {/* ============ AT-A-GLANCE BENTO ============ */}
-      <Section>
-        <SectionHeader
-          label="At a glance"
-          title="Eight modules. One workspace."
-          description="Every capability inside LeadBuddie. Skim the bento, then dive into the four pillars below."
-          centered
-          className="mb-12 md:mb-14"
-        />
+      {/* ============ CAPABILITY GRID ============ */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <div className="text-xs font-bold uppercase tracking-[0.12em] text-brand">What’s inside</div>
+            <h2 className="mt-3 font-heading text-[2rem] font-bold leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-4xl">
+              One employee. Eight jobs, done every day.
+            </h2>
+            <p className="mt-3.5 text-[0.97rem] leading-relaxed text-text-secondary">
+              No bots to wire up, no CRM to babysit. Buddie handles the whole WhatsApp lead journey —
+              from first reply to booked customer.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {MODULES.map(({ id, icon: Icon, title, caption, tone, span, anchor }, i) => (
-            <Link
-              key={id}
-              href={anchor ? `#${anchor}` : '#'}
-              data-reveal
-              style={{ ['--reveal-delay' as any]: `${i * 0.05}s` }}
-              className={`group relative flex h-full flex-col rounded-3xl border border-white/[0.08] bg-bg-card/80 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-bg-card ${span ?? ''}`}
-            >
-              <div className={`mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border ${tone}`}>
-                <Icon className="h-5 w-5" strokeWidth={1.8} />
+          <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
+            {CAPABILITIES.map(({ icon: Icon, title, caption }) => (
+              <div
+                key={title}
+                className="flex flex-col rounded-[20px] border border-border bg-bg-card p-5 transition-shadow hover:shadow-[0_18px_44px_-22px_rgba(20,20,40,0.22)]"
+              >
+                <span
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl"
+                  style={{ background: P.chip, color: P.brandHover, border: `1px solid ${P.chipBorder}` }}
+                >
+                  <Icon className="h-5 w-5" strokeWidth={1.9} />
+                </span>
+                <h3 className="mt-4 text-base font-bold tracking-tight text-text-primary">{title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">{caption}</p>
               </div>
-              <h3 className="text-base font-semibold text-text-primary">{title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-text-secondary">{caption}</p>
-              <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-text-muted transition-colors group-hover:text-text-primary">
-                Learn more
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
-          ))}
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
-      {/* ============ DEEP DIVES ============ */}
-      <Section background="elevated">
-        <div className="space-y-24 md:space-y-32">
-          {DEEP_DIVES.map((dive, i) => (
-            <DeepDiveBlock key={dive.id} dive={dive} index={i} />
-          ))}
-        </div>
-      </Section>
-
-      {/* ============ WATER PURIFIER PACK CALLOUT ============ */}
-      <Section>
-        <div
-          data-reveal
-          className="relative overflow-hidden rounded-3xl border border-border/80 bg-gradient-to-br from-brand/5 via-bg-card to-teal-500/5 p-8 md:p-12 shadow-xl shadow-black/5"
-        >
-          {/* Subtle backdrop image effect on the left for water texture */}
-          <div className="absolute left-0 top-0 bottom-0 w-full md:w-1/2 opacity-[0.03] pointer-events-none bg-cover bg-center hidden md:block" style={{ backgroundImage: "url('/images/is-leadbuddie-right-for-you.png')" }} />
-          
-          <div className="relative grid items-center gap-8 lg:gap-12 md:grid-cols-[1.3fr,1fr]">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-brand/25 bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-hover">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
-                Industry pack · Live
-              </div>
-              
-              <h2 className="text-2xl font-extrabold leading-tight text-text-primary md:text-4xl tracking-tight">
-                Built deep for water purifier dealers — on top of everything above.
-              </h2>
-              
-              <p className="text-sm md:text-base leading-relaxed text-text-secondary">
-                On top of the eight core modules, the Water Purifier Pack adds the workflows generic CRMs never built — AMC renewals, callback discipline, service-visit booking, and a customer drawer that travels with the installed product.
-              </p>
-
-              {/* Highlights 2-column checklist inside the left column */}
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                {PACK_HIGHLIGHTS.map(({ icon: Icon, label }, i) => (
-                  <li
-                    key={label}
-                    data-reveal
-                    style={{ ['--reveal-delay' as any]: `${0.1 + i * 0.08}s` }}
-                    className="flex items-start gap-2.5 rounded-xl border border-border/60 bg-bg-card/75 p-3 shadow-sm"
-                  >
-                    <div className="mt-0.5 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-brand/20 bg-brand/10 text-brand-hover">
-                      <Icon className="h-4 w-4" strokeWidth={1.8} />
-                    </div>
-                    <span className="text-xs font-semibold leading-relaxed text-text-secondary">{label}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Button href="/case-study" variant="primary" size="md">
-                  Read the case study
-                </Button>
-                <Button href="/demo" variant="outline" size="md">
-                  Book dealer demo
-                </Button>
-              </div>
-            </div>
-
-            {/* Premium Indian Water Business Manager Backdrop Image Frame */}
-            <div className="flex items-center justify-center">
-              <div className="relative h-72 sm:h-80 md:h-[350px] w-full max-w-[420px] rounded-3xl overflow-hidden border border-border/70 shadow-lg bg-white group">
-                <Image
-                  src="/images/is-leadbuddie-right-for-you.png"
-                  alt="Indian water purification business manager tracking AMC renewals on LeadBuddie"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 420px"
-                />
-                {/* Dark gradient overlay for readable text at the bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                
-                {/* Live dealer tag */}
-                <div className="absolute top-4 left-4 bg-brand/95 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/20 shadow-md">
-                  Verified Indian Dealer
+      {/* ============ BOOKINGS SPOTLIGHT ============ */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div
+            className="relative overflow-hidden rounded-[28px] border border-border-light bg-bg-card p-6 sm:p-10"
+            style={{ boxShadow: `0 30px 70px -34px ${P.glow}` }}
+          >
+            <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-[0.12em] text-brand">The part other tools don’t have</div>
+                <h2 className="mt-3 font-heading text-[1.9rem] font-bold leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-[2.4rem]">
+                  Serious leads don’t just get replies. They get booked.
+                </h2>
+                <p className="mt-4 max-w-lg text-[0.97rem] leading-relaxed text-text-secondary">
+                  Most WhatsApp tools stop at a reply. Buddie offers times, confirms the slot, and drops
+                  the booking on your board — callbacks, demos, site visits, appointments, consultations,
+                  trials, and AMC/service visits. You just see ready customers.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {['Callback', 'Demo', 'Site Visit', 'Appointment', 'Consultation', 'Trial', 'Service Visit'].map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full px-2.5 py-1 text-[11px] font-semibold"
+                      style={{ background: P.chip, color: P.brandHover, border: `1px solid ${P.chipBorder}` }}
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
-                
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-xs font-bold">Master Water Purifier</p>
-                  <p className="text-[10px] text-white/80 mt-0.5">Managing 100+ daily WhatsApp service leads & AMC campaigns</p>
+              </div>
+
+              {/* Mock Bookings board */}
+              <div className="rounded-[22px] border border-border bg-bg-secondary/50 p-5 sm:p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg text-sm text-white" style={{ background: P.brandGrad }}>
+                      📅
+                    </span>
+                    <span className="text-sm font-bold tracking-tight text-text-primary">Bookings board</span>
+                  </div>
+                  <Pill dot dotColor={P.success} style={{ background: P.successSoft, color: P.success, fontSize: 10.5, padding: '3px 9px' }}>
+                    live
+                  </Pill>
+                </div>
+                <div className="flex flex-col gap-3">
+                  {BOARD.map((b, i) => (
+                    <div key={i} className="flex items-center gap-3 rounded-2xl border border-border bg-bg-card p-3.5 shadow-sm">
+                      <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-base" style={{ background: P.successSoft, color: P.success }}>
+                        ✓
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="text-sm font-bold tracking-tight text-text-primary">{b.type}</div>
+                        <div className="text-xs text-text-muted">{b.when} · {b.who}</div>
+                      </div>
+                      <Pill style={{ background: P.successSoft, color: P.success, fontSize: 10.5, padding: '3px 9px' }}>Booked</Pill>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* ============ TRUST / COMPLIANCE ============ */}
-      <Section background="elevated">
-        <SectionHeader
-          label="Trust & compliance"
-          title="Built on the rails that messaging apps actually trust."
-          description="Official Meta tech provider with DPDP-ready data handling and team-level access controls."
-          centered
-          className="mb-12 md:mb-14"
-        />
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {[
-            {
-              icon: ShieldCheck,
-              title: 'Official Meta tech provider',
-              caption: 'WhatsApp Business API messaging. Approved, audited, on official rails.',
-            },
-            {
-              icon: Instagram,
-              title: 'Instagram messaging',
-              caption: 'DM lead capture + reply via the official Instagram API.',
-            },
-            {
-              icon: Zap,
-              title: 'DPDP-ready data handling',
-              caption: 'Workspace-isolated storage, role-based access, data deletion on request.',
-            },
-          ].map(({ icon: Icon, title, caption }, i) => (
-            <div
-              key={title}
-              data-reveal
-              style={{ ['--reveal-delay' as any]: `${i * 0.08}s` }}
-              className="flex flex-col gap-3 rounded-2xl border border-border/60 bg-bg-card/85 p-6 shadow-sm"
-            >
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-brand/20 bg-brand/10 text-brand">
-                <Icon className="h-5 w-5" strokeWidth={1.8} />
-              </div>
-              <h3 className="text-base font-semibold text-text-primary">{title}</h3>
-              <p className="text-sm leading-relaxed text-text-secondary">{caption}</p>
-            </div>
+      {/* ============ DEEP DIVES ============ */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl space-y-24 md:space-y-32">
+          {DEEP_DIVES.map((dive, i) => (
+            <DeepDiveBlock key={dive.id} dive={dive} index={i} />
           ))}
         </div>
-      </Section>
+      </section>
+
+      {/* ============ AUTONOMY MODES (compact) ============ */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <div className="text-xs font-bold uppercase tracking-[0.12em] text-brand">Trust at your pace</div>
+            <h2 className="mt-3 font-heading text-[2rem] font-bold leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-4xl">
+              You decide how much Buddie runs.
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {MODES.map((m) => (
+              <div
+                key={m.name}
+                className="rounded-[22px] border bg-bg-card p-6"
+                style={m.featured ? { borderColor: 'var(--color-border-light)', boxShadow: `0 24px 60px -24px ${P.glow}` } : { borderColor: 'var(--color-border)' }}
+              >
+                <div className="flex items-center gap-3">
+                  <span
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-xl font-extrabold"
+                    style={m.featured ? { background: P.brandGrad, color: '#fff' } : { background: 'var(--color-sunk)', color: P.brand }}
+                  >
+                    {m.glyph}
+                  </span>
+                  <div>
+                    <div className="text-lg font-bold tracking-tight text-text-primary">{m.name}</div>
+                    {m.featured && <div className="text-[11px] font-semibold uppercase tracking-[0.08em] text-brand">Recommended</div>}
+                  </div>
+                </div>
+                <p className="mt-4 text-sm font-semibold text-text-primary">{m.tagline}</p>
+                <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-text-secondary">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ WATER PURIFIER PACK ============ */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative overflow-hidden rounded-[28px] border border-border bg-bg-card p-7 md:p-12">
+            <div className="relative grid items-center gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
+              <div>
+                <Pill dot dotColor={P.brand} className="border text-brand" style={{ background: P.chip, borderColor: P.chipBorder }}>
+                  Industry pack · Live
+                </Pill>
+                <h2 className="mt-4 font-heading text-[1.8rem] font-bold leading-[1.08] tracking-[-0.03em] text-text-primary md:text-[2.3rem]">
+                  Built deep for water purifier dealers.
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-text-secondary md:text-base">
+                  On top of everything above, the Water Purifier Pack adds the workflows generic CRMs never
+                  built — AMC renewals, callback discipline, service-visit booking, and a customer drawer
+                  that travels with the installed product.
+                </p>
+                <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {PACK_HIGHLIGHTS.map((label) => (
+                    <li key={label} className="flex items-start gap-2.5 rounded-xl border border-border bg-bg-elevated p-3">
+                      <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[11px] font-extrabold" style={{ background: P.successSoft, color: P.success }}>
+                        ✓
+                      </span>
+                      <span className="text-xs font-semibold leading-relaxed text-text-secondary">{label}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Button href="/case-study" variant="primary" size="md">Read the case study</Button>
+                  <Button href="/demo" variant="outline" size="md">Book dealer demo</Button>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center">
+                <div className="relative h-72 w-full max-w-[420px] overflow-hidden rounded-[22px] border border-border shadow-lg sm:h-80 md:h-[350px]">
+                  <Image
+                    src="/images/is-leadbuddie-right-for-you.png"
+                    alt="Indian water purifier dealer tracking AMC renewals and service visits on LeadBuddie"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 420px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                  <div className="absolute left-4 top-4 rounded-full border border-white/20 bg-brand/95 px-2.5 py-1 text-[10px] font-bold text-white shadow-md">
+                    Verified Indian Dealer
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <p className="text-xs font-bold">Master Water Purifier · Coimbatore</p>
+                    <p className="mt-0.5 text-[10px] text-white/80">100+ daily WhatsApp service leads & AMC campaigns</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ TRUST / COMPLIANCE ============ */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <div className="text-xs font-bold uppercase tracking-[0.12em] text-brand">Trust & compliance</div>
+            <h2 className="mt-3 font-heading text-[2rem] font-bold leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-4xl">
+              On the rails WhatsApp actually trusts.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {[
+              { icon: ShieldCheck, title: 'Official Meta tech provider', caption: 'WhatsApp Business API messaging — approved, audited, on official rails. No QR scraping.' },
+              { icon: BadgeCheck, title: 'Your number, your history', caption: 'Works on your existing WhatsApp number. Old chats aren’t imported — every new lead is captured.' },
+              { icon: Check, title: 'DPDP-ready data handling', caption: 'Workspace-isolated storage, role-based access, and data deletion on request.' },
+            ].map(({ icon: Icon, title, caption }) => (
+              <div key={title} className="flex flex-col gap-3 rounded-[20px] border border-border bg-bg-card p-6">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: P.chip, color: P.brandHover, border: `1px solid ${P.chipBorder}` }}>
+                  <Icon className="h-5 w-5" strokeWidth={1.9} />
+                </span>
+                <h3 className="text-base font-bold tracking-tight text-text-primary">{title}</h3>
+                <p className="text-sm leading-relaxed text-text-secondary">{caption}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ============ FINAL CTA ============ */}
       <FinalCTA />
@@ -433,67 +433,41 @@ export default function ProductPage() {
   )
 }
 
-/* ---------- Sub-components ---------- */
-
+/* ─── Sub-components ──────────────────────────────────────────────────────── */
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="text-2xl font-bold text-text-primary md:text-3xl">{value}</div>
-      <div className="mt-1 text-xs uppercase tracking-[0.14em] text-text-muted md:text-[11px]">{label}</div>
+      <div className="font-heading text-2xl font-extrabold tracking-[-0.02em] text-text-primary md:text-3xl">{value}</div>
+      <div className="mt-1 text-[11px] uppercase tracking-[0.12em] text-text-muted">{label}</div>
     </div>
   )
 }
 
 function DeepDiveBlock({ dive, index }: { dive: DeepDive; index: number }) {
-  const accentClasses: Record<string, { dot: string; pill: string; bullet: string }> = {
-    teal: {
-      dot: 'bg-brand',
-      pill: 'border-brand/30 bg-brand/10 text-brand-hover',
-      bullet: 'text-brand',
-    },
-    violet: {
-      dot: 'bg-brand-hover',
-      pill: 'border-brand/30 bg-brand/10 text-brand-hover',
-      bullet: 'text-brand',
-    },
-    cyan: {
-      dot: 'bg-brand',
-      pill: 'border-brand/30 bg-brand/10 text-brand-hover',
-      bullet: 'text-brand',
-    },
-    emerald: {
-      dot: 'bg-brand-hover',
-      pill: 'border-brand/30 bg-brand/10 text-brand-hover',
-      bullet: 'text-brand',
-    },
-  }
-  const acc = accentClasses[dive.accent] ?? accentClasses.teal
-
   return (
-    <div
-      id={dive.id}
-      data-reveal
-      className={`grid scroll-mt-24 gap-10 lg:grid-cols-12 lg:gap-16 lg:items-center`}
-    >
+    <div id={dive.id} className="grid scroll-mt-24 gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
       {/* Text column */}
       <div className={`order-2 lg:col-span-5 ${dive.reverse ? 'lg:order-2' : 'lg:order-1'}`}>
-        <div className={`mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] ${acc.pill}`}>
-          <span className={`h-1.5 w-1.5 rounded-full ${acc.dot}`} />
+        <div
+          className="mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em]"
+          style={{ background: P.chip, borderColor: P.chipBorder, color: P.brandHover }}
+        >
+          <span className="h-1.5 w-1.5 rounded-full" style={{ background: P.brand }} />
           0{index + 1} · {dive.label}
         </div>
 
-        <h2 className="text-2xl font-bold leading-tight text-text-primary md:text-4xl">
+        <h2 className="font-heading text-2xl font-bold leading-tight tracking-[-0.02em] text-text-primary md:text-[2rem]">
           {dive.title}
         </h2>
 
-        <p className="mt-4 text-base leading-relaxed text-text-secondary md:text-lg">
-          {dive.description}
-        </p>
+        <p className="mt-4 text-base leading-relaxed text-text-secondary">{dive.description}</p>
 
         <ul className="mt-7 space-y-3">
           {dive.bullets.map((b) => (
             <li key={b} className="flex items-start gap-3">
-              <Check className={`mt-1 h-4 w-4 flex-shrink-0 ${acc.bullet}`} strokeWidth={2.5} />
+              <span className="mt-0.5 inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md text-[11px] font-extrabold" style={{ background: P.successSoft, color: P.success }}>
+                ✓
+              </span>
               <span className="text-sm leading-relaxed text-text-secondary md:text-[15px]">{b}</span>
             </li>
           ))}
@@ -503,20 +477,13 @@ function DeepDiveBlock({ dive, index }: { dive: DeepDive; index: number }) {
       {/* Screenshot column */}
       <div className={`order-1 lg:col-span-7 ${dive.reverse ? 'lg:order-1' : 'lg:order-2'}`}>
         <div className="relative">
-          <div className={`pointer-events-none absolute -inset-8 rounded-[36px] bg-gradient-to-br opacity-50 blur-3xl ${
-            dive.accent === 'teal' ? 'from-teal-400/30 to-transparent' :
-            dive.accent === 'violet' ? 'from-violet-400/30 to-transparent' :
-            dive.accent === 'cyan' ? 'from-cyan-400/30 to-transparent' :
-            'from-emerald-400/30 to-transparent'
-          }`} />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-8 rounded-[36px] opacity-60 blur-3xl"
+            style={{ background: `radial-gradient(circle at 50% 50%, ${P.glow}, transparent 70%)` }}
+          />
           <div className="relative">
-            <ScreenshotFrame
-              src={dive.screenshot}
-              alt={dive.title}
-              status={dive.status}
-              aspect="3/2"
-              fit="cover"
-            />
+            <ScreenshotFrame src={dive.screenshot} alt={dive.title} status="connected" aspect="3/2" fit="cover" />
           </div>
         </div>
       </div>
