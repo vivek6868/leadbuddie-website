@@ -8,8 +8,8 @@ import { Button } from '@/components/ui/Button'
 import { BuddieFace, Pill, Phone, TypingDots, WhatsAppGlyph, P } from './atoms'
 
 const ACTIVITY = [
-  { who: 'Priya S.', what: 'sent a price quote', tone: P.success, icon: '✓' },
-  { who: 'Rohan M.', what: 'matched AMC brochure', tone: P.brand, icon: '📎' },
+  { who: 'Priya S.', what: 'qualified · serious buyer', tone: P.success, icon: '✓' },
+  { who: 'Rohan M.', what: 'booked a site visit', tone: P.brand, icon: '📅' },
   { who: 'Aisha K.', what: 'flagged for your call', tone: P.danger, icon: '!' },
 ]
 
@@ -35,22 +35,22 @@ export function Hero() {
             className="border text-brand"
             style={{ background: P.chip, borderColor: P.chipBorder }}
           >
-            Built for WhatsApp &amp; Instagram · Global
+            Built for WhatsApp · Made for Indian businesses
           </Pill>
 
-          <h1 className="mt-5 font-heading text-[2.65rem] font-bold leading-[1.03] tracking-[-0.035em] text-text-primary text-balance sm:text-5xl lg:text-[3.75rem]">
+          <h1 className="mt-5 font-heading text-[2.5rem] font-bold leading-[1.04] tracking-[-0.035em] text-text-primary text-balance sm:text-5xl lg:text-[3.5rem]">
             Meet Buddie.<br />
-            Your AI <span className="text-brand">Sales Employee</span>.
+            Your AI <span className="text-brand">Sales Employee</span> for WhatsApp.
           </h1>
 
-          <p className="mt-5 max-w-xl text-lg font-semibold leading-snug text-text-secondary sm:text-xl lg:text-2xl">
-            Replies in seconds. Follows up for days. Never forgets a lead.
+          <p className="mt-5 max-w-xl text-lg font-semibold leading-snug text-text-secondary sm:text-xl lg:text-[1.6rem]">
+            Replies in seconds, follows up for days, filters serious leads, and books customers automatically.
           </p>
 
           <p className="mt-4 max-w-xl text-base leading-relaxed text-text-secondary sm:text-[1.0625rem]">
-            Buddie is an official WhatsApp Business AI that monitors your chats, drafts accurate replies,
-            qualifies incoming leads, and follows up on quotes — ensuring you never lose a customer
-            to a delayed response.
+            Built for Indian businesses that get leads on WhatsApp. Buddie talks to every enquiry,
+            finds the serious customers, and books them for calls, demos, and visits — on the
+            <strong className="text-text-primary"> official WhatsApp Business API, not QR scraping.</strong>
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -58,7 +58,7 @@ export function Hero() {
               Start free 30-day trial <span className="ml-1">→</span>
             </Button>
             <Button href="/demo" variant="outline" size="lg" className="w-full sm:w-auto">
-              <span className="mr-1.5 text-brand">▶</span> Watch demo
+              <span className="mr-1.5 text-brand">▶</span> Watch Buddie book a lead
             </Button>
           </div>
 
@@ -106,12 +106,12 @@ function HeroVisual() {
               </Pill>
             </div>
             <div className="mt-1 text-[0.78rem] text-text-secondary">
-              Sales employee · WhatsApp + Instagram
+              Sales employee · WhatsApp
             </div>
             <div className="mt-2 flex gap-3.5 text-[0.7rem] text-text-muted">
               <span><strong className="text-[0.8rem] font-bold text-text-primary">23</strong> handled</span>
-              <span><strong className="text-[0.8rem] font-bold text-text-primary">19</strong> replied</span>
-              <span><strong className="text-[0.8rem] font-bold text-text-primary">47s</strong> avg</span>
+              <span><strong className="text-[0.8rem] font-bold text-text-primary">14</strong> qualified</span>
+              <span><strong className="text-[0.8rem] font-bold text-text-primary">6</strong> booked</span>
             </div>
           </div>
         </div>
@@ -120,11 +120,11 @@ function HeroVisual() {
         <div className="mt-4 rounded-2xl border border-border bg-bg-elevated p-3.5">
           <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-text-muted">Right now</div>
           <div className="mt-1.5 text-[0.8125rem] leading-relaxed text-text-primary">
-            Drafting a reply to <strong>Karan G.</strong> about a Kent Grand 3-BHK install — pricing &amp; brochure ready.
+            Booking a demo for <strong>Karan G.</strong> — confirming tomorrow 6 PM and adding it to your Bookings board.
           </div>
           <div className="mt-2 flex items-center gap-2">
             <TypingDots color={P.brand} size={5} />
-            <span className="text-[11px] text-text-muted">typing…</span>
+            <span className="text-[11px] text-text-muted">confirming slot…</span>
           </div>
         </div>
 
@@ -153,30 +153,43 @@ function HeroVisual() {
           name="Ramesh K."
           hint="Buddie · typing"
           messages={[
-            { side: 'in', text: 'Do you have Kent Grand in stock?', time: '11:00' },
-            { side: 'out', ai: true, text: 'Hi Ramesh! Yes — ₹18,500 with free install + 1-yr warranty. Brochure?', time: '11:00' },
+            { side: 'in', text: 'I want a demo tomorrow evening', time: '11:00' },
+            { side: 'out', ai: true, text: 'Done! Demo booked for tomorrow 6 PM ✅ You’ll get a reminder.', time: '11:00' },
           ]}
         />
       </div>
 
-      {/* Floating notification, top-right */}
+      {/* Floating Bookings-board card, top-right */}
       <div
-        className="lb-float-fast absolute -top-1.5 -right-3 z-30 flex max-w-[240px] items-center gap-2.5 rounded-2xl border px-3.5 py-2.5 backdrop-blur-md"
+        className="lb-float-fast absolute -top-1.5 -right-3 z-30 max-w-[244px] rounded-2xl border px-3.5 py-3 backdrop-blur-md"
         style={{
-          background: 'rgba(255,255,255,0.92)',
+          background: 'rgba(255,255,255,0.95)',
           borderColor: 'var(--color-border-light)',
           boxShadow: '0 16px 36px -12px rgba(20,20,40,0.18)',
         }}
       >
-        <span
-          className="inline-flex h-[30px] w-[30px] items-center justify-center rounded-lg text-sm font-extrabold text-white"
-          style={{ background: P.brandGrad }}
-        >
-          ✦
-        </span>
-        <div className="min-w-0">
-          <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-text-muted">Buddie · Just now</div>
-          <div className="mt-px text-xs font-semibold text-text-primary">Ramesh is ready to pay</div>
+        <div className="flex items-center gap-2">
+          <span
+            className="inline-flex h-[26px] w-[26px] items-center justify-center rounded-lg text-sm font-extrabold text-white"
+            style={{ background: P.brandGrad }}
+          >
+            📅
+          </span>
+          <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-text-muted">
+            Bookings board · Just now
+          </div>
+        </div>
+        <div className="mt-2 flex items-center gap-2 rounded-xl border border-border bg-bg-elevated px-2.5 py-2">
+          <span
+            className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded text-[10px] font-extrabold"
+            style={{ background: P.successSoft, color: P.success }}
+          >
+            ✓
+          </span>
+          <div className="min-w-0">
+            <div className="text-xs font-bold text-text-primary">Demo · Tomorrow 6 PM</div>
+            <div className="text-[10px] font-semibold" style={{ color: P.success }}>Booked · Ramesh K.</div>
+          </div>
         </div>
       </div>
     </div>

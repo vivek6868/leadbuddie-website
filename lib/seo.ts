@@ -15,7 +15,7 @@ export const SITE_URL = 'https://leadbuddie.com'
 export const APP_URL = 'https://app.leadbuddie.com'
 
 const ORG_DESCRIPTION =
-  'LeadBuddie is a Customer Operations Platform for WhatsApp-first businesses in India. Track leads, customers, AMC renewals, service visits and follow-ups from one workspace — with industry packs starting with water treatment dealers.'
+  'LeadBuddie is an AI sales employee for WhatsApp. It replies to enquiries instantly, follows up automatically, qualifies serious leads, and books callbacks, demos, site visits, appointments, consultations, trials and service visits — on the official WhatsApp Business API. Built for Indian businesses across water treatment, salons, gyms, clinics, travel, coaching and home services.'
 
 /** Organization — sitewide. Establishes the brand entity for Google + LLMs. */
 export const ORGANIZATION_SCHEMA = {
@@ -58,7 +58,7 @@ export const MOBILE_APPLICATION_SCHEMA = {
   url: 'https://play.google.com/store/search?q=leadbuddie&c=apps&hl=en_SG',
   publisher: { '@id': `${SITE_URL}/#organization` },
   description:
-    'LeadBuddie for Android — Customer Operations Platform for WhatsApp-first businesses. Manage leads, customers, AMC renewals and follow-ups from your phone.',
+    'LeadBuddie for Android — an AI sales employee for WhatsApp. Reply to leads, follow up automatically, qualify serious customers, and book calls, demos and visits from your phone.',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -91,19 +91,38 @@ export function softwareApplicationSchema(opts?: {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: opts?.name ?? 'LeadBuddie',
+    alternateName: 'LeadBuddie — AI Sales Employee for WhatsApp',
     applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'CRM',
     operatingSystem: 'Web, Android, iOS',
     url: opts?.url ?? SITE_URL,
+    inLanguage: 'en-IN',
     description:
       opts?.description ??
-      'Customer Operations Platform for WhatsApp-first businesses — lead, customer, AMC renewal and follow-up management in one workspace.',
+      'AI sales employee for WhatsApp that replies to leads, follows up automatically, qualifies serious customers, and books callbacks, demos, site visits and appointments on the official WhatsApp Business API. Built for Indian businesses.',
+    keywords:
+      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, appointment booking on WhatsApp, lead management, auto follow-ups',
+    featureList: [
+      'AI auto-replies to WhatsApp leads',
+      'Automatic follow-ups until customers reply or book',
+      'Lead qualification — filters serious buyers',
+      'Bookings board — callbacks, demos, site visits, appointments, consultations, trials, service & AMC visits',
+      'Shared team inbox with assignment and notes',
+      'WhatsApp campaigns and broadcasts',
+      'AMC renewal and service reminders',
+      'Multi-number WhatsApp support (up to 5 numbers)',
+      'Official WhatsApp Business API — not QR scraping',
+    ],
+    audience: {
+      '@type': 'BusinessAudience',
+      name: 'Indian small and medium businesses that get leads on WhatsApp',
+    },
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'INR',
       lowPrice: '0',
       highPrice: '4999',
-      offerCount: 5,
+      offerCount: 4,
     },
     publisher: { '@id': `${SITE_URL}/#organization` },
   }

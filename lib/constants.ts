@@ -137,25 +137,25 @@ export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
   ],
   starter: [
     'Buddie AI sales employee · Watch + Approval modes',
-    'First-reply auto-send (brand-new leads)',
-    'Approval queue with edit + reject',
-    'Escalation routing (high intent + complaints)',
+    'Instant first reply + automatic follow-ups',
+    'Lead qualification + approval queue (edit / reject)',
+    'Booking requests captured — callbacks, visits, appointments',
     'Unified WhatsApp inbox · 1 number',
     'Unlimited AI replies (daily cap protects costs)',
     'Up to 20 templates · 2 seats',
   ],
   growth: [
     'Everything in Starter, plus:',
-    'Buddie Auto mode (replies on its own)',
-    'Send brochures and catalogs from media library',
-    'AMC renewal engine + dormant-lead insights',
-    'Campaigns · 3/month · up to 3,000 recipients',
-    'AI template builder · 50/month',
-    'Up to 5 seats',
+    'Buddie Auto mode — auto replies + auto follow-ups',
+    'Bookings board — callbacks, demos, site visits & appointments',
+    'Multi-number WhatsApp — up to 3 business numbers',
+    'WhatsApp campaigns · 3/month · up to 3,000 recipients',
+    'AMC renewal engine + lead qualification & dormant-lead revival',
+    'AI template builder · 50/month · up to 5 seats',
   ],
   scale: [
     'Everything in Growth, plus:',
-    'Up to 10 seats · 2 WhatsApp numbers',
+    'Up to 10 seats · up to 5 WhatsApp numbers',
     'Campaigns · 20/month · 50,000 recipients',
     'Voice minutes (AI inbound call agent — coming soon)',
     'Team analytics + priority support',
@@ -186,7 +186,7 @@ export const PRICING_PLANS = [
     price: 999,
     currency: '₹',
     period: 'month',
-    description: 'AI replies your WhatsApp. Approval mode — you tap to send, Buddie drafts.',
+    description: 'Buddie replies and follows up on WhatsApp. Approval mode — you tap to send.',
     features: PLAN_VISIBLE_FEATURES.starter,
     cta: 'Start Free Trial',
     highlighted: false,
@@ -197,7 +197,7 @@ export const PRICING_PLANS = [
     price: 2499,
     currency: '₹',
     period: 'month',
-    description: 'Buddie on autopilot · brochure sending · AMC renewal engine · campaigns.',
+    description: 'Buddie on autopilot — auto replies, follow-ups, bookings, lead management & campaigns.',
     features: PLAN_VISIBLE_FEATURES.growth,
     cta: 'Start Free Trial',
     highlighted: true,
@@ -381,9 +381,18 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — AI CRM & AMC Renewal Software for WhatsApp',
-  description: 'LeadBuddie is an AI CRM and AMC renewal tracking software that automates customer replies, contract reminders, and service follow-ups on WhatsApp Business API. Built for water treatment, purifier, HVAC, and service dealers. 30-day free trial.',
-  keywords: 'AI employee for business, AI sales employee WhatsApp, AI sales agent, AI receptionist for business, WhatsApp AI employee, RO service software India, RO CRM software, water purifier dealer software, water treatment CRM, AMC renewal software India, RO billing software, AMC reminder app, water purifier lead management, complaint management software water purifier, RO technician app, annual maintenance contract CRM, AC service software India, service center software India',
+  title: 'LeadBuddie — AI Sales Employee for WhatsApp that Books Leads',
+  description:
+    'LeadBuddie is an AI sales employee for WhatsApp. It replies to leads instantly, follows up automatically, qualifies serious customers, and books calls, demos, site visits & appointments — on the official WhatsApp Business API. Built for Indian businesses. Free 30-day trial.',
+  keywords:
+    // Head terms (highest intent)
+    'AI sales employee for WhatsApp, WhatsApp CRM, WhatsApp CRM India, WhatsApp automation for business, WhatsApp Business API India, AI chatbot for WhatsApp, AI WhatsApp assistant, WhatsApp auto reply software, ' +
+    // Lead + booking intent
+    'WhatsApp lead management software, lead management software India, WhatsApp follow up automation, WhatsApp appointment booking, book appointments on WhatsApp, WhatsApp booking system, AI sales agent, AI receptionist for business, WhatsApp bot for small business, WhatsApp chatbot for business India, WhatsApp marketing software India, automated WhatsApp replies, ' +
+    // Vertical / industry
+    'salon appointment booking software, gym lead management software, clinic appointment booking WhatsApp, travel agency CRM India, coaching institute CRM, home service booking software, ' +
+    // Water-treatment cluster (existing ranking terms — retained)
+    'water purifier CRM, water purifier dealer software, water treatment CRM, RO service software India, AMC renewal software India, RO CRM software, water purifier lead management, AMC reminder app, annual maintenance contract CRM, AC service software India, service center software India',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection)

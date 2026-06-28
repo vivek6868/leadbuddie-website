@@ -223,13 +223,13 @@ export function AutonomyModes() {
   )
 }
 
-/* ── Built for Global Scale (Multilingual AI) ────────────────────────────── */
-// Real customers from lib/constants TESTIMONIALS.
+/* ── Built for India (Multilingual AI) ───────────────────────────────────── */
+// Real customers from lib/constants TESTIMONIALS, tagged by Indian city.
 const GLOBAL_CARDS = [
-  { tag: 'Field service', who: 'Master Water Purifier', stat: '100+', statLabel: 'leads / day handled' },
-  { tag: 'Travel & tours', who: 'Nitya Tours & agency', stat: 'Zero', statLabel: 'missed follow-ups' },
-  { tag: 'Fitness & studios', who: 'Zyrax Fitness', stat: '1 inbox', statLabel: 'across all trainers' },
-  { tag: 'B2B retail', who: 'Classic Leathers', stat: '0', statLabel: 'orders lost in DMs' },
+  { tag: 'Coimbatore · Water', who: 'Master Water Purifier', stat: '100+', statLabel: 'leads / day handled' },
+  { tag: 'Mumbai · Travel', who: 'Nitya Tours & agency', stat: 'Zero', statLabel: 'missed follow-ups' },
+  { tag: 'Bangalore · Fitness', who: 'Zyrax Fitness', stat: '1 inbox', statLabel: 'across all trainers' },
+  { tag: 'Delhi · B2B retail', who: 'Classic Leathers', stat: '0', statLabel: 'orders lost on WhatsApp' },
 ]
 
 export function BuiltForGlobal() {
@@ -238,13 +238,14 @@ export function BuiltForGlobal() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-9 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <div className="text-xs font-bold uppercase tracking-[0.12em] text-brand">Multilingual AI</div>
+            <div className="text-xs font-bold uppercase tracking-[0.12em] text-brand">Made for India · Multilingual AI</div>
             <h2 className="mt-3 font-heading text-[2rem] font-bold leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-[2.25rem]">
-              Phoenix studios. London agents.<br />Dubai agencies.
+              Coimbatore dealers. Chennai salons.<br />Mumbai agencies.
             </h2>
           </div>
           <div className="max-w-sm text-sm text-text-secondary">
-            Buddie understands multiple currencies ($, €, ₹), transcribes in 50+ languages, and responds natively in the customer&apos;s preferred language.
+            Buddie chats naturally in Hindi, Tamil, Telugu, English and Hinglish, understands ₹ pricing,
+            and replies in the customer&apos;s own language. <span className="text-text-muted">Also works for global WhatsApp-first teams.</span>
           </div>
         </div>
 

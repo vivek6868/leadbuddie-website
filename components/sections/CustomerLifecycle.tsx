@@ -39,7 +39,7 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     ],
     whatsappPreview: [
       { sender: 'Customer', text: 'Hi, I saw your ad. What are your installation packages?' },
-      { sender: 'Buddie AI', text: 'Hi there! We offer Standard Installation ($49) and Premium ($79) which includes 1yr extra warranty. Here is the list: leadbuddie.com/install-spec', badge: 'Draft reply prepared' }
+      { sender: 'Buddie AI', text: 'Hi there! We offer Standard Installation (₹499) and Premium (₹799) which includes 1yr extra warranty. Here is the list: leadbuddie.com/install-spec', badge: 'Draft reply prepared' }
     ],
     stats: '10s response time',
     screenshotSrc: '/images/lead-capture-flow.png',
@@ -51,15 +51,15 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     title: '2. Auto-CRM Log',
     subtitle: 'Extract data from chats',
     icon: UserCheck,
-    actionDescription: 'No manual spreadsheets. Buddie automatically parses names, location ZIP codes, and requested models directly from the chat text, logging them to the sales pipeline.',
+    actionDescription: 'No manual spreadsheets. Buddie automatically parses names, area PIN codes, and requested models directly from the chat text, logging them to the sales pipeline.',
     highlights: [
       'Reads names, addresses, and phone numbers automatically',
-      'Categorizes leads by location & interest in the CRM',
+      'Categorizes leads by location & interest automatically',
       'Eliminates human error & copy-pasting'
     ],
     whatsappPreview: [
-      { sender: 'System Log', text: 'Scanned WhatsApp contact: Sarah Jenkins' },
-      { sender: 'System Action', text: 'Created Customer Profile: Sarah Jenkins, ZIP 10001, Product: AquaPure Pro' }
+      { sender: 'System Log', text: 'Scanned WhatsApp contact: Lakshmi Narayan' },
+      { sender: 'System Action', text: 'Created Customer Profile: Lakshmi Narayan, Coimbatore 641001, Product: Kent Grand' }
     ],
     stats: '100% manual logging removed',
     screenshotSrc: '/images/onboarding-flow.png',
@@ -78,7 +78,7 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
       'Frictionless 1-tap payment for your customers'
     ],
     whatsappPreview: [
-      { sender: 'Buddie AI', text: 'Hi Sarah! Your Gold Service AMC expires in 5 days. Click here to renew in 1 tap: pay.leadbuddie.com/sarah', badge: 'AMC Engine' },
+      { sender: 'Buddie AI', text: 'Hi Lakshmi! Your Gold Service AMC expires in 5 days. Click here to renew in 1 tap: pay.leadbuddie.com/lakshmi', badge: 'AMC Engine' },
       { sender: 'Customer', text: 'Done! Payment sent. Thanks.' }
     ],
     stats: 'Up to 92% renewal retention',
@@ -99,7 +99,7 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
     ],
     whatsappPreview: [
       { sender: 'Customer', text: 'I need a filter change today.' },
-      { sender: 'Buddie AI', text: 'Booked for 3:00 PM today. Technician Alex (ID: AX492) will arrive. You can track them here: map.leadbuddie.com/t/alex', badge: 'Auto Scheduled' }
+      { sender: 'Buddie AI', text: 'Booked for 3:00 PM today. Technician Ravi (ID: RV492) will arrive. You can track them here: map.leadbuddie.com/t/ravi', badge: 'Auto Scheduled' }
     ],
     stats: '0 missed appointments',
     screenshotSrc: '/images/service-visit-flow.png',
@@ -118,7 +118,7 @@ const LIFECYCLE_STEPS: LifecycleStep[] = [
       'Turns dead database contacts into fresh revenue streams'
     ],
     whatsappPreview: [
-      { sender: 'Buddie AI', text: 'Hey David! It has been 6 months since your last system check. Book today and get 15% off using code REVIVE15.', badge: 'Re-activation list' },
+      { sender: 'Buddie AI', text: 'Hey Vikram! It has been 6 months since your last system check. Book today and get 15% off using code REVIVE15.', badge: 'Re-activation list' },
       { sender: 'Customer', text: 'Great. Please book me for tomorrow morning.' }
     ],
     stats: '15% recovery on cold databases',
@@ -137,9 +137,9 @@ export function CustomerLifecycle() {
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-brand/5 rounded-full blur-3xl pointer-events-none" />
 
       <SectionHeader
-        label="Full Journey CRM"
+        label="The full lead journey"
         title="More than a chat bubble"
-        description="Most WhatsApp bots answer FAQs and stop there. LeadBuddie runs your entire operations lifecycle, from first click to repeat renewals."
+        description="Most WhatsApp bots answer one question and stop. Buddie handles the whole journey — from first enquiry to booking, renewal, and repeat business."
         centered
         className="mb-16 md:mb-24"
       />
