@@ -5,7 +5,6 @@
  * use the site's real data (lib/constants) where the design used placeholders.
  */
 import { Button } from '@/components/ui/Button'
-import { PRICING_PLANS } from '@/lib/constants'
 import { BuddieFace, Pill, P } from './atoms'
 import { ApprovalDeskDemo } from './ApprovalDeskDemo'
 
@@ -268,80 +267,8 @@ export function BuiltForGlobal() {
 }
 
 /* ── Pricing ─────────────────────────────────────────────────────────────── */
-export function Pricing() {
-  return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <div className="text-xs font-bold uppercase tracking-[0.12em] text-brand">Pricing</div>
-          <h2 className="mt-3 font-heading text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-text-primary">
-            One employee. Less than your daily coffee budget.
-          </h2>
-          <p className="mt-3.5 text-[0.97rem] leading-relaxed text-text-secondary">
-            30 days free on Growth. Cancel anytime. No card needed to start.
-          </p>
-        </div>
-
-        <div className="grid gap-3.5 md:grid-cols-2 xl:grid-cols-4">
-          {PRICING_PLANS.map((p) => (
-            <div
-              key={p.id}
-              className={`relative flex flex-col rounded-[22px] border bg-bg-card p-6 ${
-                p.highlighted ? 'border-border-light' : 'border-border'
-              }`}
-              style={p.highlighted ? { boxShadow: `0 24px 60px -24px ${P.glow}` } : undefined}
-            >
-              {p.highlighted && (
-                <span
-                  className="absolute -top-2.5 left-6 rounded-full px-2.5 py-1 text-[10.5px] font-bold uppercase tracking-wide text-white"
-                  style={{ background: P.brandGrad, boxShadow: `0 6px 14px -4px ${P.glow}` }}
-                >
-                  Most popular
-                </span>
-              )}
-              <div className="text-base font-bold tracking-tight text-text-primary">{p.name}</div>
-              <div className="mt-3 flex items-baseline gap-1">
-                <span className="text-base font-semibold text-text-secondary">₹</span>
-                <span className="font-heading text-[2.75rem] font-extrabold leading-none tracking-[-0.035em] tabular-nums text-text-primary">
-                  {p.price.toLocaleString('en-IN')}
-                </span>
-                <span className="text-[13px] font-medium text-text-muted">/mo</span>
-              </div>
-              <p className="mt-2.5 min-h-[44px] text-xs leading-relaxed text-text-secondary">{p.description}</p>
-              <ul className="mt-4 flex flex-col gap-2.5">
-                {p.features.slice(0, 5).map((f, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs leading-relaxed text-text-primary">
-                    <span
-                      className="mt-0.5 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded text-[9px] font-extrabold"
-                      style={{ background: P.successSoft, color: P.success }}
-                    >
-                      ✓
-                    </span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex-1" />
-              <div className="mt-5">
-                <Button
-                  href="https://app.leadbuddie.com"
-                  variant={p.highlighted ? 'primary' : 'outline'}
-                  className="w-full"
-                >
-                  {p.cta}
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-6 text-center text-xs text-text-muted">
-          Meta conversation charges may apply separately based on usage.
-        </p>
-      </div>
-    </section>
-  )
-}
+/* Moved to components/home/HomePricing.tsx (client — monthly/annual toggle
+   mirroring the in-app billing page). */
 
 /* ── Final CTA ───────────────────────────────────────────────────────────── */
 export function FinalCTA() {

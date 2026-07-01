@@ -24,6 +24,7 @@ import { Button } from '@/components/ui/Button'
 import { ScreenshotFrame } from '@/components/ui/ScreenshotFrame'
 import { FinalCTA } from '@/components/sections/FinalCTA'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
+import { ProductAwareness } from '@/components/home/ProductAwareness'
 import { Pill, P } from '@/components/home/atoms'
 
 export const metadata: Metadata = {
@@ -297,6 +298,9 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
+
+      {/* ============ PRODUCT AWARENESS AGENT ============ */}
+      <ProductAwareness />
 
       {/* ============ DEEP DIVES ============ */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">

@@ -20,6 +20,16 @@ export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
       'Callbacks, demos, site visits, appointments, consultations, trials, service visits, and AMC visits — plus custom booking types for your business. Every booking lands on your Bookings board with a reminder.',
   },
   {
+    question: 'I sell many products — will Buddie send the wrong one?',
+    answer:
+      'No. Buddie’s Product Awareness Agent matches each enquiry to your product catalog using the keywords you set — even when the customer clicks a WhatsApp ad — and only sends a product it’s confident about. It never guesses. All details (price, description, brochure, link) come straight from your catalog, so replies are always accurate. Available on Growth and above.',
+  },
+  {
+    question: 'Can Buddie send images, videos and payment links — not just text?',
+    answer:
+      'Yes. For each product you can add an image or video, a brochure PDF, and a payment or website link. When Buddie matches the product, it sends them automatically and then offers the matching booking — all inside WhatsApp.',
+  },
+  {
     question: 'Do you sell leads?',
     answer:
       'No. LeadBuddie does not sell random leads. It converts your own incoming WhatsApp enquiries into qualified leads and bookings — so you only work the customers who already contacted you.',

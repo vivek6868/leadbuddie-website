@@ -5,13 +5,14 @@ import {
   MeetBuddie,
   AutonomyModes,
   BuiltForGlobal,
-  Pricing,
   FinalCTA,
 } from '@/components/home/Sections'
+import { HomePricing } from '@/components/home/HomePricing'
 import { BookingWow, TodaysBookings } from '@/components/home/BookingWow'
 import { ProblemSolution } from '@/components/home/ProblemSolution'
 import { HowItWorksBand } from '@/components/home/HowItWorksBand'
 import { WorksForYourBusiness } from '@/components/home/WorksForYourBusiness'
+import { ProductAwareness } from '@/components/home/ProductAwareness'
 import { CustomerLifecycle } from '@/components/sections/CustomerLifecycle'
 import { RevenueCalculator } from '@/components/sections/RevenueCalculator'
 import { Outcomes } from '@/components/sections/Outcomes'
@@ -77,7 +78,10 @@ export default function HomePage() {
       {/* 8. Works for your business — vertical grid */}
       <WorksForYourBusiness />
 
-      {/* 9. Full lead journey & screenshots */}
+      {/* 9. Product Awareness Agent — sends the right product */}
+      <ProductAwareness />
+
+      {/* 10. Full lead journey & screenshots */}
       <CustomerLifecycle />
 
       {/* 10. ROI / AMC Revenue Leak Calculator */}
@@ -89,7 +93,7 @@ export default function HomePage() {
       {/* 12. Built for India · multilingual */}
       <BuiltForGlobal />
 
-      <Pricing />
+      <HomePricing />
       <FinalCTA />
 
       {/* Retained shared sections */}
