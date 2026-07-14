@@ -101,9 +101,12 @@ export function softwareApplicationSchema(opts?: {
       opts?.description ??
       'AI sales employee for WhatsApp that replies to leads, follows up automatically, qualifies serious customers, and books callbacks, demos, site visits and appointments on the official WhatsApp Business API. Built for Indian businesses.',
     keywords:
-      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, appointment booking on WhatsApp, lead management, auto follow-ups',
+      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, appointment booking on WhatsApp, lead management, auto follow-ups, WhatsApp voice note transcription, multilingual WhatsApp AI, WhatsApp chat translation',
     featureList: [
       'AI auto-replies to WhatsApp leads',
+      'Understands WhatsApp voice notes — automatic transcription in any language',
+      'Replies in the customer’s language — Hindi, Tamil, Telugu & 10+ languages',
+      'Inbox translation — read every chat in your own language',
       'Automatic follow-ups until customers reply or book',
       'Lead qualification — filters serious buyers',
       'Bookings board — callbacks, demos, site visits, appointments, consultations, trials, service & AMC visits',

@@ -14,7 +14,7 @@ const TRUST_ITEMS = [
   { glyph: '⚲', label: 'DPDP compliant', sub: 'Secure data isolation' },
   { glyph: '₹', label: 'Cancel anytime', sub: '30 days free, no card' },
   { glyph: '→', label: 'On your number', sub: 'Existing WhatsApp · quick setup' },
-  { glyph: '★', label: '5,000+ leads handled', sub: 'Across 20+ growing SMBs' },
+  { glyph: '★', label: '1.5 lakh+ messages handled', sub: 'Across 75+ onboarded businesses' },
 ]
 
 export function TrustStrip() {
@@ -46,13 +46,14 @@ export function TrustStrip() {
 }
 
 /* ── Numbers band ────────────────────────────────────────────────────────── */
-// Design used 92% / ₹4.2L placeholders; swapped for figures the site actually
-// backs (10s product claim, 5,000+ leads / 20+ SMBs from SOCIAL_PROOF_STATS,
-// 100+ leads/day from the Master Water Purifier testimonial).
+// Figures the site actually backs — pulled from live production DB (Jul 2026):
+// 1.5 lakh+ messages / 10,000+ leads / 75+ businesses are real platform totals;
+// 200+ leads/day is the live 7-day platform run-rate (226/day at last check).
+// Update these as the platform grows — never publish a number the DB can't back.
 const STATS = [
-  { value: '10s', label: 'Avg WhatsApp reply', sub: 'Even at 2am, even on Sundays', accent: P.brand },
-  { value: '5,000+', label: 'Leads handled', sub: 'Across 20+ growing SMBs', accent: P.success },
-  { value: '100+', label: 'Leads / day handled', sub: 'For Master Water Purifier', accent: P.brand },
+  { value: '1.5L+', label: 'WhatsApp messages handled', sub: 'Across 75+ onboarded businesses', accent: P.brand },
+  { value: '10,000+', label: 'Leads captured & worked', sub: 'Replies in 10s — even at 2am', accent: P.success },
+  { value: '200+', label: 'New leads every day', sub: 'Captured across the platform', accent: P.brand },
 ]
 
 export function NumbersBand() {
@@ -65,8 +66,8 @@ export function NumbersBand() {
             Pays for itself<br />in the first week.
           </h2>
           <p className="mt-4 max-w-md text-[0.97rem] leading-relaxed text-text-secondary">
-            Real numbers from early dealers running LeadBuddie since 2025 — water purifiers,
-            gyms, travel, B2B retail.
+            Live totals from businesses running LeadBuddie — water purifiers, gyms, salons,
+            footwear retail, travel, matrimony and more. Real production numbers, not projections.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
@@ -243,8 +244,8 @@ export function BuiltForGlobal() {
             </h2>
           </div>
           <div className="max-w-sm text-sm text-text-secondary">
-            Buddie chats naturally in Hindi, Tamil, Telugu, English and Hinglish, understands ₹ pricing,
-            and replies in the customer&apos;s own language. <span className="text-text-muted">Also works for global WhatsApp-first teams.</span>
+            Buddie chats naturally in Hindi, Tamil, Telugu, English and Hinglish — even voice notes —
+            understands ₹ pricing, and replies in the customer&apos;s own language. <span className="text-text-muted">Also works for global WhatsApp-first teams.</span>
           </div>
         </div>
 

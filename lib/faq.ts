@@ -30,6 +30,16 @@ export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
       'Yes. For each product you can add an image or video, a brochure PDF, and a payment or website link. When Buddie matches the product, it sends them automatically and then offers the matching booking — all inside WhatsApp.',
   },
   {
+    question: 'My customers send voice notes — can Buddie understand them?',
+    answer:
+      'Yes. When a customer sends a WhatsApp voice note, Buddie transcribes it in seconds and replies just like it would to a typed message — in any language. A late-night Tamil voice note asking for a service visit gets understood, answered and booked while you sleep.',
+  },
+  {
+    question: 'Which languages does Buddie speak? Can I read chats in my language?',
+    answer:
+      'Buddie replies in the language your customer used — Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Bengali, English and Hinglish. And in your inbox you pick your language once: every chat is translated for you automatically, so a Tamil conversation can read in English (or any language you choose). No copy-pasting into Google Translate.',
+  },
+  {
     question: 'Do you sell leads?',
     answer:
       'No. LeadBuddie does not sell random leads. It converts your own incoming WhatsApp enquiries into qualified leads and bookings — so you only work the customers who already contacted you.',

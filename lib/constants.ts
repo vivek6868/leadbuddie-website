@@ -63,6 +63,18 @@ export const FEATURES = [
     icon: 'Sparkles',
   },
   {
+    id: 'voice-notes-transcription',
+    title: 'Understands voice notes',
+    description: 'Customers send WhatsApp voice notes; Buddie transcribes them in seconds and replies like it would to text — in any language. A late-night Tamil voice note becomes a booked visit by morning.',
+    icon: 'Mic',
+  },
+  {
+    id: 'multilingual-translation',
+    title: 'Every language + inbox translation',
+    description: 'Buddie replies in the customer\'s language — Hindi, Tamil, Telugu, Kannada & 10+ more. You pick your inbox language once and every chat is translated for you automatically.',
+    icon: 'Languages',
+  },
+  {
     id: 'autonomy-modes',
     title: 'Watch · Approval · Auto modes',
     description: 'Three trust modes you can change in one tap. Try Buddie risk-free in Watch mode (watches, drafts, sends nothing), Approval mode (you tap approve to send), or Auto mode (autopilot).',

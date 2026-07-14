@@ -12,6 +12,7 @@ import { BookingWow, TodaysBookings } from '@/components/home/BookingWow'
 import { ProblemSolution } from '@/components/home/ProblemSolution'
 import { HowItWorksBand } from '@/components/home/HowItWorksBand'
 import { WorksForYourBusiness } from '@/components/home/WorksForYourBusiness'
+import { VoiceAndLanguage } from '@/components/home/VoiceAndLanguage'
 import { ProductAwareness } from '@/components/home/ProductAwareness'
 import { CustomerLifecycle } from '@/components/sections/CustomerLifecycle'
 import { RevenueCalculator } from '@/components/sections/RevenueCalculator'
@@ -26,14 +27,14 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'LeadBuddie — AI Sales Employee for WhatsApp that Books Leads',
   description:
-    'AI sales employee for WhatsApp — Buddie replies to leads, follows up automatically, qualifies serious customers, and books calls, demos, site visits & appointments. Built for Indian businesses on the official WhatsApp Business API. Free 30-day trial, no card.',
+    'AI sales employee for WhatsApp — Buddie replies to leads, understands voice notes, speaks Hindi, Tamil & 10+ languages, follows up automatically, qualifies serious customers, and books calls, demos, site visits & appointments. Official WhatsApp Business API. Free 30-day trial, no card.',
   keywords:
-    'AI sales employee for WhatsApp, WhatsApp CRM India, WhatsApp automation for business, WhatsApp appointment booking, WhatsApp lead management software, AI chatbot for WhatsApp, WhatsApp Business API India, book appointments on WhatsApp',
+    'AI sales employee for WhatsApp, WhatsApp CRM India, WhatsApp automation for business, WhatsApp appointment booking, WhatsApp lead management software, AI chatbot for WhatsApp, WhatsApp Business API India, book appointments on WhatsApp, WhatsApp voice note transcription, WhatsApp AI in Hindi, WhatsApp AI in Tamil, multilingual WhatsApp chatbot, WhatsApp chat translation',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'LeadBuddie — AI Sales Employee for WhatsApp',
     description:
-      'Buddie replies to your WhatsApp leads, follows up, qualifies serious customers, and books calls, demos, site visits & appointments — automatically. Built for Indian businesses.',
+      'Buddie replies to your WhatsApp leads — even voice notes, in Hindi, Tamil & 10+ languages — follows up, qualifies serious customers, and books calls, demos, site visits & appointments automatically.',
     url: 'https://leadbuddie.com',
     type: 'website',
   },
@@ -78,7 +79,10 @@ export default function HomePage() {
       {/* 8. Works for your business — vertical grid */}
       <WorksForYourBusiness />
 
-      {/* 9. Product Awareness Agent — sends the right product */}
+      {/* 9. Voice notes & every language — Buddie hears, replies, translates */}
+      <VoiceAndLanguage />
+
+      {/* 10. Product Awareness Agent — sends the right product */}
       <ProductAwareness />
 
       {/* 10. Full lead journey & screenshots */}

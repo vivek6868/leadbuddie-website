@@ -7,6 +7,27 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "thulix-dashboard",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/vivek/paint business/project/thulix-ai/dashboard"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "leadmate-hutliv-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/vivek/paint business/project/leadmate-hutliv"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "resume-studio",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4173", "-d", "/Users/vivek/paint business/project/resume-studio"],
+      "port": 4173,
+      "autoPort": true
     }
   ]
 }
