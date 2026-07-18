@@ -6,7 +6,7 @@ import { Section } from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'Features — LeadBuddie AI Sales Employee for WhatsApp',
-  description: 'AI replies, voice-note transcription, 10+ Indian languages with inbox translation, smart follow-ups, bookings, and team collaboration for WhatsApp + Instagram CRM teams.',
+  description: 'AI replies, train Buddie by chat or voice, one-tap WhatsApp booking & quote forms, voice-note transcription, 10+ Indian languages with inbox translation, smart follow-ups, and team collaboration for WhatsApp + Instagram CRM teams.',
   alternates: { canonical: '/features' },
 }
 

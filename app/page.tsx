@@ -14,6 +14,9 @@ import { HowItWorksBand } from '@/components/home/HowItWorksBand'
 import { WorksForYourBusiness } from '@/components/home/WorksForYourBusiness'
 import { VoiceAndLanguage } from '@/components/home/VoiceAndLanguage'
 import { ProductAwareness } from '@/components/home/ProductAwareness'
+import { TrainBuddie } from '@/components/home/TrainBuddie'
+import { OneTapActions } from '@/components/home/OneTapActions'
+import { TruthSafety } from '@/components/home/TruthSafety'
 import { CustomerLifecycle } from '@/components/sections/CustomerLifecycle'
 import { RevenueCalculator } from '@/components/sections/RevenueCalculator'
 import { Outcomes } from '@/components/sections/Outcomes'
@@ -70,31 +73,40 @@ export default function HomePage() {
       {/* 5. Meet the AI Employee (approval desk) */}
       <MeetBuddie />
 
-      {/* 6. How it works — 3-step band */}
+      {/* 6. Train Buddie — teach it like a new employee, by talking */}
+      <TrainBuddie />
+
+      {/* 7. How it works — 3-step band */}
       <HowItWorksBand />
 
-      {/* 7. The 3 Autonomy/Trust Modes */}
+      {/* 8. The 3 Autonomy/Trust Modes */}
       <AutonomyModes />
 
-      {/* 8. Works for your business — vertical grid */}
+      {/* 9. Works for your business — vertical grid */}
       <WorksForYourBusiness />
 
-      {/* 9. Voice notes & every language — Buddie hears, replies, translates */}
+      {/* 10. Voice notes & every language — Buddie hears, replies, translates */}
       <VoiceAndLanguage />
 
-      {/* 10. Product Awareness Agent — sends the right product */}
+      {/* 11. Product Awareness Agent — sends the right product */}
       <ProductAwareness />
 
-      {/* 10. Full lead journey & screenshots */}
+      {/* 12. One-Tap Bookings & Quotes — tap-to-fill WhatsApp forms */}
+      <OneTapActions />
+
+      {/* 13. Full lead journey & screenshots */}
       <CustomerLifecycle />
 
-      {/* 10. ROI / AMC Revenue Leak Calculator */}
+      {/* 14. ROI / AMC Revenue Leak Calculator */}
       <RevenueCalculator />
 
-      {/* 11. Metrics & Verified Customer Stories */}
+      {/* 15. Truth & Safety — Buddie never guesses */}
+      <TruthSafety />
+
+      {/* 16. Metrics & Verified Customer Stories */}
       <Outcomes />
 
-      {/* 12. Built for India · multilingual */}
+      {/* 17. Built for India · multilingual */}
       <BuiltForGlobal />
 
       <HomePricing />

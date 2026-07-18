@@ -40,6 +40,21 @@ export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
       'Buddie replies in the language your customer used — Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Bengali, English and Hinglish. And in your inbox you pick your language once: every chat is translated for you automatically, so a Tamil conversation can read in English (or any language you choose). No copy-pasting into Google Translate.',
   },
   {
+    question: 'How do I train Buddie?',
+    answer:
+      'Just talk to it — by text or voice, in any language. Tell it what to answer, what to ask before booking, or what it should never promise. Buddie shows you exactly what it learned as a plain-language proposal, and nothing goes live until you approve it.',
+  },
+  {
+    question: 'Do my customers need to install anything?',
+    answer:
+      'No. Everything happens inside the normal WhatsApp app your customers already have — chats, tap-to-fill booking forms, voice notes, all of it. No app to download, no account to create.',
+  },
+  {
+    question: 'What happens when Buddie doesn’t know an answer?',
+    answer:
+      'It says so honestly, brings your team in, and asks you to teach it for next time. Buddie never invents a price or makes a promise it can’t back — if it isn’t sure, it defers to you instead of guessing.',
+  },
+  {
     question: 'Do you sell leads?',
     answer:
       'No. LeadBuddie does not sell random leads. It converts your own incoming WhatsApp enquiries into qualified leads and bookings — so you only work the customers who already contacted you.',

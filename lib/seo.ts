@@ -104,6 +104,8 @@ export function softwareApplicationSchema(opts?: {
       'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, appointment booking on WhatsApp, lead management, auto follow-ups, WhatsApp voice note transcription, multilingual WhatsApp AI, WhatsApp chat translation',
     featureList: [
       'AI auto-replies to WhatsApp leads',
+      'Train your AI by chat or voice',
+      'One-tap WhatsApp booking & quote forms',
       'Understands WhatsApp voice notes — automatic transcription in any language',
       'Replies in the customer’s language — Hindi, Tamil, Telugu & 10+ languages',
       'Inbox translation — read every chat in your own language',

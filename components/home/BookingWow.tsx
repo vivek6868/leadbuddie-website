@@ -145,7 +145,9 @@ const TODAY = [
 
 export function TodaysBookings() {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8">
+    // overflow-hidden: an inner mockup exceeds 375px viewports by ~10px and, unclipped, gives the
+    // whole page a horizontal scroll on phones (found in the Jul 18 mobile design pass).
+    <section className="overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
         {/* Copy */}
         <div>

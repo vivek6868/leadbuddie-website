@@ -63,6 +63,18 @@ export const FEATURES = [
     icon: 'Sparkles',
   },
   {
+    id: 'train-buddie',
+    title: 'Train Buddie by chat or voice',
+    description: 'Teach Buddie in plain language — text or voice, any language — what to answer, what to ask, and what it should never promise. It shows you exactly what it learned before anything goes live.',
+    icon: 'GraduationCap',
+  },
+  {
+    id: 'one-tap-bookings-quotes',
+    title: 'One-tap bookings & quotes',
+    description: 'Instead of a long back-and-forth, Buddie sends a tap-to-fill card right inside WhatsApp — dates, choices, details filled in seconds — and you receive a complete, structured request.',
+    icon: 'ListChecks',
+  },
+  {
     id: 'voice-notes-transcription',
     title: 'Understands voice notes',
     description: 'Customers send WhatsApp voice notes; Buddie transcribes them in seconds and replies like it would to text — in any language. A late-night Tamil voice note becomes a booked visit by morning.',
