@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { NAVIGATION, LEGAL_LINKS, CONTACT, BRAND } from '@/lib/constants'
+import { LEGAL_LINKS, CONTACT, BRAND } from '@/lib/constants'
 import { Mail, MapPin } from 'lucide-react'
 import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
 import { PlayStoreBadge } from '@/components/layout/PlayStoreBadge'
@@ -14,7 +14,13 @@ export function Footer() {
           <div>
             <h3 className="text-gray-900 font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
-              {NAVIGATION.filter(item => ['Product', 'Pricing', 'Demo', 'Blog'].includes(item.name)).map((item) => (
+            {[
+              { name: 'Product', href: '/product' },
+              { name: 'How it works', href: '/how-it-works' },
+              { name: 'Pricing', href: '/pricing' },
+              { name: 'Book a demo', href: '/demo' },
+              { name: 'Guides', href: '/blog' },
+            ].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -35,14 +41,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Solutions Links — niche SEO landing pages */}
+          {/* Solutions Links — use-case landing pages */}
           <div>
             <h3 className="text-gray-900 font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/ai-employee" className="text-semibold text-brand hover:text-brand-hover transition-colors text-sm flex items-center gap-1">
+                <Link href="/ai-employee" className="font-semibold text-brand hover:text-brand-hover transition-colors text-sm flex items-center gap-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
-                  AI Sales Employee
+                  WhatsApp AI Employee
                 </Link>
               </li>
               <li>
@@ -70,11 +76,7 @@ export function Footer() {
                   AMC Revenue Calculator
                 </Link>
               </li>
-              <li>
-                <Link href="/case-study" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  Case Study
-                </Link>
-              </li>
+              <li><Link href="/case-study" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Customer stories</Link></li>
             </ul>
           </div>
 
@@ -121,7 +123,7 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="text-gray-900 font-semibold mb-4">Contact</h3>
-            <p className="text-gray-900 font-medium text-sm mb-3">{BRAND.company}</p>
+              <p className="text-gray-900 font-medium text-sm mb-3">{BRAND.company}</p>
             <ul className="space-y-3">
               {CONTACT.address && (
                 <li>
@@ -162,7 +164,7 @@ export function Footer() {
         <div className="border-t border-gray-200 pt-8">
           <div className="text-center space-y-2">
             <p className="text-gray-700 text-sm font-medium">
-              Your AI Sales Employee, built on official Meta messaging infrastructure. Built for growing businesses worldwide.
+              Your AI sales employee for WhatsApp. Built for businesses that want every enquiry to move forward.
             </p>
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} {BRAND.name} — A product of {BRAND.company}

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { NAVIGATION } from '@/lib/constants'
+import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { MobileMenu } from './MobileMenu'
 import { DemoRequestModal } from '@/components/forms/DemoRequestModal'
@@ -13,6 +13,8 @@ export function Navbar() {
   const [logoError, setLogoError] = useState(false)
   const [demoModalOpen, setDemoModalOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const isDarkHero = pathname === '/' && !scrolled
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -46,22 +48,26 @@ export function Navbar() {
             ) : (
               <span className="font-heading text-xl font-bold text-text-primary">LeadBuddie</span>
             )}
-            <div className="hidden items-center gap-1 rounded-full border border-border bg-bg-elevated/80 px-2.5 py-1 text-[11px] font-medium text-text-secondary lg:inline-flex">
+            <span className={`font-heading text-xl font-extrabold tracking-[-0.04em] ${isDarkHero ? 'text-white' : 'text-text-primary'}`}>
+              LeadBuddie
+            </span>
+            <div className={`hidden items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium lg:inline-flex ${isDarkHero ? 'border-white/15 bg-white/[0.07] text-slate-300' : 'border-border bg-bg-elevated/80 text-text-secondary'}`}>
               <span className="h-2 w-2 rounded-full bg-wa" />
-              <span
-                className="h-2 w-2 rounded-full"
-                style={{ background: 'linear-gradient(45deg, #F58529, #DD2A7B, #515BD4)' }}
-              />
-              <span>WA + IG</span>
+              <span>AI employee</span>
             </div>
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
-            {NAVIGATION.map((item) => (
+            {[
+              { name: 'Product', href: '/product' },
+              { name: 'How it works', href: '/how-it-works' },
+              { name: 'Pricing', href: '/pricing' },
+              { name: 'Resources', href: '/blog' },
+            ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
+                className={`text-sm font-medium transition-colors ${isDarkHero ? 'text-slate-300 hover:text-white' : 'text-text-secondary hover:text-text-primary'}`}
               >
                 {item.name}
               </Link>
@@ -72,7 +78,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setDemoModalOpen(true)}
-              className="rounded-xl border border-border-light bg-bg-card px-4 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-brand hover:bg-brand-subtle"
+              className={`rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors ${isDarkHero ? 'border-white/15 bg-white/[0.06] text-white hover:border-white/30 hover:bg-white/[0.11]' : 'border-border-light bg-bg-card text-text-primary hover:border-brand hover:bg-brand-subtle'}`}
             >
               Book Demo
             </button>

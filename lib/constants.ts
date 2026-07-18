@@ -1,6 +1,6 @@
 export const BRAND = {
   name: 'LeadBuddie',
-  tagline: 'Your AI Sales Employee for WhatsApp & Instagram — built for growing businesses',
+  tagline: 'Your AI Sales Employee for WhatsApp — built for growing businesses',
   company: 'Hutliv Technologies LLP',
   founded: 2025,
 } as const
@@ -88,8 +88,8 @@ export const FEATURES = [
   },
   {
     id: 'autonomy-modes',
-    title: 'Watch · Approval · Auto modes',
-    description: 'Three trust modes you can change in one tap. Try Buddie risk-free in Watch mode (watches, drafts, sends nothing), Approval mode (you tap approve to send), or Auto mode (autopilot).',
+    title: 'Automatic replies with business controls',
+    description: 'Buddie can reply automatically within the business rules you have approved. Pause a sensitive lead, stop a follow-up, or bring your team in whenever human judgment is needed.',
     icon: 'Hand',
   },
   {

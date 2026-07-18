@@ -5,9 +5,9 @@ import { getAllPosts, getCategories, getPostsByCategory, type BlogCategory } fro
 import { BlogCard } from '@/components/blog/BlogCard'
 
 export const metadata: Metadata = {
-  title: 'WhatsApp & Instagram CRM Insights | LeadBuddie Blog',
+  title: 'WhatsApp AI Sales & Lead Management Guides | LeadBuddie',
   description:
-    'Guides for teams using WhatsApp and Instagram to manage leads, automate follow-ups, and close more deals with LeadBuddie.',
+    'Practical guides for WhatsApp-led businesses: AI sales employees, lead qualification, booking automation, follow-up controls and team workflows.',
   alternates: { canonical: '/blog' },
 }
 
@@ -50,13 +50,13 @@ export default async function BlogPage({ searchParams }: PageProps) {
             LeadBuddie field notes
           </div>
           <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-text-primary md:text-6xl animate-fade-in-up delay-300">
-            WhatsApp &amp; Instagram <br className="hidden md:block" />
+            WhatsApp sales <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-brand-hover via-teal-600 to-indigo-600 bg-clip-text text-transparent">
               CRM insights for Indian SMBs.
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg animate-fade-in-up delay-500">
-            Practical guides on managing leads in DMs, fixing follow-up leaks, and building a calmer sales workflow — written from real dealer floors, not generic templates.
+            Practical guides on managing leads, fixing follow-up leaks and building a calmer WhatsApp sales workflow — written for operators, not generic templates.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm animate-fade-in-up delay-700">

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const alt =
-  'LeadBuddie — Customer Operations Platform for WhatsApp-first businesses'
+  'LeadBuddie — AI sales employee for WhatsApp'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -21,9 +21,9 @@ export default function OpengraphImage() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '72px',
-          backgroundColor: '#08080f',
+          backgroundColor: '#09111f',
           backgroundImage:
-            'radial-gradient(circle at 18% 12%, rgba(124,58,237,0.45), transparent 42%), radial-gradient(circle at 88% 22%, rgba(37,211,102,0.20), transparent 38%)',
+            'radial-gradient(circle at 18% 12%, rgba(118,72,210,0.38), transparent 42%), radial-gradient(circle at 88% 22%, rgba(37,211,102,0.23), transparent 38%)',
           fontFamily: 'sans-serif',
         }}
       >
@@ -37,8 +37,8 @@ export default function OpengraphImage() {
               width: '56px',
               height: '56px',
               borderRadius: '16px',
-              backgroundColor: '#7c3aed',
-              color: '#ffffff',
+              backgroundColor: '#25d366',
+              color: '#092015',
               fontSize: '30px',
               fontWeight: 800,
             }}
@@ -56,16 +56,15 @@ export default function OpengraphImage() {
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              fontSize: '76px',
+              fontSize: '72px',
               fontWeight: 800,
               lineHeight: 1.05,
               color: '#ffffff',
               letterSpacing: '-1.5px',
             }}
           >
-            <span style={{ marginRight: '22px' }}>Customer Operations Platform for</span>
-            <span style={{ color: '#a78bfa', marginRight: '22px' }}>WhatsApp-first</span>
-            <span>businesses</span>
+            <span style={{ marginRight: '22px' }}>Your AI sales employee</span>
+            <span style={{ color: '#6ff19b', marginRight: '22px' }}>for WhatsApp</span>
           </div>
         </div>
 
@@ -73,7 +72,7 @@ export default function OpengraphImage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <div style={{ width: '40px', height: '4px', borderRadius: '2px', backgroundColor: '#25d366', display: 'flex' }} />
           <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '30px', fontWeight: 500 }}>
-            Leads · Customers · AMC renewals · Follow-ups — one workspace
+            Train it. Trust it. Move every lead to the right next step.
           </div>
         </div>
       </div>

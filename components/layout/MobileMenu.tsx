@@ -5,7 +5,6 @@ import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
-import { NAVIGATION } from '@/lib/constants'
 import { Button } from '@/components/ui/Button'
 
 interface MobileMenuProps {
@@ -72,7 +71,12 @@ export function MobileMenu({ onRequestDemo }: MobileMenuProps) {
             </div>
 
             <nav className="flex flex-col p-3">
-              {NAVIGATION.map((item) => (
+              {[
+                { name: 'Product', href: '/product' },
+                { name: 'How it works', href: '/how-it-works' },
+                { name: 'Pricing', href: '/pricing' },
+                { name: 'Resources', href: '/blog' },
+              ].map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

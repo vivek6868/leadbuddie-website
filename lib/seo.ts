@@ -15,7 +15,7 @@ export const SITE_URL = 'https://leadbuddie.com'
 export const APP_URL = 'https://app.leadbuddie.com'
 
 const ORG_DESCRIPTION =
-  'LeadBuddie is an AI sales employee for WhatsApp. It replies to enquiries instantly, follows up automatically, qualifies serious leads, and books callbacks, demos, site visits, appointments, consultations, trials and service visits — on the official WhatsApp Business API. Built for Indian businesses across water treatment, salons, gyms, clinics, travel, coaching and home services.'
+  'LeadBuddie is an AI sales employee for WhatsApp. Businesses teach it in plain language, then it answers enquiries from approved business knowledge, collects the right details, creates bookings or quote requests, and brings in the team when needed. Built for Indian WhatsApp-led businesses.'
 
 /** Organization — sitewide. Establishes the brand entity for Google + LLMs. */
 export const ORGANIZATION_SCHEMA = {
@@ -58,7 +58,7 @@ export const MOBILE_APPLICATION_SCHEMA = {
   url: 'https://play.google.com/store/search?q=leadbuddie&c=apps&hl=en_SG',
   publisher: { '@id': `${SITE_URL}/#organization` },
   description:
-    'LeadBuddie for Android — an AI sales employee for WhatsApp. Reply to leads, follow up automatically, qualify serious customers, and book calls, demos and visits from your phone.',
+    'LeadBuddie for Android — an AI sales employee for WhatsApp. Train Buddie, manage leads, and move customer enquiries to the right next step from your phone.',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -99,17 +99,19 @@ export function softwareApplicationSchema(opts?: {
     inLanguage: 'en-IN',
     description:
       opts?.description ??
-      'AI sales employee for WhatsApp that replies to leads, follows up automatically, qualifies serious customers, and books callbacks, demos, site visits and appointments on the official WhatsApp Business API. Built for Indian businesses.',
+      'AI sales employee for WhatsApp that learns your business, answers enquiries from approved knowledge, collects relevant details, and turns leads into bookings, quote requests, orders or team handovers.',
     keywords:
-      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, appointment booking on WhatsApp, lead management, auto follow-ups, WhatsApp voice note transcription, multilingual WhatsApp AI, WhatsApp chat translation',
+      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, WhatsApp booking automation, WhatsApp quote requests, lead management, multilingual WhatsApp AI',
     featureList: [
-      'AI auto-replies to WhatsApp leads',
+      'AI auto-replies to WhatsApp enquiries',
       'Train your AI by chat or voice',
+      'Approved business knowledge and reply safety rules',
+      'Product-aware next actions: booking, quote, order, callback or handover',
       'One-tap WhatsApp booking & quote forms',
       'Understands WhatsApp voice notes — automatic transcription in any language',
       'Replies in the customer’s language — Hindi, Tamil, Telugu & 10+ languages',
       'Inbox translation — read every chat in your own language',
-      'Automatic follow-ups until customers reply or book',
+      'Automatic follow-ups with pause, mute and quiet-hours controls',
       'Lead qualification — filters serious buyers',
       'Bookings board — callbacks, demos, site visits, appointments, consultations, trials, service & AMC visits',
       'Shared team inbox with assignment and notes',

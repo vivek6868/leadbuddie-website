@@ -1,43 +1,20 @@
-import { Hero } from '@/components/home/Hero'
-import {
-  TrustStrip,
-  NumbersBand,
-  MeetBuddie,
-  AutonomyModes,
-  BuiltForGlobal,
-  FinalCTA,
-} from '@/components/home/Sections'
-import { HomePricing } from '@/components/home/HomePricing'
-import { BookingWow, TodaysBookings } from '@/components/home/BookingWow'
-import { ProblemSolution } from '@/components/home/ProblemSolution'
-import { HowItWorksBand } from '@/components/home/HowItWorksBand'
-import { WorksForYourBusiness } from '@/components/home/WorksForYourBusiness'
-import { VoiceAndLanguage } from '@/components/home/VoiceAndLanguage'
-import { ProductAwareness } from '@/components/home/ProductAwareness'
-import { TrainBuddie } from '@/components/home/TrainBuddie'
-import { OneTapActions } from '@/components/home/OneTapActions'
-import { TruthSafety } from '@/components/home/TruthSafety'
-import { CustomerLifecycle } from '@/components/sections/CustomerLifecycle'
-import { RevenueCalculator } from '@/components/sections/RevenueCalculator'
-import { Outcomes } from '@/components/sections/Outcomes'
-import { FAQSection } from '@/components/sections/FAQSection'
-import { FounderSection } from '@/components/sections/FounderSection'
+import { PremiumHome } from '@/components/home/PremiumHome'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { softwareApplicationSchema, faqSchema } from '@/lib/seo'
 import { HOMEPAGE_FAQ } from '@/lib/faq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'LeadBuddie — AI Sales Employee for WhatsApp that Books Leads',
+  title: 'LeadBuddie — AI Sales Employee for WhatsApp',
   description:
-    'AI sales employee for WhatsApp — Buddie replies to leads, understands voice notes, speaks Hindi, Tamil & 10+ languages, follows up automatically, qualifies serious customers, and books calls, demos, site visits & appointments. Official WhatsApp Business API. Free 30-day trial, no card.',
+    'LeadBuddie is the AI sales employee for WhatsApp. Train it in plain language, answer enquiries from approved business knowledge, collect the right details, and turn leads into bookings, quote requests or team handovers.',
   keywords:
-    'AI sales employee for WhatsApp, WhatsApp CRM India, WhatsApp automation for business, WhatsApp appointment booking, WhatsApp lead management software, AI chatbot for WhatsApp, WhatsApp Business API India, book appointments on WhatsApp, WhatsApp voice note transcription, WhatsApp AI in Hindi, WhatsApp AI in Tamil, multilingual WhatsApp chatbot, WhatsApp chat translation',
+    'AI sales employee for WhatsApp, WhatsApp AI employee, WhatsApp lead management software, WhatsApp booking automation, WhatsApp quote request, WhatsApp CRM India, WhatsApp Business API, train AI for business, WhatsApp automation for small business',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'LeadBuddie — AI Sales Employee for WhatsApp',
     description:
-      'Buddie replies to your WhatsApp leads — even voice notes, in Hindi, Tamil & 10+ languages — follows up, qualifies serious customers, and books calls, demos, site visits & appointments automatically.',
+      'Train an AI employee for your WhatsApp business. Buddie answers enquiries, collects the right details, and moves leads to bookings, quotes or your team.',
     url: 'https://leadbuddie.com',
     type: 'website',
   },
@@ -45,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LeadBuddie — AI Sales Employee for WhatsApp',
     description:
-      'Buddie replies, follows up, qualifies, and books your WhatsApp leads automatically. Built for Indian businesses. Free 30-day trial.',
+      'The AI sales employee that turns WhatsApp enquiries into qualified next steps.',
   },
 }
 
@@ -54,67 +31,7 @@ export default function HomePage() {
     <>
       <JsonLd data={[softwareApplicationSchema(), faqSchema(HOMEPAGE_FAQ)]} />
 
-      {/* WhatsApp Premium homepage — AI Sales Employee + Bookings positioning */}
-      <Hero />
-      <TrustStrip />
-
-      {/* 1. The wow moment: WhatsApp chat → booked customer */}
-      <BookingWow />
-
-      {/* 2. Owner's morning view — Today's Bookings */}
-      <TodaysBookings />
-
-      {/* 3. Problem → Solution (the daily WhatsApp headache) */}
-      <ProblemSolution />
-
-      {/* 4. Proof numbers */}
-      <NumbersBand />
-
-      {/* 5. Meet the AI Employee (approval desk) */}
-      <MeetBuddie />
-
-      {/* 6. Train Buddie — teach it like a new employee, by talking */}
-      <TrainBuddie />
-
-      {/* 7. How it works — 3-step band */}
-      <HowItWorksBand />
-
-      {/* 8. The 3 Autonomy/Trust Modes */}
-      <AutonomyModes />
-
-      {/* 9. Works for your business — vertical grid */}
-      <WorksForYourBusiness />
-
-      {/* 10. Voice notes & every language — Buddie hears, replies, translates */}
-      <VoiceAndLanguage />
-
-      {/* 11. Product Awareness Agent — sends the right product */}
-      <ProductAwareness />
-
-      {/* 12. One-Tap Bookings & Quotes — tap-to-fill WhatsApp forms */}
-      <OneTapActions />
-
-      {/* 13. Full lead journey & screenshots */}
-      <CustomerLifecycle />
-
-      {/* 14. ROI / AMC Revenue Leak Calculator */}
-      <RevenueCalculator />
-
-      {/* 15. Truth & Safety — Buddie never guesses */}
-      <TruthSafety />
-
-      {/* 16. Metrics & Verified Customer Stories */}
-      <Outcomes />
-
-      {/* 17. Built for India · multilingual */}
-      <BuiltForGlobal />
-
-      <HomePricing />
-      <FinalCTA />
-
-      {/* Retained shared sections */}
-      <FAQSection />
-      <FounderSection />
+      <PremiumHome />
     </>
   )
 }

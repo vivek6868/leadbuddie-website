@@ -10,9 +10,9 @@ export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
       'Official WhatsApp Business API via Meta. LeadBuddie is not risky personal-WhatsApp QR scraping. Your number stays safe and compliant, and Buddie works on top of it.',
   },
   {
-    question: 'Can Buddie reply and book customers automatically?',
+    question: 'Can Buddie reply and move leads forward automatically?',
     answer:
-      'Yes — and you decide how much. Choose Watch (Buddie only observes), Approval (Buddie drafts, you tap to send), or Auto (Buddie replies, follows up, and books on its own within your rules).',
+      'Yes. In Auto mode, Buddie replies within the business rules you have approved, collects only the details needed, creates the right booking or request, and brings in your team when human judgment is needed. You can pause a lead or turn off an automation whenever you need to.',
   },
   {
     question: 'What can Buddie book?',
