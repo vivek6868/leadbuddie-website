@@ -18,24 +18,6 @@ import { ActionScene, TrainBuddieScene } from '@/components/home/AIEmployeeVisua
 
 const APP_URL = 'https://app.leadbuddie.com'
 
-const STORY_STEPS = [
-  {
-    number: '01',
-    title: 'A customer sends a normal WhatsApp message',
-    detail: '“I need a Bali trip for four people in December.”',
-  },
-  {
-    number: '02',
-    title: 'Buddie understands the product and goal',
-    detail: 'It knows this is a Bali quote—not a booking or a generic sales chat.',
-  },
-  {
-    number: '03',
-    title: 'Your team receives a useful next step',
-    detail: 'Dates, departure city and travellers collected. Quote request ready.',
-  },
-]
-
 const ESSENTIALS: { title: string; copy: string; icon: LucideIcon }[] = [
   { title: 'One shared lead inbox', copy: 'Your team sees the full context, ownership and next action—not an unread-message pile.', icon: MessageCircleMore },
   { title: 'Bookings and requests', copy: 'Turn conversations into structured work your team can confirm and complete.', icon: CalendarDays },
@@ -99,6 +81,54 @@ function RequestCard() {
   )
 }
 
+function CustomerOutcomeStory() {
+  return (
+    <div className="relative isolate mt-12 min-h-[740px] overflow-hidden rounded-[34px] bg-[#07111f] shadow-[0_36px_100px_rgba(10,28,19,0.2)] sm:min-h-[700px] lg:min-h-[640px]">
+      <Image
+        src="/images/stories/travel-owner-ready-lead.webp"
+        alt="A travel business owner receiving a qualified customer request from Buddie"
+        fill
+        sizes="(max-width: 1280px) 100vw, 1280px"
+        className="object-cover object-[64%_center] sm:object-[60%_center] lg:object-center"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(5,14,24,0.98)_0%,rgba(5,14,24,0.72)_52%,rgba(5,14,24,0.04)_80%)] lg:bg-[linear-gradient(90deg,rgba(5,14,24,0.98)_0%,rgba(5,14,24,0.86)_36%,rgba(5,14,24,0.12)_69%,rgba(5,14,24,0.2)_100%)]" />
+
+      <div className="absolute left-5 top-5 z-10 rounded-full border border-white/20 bg-[#07111f]/65 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.12em] text-white backdrop-blur-md sm:left-7 sm:top-7">
+        A real day with Buddie
+      </div>
+
+      <div className="relative z-10 flex min-h-[740px] items-end p-5 sm:min-h-[700px] sm:p-7 lg:min-h-[640px] lg:items-center lg:p-10 xl:p-14">
+        <div className="grid w-full gap-5 lg:grid-cols-[minmax(0,420px)_1fr] lg:items-end lg:gap-10">
+          <div className="rounded-[26px] border border-white/15 bg-[#0b1725]/88 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-5">
+            <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
+              <div>
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#8ff6af]">9:47 AM · New enquiry</p>
+                <p className="mt-1 text-xs font-semibold text-slate-300">You’re already helping another customer</p>
+              </div>
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#25d366] text-[#082315]"><MessageCircleMore className="h-4 w-4" /></span>
+            </div>
+            <div className="mt-4 space-y-2.5 text-[12px] leading-relaxed">
+              <div className="max-w-[88%] rounded-2xl rounded-bl-md bg-white px-3.5 py-3 font-semibold text-slate-800">I need a Bali trip for four people in December.</div>
+              <div className="ml-auto max-w-[92%] rounded-2xl rounded-br-md bg-[#dcf8e4] px-3.5 py-3 font-semibold text-[#173822]">Absolutely. I’ll collect the trip details so our team can prepare the right options.</div>
+              <div className="ml-auto flex max-w-[92%] flex-wrap gap-1.5">
+                {['Travel dates', 'Departure city', 'Travellers'].map((item) => <span key={item} className="rounded-full border border-[#70df96]/25 bg-[#153527] px-2.5 py-1.5 text-[10px] font-bold text-[#a7f4bd]">✓ {item}</span>)}
+              </div>
+            </div>
+            <div className="mt-4 flex items-center gap-2 text-[11px] font-semibold text-slate-300"><Sparkles className="h-4 w-4 text-[#9b7cf1]" /> Buddie knows this needs a quote—not a fake booking.</div>
+          </div>
+
+          <div className="lg:justify-self-end">
+            <div className="mb-3 max-w-sm rounded-2xl border border-white/20 bg-white/90 px-4 py-3 text-sm font-bold text-slate-800 shadow-lg backdrop-blur">
+              You open LeadBuddie to work you can act on—not another unread chat.
+            </div>
+            <div className="max-w-sm"><RequestCard /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function PremiumHome() {
   return (
     <>
@@ -123,11 +153,22 @@ export function PremiumHome() {
 
       <section className="border-b border-slate-200 bg-white px-4 py-5 sm:px-6 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left"><p className="text-sm font-semibold text-slate-800">Built for owners whose business already happens on WhatsApp.</p><p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Travel · Services · Wellness · Retail · Education</p></div></section>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto max-w-7xl"><div className="max-w-2xl"><Eyebrow>Not another chatbot or inbox</Eyebrow><h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl">A reply is not the result. <span className="text-slate-400">A useful next step is.</span></h2></div><div className="mt-12 grid gap-3 lg:grid-cols-3">{STORY_STEPS.map((step, index) => <div key={step.number} className={`relative overflow-hidden rounded-[27px] p-6 sm:p-7 ${index === 1 ? 'bg-[#e8faee]' : 'bg-[#f5f7f8]'}`}><div className="text-[11px] font-bold tracking-[0.15em] text-[#178b45]">{step.number}</div><h3 className="mt-10 max-w-xs text-xl font-bold tracking-[-0.035em] text-slate-950">{step.title}</h3><p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">{step.detail}</p>{index === 2 && <div className="mt-7 max-w-xs"><RequestCard /></div>}</div>)}</div></div></section>
+      <section id="customer-outcome" className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+            <div className="max-w-3xl">
+              <Eyebrow>Not another chatbot or inbox</Eyebrow>
+              <h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl">Your customer feels helped. <span className="text-slate-400">You receive a lead you can act on.</span></h2>
+            </div>
+            <p className="max-w-lg text-base leading-relaxed text-slate-600 lg:pb-1">While you run the business, Buddie understands the enquiry, collects only the useful details and prepares the next step for your team.</p>
+          </div>
+          <CustomerOutcomeStory />
+        </div>
+      </section>
 
-      <section className="overflow-hidden bg-[#eef4ef] px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.87fr_1.13fr] lg:items-center"><div><Eyebrow>Train Buddie</Eyebrow><h2 className="mt-5 max-w-xl font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-5xl">Teach it exactly like you would teach a new employee.</h2><p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">No settings maze. Tell Buddie what you sell, what it should ask, what it must never promise and when a team member should take over. It proposes the change before it goes live.</p><div className="mt-8 space-y-3.5">{['Talk by text or voice in your own language.', 'Buddie uses existing products, FAQs and rules as its starting knowledge.', 'Every change is explained in plain language before you save it.'].map((line) => <div key={line} className="flex items-start gap-3 text-sm font-semibold text-slate-800"><span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#25d366] text-[#092015]"><Check className="h-3 w-3 stroke-[3]" /></span>{line}</div>)}</div><Link href="/product" className="mt-8 inline-flex items-center gap-1.5 text-sm font-bold text-[#168a42] transition hover:gap-2.5">Explore Train Buddie <ChevronRight className="h-4 w-4" /></Link></div><TrainBuddieScene /></div></section>
+      <section id="train-buddie" className="scroll-mt-24 overflow-hidden bg-[#eef4ef] px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.87fr_1.13fr] lg:items-center"><div><Eyebrow>Train Buddie</Eyebrow><h2 className="mt-5 max-w-xl font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-5xl">Teach it exactly like you would teach a new employee.</h2><p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">No settings maze. Tell Buddie what you sell, what it should ask, what it must never promise and when a team member should take over. It proposes the change before it goes live.</p><div className="mt-8 space-y-3.5">{['Talk by text or voice in your own language.', 'Buddie uses existing products, FAQs and rules as its starting knowledge.', 'Every change is explained in plain language before you save it.'].map((line) => <div key={line} className="flex items-start gap-3 text-sm font-semibold text-slate-800"><span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#25d366] text-[#092015]"><Check className="h-3 w-3 stroke-[3]" /></span>{line}</div>)}</div><Link href="/product" className="mt-8 inline-flex items-center gap-1.5 text-sm font-bold text-[#168a42] transition hover:gap-2.5">Explore Train Buddie <ChevronRight className="h-4 w-4" /></Link></div><TrainBuddieScene /></div></section>
 
-      <section className="bg-[#091321] px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center"><div><Eyebrow dark>The action engine</Eyebrow><h2 className="mt-5 max-w-xl font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] sm:text-5xl">Buddie knows when chat is enough—and when an action is better.</h2><p className="mt-5 max-w-lg text-base leading-relaxed text-slate-300">One easy detail? It asks in chat. A small choice? It sends buttons. Several booking or quote details? It sends a WhatsApp form. When the job is done, Buddie stops.</p><div className="mt-8 flex flex-wrap gap-2">{['Chat for simple details', 'Buttons for quick choices', 'Forms for structured requests', 'Human handover when needed'].map((item) => <span key={item} className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-2 text-xs font-semibold text-slate-200">{item}</span>)}</div></div><ActionScene /></div></section>
+      <section id="action-engine" className="scroll-mt-24 bg-[#091321] px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center"><div><Eyebrow dark>The action engine</Eyebrow><h2 className="mt-5 max-w-xl font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] sm:text-5xl">Buddie knows when chat is enough—and when an action is better.</h2><p className="mt-5 max-w-lg text-base leading-relaxed text-slate-300">One easy detail? It asks in chat. A small choice? It sends buttons. Several booking or quote details? It sends a WhatsApp form. When the job is done, Buddie stops.</p><div className="mt-8 flex flex-wrap gap-2">{['Chat for simple details', 'Buttons for quick choices', 'Forms for structured requests', 'Human handover when needed'].map((item) => <span key={item} className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-2 text-xs font-semibold text-slate-200">{item}</span>)}</div></div><ActionScene /></div></section>
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end"><div className="max-w-2xl"><Eyebrow>Everything around the conversation</Eyebrow><h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-5xl">Your team gets clarity, not more work.</h2></div><Link href="/features" className="inline-flex items-center gap-1.5 text-sm font-bold text-[#168a42]">See all capabilities <ArrowRight className="h-4 w-4" /></Link></div><div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{ESSENTIALS.map(({ title, copy, icon: Icon }) => <div key={title} className="rounded-[24px] border border-slate-200 bg-white p-5"><span className="grid h-10 w-10 place-items-center rounded-xl bg-[#eff9f1] text-[#168a42]"><Icon className="h-5 w-5" /></span><h3 className="mt-7 text-base font-bold tracking-[-0.025em] text-slate-950">{title}</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">{copy}</p></div>)}</div></div></section>
 

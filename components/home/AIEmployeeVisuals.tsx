@@ -1,89 +1,122 @@
 import Image from 'next/image'
-import { ArrowRight, Check, CheckCircle2, FileText, Mic, Sparkles } from 'lucide-react'
+import {
+  CalendarCheck2,
+  Check,
+  CheckCircle2,
+  Mic,
+  ShieldCheck,
+  Sparkles,
+} from 'lucide-react'
+
+function VoiceWave() {
+  return (
+    <span className="flex h-5 items-center gap-[3px]" aria-hidden="true">
+      {[8, 14, 18, 11, 16, 9, 13, 7].map((height, index) => (
+        <span
+          key={`${height}-${index}`}
+          className="w-[3px] rounded-full bg-[#7551dc]"
+          style={{ height }}
+        />
+      ))}
+    </span>
+  )
+}
 
 /**
- * Marketing visuals deliberately show a complete, understandable business story.
- * The colourful image adds energy, while the foreground makes the product outcome
- * obvious to an owner in a few seconds.
+ * These scenes use real SMB environments as the emotional anchor and layer
+ * only the minimum product UI needed to make the capability believable.
  */
 export function TrainBuddieScene({ dark = false }: { dark?: boolean }) {
   return (
     <div
-      className={`relative isolate min-h-[470px] overflow-hidden rounded-[30px] border p-4 shadow-[0_32px_80px_rgba(19,33,64,0.18)] sm:min-h-[535px] sm:p-6 ${
-        dark ? 'border-white/15 bg-[#11172c]' : 'border-white/80 bg-[#eaf4ee]'
+      className={`relative isolate min-h-[520px] overflow-hidden rounded-[32px] border shadow-[0_34px_90px_rgba(19,33,64,0.22)] sm:min-h-[570px] ${
+        dark ? 'border-white/15 bg-[#0d1722]' : 'border-white/90 bg-[#dfeae3]'
       }`}
     >
       <Image
-        src="/images/brand/buddie-learning-core.png"
-        alt=""
+        src="/images/stories/fabric-owner-trains-buddie.webp"
+        alt="A fabric showroom owner teaching Buddie with a voice note"
         fill
         sizes="(max-width: 1024px) 100vw, 55vw"
-        className="object-cover object-center opacity-90"
+        className="object-cover object-[42%_center]"
       />
-      <div className={`absolute inset-0 ${dark ? 'bg-[radial-gradient(circle_at_50%_47%,transparent_5%,rgba(8,14,31,0.2)_52%,rgba(8,14,31,0.75)_100%)]' : 'bg-[radial-gradient(circle_at_50%_46%,transparent_6%,rgba(234,244,238,0.1)_51%,rgba(234,244,238,0.72)_100%)]'}`} />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,19,14,0.02)_32%,rgba(6,19,14,0.2)_58%,rgba(6,19,14,0.78)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#07150e]/80 via-[#07150e]/12 to-transparent" />
 
-      <div className="relative z-10 flex items-center justify-between">
-        <span className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.12em] ${dark ? 'border-white/15 bg-[#10172c]/75 text-white' : 'border-white/80 bg-white/80 text-slate-700'}`}>
-          <span className="lb-scene-live-dot h-1.5 w-1.5 rounded-full bg-[#25d366]" /> Live learning
-        </span>
-        <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[10px] font-bold ${dark ? 'bg-[#25d366]/15 text-[#91f5af]' : 'bg-[#ddf8e5] text-[#14833f]'}`}>
-          <Check className="h-3 w-3 stroke-[3]" /> Nothing changes until saved
-        </span>
+      <div className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full border border-white/40 bg-[#08140f]/75 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md sm:left-6 sm:top-6">
+        <span className="lb-scene-live-dot h-1.5 w-1.5 rounded-full bg-[#42e87c]" />
+        Teaching Buddie
       </div>
 
-      <div className="lb-scene-float absolute left-4 top-[112px] z-10 w-[min(245px,67%)] rounded-[20px] border border-white/80 bg-white/95 p-3.5 shadow-[0_20px_42px_rgba(22,39,58,0.18)] backdrop-blur sm:left-6 sm:top-[132px] sm:w-[255px] sm:p-4">
-        <div className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#3f24a8]">
-          <span className="grid h-6 w-6 place-items-center rounded-lg bg-[#eee8ff] text-[#6e41d8]"><Mic className="h-3.5 w-3.5" /></span>
-          You teach Buddie
+      <div className="lb-scene-float absolute bottom-5 left-4 z-10 max-w-[245px] rounded-[19px] border border-white/60 bg-white/95 p-3.5 shadow-[0_20px_50px_rgba(4,20,11,0.28)] backdrop-blur sm:bottom-7 sm:left-6 sm:max-w-[270px] sm:p-4">
+        <div className="flex items-center gap-2">
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#eee9ff] text-[#6f45d8]"><Mic className="h-4 w-4" /></span>
+          <VoiceWave />
+          <span className="text-[10px] font-bold text-slate-500">0:12</span>
         </div>
-        <p className="mt-3 text-[12px] font-semibold leading-relaxed text-slate-700 sm:text-[13px]">
-          “For Bali packages, ask for dates and travellers. Never promise the final price.”
+        <p className="mt-3 text-[12px] font-semibold leading-relaxed text-slate-750 sm:text-[13px]">
+          “Warranty is two years now. Never promise same-day delivery.”
         </p>
       </div>
 
-      <div className="lb-scene-pulse absolute left-1/2 top-[48%] z-10 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-[27px] border border-white/50 bg-[#101831]/75 text-white shadow-[0_0_0_12px_rgba(105,75,222,0.13),0_0_54px_rgba(113,74,232,0.65)] backdrop-blur sm:h-24 sm:w-24">
-        <Sparkles className="h-8 w-8 text-[#e9ddff] sm:h-9 sm:w-9" />
-      </div>
-      <div className={`absolute left-1/2 top-[calc(48%+56px)] z-10 -translate-x-1/2 whitespace-nowrap text-[10px] font-extrabold uppercase tracking-[0.1em] ${dark ? 'text-white' : 'text-[#263c5d]'}`}>Buddie understands</div>
-
-      <div className="lb-scene-float-delayed absolute bottom-5 right-4 z-10 w-[min(267px,76%)] rounded-[20px] border border-[#c7efd3] bg-white/95 p-3.5 shadow-[0_20px_42px_rgba(20,73,47,0.18)] backdrop-blur sm:bottom-7 sm:right-6 sm:w-[285px] sm:p-4">
-        <div className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#168a42]">
-          <span className="grid h-6 w-6 place-items-center rounded-lg bg-[#dcf8e4] text-[#168a42]"><CheckCircle2 className="h-3.5 w-3.5" /></span>
-          Buddie learns
+      <div className="lb-scene-float-delayed absolute right-4 top-[88px] z-10 w-[min(292px,78%)] rounded-[22px] border border-[#ccefd7] bg-white/95 p-4 shadow-[0_24px_60px_rgba(5,29,16,0.3)] backdrop-blur sm:right-6 sm:top-[104px] sm:w-[310px] sm:p-5">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#168a42]">
+            <Sparkles className="h-4 w-4" /> Buddie understood
+          </div>
+          <span className="rounded-full bg-[#eef8f1] px-2 py-1 text-[9px] font-bold text-[#198548]">Review first</span>
         </div>
-        <div className="mt-3 rounded-xl bg-[#effaf2] px-3 py-2.5 text-[12px] font-bold text-slate-800">Bali package → Quote request</div>
-        <div className="mt-2 space-y-1.5 text-[11px] font-semibold text-slate-600">
-          <div className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-[#159449]" /> Collect dates and travellers</div>
-          <div className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-[#159449]" /> Never promise the final price</div>
+        <p className="mt-4 text-sm font-extrabold tracking-[-0.02em] text-slate-950">Update delivery rules</p>
+        <div className="mt-3 space-y-2 rounded-2xl bg-[#f4faf6] p-3 text-[11px] font-semibold text-slate-700">
+          <div className="flex items-start gap-2"><Check className="mt-0.5 h-3.5 w-3.5 shrink-0 stroke-[3] text-[#169447]" /> Warranty: 2 years</div>
+          <div className="flex items-start gap-2"><Check className="mt-0.5 h-3.5 w-3.5 shrink-0 stroke-[3] text-[#169447]" /> Never promise same-day delivery</div>
         </div>
-        <div className="mt-3 flex gap-2"><span className="rounded-lg bg-[#149447] px-3 py-2 text-[10px] font-extrabold text-white">Save changes</span><span className="rounded-lg border border-[#ccbfff] px-3 py-2 text-[10px] font-bold text-[#6e41d8]">Edit</span></div>
+        <div className="mt-3 flex gap-2">
+          <span className="rounded-xl bg-[#159447] px-3.5 py-2.5 text-[10px] font-extrabold text-white shadow-[0_8px_20px_rgba(21,148,71,0.22)]">Save changes</span>
+          <span className="rounded-xl border border-[#d6ccfa] bg-white px-3.5 py-2.5 text-[10px] font-bold text-[#6e41d8]">Edit</span>
+        </div>
+        <div className="mt-3 flex items-center gap-1.5 text-[9px] font-semibold text-slate-500"><ShieldCheck className="h-3.5 w-3.5 text-[#159447]" /> Nothing changes until you save</div>
       </div>
-
-      <div className="lb-scene-orbit absolute left-[19%] top-[49%] z-10 h-2.5 w-2.5 rounded-full bg-[#29d86e] shadow-[0_0_18px_#29d86e]" />
-      <div className="lb-scene-orbit-reverse absolute right-[17%] top-[35%] z-10 h-3 w-3 rounded-full bg-[#a778ff] shadow-[0_0_18px_#a778ff]" />
     </div>
   )
 }
 
 export function ActionScene() {
   return (
-    <div className="relative isolate overflow-hidden rounded-[30px] border border-white/15 bg-[#10182b] p-4 shadow-[0_32px_80px_rgba(0,0,0,0.32)] sm:p-6">
-      <div className="absolute -left-20 top-10 h-52 w-52 rounded-full bg-[#7248e8]/35 blur-[80px]" />
-      <div className="absolute -bottom-20 -right-10 h-64 w-64 rounded-full bg-[#12c866]/25 blur-[90px]" />
-      <div className="relative flex items-center justify-between text-[10px] font-extrabold uppercase tracking-[0.12em] text-slate-300">
-        <span>One WhatsApp conversation</span><span className="rounded-full bg-[#25d366]/15 px-2.5 py-1.5 text-[#91f5af]">Smallest right action</span>
+    <div className="relative isolate min-h-[540px] overflow-hidden rounded-[32px] border border-white/15 bg-[#10182b] shadow-[0_34px_90px_rgba(0,0,0,0.36)] sm:min-h-[590px]">
+      <Image
+        src="/images/stories/wellness-owner-booking.webp"
+        alt="A wellness business owner welcoming a customer whose booking is already organised"
+        fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="object-cover object-[57%_center]"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,15,25,0.94)_0%,rgba(7,15,25,0.72)_34%,rgba(7,15,25,0.08)_69%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#07111f]/75 to-transparent" />
+
+      <div className="absolute left-4 top-4 z-10 rounded-full border border-white/20 bg-[#07111f]/70 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.12em] text-white backdrop-blur sm:left-6 sm:top-6">
+        A customer books in 15 seconds
       </div>
-      <div className="relative mt-8 grid gap-4 lg:grid-cols-[0.9fr_auto_1.1fr] lg:items-center">
-        <div className="lb-scene-float rounded-[22px] border border-white/15 bg-white/[0.09] p-4 backdrop-blur">
-          <div className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#bde8ff]"><span className="h-2 w-2 rounded-full bg-[#54c9ff]" /> Customer says</div>
-          <div className="mt-3 rounded-2xl rounded-bl-md bg-white px-3.5 py-3 text-sm font-semibold leading-relaxed text-[#192541]">“Need Bali for four people in December.”</div>
-          <div className="mt-3 flex items-center gap-2 text-[11px] text-slate-300"><span className="grid h-6 w-6 place-items-center rounded-lg bg-[#25d366] text-[#082315]"><Sparkles className="h-3.5 w-3.5" /></span> Buddie recognises the product and goal</div>
+
+      <div className="lb-scene-float absolute left-4 top-[80px] z-10 w-[min(284px,79%)] overflow-hidden rounded-[24px] border border-white/25 bg-white/[0.96] shadow-[0_26px_65px_rgba(0,0,0,0.36)] backdrop-blur sm:left-6 sm:top-[98px] sm:w-[310px]">
+        <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3.5">
+          <div><p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#178b45]">Thamara Wellness</p><p className="mt-0.5 text-sm font-extrabold text-slate-950">Book a massage</p></div>
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#e9f9ee] text-[#168a42]"><CalendarCheck2 className="h-5 w-5" /></span>
         </div>
-        <div className="relative mx-auto hidden h-16 w-16 lg:block"><div className="lb-scene-wave absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-gradient-to-r from-[#69c6ff] via-[#ae91ff] to-[#25d366]" /><div className="lb-scene-wave-dot absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_22px_#b8a3ff]" /><ArrowRight className="absolute right-0 top-1/2 h-4 w-4 -translate-y-1/2 text-[#80f2a6]" /></div>
-        <div className="lb-scene-float-delayed rounded-[22px] border border-[#4dca80]/35 bg-[#edfdf2] p-4 shadow-[0_20px_42px_rgba(7,39,20,0.22)]">
-          <div className="flex items-center justify-between"><div className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#14833f]"><FileText className="h-4 w-4" /> Buddie creates</div><span className="rounded-full bg-[#dcf8e4] px-2 py-1 text-[9px] font-bold text-[#14833f]">Quote request</span></div>
-          <div className="mt-3 rounded-xl bg-white p-3"><div className="text-sm font-bold text-slate-900">A useful request for your team</div><div className="mt-3 grid grid-cols-2 gap-1.5">{['15–22 Dec', '4 travellers', 'Departure city', 'Bali package'].map((item) => <span key={item} className="rounded-lg bg-[#f1f8f3] px-2 py-1.5 text-[10px] font-semibold text-slate-600">{item}</span>)}</div></div>
-          <div className="mt-3 flex items-center gap-2 text-[11px] font-semibold text-[#386049]"><CheckCircle2 className="h-4 w-4 text-[#169447]" /> No false booking confirmation. No transcript to decode.</div>
+        <div className="space-y-2.5 p-4 text-[11px]">
+          <div className="rounded-xl border border-slate-200 bg-white px-3 py-2.5"><span className="block text-[9px] font-bold uppercase tracking-[0.08em] text-slate-400">Treatment</span><span className="mt-1 block font-bold text-slate-800">Deep tissue massage</span></div>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="rounded-xl border border-slate-200 px-3 py-2.5"><span className="block text-[9px] font-bold uppercase tracking-[0.08em] text-slate-400">Date</span><span className="mt-1 block font-bold text-slate-800">Tomorrow</span></div>
+            <div className="rounded-xl border border-slate-200 px-3 py-2.5"><span className="block text-[9px] font-bold uppercase tracking-[0.08em] text-slate-400">Time</span><span className="mt-1 block font-bold text-slate-800">5:30 PM</span></div>
+          </div>
+          <div className="rounded-xl bg-[#159447] px-3 py-3 text-center font-extrabold text-white">Request appointment</div>
+        </div>
+      </div>
+
+      <div className="lb-scene-float-delayed absolute bottom-5 right-4 z-10 w-[min(275px,77%)] rounded-[20px] border border-[#9df0b8]/40 bg-[#092217]/95 p-4 text-white shadow-[0_22px_55px_rgba(0,0,0,0.32)] backdrop-blur sm:bottom-7 sm:right-6 sm:w-[295px]">
+        <div className="flex items-start gap-3">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#25d366] text-[#082315]"><CheckCircle2 className="h-5 w-5" /></span>
+          <div><p className="text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#91f5af]">Ready for your team</p><p className="mt-1 text-sm font-extrabold">Appointment request received</p><p className="mt-1 text-[11px] leading-relaxed text-slate-300">Customer, service, date and time—already organised.</p></div>
         </div>
       </div>
     </div>
