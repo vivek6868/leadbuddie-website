@@ -8,10 +8,11 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 interface MobileMenuProps {
+  darkTrigger?: boolean
   onRequestDemo?: () => void
 }
 
-export function MobileMenu({ onRequestDemo }: MobileMenuProps) {
+export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [logoError, setLogoError] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -115,7 +116,7 @@ export function MobileMenu({ onRequestDemo }: MobileMenuProps) {
     <>
       <button
         onClick={() => setIsOpen((v) => !v)}
-        className="p-2 text-text-primary transition-colors hover:text-brand"
+        className={`rounded-lg p-2 transition-colors ${darkTrigger ? 'text-white hover:bg-white/10 hover:text-white' : 'text-slate-900 hover:bg-slate-100 hover:text-brand-hover'}`}
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >

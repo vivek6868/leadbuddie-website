@@ -29,7 +29,7 @@ export function Navbar() {
         className={cn(
           'fixed inset-x-0 top-0 z-50 transition-all duration-300',
           scrolled
-            ? 'border-b border-border bg-bg-primary/78 backdrop-blur-xl'
+            ? 'border-b border-slate-200/90 bg-white/95 shadow-[0_12px_36px_rgba(15,23,42,0.1)] backdrop-blur-xl'
             : 'bg-transparent'
         )}
       >
@@ -88,7 +88,7 @@ export function Navbar() {
           </div>
 
           <div className="md:hidden">
-            <MobileMenu onRequestDemo={() => setDemoModalOpen(true)} />
+            <MobileMenu darkTrigger={isDarkHero} onRequestDemo={() => setDemoModalOpen(true)} />
           </div>
         </div>
       </nav>
