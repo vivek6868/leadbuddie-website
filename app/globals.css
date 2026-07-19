@@ -345,8 +345,51 @@ html.js-reveal [data-reveal]:not([data-reveal="visible"]) {
 .lb-float { animation: lbFloat 5s ease-in-out infinite; }
 .lb-float-fast { animation: lbFloat 4s ease-in-out infinite; }
 
+/* Product-story scenes: motion is purposeful, showing information moving from
+   an owner/customer to Buddie and then to a real business outcome. */
+@keyframes lbSceneFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.5deg); }
+  50% { transform: translate3d(0, -9px, 0) rotate(0.5deg); }
+}
+@keyframes lbSceneFloatDelayed {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0.5deg); }
+  50% { transform: translate3d(0, -8px, 0) rotate(-0.4deg); }
+}
+@keyframes lbScenePulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.07); }
+}
+@keyframes lbSceneOrbit {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.7; }
+  50% { transform: translate3d(14px, -10px, 0); opacity: 1; }
+}
+@keyframes lbSceneOrbitReverse {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.8; }
+  50% { transform: translate3d(-12px, 12px, 0); opacity: 1; }
+}
+@keyframes lbSceneWaveDot {
+  0% { transform: translate(-110%, -50%); opacity: 0; }
+  18% { opacity: 1; }
+  78% { opacity: 1; }
+  100% { transform: translate(110%, -50%); opacity: 0; }
+}
+@keyframes lbSceneWave {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.lb-scene-float { animation: lbSceneFloat 5.5s ease-in-out infinite; }
+.lb-scene-float-delayed { animation: lbSceneFloatDelayed 6.2s ease-in-out 0.8s infinite; }
+.lb-scene-pulse { animation: lbScenePulse 3.2s ease-in-out infinite; }
+.lb-scene-orbit { animation: lbSceneOrbit 4.6s ease-in-out infinite; }
+.lb-scene-orbit-reverse { animation: lbSceneOrbitReverse 4.2s ease-in-out 0.6s infinite; }
+.lb-scene-wave { animation: lbSceneWave 1.6s ease-in-out infinite; }
+.lb-scene-wave-dot { animation: lbSceneWaveDot 2.3s ease-in-out infinite; }
+.lb-scene-live-dot { animation: lbBreathe 1.5s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
-  .lb-live-dot, .lb-halo, .lb-eye, .lb-typing-dot, .lb-float, .lb-float-fast {
+  .lb-live-dot, .lb-halo, .lb-eye, .lb-typing-dot, .lb-float, .lb-float-fast,
+  .lb-scene-float, .lb-scene-float-delayed, .lb-scene-pulse, .lb-scene-orbit,
+  .lb-scene-orbit-reverse, .lb-scene-wave, .lb-scene-wave-dot, .lb-scene-live-dot {
     animation: none !important;
   }
 }
