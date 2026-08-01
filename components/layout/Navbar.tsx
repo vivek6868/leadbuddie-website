@@ -14,7 +14,9 @@ export function Navbar() {
   const [demoModalOpen, setDemoModalOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const isDarkHero = pathname === '/' && !scrolled
+  const hasDarkHero = ['/', '/product', '/ai-employee', '/features', '/how-it-works', '/pricing', '/resources', '/contact', '/demo', '/case-study'].includes(pathname)
+    || (pathname.startsWith('/blog/') && pathname !== '/blog/rss.xml')
+  const isDarkHero = hasDarkHero && !scrolled
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -38,15 +40,15 @@ export function Navbar() {
             {!logoError ? (
               <Image
                 src="/images/logo.png"
-                alt="LeadBuddie Logo"
-                width={176}
+                alt=""
+                width={44}
                 height={44}
-                className="h-11 w-auto"
+                className="h-10 w-10 rounded-xl object-contain"
                 priority
                 onError={() => setLogoError(true)}
               />
             ) : (
-              <span className="font-heading text-xl font-bold text-text-primary">LeadBuddie</span>
+              <span className={`font-heading text-xl font-bold ${isDarkHero ? 'text-white' : 'text-text-primary'}`}>LB</span>
             )}
             <span className={`font-heading text-xl font-extrabold tracking-[-0.04em] ${isDarkHero ? 'text-white' : 'text-text-primary'}`}>
               LeadBuddie
@@ -60,9 +62,10 @@ export function Navbar() {
           <div className="hidden items-center gap-8 md:flex">
             {[
               { name: 'Product', href: '/product' },
+              { name: 'AI employee', href: '/ai-employee' },
               { name: 'How it works', href: '/how-it-works' },
               { name: 'Pricing', href: '/pricing' },
-              { name: 'Resources', href: '/blog' },
+              { name: 'Resources', href: '/resources' },
             ].map((item) => (
               <Link
                 key={item.href}

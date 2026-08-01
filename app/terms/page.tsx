@@ -140,7 +140,7 @@ export default function TermsPage() {
             <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">6.1 Subscription Plans</h3>
             <p className="text-text-secondary mb-4 leading-relaxed">
               Our Service is offered on a subscription basis. By subscribing, you agree to pay the fees associated 
-              with your chosen plan. Subscription fees are billed monthly in advance.
+              with your chosen plan. Subscription fees are billed in advance according to the billing cycle you select.
             </p>
 
             <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">6.2 Free Trial</h3>
@@ -166,24 +166,22 @@ export default function TermsPage() {
 
           <div className="bg-bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm">
             <h2 className="text-xl md:text-2xl font-bold text-text-primary mb-4">7. Refund Policy</h2>
-            <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">7.1 7-Day Money-Back Guarantee</h3>
+            <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">7.1 Refund Eligibility</h3>
             <p className="text-text-secondary mb-4 leading-relaxed">
-              We offer a 7-day money-back guarantee from the date of your first paid subscription. If you are 
-              not satisfied with our Service within 7 days of your first payment, contact us at {CONTACT.support} 
-              to request a full refund.
+              Subscription payments are not refundable after successful activation. Refunds are only considered for
+              duplicate payments or billing errors. Submit eligible refund requests to {CONTACT.support} within 7 days.
             </p>
 
             <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">7.2 Refund Processing</h3>
             <p className="text-text-secondary mb-4 leading-relaxed">
-              Refunds will be processed to the original payment method within 5-10 business days. Once processed, 
+              Approved refunds will be processed to the original payment method within 5-7 business days. Once processed,
               your account will be suspended and you will lose access to the Service.
             </p>
 
-            <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">7.3 No Refunds After 7 Days</h3>
+            <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">7.3 Cancellation</h3>
             <p className="text-text-secondary leading-relaxed">
-              After the 7-day guarantee period, subscription fees are non-refundable. However, you may cancel 
-              your subscription at any time, and you will continue to have access until the end of your current 
-              billing period.
+              You may cancel your subscription at any time. Unless you choose immediate cancellation, access continues
+              until the end of the current billing period. Cancellation does not create a refund entitlement.
             </p>
           </div>
 
@@ -192,7 +190,7 @@ export default function TermsPage() {
             <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">8.1 Termination by You</h3>
             <p className="text-text-secondary mb-4 leading-relaxed">
               You may cancel your account at any time through your account settings or by contacting us. 
-              Upon cancellation, your account will remain active until the end of your current billing period.
+              Unless you choose immediate cancellation, your account will remain active until the end of your current billing period.
             </p>
 
             <h3 className="text-lg font-bold text-text-primary mb-2 mt-4">8.2 Termination by Us</h3>
@@ -288,7 +286,7 @@ export default function TermsPage() {
               <li><strong>Email:</strong> <a href={`mailto:${CONTACT.general}`} className="text-brand-hover hover:text-brand font-semibold underline underline-offset-2">{CONTACT.general}</a></li>
               <li><strong>Support:</strong> <a href={`mailto:${CONTACT.support}`} className="text-brand-hover hover:text-brand font-semibold underline underline-offset-2">{CONTACT.support}</a></li>
               <li><strong>Company:</strong> {BRAND.company}</li>
-              <li><strong>Location:</strong> India (Serving businesses worldwide)</li>
+              <li><strong>Location:</strong> India</li>
             </ul>
           </div>
         </div>

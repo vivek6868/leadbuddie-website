@@ -133,16 +133,16 @@ export function ContactForm() {
         </div>
 
         {status === 'success' && (
-          <div className="flex items-center space-x-2 rounded-xl border border-wa/30 bg-wa-subtle p-4">
-            <CheckCircle2 className="text-wa" size={20} />
-            <span className="text-wa">Message sent successfully! We'll get back to you within 24 hours.</span>
+          <div role="status" aria-live="polite" className="flex items-center space-x-2 rounded-xl border border-emerald-300 bg-emerald-50 p-4">
+            <CheckCircle2 className="text-emerald-700" size={20} />
+            <span className="text-emerald-900">Message sent. The LeadBuddie team will review it.</span>
           </div>
         )}
 
         {status === 'error' && (
-          <div className="flex items-center space-x-2 rounded-xl border border-[#ef4444]/30 bg-[#ef4444]/10 p-4">
-            <AlertCircle className="text-[#f87171]" size={20} />
-            <span className="text-[#fca5a5]">Something went wrong. Please try again or email us directly.</span>
+          <div role="alert" className="flex items-center space-x-2 rounded-xl border border-red-300 bg-red-50 p-4">
+            <AlertCircle className="text-red-700" size={20} />
+            <span className="text-red-900">Something went wrong. Please try again or email us directly.</span>
           </div>
         )}
 
@@ -174,4 +174,3 @@ export function ContactForm() {
     </div>
   )
 }
-

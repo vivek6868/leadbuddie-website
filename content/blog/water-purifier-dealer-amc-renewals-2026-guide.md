@@ -1,8 +1,9 @@
 ---
-title: The Water Purifier Dealer's Guide to AMC Renewals in 2026 — How to Stop Losing ₹2–3 Lakhs a Month
-description: Most water purifier dealers in India leak more revenue from missed AMC renewals than from any other gap. Here is the 2026 playbook for closing them — workflow, scripts, and a real dealer case study.
+title: The Water Purifier Dealer's Guide to AMC Renewals in 2026
+description: A practical 2026 playbook for water purifier dealers to organise AMC renewal workflows, scripts and follow-ups.
 slug: water-purifier-dealer-amc-renewals-2026-guide
 date: 2026-05-16T00:00:00.000Z
+dateModified: 2026-08-01T00:00:00.000Z
 author: Vivek D
 category: CRM
 image: '/images/blog/amc-renewals-guide.png'
@@ -12,7 +13,7 @@ isPublished: true
 
 If you run a water purifier dealership in India in 2026, your single most under-managed revenue stream is sitting in plain sight — **the AMC renewal**.
 
-You already sold the customer. They already trust the brand. They already paid for the unit. The renewal is the cheapest sale in your entire business. And yet — for most dealers we talk to — somewhere between **25% and 40% of AMC contracts walk out the door every year** because nobody followed up.
+You already sold the customer. They already trust the brand. They already paid for the unit. Yet renewal opportunities are often lost because nobody followed up at the right time.
 
 This is not a sales problem. It is an **operations problem**. And it is the most fixable problem in the entire water purifier business.
 
@@ -22,7 +23,7 @@ This guide breaks down where renewals leak, what a good 2026 workflow looks like
 
 ## The math: why AMC renewals are your highest-margin revenue
 
-Take the simplest possible dealer — 120 active AMCs, ₹2,499 average plan, industry-standard 30% leak. Here is what that costs you.
+Use your own customer count, AMC value and recorded renewal rate to measure the opportunity. The table below is an illustration using a 30% missed-renewal assumption, not an industry benchmark.
 
 | Dealer size | Active AMCs | Avg AMC value | Annual AMC revenue | Revenue lost @ 30% leak |
 | --- | ---: | ---: | ---: | ---: |
@@ -31,7 +32,7 @@ Take the simplest possible dealer — 120 active AMCs, ₹2,499 average plan, in
 | Large | 800 | ₹2,499 | ₹19,99,200 | **₹5,99,760** |
 | Multi-branch | 1,500 | ₹2,499 | ₹37,48,500 | **₹11,24,550** |
 
-A mid-sized dealer is leaking **₹2–3 lakhs a month**. A multi-branch dealer is closer to **₹7–10 lakhs a month**. None of this is theoretical — we have looked at the books with three dealers in 2026 and the pattern repeats.
+A mid-sized dealer in this illustration would forgo ₹2,62,395 a year; a multi-branch dealer would forgo ₹11,24,550 a year. Calculate these figures from your own records before setting a target.
 
 The brutal part: **AMC revenue is your highest-margin revenue**. No acquisition cost. No new install. No commission to a sales rep. Most renewals cost you a single phone call. Lose them and you have lost almost-pure profit.
 
@@ -46,7 +47,7 @@ Before you fix the leak you need to know exactly where it is happening. Across t
 | 1 | The "I'll call later" customer | "Send me the plan details, I will let you know." You send. They go quiet. Two months later their AMC has expired and they are on a cheaper local technician. | Every "let me know" needs a hard scheduled callback with the customer's note attached — *"wife to approve"*, *"call after salary on 20th"*. |
 | 2 | The expiring AMC nobody noticed | AMC quietly expired three weeks ago. Customer calls in with a filter complaint and now you are negotiating from weakness. | Every AMC surfaces on someone's screen **30 days before expiry** — not after. |
 | 3 | The 11 PM WhatsApp | Customer messages at 10:47 PM. You see it next morning. By then they have two competing quotes. | After-hours messages get an automatic, on-brand reply — acknowledge, attach the right plan PDF, book a callback. |
-| 4 | The service-complaint renewal | Customer messages about strange-tasting water. Technician fixes it. Nobody marks the customer for a renewal touchpoint — even though service moments convert 2–3× better. | Every service visit pushes a renewal touchpoint forward by 30 days. Catch them at that moment. |
+| 4 | The service-complaint renewal | Customer messages about strange-tasting water. Technician fixes it. Nobody marks the customer for a renewal touchpoint. | Add a renewal touchpoint after every service visit. |
 | 5 | The lost callback | You called last Tuesday. They asked for a Monday callback. Monday came. You forgot. Three weeks later, they have moved on. | Every promised callback lands on a real list on the real day — not a notebook, not a phone reminder. |
 
 The fixes are not glamorous. They are operational. And every one of them is the difference between a renewed AMC and a lost customer.
@@ -108,7 +109,7 @@ Every customer's activity timeline should be visible to the entire team. *Last c
 
 ## How Mastec Water Purifier rebuilt their renewal process in 2026
 
-Mastec is one of our pilot dealers. They handle 60–100 leads per day. Before they moved to a structured workflow, their renewal process looked like every other dealer's — a notebook, WhatsApp screenshots saved as photos, and the owner remembering most things.
+Mastec is one of our pilot dealers. Before they moved to a structured workflow, their renewal process relied on a notebook, WhatsApp screenshots saved as photos, and the owner remembering most things.
 
 When we sat down with them in early 2026, three things changed.
 
@@ -131,12 +132,12 @@ If you run a water purifier dealership and you want to fix your AMC renewal leak
 | Days | Focus | The single concrete action |
 | :-: | --- | --- |
 | 1–3 | **Centralise** | Export customers from wherever they live — Excel, WhatsApp Business, brand portal, technician's notebook — and import into one system with products + AMCs attached. |
-| 4–7 | **Measure the leak** | Pull every AMC that expired in the last 12 months. How many renewed? That is your baseline renewal rate. Most dealers land between 60–75%. |
+| 4–7 | **Measure the leak** | Pull every AMC that expired in the last 12 months. How many renewed? That is your baseline renewal rate. |
 | 8–14 | **Build the morning ritual** | One 10-minute slot every morning. Open the renewals page. Call in order of urgency. Log every outcome — no skipping. |
 | 15–21 | **Turn on after-hours** | Configure your AI sales agent to handle after-hours renewal queries. Approve templates and assets. Watch overnight conversations move themselves forward. |
 | 22–30 | **Measure & adjust** | Compare renewal rate vs. baseline. Look for patterns in *"not interested"*. Audit missed callbacks. Tighten the workflow for next month. |
 
-By day 30, your renewal rate should climb **5–10 percentage points**. Hold that for 12 months and — for a 200-customer dealer at ₹2,500 average AMC — that is **₹15,000 to ₹30,000 a month** in pure profit, growing as your customer base grows.
+At the end of the first month, compare your renewal rate and missed-callback count with the baseline. Use the result to adjust the workflow rather than assuming a fixed uplift.
 
 ---
 

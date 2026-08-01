@@ -1,79 +1,67 @@
 import { Metadata } from 'next'
-import { Section } from '@/components/ui/Section'
-import { SectionHeader } from '@/components/ui/SectionHeader'
-import { Card } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
-import { FileText, BookOpen, HelpCircle } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowRight, Calculator, BookOpen, MessageCircle, ShieldCheck } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Resources — LeadBuddie',
-  description: 'Helpful resources, guides, and documentation for LeadBuddie',
+  description: 'Practical WhatsApp sales, lead management, AMC renewal and AI safety guides for Indian service businesses.',
   alternates: { canonical: '/resources' },
 }
 
 const resources = [
   {
     icon: BookOpen,
-    title: 'Getting Started Guide',
-    description: 'Learn how to set up your WhatsApp Business API and connect it to LeadBuddie.',
-    href: '#',
+    title: 'WhatsApp sales guides',
+    description: 'Practical playbooks for handling enquiries, improving follow-ups and organising WhatsApp-led sales.',
+    href: '/blog?category=WhatsApp',
+    cta: 'Browse WhatsApp guides',
   },
   {
-    icon: FileText,
-    title: 'API Documentation',
-    description: 'Technical documentation for integrating LeadBuddie with your existing tools.',
-    href: '#',
+    icon: Calculator,
+    title: 'AMC revenue calculator',
+    description: 'Estimate the renewal revenue at risk in your service business and identify the follow-up gap to fix.',
+    href: '/amc-revenue-calculator',
+    cta: 'Calculate renewal revenue',
   },
   {
-    icon: HelpCircle,
-    title: 'Help Center',
-    description: 'Find answers to common questions and troubleshooting tips.',
-    href: '#',
+    icon: MessageCircle,
+    title: 'Water purifier dealer playbooks',
+    description: 'Guides for RO enquiries, service callbacks and AMC renewals on WhatsApp.',
+    href: '/water-purifier-crm',
+    cta: 'Explore water purifier CRM',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'AI control and safety',
+    description: 'Understand how approval workflows and business knowledge can keep automated WhatsApp conversations on track.',
+    href: '/blog/autonomy-ladder-whatsapp-ai-watch-mode',
+    cta: 'Read the safety guide',
   },
 ]
 
 export default function ResourcesPage() {
   return (
     <>
-      <Section className="pt-32 pb-16">
-        <SectionHeader
-          title="Resources & Documentation"
-          description="Everything you need to get the most out of LeadBuddie"
-          centered
-        />
-      </Section>
+      <section className="relative isolate overflow-hidden bg-[#07111f] px-4 pb-20 pt-28 text-white sm:px-6 md:pt-36 lg:px-8">
+        <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:54px_54px]" />
+        <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-[#25d366]/15 blur-[100px]" />
+        <div className="relative mx-auto max-w-4xl text-center"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]">Practical guidance for WhatsApp-led businesses</p><h1 className="mt-5 font-heading text-5xl font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Learn the workflow. <span className="text-[#79eea0]">Build the right customer journey.</span></h1><p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">Straightforward guides and tools for enquiries, follow-ups, quote requests, service operations and responsible AI automation.</p></div>
+      </section>
 
-      <Section>
-        <div className="grid md:grid-cols-3 gap-6">
+      <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
           {resources.map((resource, index) => (
-            <Card key={index} hover className="text-center">
-              <div className="w-12 h-12 rounded-lg bg-teal-50 flex items-center justify-center mx-auto mb-4">
-                <resource.icon className="text-teal-600" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{resource.title}</h3>
-              <p className="text-gray-600 mb-6">{resource.description}</p>
-              <Button href={resource.href} variant="outline" className="w-full">
-                Coming Soon
-              </Button>
-            </Card>
+            <Link key={index} href={resource.href} className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_22px_65px_-38px_rgba(15,23,42,0.3)] transition duration-300 hover:-translate-y-1 hover:border-[#bce8c8] hover:shadow-[0_30px_75px_-36px_rgba(15,23,42,0.35)] sm:p-8">
+              <div className="flex items-start justify-between gap-5"><span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#eaf9ee] text-[#168a42]"><resource.icon size={22} /></span><span className="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-500 transition group-hover:border-[#25d366] group-hover:text-[#168a42]"><ArrowRight className="h-4 w-4" /></span></div>
+              <h2 className="mt-10 font-heading text-2xl font-extrabold tracking-[-0.04em] text-slate-950">{resource.title}</h2>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-slate-600">{resource.description}</p>
+              <p className="mt-7 text-sm font-bold text-[#168a42]">{resource.cta}</p>
+            </Link>
           ))}
         </div>
-      </Section>
+      </section>
 
-      <Section background="gray" className="py-16">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Need more help?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Our support team is here to help you succeed.
-          </p>
-          <Button href="/contact" size="lg">
-            Contact Support
-          </Button>
-        </div>
-      </Section>
+      <section className="px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 rounded-[30px] bg-[#eef5ef] p-7 sm:flex-row sm:items-center sm:p-10"><div><p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#168a42]">Need a walkthrough?</p><h2 className="mt-3 font-heading text-3xl font-extrabold tracking-[-0.045em] text-slate-950">Map LeadBuddie to your real business flow.</h2><p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">Tell us how your team manages enquiries, service visits, bookings or quotations today.</p></div><Link href="/contact" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#25d366] px-5 py-3 text-sm font-extrabold text-[#082315] shadow-[0_12px_30px_rgba(37,211,102,0.22)]">Talk to the team <ArrowRight className="h-4 w-4" /></Link></div></section>
     </>
   )
 }
-

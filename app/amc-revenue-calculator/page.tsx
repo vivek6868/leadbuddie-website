@@ -7,7 +7,7 @@ import { faqSchema, breadcrumbSchema, SITE_URL } from '@/lib/seo'
 const PATH = '/amc-revenue-calculator'
 const TITLE = 'AMC & Contract Revenue Leak Calculator | LeadBuddie'
 const DESCRIPTION =
-  'Free calculator: see how much contract renewal and AMC revenue your business loses every year — and how much you could recover with a tracked renewal workflow. No sign-up needed.'
+  'Free calculator: model potential contract and AMC renewal revenue using your own account count, contract value and renewal-rate assumptions. No sign-up needed.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -25,19 +25,19 @@ export const metadata: Metadata = {
 
 const FAQ = [
   {
-    question: 'How much contract renewal revenue do businesses typically lose?',
+    question: 'What does this calculator estimate?',
     answer:
-      'Most service and maintenance businesses renew only 40–60% of their contracts because follow-up is manual. Across a few hundred accounts, that is typically thousands of dollars or lakhs of rupees slipping away in missed customer value.',
+      'It models potential annual renewal revenue from the account count, average contract value and renewal rate you enter. It is a planning tool, not a benchmark for your business or an outcome forecast.',
   },
   {
     question: 'How does this calculator estimate recoverable revenue?',
     answer:
-      'It multiplies your recurring/AMC-eligible accounts by your average contract value to find your potential renewal revenue, compares it to what you close today, and shows the gap you could recover by lifting your renewal rate toward ~85% — the level teams typically reach with a tracked renewal workflow.',
+      'It multiplies your recurring or AMC-eligible accounts by your average contract value, then compares your current renewal rate with a planning scenario you can adjust. The difference is illustrative, not a promise of recoverable revenue.',
   },
   {
     question: 'How can I actually recover that revenue?',
     answer:
-      'By making sure no renewal is missed: track every contract end-date, surface contracts due by urgency, follow up on WhatsApp and email, and schedule callbacks so promised follow-ups never get forgotten. LeadBuddie automates this workflow.',
+      'Use a documented workflow: keep contract end dates current, review contracts due by urgency, record callbacks and use approved customer messaging where appropriate. LeadBuddie provides renewal tools for eligible water-treatment businesses; sends depend on plan, setup, templates and messaging eligibility.',
   },
 ]
 
@@ -54,7 +54,7 @@ export default function AmcRevenueCalculatorPage() {
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Web',
             description: DESCRIPTION,
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
             publisher: { '@id': `${SITE_URL}/#organization` },
           },
           faqSchema(FAQ),
@@ -73,11 +73,10 @@ export default function AmcRevenueCalculatorPage() {
             Free tool · No sign-up
           </span>
           <h1 className="text-balance text-3xl font-bold leading-[1.08] tracking-tight text-text-primary sm:text-4xl md:text-5xl font-heading">
-            How much contract revenue is your business losing?
+            Model your contract renewal revenue
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg">
-            Most service businesses leak 40% of their repeat contracts due to manual follow-up. Move the
-            sliders to see your number — and how much you could recover.
+            Use your own account count, contract value and renewal-rate assumptions to compare today’s renewal revenue with a planning scenario.
           </p>
         </div>
       </section>
@@ -97,15 +96,10 @@ export default function AmcRevenueCalculatorPage() {
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-text-secondary">
             <p>
-              A customer who already knows your team is the easiest customer to retain.
-              Renewing their agreements should be highly efficient — yet for
-              most teams, a large percentage of contracts lapse purely because
-              nobody reached out in time with a direct renewal link.
+              Existing customers already know your team and service history. Keeping renewal dates and follow-up commitments visible can help your team plan the next conversation.
             </p>
             <p>
-              It is an operations and communication problem, and it is highly fixable.
-              When every renewal is tracked, surfaced by urgency, and followed up on
-              WhatsApp or SMS, renewal rates climb fast.{' '}
+              It is an operations and communication workflow. Review your own results over time rather than treating this calculator’s scenario as a forecast.{' '}
               <Link href="/amc-renewal-software" className="font-semibold text-brand-hover hover:underline">
                 See how AMC renewal tracking works →
               </Link>

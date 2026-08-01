@@ -11,36 +11,6 @@ interface CTASectionProps {
   secondaryHref?: string
 }
 
-export function CTASection({
-  title = "Ready to Never Lose a Lead Again?",
-  description = "Start your 30-day free trial today. No credit card required.",
-  primaryCTA = "Start Free Trial",
-  primaryHref = "/pricing",
-  secondaryCTA,
-  secondaryHref,
-}: CTASectionProps) {
-  return (
-    <Section className="bg-gradient-to-r from-primary-600/10 via-secondary-600/10 to-primary-600/10 border-y border-primary-600/20">
-      <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          {title}
-        </h2>
-        <p className="text-lg text-dark-300 mb-8">
-          {description}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" href={primaryHref} className="group">
-            {primaryCTA}
-            <ArrowRight className="ml-2 inline-block group-hover:translate-x-1 transition-transform" size={20} />
-          </Button>
-          {secondaryCTA && secondaryHref && (
-            <Button size="lg" variant="outline" href={secondaryHref}>
-              {secondaryCTA}
-            </Button>
-          )}
-        </div>
-      </div>
-    </Section>
-  )
+export function CTASection({ title = 'Give every enquiry a capable next step.', description = 'Connect your business number, teach Buddie in plain language, test the journey, and choose when it can reply automatically.', primaryCTA = 'Start your 30-day trial', primaryHref = 'https://app.leadbuddie.com', secondaryCTA = 'Watch product demo', secondaryHref = '/demo' }: CTASectionProps) {
+  return <Section><div className="relative overflow-hidden rounded-[34px] bg-[#07111f] px-6 py-16 text-center text-white shadow-[0_32px_90px_-38px_rgba(9,19,33,0.72)] sm:px-12 sm:py-20"><div className="absolute -right-20 -top-16 h-72 w-72 rounded-full bg-[#25d366]/20 blur-[90px]" /><div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-[#7c4fe3]/20 blur-[90px]" /><div className="relative mx-auto max-w-2xl"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]">Ready when your customers are</p><h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] sm:text-5xl">{title}</h2><p className="mt-5 text-base leading-relaxed text-slate-300">{description}</p><div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Button href={primaryHref} size="lg" className="w-full sm:w-auto">{primaryCTA}<ArrowRight className="ml-2 h-4 w-4" /></Button>{secondaryCTA && secondaryHref && <Button href={secondaryHref} variant="outline" size="lg" className="w-full border-white/20 bg-white/[0.06] text-white hover:border-white/35 hover:bg-white/[0.12] hover:text-white sm:w-auto">{secondaryCTA}</Button>}</div></div></div></Section>
 }
-

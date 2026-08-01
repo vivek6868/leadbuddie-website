@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     title: SEO.title,
     description: SEO.description,
     siteName: 'LeadBuddie',
-    // og:image is provided by app/opengraph-image.tsx (generated, branded 1200×630)
+    images: [{ url: '/images/brand/social-card-v1.png', width: 1731, height: 909, alt: 'LeadBuddie helps turn WhatsApp enquiries into clear business requests' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: SEO.title,
     description: SEO.description,
-    // twitter:image is provided by app/opengraph-image.tsx
+    images: ['/images/brand/social-card-v1.png'],
   },
   robots: {
     index: true,
@@ -81,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${bricolage.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         {/* Google tag (gtag.js) - Analytics GA4 + Ads */}
         <script
@@ -104,24 +104,28 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               function gtag_report_conversion(url) {
+                var navigated = false;
                 var callback = function () {
+                  if (navigated) return;
+                  navigated = true;
                   if (typeof(url) != 'undefined') {
                     window.location = url;
                   }
                 };
+                var fallback = window.setTimeout(callback, 800);
                 gtag('event', 'conversion', {
                   'send_to': 'AW-17930856536/wtseCNjOv_IbENjQjOZC',
                   'value': 1.0,
-                  'currency': 'SGD',
+                  'currency': 'INR',
                   'transaction_id': '',
-                  'event_callback': callback
+                  'event_callback': function () { window.clearTimeout(fallback); callback(); }
                 });
                 return false;
               }
               document.addEventListener('DOMContentLoaded', function() {
                 document.body.addEventListener('click', function(e) {
                   var a = e.target.closest('a[href*="app.leadbuddie.com"]');
-                  if (a && a.href) {
+                  if (a && a.href && !e.defaultPrevented && e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
                     e.preventDefault();
                     gtag_report_conversion(a.href);
                   }
@@ -132,12 +136,13 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-bg-primary text-text-primary">
+        <a href="#main-content" className="sr-only fixed left-4 top-4 z-[2147483647] rounded-lg bg-white px-4 py-2 font-semibold text-slate-950 shadow-lg focus:not-sr-only">Skip to content</a>
         <JsonLd data={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, MOBILE_APPLICATION_SCHEMA]} />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <DemoModalProvider>
             <ScrollRevealClient />
             <Navbar />
-            <main className="min-h-screen">
+            <main id="main-content" className="min-h-screen" tabIndex={-1}>
               {children}
             </main>
             <Footer />
@@ -156,4 +161,3 @@ export default function RootLayout({
     </html>
   )
 }
-

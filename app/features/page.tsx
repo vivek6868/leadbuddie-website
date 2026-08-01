@@ -2,11 +2,10 @@ import { Metadata } from 'next'
 import { FeatureList } from '@/components/features/FeatureList'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { CTASection } from '@/components/sections/CTASection'
-import { Section } from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'Features — LeadBuddie AI Sales Employee for WhatsApp',
-  description: 'AI replies, train Buddie by chat or voice, one-tap WhatsApp booking & quote forms, voice-note transcription, 10+ Indian languages with inbox translation, smart follow-ups, and team collaboration for WhatsApp + Instagram CRM teams.',
+  description: 'Explore LeadBuddie capabilities for approved WhatsApp replies, business training, product-aware conversations, booking and quote requests, follow-ups, handover and team collaboration.',
   alternates: { canonical: '/features' },
 }
 
@@ -15,11 +14,7 @@ export default function FeaturesPage() {
     <>
       <FeatureList />
       <ComplianceSection />
-      <CTASection 
-        title="Ready to Get Started?"
-        description="Start your free trial and see how LeadBuddie can transform your lead management."
-      />
+      <CTASection />
     </>
   )
 }
-

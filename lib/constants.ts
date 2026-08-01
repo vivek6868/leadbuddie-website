@@ -59,31 +59,37 @@ export const FEATURES = [
   {
     id: 'buddie-ai-sales-employee',
     title: 'Buddie — your AI sales employee',
-    description: 'Instant WhatsApp reply in under 10 seconds, even at 2 AM or on Sundays. Buddie acts like an employee that replies to leads, sends brochures, and follows up quiet buyers on autopilot.',
+    description: 'When enabled for your plan and business rules, Buddie can reply to WhatsApp enquiries, share approved product information, and help your team follow up on quiet leads.',
     icon: 'Sparkles',
   },
   {
     id: 'train-buddie',
     title: 'Train Buddie by chat or voice',
-    description: 'Teach Buddie in plain language — text or voice, any language — what to answer, what to ask, and what it should never promise. It shows you exactly what it learned before anything goes live.',
+    description: 'Teach Buddie in plain language by text or voice: what to answer, what to ask, and what it should not promise. Review the proposed changes before they go live.',
     icon: 'GraduationCap',
+  },
+  {
+    id: 'ai-product-builder',
+    title: 'Create products with AI',
+    description: 'On Growth and Scale, describe what you sell in one sentence. Buddie prepares a product or service draft for you to review before anything is saved.',
+    icon: 'PackagePlus',
   },
   {
     id: 'one-tap-bookings-quotes',
     title: 'One-tap bookings & quotes',
-    description: 'Instead of a long back-and-forth, Buddie sends a tap-to-fill card right inside WhatsApp — dates, choices, details filled in seconds — and you receive a complete, structured request.',
+    description: 'Instead of a long back-and-forth, Buddie can send a tap-to-fill card in WhatsApp so your team receives a complete, structured booking or quote request.',
     icon: 'ListChecks',
   },
   {
     id: 'voice-notes-transcription',
     title: 'Understands voice notes',
-    description: 'Customers send WhatsApp voice notes; Buddie transcribes them in seconds and replies like it would to text — in any language. A late-night Tamil voice note becomes a booked visit by morning.',
+    description: 'Buddie can transcribe supported WhatsApp voice notes and use the transcript to continue the conversation or hand it to your team.',
     icon: 'Mic',
   },
   {
     id: 'multilingual-translation',
-    title: 'Every language + inbox translation',
-    description: 'Buddie replies in the customer\'s language — Hindi, Tamil, Telugu, Kannada & 10+ more. You pick your inbox language once and every chat is translated for you automatically.',
+    title: 'Language-aware replies and inbox translation',
+    description: 'Buddie can match the customer\'s language and script, including commonly used Indian languages. Inbox translation is available where supported.',
     icon: 'Languages',
   },
   {
@@ -95,43 +101,43 @@ export const FEATURES = [
   {
     id: 'amc-renewal-reminders',
     title: 'Automated AMC Reminders',
-    description: 'Buddie messages every customer 60, 30, 15, and 7 days before their AMC expires. Keep your recurring revenue recurring without chasing manual spreadsheets.',
+    description: 'For eligible water-treatment businesses, Buddie can prepare 60, 30, 15 and 7-day AMC reminders. Sending depends on your mode, approved templates and WhatsApp eligibility.',
     icon: 'RefreshCcw',
   },
   {
     id: 'winback-lapsed-amc',
     title: 'Win back lapsed AMCs',
-    description: 'One-tap reactivation play to reach out to customers who let their AMC drop. Recover lost service and AMC revenue with zero effort.',
+    description: 'For eligible water-treatment businesses, prepare a reactivation message for customers with lapsed AMCs and review or send it under your chosen controls.',
     icon: 'RefreshCcw',
   },
   {
     id: 'revive-dormant-leads',
     title: 'Revive dormant leads',
-    description: 'Buddie reaches out automatically to leads that went cold 30+ days ago. Bring quiet prospects back into the sales conversation.',
+    description: 'Set up a controlled re-engagement play for eligible quiet leads, subject to your plan, autonomy mode and WhatsApp messaging rules.',
     icon: 'Clock',
   },
   {
     id: 'followup-automation',
     title: 'Day 1/3/7 & Quiet-lead Follow-ups',
-    description: 'Three honest follow-ups across a week when leads go quiet, plus a gentle nudge when a hot lead stops replying before they slip to a competitor.',
+    description: 'Growth and Scale businesses can configure follow-up nudges for quiet leads, with pause, mute and human-handover controls.',
     icon: 'Zap',
   },
   {
     id: 'approval-desk',
     title: 'Approval Desk & Full History',
-    description: 'Every reply Buddie drafts sits in one desk. Approve in seconds, edit if you want, and view the full history of what your AI employee did today.',
+    description: 'Review, edit and send Buddie drafts in one place, with a visible history of recent activity.',
     icon: 'CheckCircle2',
   },
   {
     id: 'no-invent-guardrail',
     title: 'Pricing guardrails & Human takeover',
-    description: 'Buddie never invents a price. If pricing isn\'t set, he politely defers. Reply manually to a lead and Buddie steps back automatically with per-lead pause.',
+    description: 'Buddie uses the business information you approve. When a price or fact is not configured, it can defer to your team; manual takeover can pause automated replies for that lead.',
     icon: 'ShieldCheck',
   },
   {
     id: 'chat-inbox',
     title: 'Unified Inbox (WhatsApp + Instagram)',
-    description: 'WhatsApp, Instagram, and missed calls in one view. Clears a 99+ unread backlog in 5 seconds with one tap to mark all as read.',
+    description: 'Bring connected WhatsApp and Instagram conversations into one inbox, with lead context, ownership and next actions.',
     icon: 'MessageSquare',
   },
   {
@@ -142,40 +148,39 @@ export const FEATURES = [
   },
   {
     id: 'safe-whatsapp',
-    title: 'Meta-Compliant WhatsApp Usage',
-    description: 'Official Meta tech provider. We only help you reply to leads that contacted you. No spam, no bulk blasting. Built to respect WhatsApp policies.',
+    title: 'WhatsApp policy controls',
+    description: 'LeadBuddie connects to WhatsApp Business services and provides controls for templates, campaigns and customer messaging. You remain responsible for consent and compliance with WhatsApp policies.',
     icon: 'ShieldCheck',
   },
 ] as const
 
 // Plan feature lists shown on /pricing. Mirrors the live product tiers in
 // leadmate-hutliv/config/plans.ts. The Buddie modes are the headline differentiator per tier:
-// Starter ₹999 unlocks Approval mode; Growth ₹2,499 adds Auto + brochure sending + AMC engine;
-// Scale ₹4,999 adds multi-seat + voice minutes. Free is intentionally light — drive upgrades.
+// Public plan copy mirrors leadmate-hutliv/config/plans.ts. Keep customer-facing limits and
+// conditions explicit: plan access does not bypass WhatsApp template, consent or policy rules.
 export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
   basic: [
-    'WhatsApp lead CRM — view & organise up to 10 leads',
+    'Manually add and organise up to 10 leads',
     '1 pipeline · 3 stages',
-    'Manual replies only — Buddie not included',
-    'No product catalog, bookings, campaigns or AI',
+    'No connected WhatsApp number or Buddie AI',
+    'No product catalog, bookings or campaigns',
   ],
   starter: [
-    'Buddie drafts replies — you approve & send (Approval mode)',
-    'Automatic AI first replies + welcome messages',
-    'AI suggested replies (click → edit → send)',
+    'Buddie auto-replies to WhatsApp enquiries — up to 100 AI replies a day',
     '1 WhatsApp number · 2 team members',
-    'Lead statuses, notes & reminders',
+    'Lead statuses, notes and manual follow-up reminders',
     'No product catalog, Booking Agent, follow-ups or campaigns',
   ],
   growth: [
     'Everything in Starter, plus:',
-    'Buddie Auto mode — auto replies + automatic follow-ups',
-    'Product Awareness Agent — auto-sends product details, image, brochure & buy link, and offers a booking',
-    'Booking Agent — books demos, callbacks & site visits in chat',
+    'Buddie Auto mode and configurable follow-up nudges',
+    'AI product builder — describe an item and review the draft before saving',
+    'Product Awareness Agent — shares approved product details and assets, and can offer a booking request',
+    'Booking Agent — captures booking requests for demos, callbacks and site visits in chat',
     'Products & Services catalog (up to 20 products)',
     '2 WhatsApp numbers · 5 team members',
     'WhatsApp campaigns · 3/month (up to 3,000 recipients) + asset library',
-    'AMC renewal engine + dormant-lead revival',
+    'AMC renewal tools for eligible water-treatment businesses + dormant-lead revival',
   ],
   scale: [
     'Everything in Growth, plus:',
@@ -183,15 +188,15 @@ export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
     'Unlimited products & ad → product mappings',
     'Campaigns · 20/month · 50,000 recipients · scheduling, auto-retry & analytics',
     'Team assignment, analytics & shared inbox',
-    'AI voice minutes (coming soon) + priority support',
+    '200 AI voice minutes/month + priority support',
   ],
 } as const
 
-// Public 2026 pricing ladder. Mirrors leadmate-hutliv/config/plans.ts (the `_v2` plans marked
-// `visible: true` in the live product). Old Basic/Starter ₹499 / Growth ₹999 / Team ₹1,999 /
+// Public 2026 pricing ladder. Mirrors leadmate-hutliv/config/plans.ts (the visible `starter_v3`,
+// `growth_v2` and `scale` plans). Old Basic/Starter ₹499 / Growth ₹999 / Team ₹1,999 /
 // Enterprise ₹4,999 are grandfathered-only in the product and have been removed from this
 // public-facing list. Growth is highlighted as recommended (the trust bridge tier — Buddie
-// auto-replies, brochures, AMC renewals — covers the value prop for 80% of dealers).
+// auto-replies, brochures and eligible AMC renewals).
 export const PRICING_PLANS = [
   {
     id: 'basic',
@@ -205,23 +210,23 @@ export const PRICING_PLANS = [
     highlighted: false,
   },
   {
-    id: 'starter',
+    id: 'starter_v3',
     name: 'Starter',
-    price: 999,
+    price: 1499,
     currency: '₹',
     period: 'month',
-    description: 'Buddie drafts instant replies on WhatsApp. Approval mode — you tap to send.',
+    description: 'Buddie auto-replies to WhatsApp enquiries — up to 100 AI replies a day.',
     features: PLAN_VISIBLE_FEATURES.starter,
     cta: 'Start Free Trial',
     highlighted: false,
   },
   {
-    id: 'growth',
+    id: 'growth_v2',
     name: 'Growth',
     price: 2499,
     currency: '₹',
     period: 'month',
-    description: 'Buddie on autopilot — auto replies, follow-ups, bookings, lead management & campaigns.',
+    description: 'Automation for product-aware replies, booking requests, follow-ups and campaigns.',
     features: PLAN_VISIBLE_FEATURES.growth,
     cta: 'Start Free Trial',
     highlighted: true,
@@ -232,7 +237,7 @@ export const PRICING_PLANS = [
     price: 4999,
     currency: '₹',
     period: 'month',
-    description: 'Teams, advanced campaigns, multi-number WhatsApp, voice (coming soon).',
+    description: 'Teams, advanced campaigns, multi-number WhatsApp and 200 voice minutes/month.',
     features: PLAN_VISIBLE_FEATURES.scale,
     cta: 'Start Free Trial',
     highlighted: false,
@@ -242,32 +247,44 @@ export const PRICING_PLANS = [
 export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
-    title: 'Sign Up for Free Trial',
-    description: 'Create your account in under 2 minutes. Every signup gets the Growth plan free for 30 days — no credit card required.',
+    title: 'Create your workspace',
+    description: 'Start with the Growth plan free for 30 days. No credit card is required, and the trial falls back to the Free plan unless you choose a paid plan.',
     icon: 'UserPlus',
   },
   {
     step: 2,
-    title: 'Connect WhatsApp Business Number',
-    description: 'Securely connect your WhatsApp Business number through our guided setup.',
+    title: 'Connect your WhatsApp Business number',
+    description: 'Follow the guided Meta connection flow. New supported conversations can appear in LeadBuddie after the number is connected.',
     icon: 'Link',
   },
   {
     step: 3,
-    title: 'Leads Start Flowing In',
-    description: 'All your WhatsApp conversations are automatically synced to LeadBuddie.',
-    icon: 'MessageSquare',
+    title: 'Give Buddie the business basics',
+    description: 'Paste the important information or import it from your website, then review what Buddie found: business scope, services, prices, rules and restrictions.',
+    icon: 'BookOpen',
   },
   {
     step: 4,
-    title: 'Buddie Replies and Follows Up',
-    description: 'Buddie drafts instant replies in your customer’s own language, follows up quiet leads, and chases AMC renewals — approve each reply or let it run on auto.',
-    icon: 'Brain',
+    title: 'Define what happens after interest',
+    description: 'Add at least one product or service and choose the useful outcome: answer only, quote request, booking request, order request or team handover. Set the details Buddie should collect.',
+    icon: 'ListChecks',
   },
   {
     step: 5,
-    title: 'Never Miss a Follow-up',
-    description: 'Get smart reminders and never lose a potential customer again.',
+    title: 'Test each customer journey',
+    description: 'Use the practice chat to try real enquiries, confirm the questions and handover, and correct the business knowledge before customers see it.',
+    icon: 'MessagesSquare',
+  },
+  {
+    step: 6,
+    title: 'Choose the operating mode',
+    description: 'Start in Watch or Approval if you want review, or enable Auto for eligible actions when you are satisfied with the test. Plan limits and WhatsApp rules still apply.',
+    icon: 'ShieldCheck',
+  },
+  {
+    step: 7,
+    title: 'Receive a request your team can finish',
+    description: 'Buddie collects the configured details and creates a clear quote, booking, order or handover request. Your team confirms the final business action.',
     icon: 'CheckCircle',
   },
 ] as const
@@ -277,14 +294,13 @@ export const COMPLIANCE_STATEMENTS = [
   'We receive leads from your WhatsApp Business number',
   'We organize conversations in a CRM',
   'We generate AI insights from conversations',
-  'We do NOT send spam or unsolicited messages',
-  'We do NOT share data with third parties',
-  'We comply with Meta\'s WhatsApp Business Policy',
+  'Businesses must use approved templates, consent and policy-compliant messaging',
+  'Service providers process data only as described in our Privacy Policy',
+  'Owners remain responsible for consent and WhatsApp Business Policy compliance',
 ] as const
 
-// TESTIMONIALS — only verified, paying customers should appear here.
-// Others are commented out pending founder verification. Do not re-enable
-// without confirming the customer is real, active, and quoted with consent.
+// Only the verified, consented customer quote below may be displayed. Add no further
+// testimonial without a source record and explicit permission.
 export const TESTIMONIALS = [
   {
     quote: 'Handling more than 100 leads per day was very time-consuming. After LeadBuddie, responses and follow-ups became much easier.',
@@ -299,115 +315,12 @@ export const TESTIMONIALS = [
       secondaryLabel: 'follow-ups',
     },
   },
-  // TODO: founder verification — quotes are drafts based on each customer's
-  // business type. Replace with the actual customer wording before press use.
-  {
-    quote: 'Bulk WhatsApp enquiries from retailers used to pile up in three different phones. With LeadBuddie our team works from one inbox and every B2B order is tracked from first message to dispatch.',
-    author: 'Classic Leathers',
-    company: 'Classic Leathers',
-    location: 'Sydney, Australia',
-    rating: 5,
-    metrics: {
-      primary: '1 inbox',
-      primaryLabel: 'for the whole team',
-      secondary: '0',
-      secondaryLabel: 'orders lost in DMs',
-    },
-  },
-  {
-    quote: 'Trial bookings, membership renewals, class enquiries — it was all sitting in one founder\'s WhatsApp. LeadBuddie made it a shared workflow and our trainers stopped chasing screenshots.',
-    author: 'Zyrax Fitness',
-    company: 'Zyrax Fitness',
-    location: 'Austin, USA',
-    rating: 5,
-    metrics: {
-      primary: 'Shared',
-      primaryLabel: 'inbox for trainers',
-      secondary: 'Faster',
-      secondaryLabel: 'trial conversions',
-    },
-  },
-  {
-    quote: 'Every trip enquiry needs a custom itinerary and three follow-ups. LeadBuddie keeps the whole conversation, quote, and callback in one place — we stopped losing high-ticket bookings to slow replies.',
-    author: 'Nitya Tours and Travels',
-    company: 'Nitya Tours & Travels',
-    location: 'Dubai, UAE',
-    rating: 5,
-    metrics: {
-      primary: 'Higher',
-      primaryLabel: 'package conversion',
-      secondary: 'Zero',
-      secondaryLabel: 'missed follow-ups',
-    },
-  },
-  {
-    quote: 'Site-visit requests and quote enquiries used to slip through cracks. Now each lead has a stage, an owner, and a follow-up date — our painters and the office work off the same screen.',
-    author: 'Spectrum Painting Solution',
-    company: 'Spectrum Painting Solutions',
-    location: 'Berlin, Germany',
-    rating: 5,
-    metrics: {
-      primary: 'On-time',
-      primaryLabel: 'quote follow-ups',
-      secondary: 'Clear',
-      secondaryLabel: 'ownership per lead',
-    },
-  },
-  // TODO: founder verification — re-enable only after confirming customer consent and active usage.
-  // {
-  //   quote: 'Before LeadBuddie, I was juggling 3 phones and losing leads daily. Now all my WhatsApp chats are in one place, and the AI helps me reply faster.',
-  //   author: 'Rajesh Kumar',
-  //   company: 'Thuli Paintings',
-  //   location: 'Chennai',
-  //   rating: 5,
-  //   metrics: { primary: '40%', primaryLabel: 'more deals closed', secondary: '2 months', secondaryLabel: 'to see results' },
-  // },
-  // {
-  //   quote: 'The AI reply suggestions are a game-changer. I can respond to customers in seconds instead of minutes. My team loves the shared inbox.',
-  //   author: 'Priya Sharma',
-  //   company: 'Home Decor Solutions',
-  //   location: 'Bangalore',
-  //   rating: 5,
-  //   metrics: { primary: '30%', primaryLabel: 'faster response time', secondary: '3x', secondaryLabel: 'conversion rate' },
-  // },
-  // {
-  //   quote: 'As a contractor, I get 20-30 WhatsApp enquiries daily. LeadBuddie helps me prioritize which leads are hot and which can wait.',
-  //   author: 'Amit Patel',
-  //   company: 'Patel Construction',
-  //   location: 'Ahmedabad',
-  //   rating: 5,
-  //   metrics: { primary: '100%', primaryLabel: 'follow-up rate', secondary: '0', secondaryLabel: 'missed leads' },
-  // },
-  // {
-  //   quote: 'The chat inbox feels just like WhatsApp but better. I can see all conversations, add notes, and my team knows exactly what\'s happening with each lead.',
-  //   author: 'Sunita Reddy',
-  //   company: 'Reddy Interiors',
-  //   location: 'Hyderabad',
-  //   rating: 5,
-  //   metrics: { primary: '50%', primaryLabel: 'time saved', secondary: '2x', secondaryLabel: 'team efficiency' },
-  // },
-  // {
-  //   quote: 'Started with the free trial and was hooked. The AI summaries save me so much time - I can understand a lead\'s full context in 30 seconds.',
-  //   author: 'Vikram Singh',
-  //   company: 'Singh Electricals',
-  //   location: 'Delhi',
-  //   rating: 5,
-  //   metrics: { primary: '90%', primaryLabel: 'faster lead review', secondary: '5 min', secondaryLabel: 'avg response time' },
-  // },
-  // {
-  //   quote: 'Best investment for my business. The unified inbox means I can manage everything from my laptop instead of being stuck on my phone.',
-  //   author: 'Meera Nair',
-  //   company: 'Nair Plumbing Services',
-  //   location: 'Kochi',
-  //   rating: 5,
-  //   metrics: { primary: '60%', primaryLabel: 'productivity boost', secondary: '24/7', secondaryLabel: 'lead management' },
-  // },
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — AI Sales Employee for WhatsApp that Books Leads',
+  title: 'LeadBuddie — AI Sales Software for WhatsApp',
   description:
-    'LeadBuddie is an AI sales employee for WhatsApp. It replies to leads instantly, follows up automatically, qualifies serious customers, and books calls, demos, site visits & appointments — on the official WhatsApp Business API. Built for Indian businesses. Free 30-day trial.',
+    'LeadBuddie helps WhatsApp-led businesses respond to enquiries, collect details for booking or quote requests, and hand conversations to their team. Automation varies by plan, setup and customer-messaging eligibility. Includes a 30-day Growth trial.',
   keywords:
     // Head terms (highest intent)
     'AI sales employee for WhatsApp, WhatsApp CRM, WhatsApp CRM India, WhatsApp automation for business, WhatsApp Business API India, AI chatbot for WhatsApp, AI WhatsApp assistant, WhatsApp auto reply software, ' +

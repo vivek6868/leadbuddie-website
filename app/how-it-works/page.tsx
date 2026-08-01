@@ -1,90 +1,52 @@
 import { Metadata } from 'next'
-import { Section } from '@/components/ui/Section'
 import { HOW_IT_WORKS_STEPS } from '@/lib/constants'
 import * as Icons from 'lucide-react'
 import { CTASection } from '@/components/sections/CTASection'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
-import { Shield } from 'lucide-react'
+import { Section } from '@/components/ui/Section'
+
+const STEP_ICONS = {
+  UserPlus: Icons.UserPlus,
+  Link: Icons.Link,
+  BookOpen: Icons.BookOpen,
+  ListChecks: Icons.ListChecks,
+  MessagesSquare: Icons.MessagesSquare,
+  ShieldCheck: Icons.ShieldCheck,
+  CheckCircle: Icons.CheckCircle,
+} as const
 
 export const metadata: Metadata = {
-  title: 'How LeadBuddie works — AI Sales Employee for WhatsApp & Instagram',
-  description: 'Get started in 5 simple steps. Connect your WhatsApp Business number, let your AI Sales Employee reply, qualify, and follow up.',
+  title: 'How LeadBuddie works — AI Sales Employee for WhatsApp',
+  description: 'Connect your WhatsApp Business number, teach Buddie your business rules, and give every customer enquiry the right next step.',
   alternates: { canonical: '/how-it-works' },
 }
 
 export default function HowItWorksPage() {
   return (
     <>
-      <Section className="pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              How LeadBuddie works
-            </h1>
-            <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-              Connect your WhatsApp Business number. Turn on the capabilities you want. Your AI Sales Employee starts working in minutes.
-            </p>
-          </div>
+      <Section className="overflow-hidden bg-[#07111f] pb-20 pt-28 text-white md:pt-36 lg:pb-24">
+        <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:54px_54px]" />
+        <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-[#25d366]/15 blur-[100px]" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <p className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]"><span className="h-1.5 w-1.5 rounded-full bg-brand" />A clear path from chat to action</p>
+          <h1 className="mt-5 font-heading text-5xl font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Teach Buddie your business. <span className="text-[#79eea0]">It handles the next step.</span></h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">No rigid chatbot flow and no settings maze. You set the truth and the limits; Buddie helps each customer move forward with the right information.</p>
+        </div>
+      </Section>
 
-          <div className="space-y-8 mb-12">
+      <Section background="white">
+        <div className="mx-auto max-w-5xl">
+          <div className="max-w-2xl"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#168a42]">The setup</p><h2 className="mt-4 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-5xl">Simple for the owner. Useful for the whole team.</h2></div>
+          <ol className="mt-12 space-y-3">
             {HOW_IT_WORKS_STEPS.map((step, index) => {
-              const IconComponent = (Icons as any)[step.icon] || Icons.CheckCircle
-              return (
-                <div
-                  key={step.step}
-                  className="bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8 hover:border-primary-600/50 transition-colors"
-                >
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary-600/10 rounded-lg flex items-center justify-center">
-                        <IconComponent className="text-primary-400" size={32} />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-3">
-                        <span className="text-sm font-semibold text-primary-400 bg-primary-600/10 px-3 py-1 rounded-full">
-                          Step {step.step}
-                        </span>
-                        <h2 className="text-2xl font-semibold">{step.title}</h2>
-                      </div>
-                      <p className="text-dark-300 text-lg">{step.description}</p>
-                    </div>
-                  </div>
-                </div>
-              )
+              const Icon = STEP_ICONS[step.icon as keyof typeof STEP_ICONS] ?? Icons.CheckCircle
+              return <li key={step.step} data-reveal style={{ ['--reveal-delay' as string]: `${index * 0.06}s` } as React.CSSProperties} className="grid gap-5 rounded-[25px] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_-28px_rgba(15,23,42,0.18)] sm:grid-cols-[3.5rem_1fr_auto] sm:items-center sm:p-7"><span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#effaf2] text-[#168a42]"><Icon className="h-5 w-5" strokeWidth={1.8} /></span><div><div className="flex flex-wrap items-center gap-3"><span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#168a42]">Step {step.step}</span><h3 className="font-heading text-xl font-extrabold tracking-[-0.03em] text-slate-950 sm:text-2xl">{step.title}</h3></div><p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">{step.description}</p></div><span className="hidden text-sm font-bold text-[#168a42] lg:block">Clear next action</span></li>
             })}
-          </div>
-
-          {/* Compliance Note */}
-          <div className="bg-gradient-to-r from-primary-600/10 to-secondary-600/10 border border-primary-600/20 rounded-lg p-6 md:p-8">
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-primary-600/20 rounded-full flex items-center justify-center">
-                  <Shield className="text-primary-400" size={24} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Important Compliance Note</h3>
-                <p className="text-dark-300 mb-4">
-                  <strong className="text-white">LeadBuddie helps you MANAGE leads.</strong> We do NOT send spam or 
-                  bulk unsolicited messages. We comply with WhatsApp Business Policy and Meta's terms of service.
-                </p>
-                <p className="text-dark-300">
-                  We help you organize conversations that come to your WhatsApp Business number, generate AI insights, 
-                  and set up follow-up reminders. All messages sent through your WhatsApp Business number are your 
-                  responsibility and must comply with WhatsApp's policies.
-                </p>
-              </div>
-            </div>
-          </div>
+          </ol>
         </div>
       </Section>
       <ComplianceSection />
-      <CTASection 
-        title="Ready to Get Started?"
-        description="Start your 30-day free trial and see how easy it is to manage your WhatsApp leads."
-      />
+      <CTASection />
     </>
   )
 }
-

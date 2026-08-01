@@ -65,7 +65,7 @@ export default function RefundPolicyPage() {
                 <h2 className="text-xl font-bold text-text-primary mb-3">Cancellations</h2>
                 <ul className="list-disc list-inside space-y-2.5 text-text-secondary mb-4 ml-4 leading-relaxed font-medium">
                   <li>You can cancel your subscription at any time from the Billing page.</li>
-                  <li>After cancellation, the service will remain active until the end of the paid billing cycle.</li>
+                  <li>Unless you choose immediate cancellation, the service remains active until the end of the paid billing cycle.</li>
                   <li>No cancellation fees apply.</li>
                 </ul>
               </div>
@@ -80,7 +80,8 @@ export default function RefundPolicyPage() {
               <div>
                 <h2 className="text-xl font-bold text-text-primary mb-3">Trial Period</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  If you cancel during the free trial, your card will not be charged.
+                  No payment method is required to start the free trial. If you do not choose a paid plan when it ends,
+                  your account moves to the Free plan.
                 </p>
               </div>
             </div>

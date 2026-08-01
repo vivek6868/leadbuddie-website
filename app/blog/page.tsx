@@ -35,7 +35,6 @@ export default async function BlogPage({ searchParams }: PageProps) {
   return (
     <>
       {/* ============ HERO ============ */}
-      {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-bg-primary px-4 pt-28 pb-16 sm:px-6 lg:px-8 md:pt-36 md:pb-24">
         <div className="pointer-events-none absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary" />
@@ -154,7 +153,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
               Get new playbooks the day they ship.
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary md:text-base">
-              We write one deep playbook a month for SMB owners running sales on WhatsApp and Instagram. Subscribe via RSS or come talk to the team directly.
+              Practical playbooks for SMB owners running sales on WhatsApp and Instagram. Subscribe via RSS or explore the product journey.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -168,7 +167,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
                 href="/demo"
                 className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-5 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:bg-bg-secondary"
               >
-                Talk to us
+                Watch the product demo
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

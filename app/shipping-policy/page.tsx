@@ -49,7 +49,7 @@ export default function ShippingPolicyPage() {
                 </p>
 
                 <p className="text-text-secondary mb-4 leading-relaxed">
-                  Our service is primarily designed for businesses in India, with deep understanding of the Indian market and support for Indian payment methods (UPI, cards, bank transfers). However, our web-based platform is accessible worldwide, and businesses from any country can subscribe and use LeadBuddie online, subject to local regulations and payment method availability.
+                  Our public plans are designed for businesses in India and support Indian payment methods such as UPI, cards, and bank transfers. Availability outside India is not guaranteed; contact us before subscribing if your business is registered elsewhere.
                 </p>
 
                 <p className="text-text-secondary mb-6 leading-relaxed">

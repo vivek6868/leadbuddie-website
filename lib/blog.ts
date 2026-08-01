@@ -16,6 +16,8 @@ export interface BlogPostMeta {
   image: string
   readTimeMinutes: number
   isPublished: boolean
+  /** Optional editorial update date. Omit it when a post has not been substantively updated. */
+  dateModified?: string
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -60,6 +62,7 @@ export function getAllPosts(): BlogPostMeta[] {
         image: post.image,
         readTimeMinutes: post.readTimeMinutes,
         isPublished: post.isPublished,
+        ...(post.dateModified && { dateModified: post.dateModified }),
       })
     }
   }
@@ -111,7 +114,14 @@ export function getPostsByCategory(category: BlogCategory): BlogPostMeta[] {
  */
 export function getRelatedPosts(currentSlug: string, limit = 4): BlogPostMeta[] {
   const all = getAllPosts()
-  return all.filter((p) => p.slug !== currentSlug).slice(0, limit)
+  const current = all.find((post) => post.slug === currentSlug)
+  const candidates = all.filter((post) => post.slug !== currentSlug)
+  if (!current) return candidates.slice(0, limit)
+
+  // Prefer topical continuity, then fill remaining slots with the most recent work.
+  const sameCategory = candidates.filter((post) => post.category === current.category)
+  const otherCategories = candidates.filter((post) => post.category !== current.category)
+  return [...sameCategory, ...otherCategories].slice(0, limit)
 }
 
 /**

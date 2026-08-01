@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl md:text-2xl font-bold text-text-primary mb-4">1. Introduction</h2>
             <p className="text-text-secondary mb-4 leading-relaxed">
               Welcome to {BRAND.name} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). {BRAND.name} is a product developed and operated by 
-              {BRAND.company}, serving businesses worldwide. We are committed to protecting 
+              {BRAND.company}, based in India. We are committed to protecting
               your privacy and ensuring the security of your personal information.
             </p>
             <p className="text-text-secondary leading-relaxed">
@@ -253,7 +253,7 @@ export default function PrivacyPolicyPage() {
             <ul className="list-none space-y-2 text-text-secondary leading-relaxed font-medium">
               <li><strong>Email:</strong> <a href={`mailto:${CONTACT.general}`} className="text-brand-hover hover:text-brand font-semibold underline underline-offset-2">{CONTACT.general}</a></li>
               <li><strong>Company:</strong> {BRAND.company}</li>
-              <li><strong>Location:</strong> India (Serving businesses worldwide)</li>
+              <li><strong>Location:</strong> India</li>
             </ul>
           </div>
         </div>

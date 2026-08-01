@@ -21,9 +21,9 @@ export function Button({
     'inline-flex items-center justify-center rounded-xl text-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand/60 focus:ring-offset-2 focus:ring-offset-bg-primary'
   
   const variants = {
-    primary: 'bg-brand text-white shadow-[0_12px_40px_rgba(37,211,102,0.32)] hover:bg-brand-hover',
-    secondary: 'bg-brand text-white shadow-[0_12px_40px_rgba(37,211,102,0.32)] hover:bg-brand-hover',
-    lime: 'bg-brand text-white shadow-[0_12px_40px_rgba(37,211,102,0.32)] hover:bg-brand-hover',
+    primary: 'bg-brand text-[#082315] shadow-[0_12px_40px_rgba(37,211,102,0.28)] hover:bg-[#65ed94]',
+    secondary: 'bg-[#092015] text-white shadow-[0_12px_40px_rgba(9,32,21,0.18)] hover:bg-[#183126]',
+    lime: 'bg-brand text-[#082315] shadow-[0_12px_40px_rgba(37,211,102,0.28)] hover:bg-[#65ed94]',
     outline: 'border border-border-light bg-bg-card text-text-primary hover:border-brand hover:bg-brand-subtle',
     ghost: 'text-brand hover:bg-brand-subtle',
   }
@@ -42,10 +42,11 @@ export function Button({
   )
   
   if (href) {
-    // Use regular <a> tag for external links (http/https)
+    // Keep primary conversion journeys in the same tab. Links that truly need a
+    // new tab (for example WhatsApp) use a purpose-built anchor at the call site.
     if (href.startsWith('http://') || href.startsWith('https://')) {
       return (
-        <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+        <a href={href} className={classes}>
           {children}
         </a>
       )
@@ -67,4 +68,3 @@ export function Button({
     </button>
   )
 }
-

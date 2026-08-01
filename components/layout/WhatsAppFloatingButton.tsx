@@ -68,6 +68,9 @@ export function WhatsAppFloatingButton() {
           70%  { transform: scale(1.6); opacity: 0;   }
           100% { transform: scale(1.6); opacity: 0;   }
         }
+        @media (prefers-reduced-motion: reduce) {
+          [data-lb-fab] > span:first-child { animation: none !important; }
+        }
       `}</style>
     </a>
   )

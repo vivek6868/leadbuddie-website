@@ -8,8 +8,8 @@ export function FAQSection() {
     <Section>
       <SectionHeader
         label="FAQ"
-        title="Questions teams ask before switching to a better CRM"
-        description="Everything you need to know about moving social conversations into LeadBuddie."
+        title="Questions owners ask before putting Buddie on WhatsApp"
+        description="How setup, business knowledge, automatic replies, requests and human handover work."
         centered
         className="mb-12"
       />

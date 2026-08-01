@@ -20,7 +20,7 @@ import {
 const PATH = '/ro-service-management'
 const TITLE = 'RO Service Management Software for Water Purifier Dealers | LeadBuddie'
 const DESCRIPTION =
-  'Service management software for RO and water purifier dealers. Schedule service visits from WhatsApp, track complaints, keep full customer and visit history, and never miss a callback. Free to start.'
+  'Service management software for RO and water purifier dealers. Collect visit requests from WhatsApp, track complaints, callbacks and customer history in one workspace.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,7 +40,7 @@ const FAQ = [
   {
     question: 'What is RO service management software?',
     answer:
-      'RO service management software helps water purifier dealers handle service requests, schedule visits, track complaints, and keep a full service history for every customer. LeadBuddie does this automatically on WhatsApp, responding in under 10 seconds.',
+      'RO service management software helps water purifier dealers organise service requests, visit details, complaints, callbacks and customer history. LeadBuddie connects that workflow to WhatsApp conversations.',
   },
   {
     question: 'How does Buddie handle customer complaints?',
@@ -50,7 +50,7 @@ const FAQ = [
   {
     question: 'Can I schedule service visits from WhatsApp chat?',
     answer:
-      'Yes. When a customer requests a visit, you or your team can book it on their record in one tap from their chat. The confirmation is automatically sent back in the same thread.',
+      'Buddie can collect the details for a service-visit request. Your team checks availability and confirms the final visit; the record keeps the conversation context.',
   },
   {
     question: 'Does it keep a full service history per customer?',
@@ -60,7 +60,7 @@ const FAQ = [
   {
     question: 'How much does it cost?',
     answer:
-      'LeadBuddie starts with a Free plan. Paid plans featuring Buddie AI, routing, and campaigns start at ₹999/month. Every new signup includes a 30-day free trial of the Growth plan.',
+      'LeadBuddie has a limited Free CRM plan. Paid AI plans start at ₹1,499/month, and every new signup receives a 30-day Growth trial with no card required.',
   },
 ]
 
@@ -90,10 +90,10 @@ export default function RoServiceManagementPage() {
       <NicheLanding
         eyebrow="Service & complaints, organised"
         h1="RO service management that runs from WhatsApp"
-        intro="Turn every service request and complaint into a scheduled visit with full customer history attached. Buddie replies under 10 seconds, routes urgent complaints to you, and updates records in a tap."
+        intro="Turn WhatsApp service enquiries into organised visit requests with customer context attached. Buddie can collect details and hand urgent or sensitive complaints to your team."
         trustPoints={[
-          'Instant 10s reply & routing',
-          'Book visits from chat',
+          'Configured reply & routing',
+          'Visit requests from chat',
           'Full service history drawers',
         ]}
         problem={{
@@ -102,12 +102,11 @@ export default function RoServiceManagementPage() {
             'A customer messages about a noisy filter. It gets seen, then buried. The visit is never booked, or it’s booked but the technician shows up with no history. Small misses like these are why customers don’t renew.',
             'LeadBuddie turns every request into a scheduled visit on the customer’s record, with their full history attached — so service feels organised and customers stay.',
           ],
-          stat: { value: '1 tap', label: 'from a WhatsApp complaint to a booked service visit on the customer record' },
         }}
         featuresHeading="Service operations, all in one place"
         features={[
-          { icon: MessageCircle, title: 'Instant WhatsApp replies', desc: 'Buddie replies in under 10 seconds, 24/7. Friendly template-based answers keep prospects warm.' },
-          { icon: CalendarCheck, title: 'One-tap visit scheduling', desc: 'Book the visit on the customer’s record in a tap, with date, time and reason captured.' },
+          { icon: MessageCircle, title: 'Configured WhatsApp replies', desc: 'Buddie can answer routine service questions from approved knowledge when the message is eligible.' },
+          { icon: CalendarCheck, title: 'Visit-request capture', desc: 'Collect the preferred date, time, location and reason, then let your team confirm the visit.' },
           { icon: History, title: 'Full service history', desc: 'Installed model, install date, AMC, past visits and notes — all on one customer drawer.' },
           { icon: Wrench, title: 'Complaint routing', desc: 'Urgent complaints are flagged and sent to your review desk, stopping automated replies for human takeover.' },
           { icon: Users, title: 'Team assignment & roles', desc: 'Assign visits and chats so any technician or staff member can pick up with full context.' },
@@ -115,9 +114,9 @@ export default function RoServiceManagementPage() {
         ]}
         stepsHeading="From service request to satisfied, renewing customer"
         steps={[
-          { title: 'Customer messages on WhatsApp', desc: 'An enquiry, service request, or complaint lands on your number. Buddie replies instantly (under 10 seconds).' },
+          { title: 'Customer messages on WhatsApp', desc: 'A supported enquiry, service request or complaint appears on the connected business number.' },
           { title: 'Complaints escalated to you', desc: 'If the customer mentions a malfunction or asks for a refund, Buddie pauses and alerts you for human takeover.' },
-          { title: 'Book the visit in one tap', desc: 'Schedule the service visit directly from the chat. The confirmation is sent back to the customer automatically.' },
+          { title: 'Prepare the visit request', desc: 'Buddie or your team captures the useful details; a person confirms the final schedule and customer message.' },
           { title: 'Technician arrives with full history', desc: 'The technician has the model, install date, past visits, and AMC history on their screen — zero guess work.' },
         ]}
         faq={FAQ}
@@ -127,7 +126,7 @@ export default function RoServiceManagementPage() {
           { label: 'Read the case study', href: '/case-study' },
         ]}
         ctaHeading="Make every service visit organised"
-        ctaSub="Start free on your existing WhatsApp number. Book your first visit from chat today."
+        ctaSub="Start with a 30-day Growth trial and test a service-request journey before enabling Auto."
       />
     </>
   )

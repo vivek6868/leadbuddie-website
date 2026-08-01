@@ -50,6 +50,12 @@ const config: Config = {
           500: 'var(--color-brand)',
           600: 'var(--color-brand-hover)',
         },
+        // Compatibility aliases for a small set of older marketing components.
+        // New work should use the explicit brand/bg/text tokens above.
+        secondary: {
+          500: '#7c4fe3',
+          600: '#6540c4',
+        },
         teal: {
           400: 'var(--color-wa)',
           500: 'var(--color-wa)',
@@ -88,4 +94,3 @@ const config: Config = {
   plugins: [],
 }
 export default config
-

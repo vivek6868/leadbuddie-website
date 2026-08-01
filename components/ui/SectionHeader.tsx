@@ -16,12 +16,13 @@ export function SectionHeader({
   return (
     <div className={`${centered ? 'text-center' : ''} ${className}`}>
       {label && (
-        <div className="inline-flex items-center rounded-full border border-brand/30 bg-brand-subtle px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-light mb-4">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#b9eac8] bg-[#effaf2] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#168a42] mb-5">
+          <span className="h-1.5 w-1.5 rounded-full bg-brand" />
           {label}
         </div>
       )}
       <h2
-        className={`font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-text-primary mb-4 ${
+        className={`font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[0.98] tracking-[-0.055em] text-text-primary mb-5 ${
           centered ? 'mx-auto' : ''
         } max-w-3xl`}
       >

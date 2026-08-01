@@ -33,7 +33,7 @@ const BUSINESS_JOURNEYS = [
     imagePosition: 'object-[58%_center]',
     outcome: 'Product request ready',
     enquiry: '“I need brown leather shoes in size 9.”',
-    automation: 'Answers from the real catalogue, collects size and preference, and never invents stock or price.',
+    automation: 'Uses the configured catalogue, collects size and preference, and does not invent stock or price.',
     teamGets: 'A product enquiry ready for an order, callback or store visit.',
   },
   {
@@ -79,7 +79,7 @@ export function BusinessJourneys() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#25d366]" />
               Built around your business outcome
             </div>
-            <h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl">Different businesses. <span className="text-slate-400">The right work completed automatically.</span></h2>
+            <h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl">Different businesses. <span className="text-slate-400">The right next step prepared.</span></h2>
           </div>
           <p className="max-w-lg text-base leading-relaxed text-slate-600 lg:pb-1">Buddie does not force every customer into the same chatbot flow. It understands what they want, completes the smallest useful action and gives your team something ready to use.</p>
         </div>
@@ -97,7 +97,7 @@ export function BusinessJourneys() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#07111f]/90 via-[#07111f]/5 to-transparent" />
                 <div className="absolute left-5 top-5 rounded-full border border-white/25 bg-[#07111f]/70 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.11em] text-white backdrop-blur-md">
-                  Fully automatic until the next action
+                  Automated where configured
                 </div>
                 <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4">
                   <div className="text-white">

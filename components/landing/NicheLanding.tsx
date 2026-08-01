@@ -11,7 +11,6 @@ export interface NicheLandingProps {
   problem: {
     heading: string
     body: string[]
-    stat: { value: string; label: string }
   }
   featuresHeading: string
   features: { icon: LucideIcon; title: string; desc: string }[]
@@ -62,7 +61,7 @@ export function NicheLanding({
               Start Free Trial
             </Button>
             <Button href="/demo" variant="outline" size="lg" className="w-full sm:w-auto">
-              Book a Demo
+              Watch Product Demo
             </Button>
           </div>
 
@@ -88,11 +87,16 @@ export function NicheLanding({
               </p>
             ))}
           </div>
-          <div data-reveal className="flex flex-col items-center justify-center rounded-2xl border border-red-200 bg-red-50/50 p-8 text-center shadow-inner">
-            <p className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-4xl font-bold text-transparent md:text-5xl font-mono">
-              {problem.stat.value}
-            </p>
-            <p className="mt-2 text-sm text-red-600 font-medium">{problem.stat.label}</p>
+          <div data-reveal className="rounded-2xl border border-brand/25 bg-brand/5 p-8 shadow-inner">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-hover">A clearer operating loop</p>
+            <div className="mt-5 space-y-3 text-left text-sm font-semibold text-text-primary">
+              {['A customer messages', 'Buddie collects the useful details', 'Your team receives a clear next action'].map((item, index) => (
+                <div key={item} className="flex items-center gap-3 rounded-xl border border-border bg-bg-card px-3 py-3">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand text-xs font-bold text-[#082315]">{index + 1}</span>
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -149,15 +153,15 @@ export function NicheLanding({
         </div>
       </section>
 
-      {/* ---------- Proof ---------- */}
+      {/* ---------- Product truth ---------- */}
       <section className="relative px-4 py-10 sm:px-6 lg:px-8 bg-bg-primary border-t border-border">
         <div className="mx-auto max-w-3xl rounded-3xl border border-brand/30 bg-brand/5 p-6 text-center md:p-8 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-brand-hover font-mono">In production with</p>
-          <p className="mt-2 text-xl font-bold text-text-primary font-heading">Master Water Purifier</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-hover font-mono">Designed for a safe handover</p>
+          <p className="mt-2 text-xl font-bold text-text-primary font-heading">Buddie prepares the request. Your team makes the final business decision.</p>
           <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-text-secondary">
-            Runs LeadBuddie every day for more than 100 leads — real renewals, service visits, and callbacks, not a demo dataset.{' '}
-            <Link href="/case-study" className="font-semibold text-brand hover:underline">
-              Read the story →
+            Prices, availability, confirmations and exceptions stay inside the rules you configure.{' '}
+            <Link href="/how-it-works" className="font-semibold text-brand hover:underline">
+              See the full journey →
             </Link>
           </p>
         </div>
@@ -203,7 +207,7 @@ export function NicheLanding({
               Start Free Trial
             </Button>
             <Button href="/demo" variant="outline" size="lg" className="w-full sm:w-auto">
-              Book a Demo
+              Watch Product Demo
             </Button>
           </div>
         </div>

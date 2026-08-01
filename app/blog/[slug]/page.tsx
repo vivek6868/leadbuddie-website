@@ -83,6 +83,7 @@ export async function generateMetadata({ params }: Props) {
       description,
       url: canonical,
       publishedTime: post.date,
+      modifiedTime: post.dateModified ?? post.date,
       authors: [post.author],
       section: post.category,
       ...(ogImage && { images: [{ url: ogImage }] }),
@@ -117,7 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.dateModified ?? post.date,
     author: { '@type': 'Person', name: post.author },
     publisher: {
       '@type': 'Organization',

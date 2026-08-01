@@ -1,48 +1,37 @@
 import { Section } from '@/components/ui/Section'
+import { SectionHeader } from '@/components/ui/SectionHeader'
 import { FEATURES } from '@/lib/constants'
 import * as Icons from 'lucide-react'
 import { FeatureCard } from './FeatureCard'
 
+const FEATURE_ICONS = {
+  Sparkles: Icons.Sparkles, GraduationCap: Icons.GraduationCap, ListChecks: Icons.ListChecks,
+  Mic: Icons.Mic, Languages: Icons.Languages, Hand: Icons.Hand, RefreshCcw: Icons.RefreshCcw,
+  Clock: Icons.Clock, Zap: Icons.Zap, CheckCircle2: Icons.CheckCircle2, ShieldCheck: Icons.ShieldCheck,
+  MessageSquare: Icons.MessageSquare, Kanban: Icons.Kanban, PackagePlus: Icons.PackagePlus,
+} as const
+
 export function FeatureList() {
   return (
-    <Section>
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Powerful Features for Lead Management
-        </h1>
-        <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-          Everything you need to manage WhatsApp & Instagram leads effectively
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {FEATURES.map((feature) => {
-          const IconComponent = (Icons as any)[feature.icon] || Icons.Sparkles
-          return (
-            <FeatureCard
-              key={feature.id}
-              {...feature}
-              icon={IconComponent}
-            />
-          )
-        })}
-      </div>
-      
-      <div className="mt-12 bg-dark-800/50 border border-dark-700 rounded-lg p-6 md:p-8">
-        <h2 className="text-2xl font-semibold mb-4">WhatsApp Integration & Compliance</h2>
-        <p className="text-dark-300 mb-4">
-          Our WhatsApp Business API integration helps you manage leads that come through your WhatsApp Business number. 
-          We receive and organize conversations, generate insights, and help you follow up effectively.
-        </p>
-        <div className="bg-dark-900 border border-dark-700 rounded-lg p-4">
-          <p className="text-sm text-dark-400">
-            <strong className="text-white">Important:</strong> LeadBuddie helps you MANAGE leads. We do NOT send spam, 
-            bulk messages, or unsolicited messages. We comply with Meta's WhatsApp Business Policy and only process 
-            leads that come to your WhatsApp Business number.
-          </p>
+    <>
+      <Section className="overflow-hidden bg-[#07111f] pb-20 pt-28 text-white md:pt-36 lg:pb-24">
+        <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:54px_54px]" />
+        <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-[#25d366]/15 blur-[100px]" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <p className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]"><span className="h-1.5 w-1.5 rounded-full bg-brand" />The LeadBuddie system</p>
+          <h1 className="mt-5 font-heading text-5xl font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Everything around a <span className="text-[#79eea0]">useful customer conversation.</span></h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">Buddie handles the repeatable work. Your team gets the context, controls and next action to move customers forward.</p>
         </div>
-      </div>
-    </Section>
+      </Section>
+      <Section background="white">
+        <SectionHeader label="Capabilities" title="Built for what happens after the first message." description="From the first reply to a qualified request, LeadBuddie keeps every conversation accurate, accountable and easy for your team to act on." centered />
+        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {FEATURES.map((feature, index) => {
+            const Icon = FEATURE_ICONS[feature.icon as keyof typeof FEATURE_ICONS] ?? Icons.Sparkles
+            return <FeatureCard key={feature.id} {...feature} icon={Icon} index={index} />
+          })}
+        </div>
+      </Section>
+    </>
   )
 }
-

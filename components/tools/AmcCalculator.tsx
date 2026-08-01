@@ -50,13 +50,11 @@ function Slider({ label, value, min, max, step, onChange, format }: SliderProps)
 
 export function AmcCalculator() {
   const reduce = useReducedMotion()
-  const [currency, setCurrency] = useState<'USD' | 'INR'>('USD')
+  const [currency, setCurrency] = useState<'USD' | 'INR'>('INR')
   const [customers, setCustomers] = useState(500)
-  const [amcPrice, setAmcPrice] = useState(150) // Default $150
+  const [amcPrice, setAmcPrice] = useState(2499)
   const [currentRate, setCurrentRate] = useState(45)
-
-  // With a tracked renewal workflow, dealers typically reach ~85%.
-  const TARGET_RATE = 85
+  const [targetRate, setTargetRate] = useState(70)
 
   const isUsd = currency === 'USD'
   const amcMin = isUsd ? 10 : 1000
@@ -83,7 +81,7 @@ export function AmcCalculator() {
   const { lost, recoverable, currentRevenue, potentialRevenue } = useMemo(() => {
     const potential = customers * amcPrice
     const current = potential * (currentRate / 100)
-    const effectiveTarget = Math.max(currentRate, TARGET_RATE)
+    const effectiveTarget = Math.max(currentRate, targetRate)
     const recovered = potential * ((effectiveTarget - currentRate) / 100)
     const lostNow = potential * ((100 - currentRate) / 100)
     return {
@@ -92,10 +90,10 @@ export function AmcCalculator() {
       currentRevenue: current,
       potentialRevenue: potential,
     }
-  }, [customers, amcPrice, currentRate])
+  }, [customers, amcPrice, currentRate, targetRate])
 
   const currentPct = (currentRevenue / potentialRevenue) * 100
-  const targetPct = Math.max(currentRate, TARGET_RATE)
+  const targetPct = Math.max(currentRate, targetRate)
 
   // Animated counter implementation
   const mvLost = useMotionValue(lost)
@@ -187,6 +185,15 @@ export function AmcCalculator() {
                 onChange={setCurrentRate}
                 format={(v) => `${v}%`}
               />
+              <Slider
+                label="Renewal-rate planning scenario"
+                value={targetRate}
+                min={10}
+                max={100}
+                step={5}
+                onChange={setTargetRate}
+                format={(v) => `${v}%`}
+              />
             </div>
           </div>
 
@@ -194,8 +201,7 @@ export function AmcCalculator() {
             <div className="flex items-center gap-2 text-sm text-text-secondary">
               <RefreshCcw className="h-4 w-4 flex-shrink-0 text-brand" strokeWidth={2} />
               <span>
-                Teams running a tracked renewal workflow typically reach{' '}
-                <span className="font-semibold text-text-primary">~{TARGET_RATE}%</span> renewals.
+                Set a planning scenario for the renewal rate your team wants to work toward.
               </span>
             </div>
           </div>
@@ -208,7 +214,7 @@ export function AmcCalculator() {
             <div className="mb-6">
               <div className="mb-1 flex items-center gap-2 text-sm font-medium text-red-600">
                 <TrendingDown className="h-4 w-4" strokeWidth={2.2} />
-                Annual leakage at risk
+                Annual renewal gap in this model
               </div>
               <p className="text-3xl font-bold text-red-600 md:text-4xl font-mono">
                 {displayLost}
@@ -222,14 +228,14 @@ export function AmcCalculator() {
             <div className="rounded-2xl border border-brand/30 bg-brand/5 p-5 shadow-sm">
               <div className="mb-1 flex items-center gap-2 text-sm font-semibold text-brand-hover">
                 <TrendingUp className="h-4 w-4" strokeWidth={2.2} />
-                LeadBuddie could help you recover
+                Illustrative additional renewal revenue
               </div>
               <p className="text-4xl font-bold text-brand-hover md:text-5xl font-mono">
                 {displayRec}
                 <span className="text-lg font-semibold text-text-secondary">/year</span>
               </p>
               <p className="mt-1 text-xs text-text-secondary">
-                By lifting renewals from {currentRate}% toward ~{targetPct}%.
+                If your renewal rate moved from {currentRate}% to {targetPct}%.
               </p>
             </div>
 
@@ -251,7 +257,7 @@ export function AmcCalculator() {
               </div>
               <div>
                 <div className="mb-1 flex justify-between text-[11px] text-text-secondary">
-                  <span>Potential with ~{targetPct}% renewals</span>
+                  <span>Scenario at {targetPct}% renewals</span>
                   <span className="font-semibold">{formatMoney(potentialRevenue * (targetPct / 100))}</span>
                 </div>
                 <div className="h-2.5 overflow-hidden rounded-full bg-border">
@@ -267,14 +273,14 @@ export function AmcCalculator() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button href="https://app.leadbuddie.com" variant="primary" className="w-full">
-                Start Trial & Recover Cash
+                Start Free Trial
               </Button>
               <Button href="/demo" variant="outline" className="w-full">
-                Book a Demo
+                Watch Product Demo
               </Button>
             </div>
             <p className="mt-3 text-center text-[10px] text-text-muted">
-              Estimate for guidance only — actual results depend on customer re-engagement.
+              Planning estimate only; it does not predict results or guarantee recovered revenue.
             </p>
           </div>
         </div>

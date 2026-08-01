@@ -3,6 +3,7 @@ title: 'RO Service Management: How to Manage Visits & Complaints in One Chat'
 description: Stop losing complaints in messy chats. Learn how water purifier service dealers can manage technician visits, track customer complaints, and send confirmations — all within WhatsApp.
 slug: ro-service-management-whatsapp-scheduling
 date: 2026-06-07T00:00:00.000Z
+dateModified: 2026-08-01T00:00:00.000Z
 author: Vivek D
 category: CRM
 image: '/images/blog/ro-scheduling.png'
@@ -70,4 +71,4 @@ By using a mobile-optimized CRM, your office team can schedule visits on a centr
 Moving your service management to WhatsApp doesn't just save time—it build **trust**. 
 Customers appreciate instant scheduling, clear arrival confirmations, and having their repair history remembered. When your AMC is due for renewal next year, they will renew without hesitation because your service experience was flawless.
 
-[LeadBuddie](file:///ro-service-management) is built specifically for water purifier dealers to handle leads, bookings, service tracking, and AMC renewals in one clean WhatsApp CRM. [Try it for free](https://app.leadbuddie.com) and organize your service visits today.
+[LeadBuddie](/ro-service-management) is built specifically for water purifier dealers to handle leads, bookings, service tracking, and AMC renewals in one clean WhatsApp CRM. [Try it for free](https://app.leadbuddie.com) and organise your service visits today.

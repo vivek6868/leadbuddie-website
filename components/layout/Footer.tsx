@@ -1,177 +1,72 @@
 import Link from 'next/link'
-import { LEGAL_LINKS, CONTACT, BRAND } from '@/lib/constants'
-import { Mail, MapPin } from 'lucide-react'
-import { MetaTechProviderBadge } from '@/components/sections/MetaTechProviderBadge'
-import { PlayStoreBadge } from '@/components/layout/PlayStoreBadge'
+import { ArrowUpRight, Mail, MapPin } from 'lucide-react'
+import { BRAND, CONTACT, LEGAL_LINKS } from '@/lib/constants'
+
+const columns = [
+  {
+    title: 'Product',
+    links: [
+      { name: 'Product', href: '/product' },
+      { name: 'How it works', href: '/how-it-works' },
+      { name: 'Features', href: '/features' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Product demo', href: '/demo' },
+    ],
+  },
+  {
+    title: 'Solutions',
+    links: [
+      { name: 'AI employee for WhatsApp', href: '/ai-employee' },
+      { name: 'Water purifier CRM', href: '/water-purifier-crm' },
+      { name: 'AMC renewal software', href: '/amc-renewal-software' },
+      { name: 'RO service management', href: '/ro-service-management' },
+      { name: 'Lead management', href: '/water-purifier-lead-management' },
+    ],
+  },
+  {
+    title: 'Learn',
+    links: [
+      { name: 'Resources', href: '/resources' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'AMC calculator', href: '/amc-revenue-calculator' },
+      { name: 'Customer story', href: '/case-study' },
+      { name: 'About', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+    ],
+  },
+] as const
 
 export function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <MetaTechProviderBadge variant="footer" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8 pt-4">
-          {/* Product Links */}
-          <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Product</h3>
-            <ul className="space-y-2">
-            {[
-              { name: 'Product', href: '/product' },
-              { name: 'How it works', href: '/how-it-works' },
-              { name: 'Pricing', href: '/pricing' },
-              { name: 'Book a demo', href: '/demo' },
-              { name: 'Guides', href: '/blog' },
-            ].map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link
-                  href="/blog/rss.xml"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  RSS
-                </Link>
-              </li>
-            </ul>
+    <footer className="border-t border-white/10 bg-[#07111f] text-white">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_1.85fr]">
+          <div className="max-w-md">
+            <p className="font-heading text-2xl font-extrabold tracking-[-0.04em]">LeadBuddie</p>
+            <p className="mt-4 text-sm leading-relaxed text-slate-300">AI sales software for WhatsApp-led businesses. Teach Buddie what is true, choose what it may automate, and give your team requests they can act on.</p>
+            <a href="https://app.leadbuddie.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#25d366] px-5 py-3 text-sm font-bold text-[#082315] transition hover:-translate-y-0.5 hover:bg-[#68eb95]">Start your 30-day trial <ArrowUpRight className="h-4 w-4" /></a>
+            <div className="mt-8 space-y-3 text-sm text-slate-400">
+              <a href={`mailto:${CONTACT.general}`} className="flex items-center gap-2 hover:text-white"><Mail className="h-4 w-4" />{CONTACT.general}</a>
+              <p className="flex items-center gap-2"><MapPin className="h-4 w-4" />{CONTACT.address}</p>
+            </div>
           </div>
 
-          {/* Solutions Links — use-case landing pages */}
-          <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Solutions</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/ai-employee" className="font-semibold text-brand hover:text-brand-hover transition-colors text-sm flex items-center gap-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
-                  WhatsApp AI Employee
-                </Link>
-              </li>
-              <li>
-                <Link href="/water-purifier-crm" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  Water Purifier CRM
-                </Link>
-              </li>
-              <li>
-                <Link href="/amc-renewal-software" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  AMC Renewal Software
-                </Link>
-              </li>
-              <li>
-                <Link href="/ro-service-management" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  RO Service Management
-                </Link>
-              </li>
-              <li>
-                <Link href="/water-purifier-lead-management" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  Lead Management
-                </Link>
-              </li>
-              <li>
-                <Link href="/amc-revenue-calculator" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  AMC Revenue Calculator
-                </Link>
-              </li>
-              <li><Link href="/case-study" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Customer stories</Link></li>
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              {LEGAL_LINKS.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Contact</h3>
-              <p className="text-gray-900 font-medium text-sm mb-3">{BRAND.company}</p>
-            <ul className="space-y-3">
-              {CONTACT.address && (
-                <li>
-                  <div className="flex items-start space-x-2 text-gray-600 text-sm">
-                    <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                    <span>{CONTACT.address}</span>
-                  </div>
-                </li>
-              )}
-              <li>
-                <a
-                  href={`mailto:${CONTACT.general}`}
-                  className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  <Mail size={16} />
-                  <span>{CONTACT.general}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={CONTACT.whatsappUrl}
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                >
-                  Phone / WhatsApp: {CONTACT.phone}
-                </a>
-              </li>
-            </ul>
+          <div className="grid gap-9 sm:grid-cols-3">
+            {columns.map((column) => (
+              <div key={column.title}>
+                <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-[#8bf0aa]">{column.title}</h2>
+                <ul className="mt-5 space-y-3">
+                  {column.links.map((link) => <li key={link.href}><Link href={link.href} className="text-sm text-slate-300 transition hover:text-white">{link.name}</Link></li>)}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Get the LeadBuddie Android app — sits above the legal/copyright line, between the
-            navigation columns and the legal footer. Server-rendered (badge + QR generated at
-            render time). */}
-        <div className="border-t border-gray-200 pt-8 pb-6">
-          <PlayStoreBadge />
-        </div>
-
-        <div className="border-t border-gray-200 pt-8">
-          <div className="text-center space-y-2">
-            <p className="text-gray-700 text-sm font-medium">
-              Your AI sales employee for WhatsApp. Built for businesses that want every enquiry to move forward.
-            </p>
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} {BRAND.name} — A product of {BRAND.company}
-            </p>
-            <p className="text-gray-400 text-xs">
-              LeadBuddie Technologies · Registered in India · Made in India
-            </p>
+        <div className="mt-14 flex flex-col gap-5 border-t border-white/10 pt-7 text-xs text-slate-500 lg:flex-row lg:items-center lg:justify-between">
+          <p>© {new Date().getFullYear()} {BRAND.name}. A product of {BRAND.company}, India.</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {LEGAL_LINKS.map((link) => <Link key={link.href} href={link.href} className="transition hover:text-slate-200">{link.name}</Link>)}
           </div>
         </div>
       </div>

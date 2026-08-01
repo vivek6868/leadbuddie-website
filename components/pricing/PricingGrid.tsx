@@ -13,12 +13,12 @@ const pricingFAQ = [
   {
     question: 'What happens after my free trial?',
     answer:
-      "Every new signup gets the Growth plan free for 30 days. After your trial, you can continue with any paid plan or stay on the Free plan. If you don't want to continue, simply cancel — no charges will be made.",
+      "Every new signup gets the Growth plan free for 30 days and no payment information is required to start. When the trial ends, you can choose a paid plan or continue on the Free plan.",
   },
   {
     question: 'Can I change plans later?',
     answer:
-      "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any charges.",
+      "You can request a plan change from Billing. Upgrades take effect after payment; downgrade timing and any applicable charges are shown before you confirm the change.",
   },
   {
     question: 'What payment methods do you accept?',
@@ -26,14 +26,14 @@ const pricingFAQ = [
       'We accept all major credit cards, debit cards, UPI, and bank transfers. All payments are processed securely.',
   },
   {
-    question: 'Is there a money-back guarantee?',
+    question: 'What is your refund policy?',
     answer:
-      "Yes! We offer a 7-day money-back guarantee. If you're not satisfied, contact us within 7 days for a full refund.",
+      'Subscription payments are not refundable after successful activation, except for duplicate payments or billing errors. See the Refund Policy for details and request timing.',
   },
   {
     question: 'What are WhatsApp conversation charges?',
     answer:
-      'Meta charges for WhatsApp Business API conversations. These charges are separate from LeadBuddie subscription fees and are billed directly by Meta based on your usage.',
+      'WhatsApp conversation charges may apply separately, depending on your Meta account, message type and usage. These are not included in LeadBuddie subscription prices.',
   },
 ]
 
@@ -143,8 +143,8 @@ export function PricingGrid() {
 
         <div className="mb-16 rounded-2xl border border-border bg-bg-card/90 p-6">
           <p className="text-center text-sm text-text-secondary">
-            <strong className="text-text-primary">Note:</strong> WhatsApp conversation charges by Meta may apply. These are
-            separate from LeadBuddie subscription fees.
+            <strong className="text-text-primary">Note:</strong> WhatsApp conversation charges may apply separately based on
+            your Meta account, message type and usage. They are not included in LeadBuddie subscription fees.
           </p>
         </div>
 
@@ -158,5 +158,4 @@ export function PricingGrid() {
     </>
   )
 }
-
 

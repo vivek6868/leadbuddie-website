@@ -3,6 +3,7 @@ title: 'The Autonomy Ladder: How to Adopt AI on WhatsApp Safely'
 description: Terrified of an AI messaging your customers wrong prices or hallucinating? Learn how the Autonomy Ladder (Watch, Approval, and Auto modes) lets you adopt WhatsApp AI with absolute control.
 slug: autonomy-ladder-whatsapp-ai-watch-mode
 date: 2026-06-07T00:00:00.000Z
+dateModified: 2026-08-01T00:00:00.000Z
 author: Vivek D
 category: WhatsApp
 image: '/images/blog/autonomy-ladder.png'
@@ -54,7 +55,7 @@ This mode carries **zero risk**. It allows you to audit the AI's knowledge and b
 
 ## Step 2: Approval Mode (The Collaborative Desk)
 
-Once you see that the AI's drafts are 90% accurate, you promote it to **Approval Mode**.
+Once you see that the AI's drafts consistently match your business rules, you can promote it to **Approval Mode**.
 
 In Approval Mode, when a customer messages, the AI drafts a reply and places it in your **Approval Desk**. The message is NOT sent to the customer until a human reviews it.
 
@@ -71,7 +72,7 @@ Approval Mode gives you the speed of AI (since you do not have to type the messa
 
 When the AI consistently writes perfect drafts that you approve without editing, you move it to **Auto Mode**.
 
-In Auto Mode, the AI behaves like a real employee. It answers queries, schedules bookings, and coordinates follow-ups in under 10 seconds, completely unsupervised.
+In Auto Mode, the AI can answer approved queries, schedule bookings, and coordinate follow-ups within the rules you configure.
 
 ### Best Practice for Auto Mode:
 To maintain safety, configure Auto Mode to run **Out-of-Hours only** (e.g., from 8 PM to 9 AM and on Sundays). During the day, keep it in Approval Mode. This ensures that you get instant coverage when your shop is closed and you are asleep, while maintaining manual touch during standard business hours.
@@ -91,6 +92,6 @@ Even in Auto Mode, a professional AI CRM must have strict safety guardrails:
 
 Adopting AI shouldn't feel like jumping off a cliff. By climbing the Autonomy Ladder, you can start in Watch Mode today, verify the accuracy of the drafts, and gradually move to full automation as your trust grows.
 
-[LeadBuddie](file:///) is built with this safety-first philosophy. Our AI employee, **Buddie**, defaults to Watch/Approval modes so you stay in control. 
+[LeadBuddie](/ai-employee) is built with this safety-first philosophy. Our AI employee, **Buddie**, supports Watch and Approval modes so you stay in control.
 
 [Sign up for a free 1-month trial of the Growth Plan](https://app.leadbuddie.com) and test Buddie in Watch Mode risk-free.

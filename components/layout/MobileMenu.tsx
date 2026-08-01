@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -16,6 +16,9 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
   const [isOpen, setIsOpen] = useState(false)
   const [logoError, setLogoError] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const closeRef = useRef<HTMLButtonElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
 
   // Portal needs the DOM — only render it after mount (avoids SSR mismatch).
   useEffect(() => setMounted(true), [])
@@ -27,9 +30,28 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     document.documentElement.classList.add('lb-drawer-open')
+    closeRef.current?.focus()
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false)
+      if (event.key !== 'Tab' || !panelRef.current) return
+      const focusable = Array.from(panelRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'))
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+    document.addEventListener('keydown', onKeyDown)
     return () => {
       document.body.style.overflow = prev
       document.documentElement.classList.remove('lb-drawer-open')
+      document.removeEventListener('keydown', onKeyDown)
+      triggerRef.current?.focus()
     }
   }, [isOpen])
 
@@ -45,6 +67,11 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
           />
 
           <div
+            ref={panelRef}
+            id="mobile-navigation"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Main navigation"
             className="absolute right-0 top-0 flex h-full w-[82%] max-w-xs flex-col border-l border-border bg-bg-card shadow-[0_0_60px_rgba(15,23,42,0.25)]"
             onClick={(e) => e.stopPropagation()}
           >
@@ -53,16 +80,17 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
                 {!logoError && (
                   <Image
                     src="/images/logo.png"
-                    alt="LeadBuddie Logo"
-                    width={140}
-                    height={40}
-                    className="h-8 w-auto"
+                    alt=""
+                    width={36}
+                    height={36}
+                    className="h-8 w-8 rounded-lg object-contain"
                     onError={() => setLogoError(true)}
                   />
                 )}
                 <span className="font-heading text-lg font-bold text-text-primary">LeadBuddie</span>
               </div>
               <button
+                ref={closeRef}
                 onClick={() => setIsOpen(false)}
                 className="rounded-lg p-2 text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
                 aria-label="Close menu"
@@ -74,9 +102,10 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
             <nav className="flex flex-col p-3">
               {[
                 { name: 'Product', href: '/product' },
+                { name: 'AI employee', href: '/ai-employee' },
                 { name: 'How it works', href: '/how-it-works' },
                 { name: 'Pricing', href: '/pricing' },
-                { name: 'Resources', href: '/blog' },
+                { name: 'Resources', href: '/resources' },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -115,10 +144,12 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
   return (
     <>
       <button
+        ref={triggerRef}
         onClick={() => setIsOpen((v) => !v)}
         className={`rounded-lg p-2 transition-colors ${darkTrigger ? 'text-white hover:bg-white/10 hover:text-white' : 'text-slate-900 hover:bg-slate-100 hover:text-brand-hover'}`}
         aria-label="Toggle menu"
         aria-expanded={isOpen}
+        aria-controls="mobile-navigation"
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
