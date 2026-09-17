@@ -6,7 +6,6 @@ import {
   Check,
   CheckCircle2,
   ChevronRight,
-  Languages,
   MessageCircleMore,
   Mic,
   Sparkles,
@@ -16,13 +15,14 @@ import {
 import { FAQSection } from '@/components/sections/FAQSection'
 import { ActionScene, TrainBuddieScene } from '@/components/home/AIEmployeeVisuals'
 import { BusinessJourneys } from '@/components/home/BusinessJourneys'
+import { BuddieVoice } from '@/components/home/BuddieVoice'
 
 const APP_URL = 'https://app.leadbuddie.com'
 
 const ESSENTIALS: { title: string; copy: string; icon: LucideIcon }[] = [
   { title: 'One shared lead inbox', copy: 'Your team sees the full context, ownership and next action—not an unread-message pile.', icon: MessageCircleMore },
   { title: 'Bookings and requests', copy: 'Turn conversations into structured work your team can confirm and complete.', icon: CalendarDays },
-  { title: 'Voice and local languages', copy: 'Buddie can use supported voice notes and match the customer’s language when available.', icon: Languages },
+  { title: 'Voice in, voice out', copy: 'Buddie understands customer voice notes and, on Growth and Scale, can reply with a natural voice note.', icon: Mic },
   { title: 'A safe human handover', copy: 'When judgment is needed, Buddie brings in your team with the context already collected.', icon: UsersRound },
 ]
 
@@ -166,6 +166,8 @@ export function PremiumHome() {
           <CustomerOutcomeStory />
         </div>
       </section>
+
+      <BuddieVoice />
 
       <section id="train-buddie" className="scroll-mt-24 overflow-hidden bg-[#eef4ef] px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.87fr_1.13fr] lg:items-center"><div><Eyebrow>Train Buddie</Eyebrow><h2 className="mt-5 max-w-xl font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-5xl">Teach it exactly like you would teach a new employee.</h2><p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">No settings maze. Tell Buddie what you sell, what it should ask, what it must never promise and when a team member should take over. It proposes the change before it goes live.</p><div className="mt-8 space-y-3.5">{['Talk by text or voice in your own language.', 'Buddie uses existing products, FAQs and rules as its starting knowledge.', 'On Growth and Scale, describe a product in one sentence and review the AI-prepared draft.', 'Every change is explained in plain language before you save it.'].map((line) => <div key={line} className="flex items-start gap-3 text-sm font-semibold text-slate-800"><span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#25d366] text-[#092015]"><Check className="h-3 w-3 stroke-[3]" /></span>{line}</div>)}</div><Link href="/product" className="mt-8 inline-flex items-center gap-1.5 text-sm font-bold text-[#168a42] transition hover:gap-2.5">Explore Train Buddie <ChevronRight className="h-4 w-4" /></Link></div><TrainBuddieScene /></div></section>
 

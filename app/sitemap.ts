@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.95,
     },
+    {
+      url: `${baseUrl}/whatsapp-voice-ai`,
+      lastModified: new Date('2026-09-17T00:00:00.000Z'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
     // Niche landing pages — primary SEO targets for the water-treatment vertical
     {
       url: `${baseUrl}/water-purifier-crm`,

@@ -17,6 +17,7 @@ const columns = [
     title: 'Solutions',
     links: [
       { name: 'AI employee for WhatsApp', href: '/ai-employee' },
+      { name: 'WhatsApp voice AI', href: '/whatsapp-voice-ai' },
       { name: 'Water purifier CRM', href: '/water-purifier-crm' },
       { name: 'AMC renewal software', href: '/amc-renewal-software' },
       { name: 'RO service management', href: '/ro-service-management' },

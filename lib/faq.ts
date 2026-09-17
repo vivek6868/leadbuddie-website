@@ -32,7 +32,12 @@ export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
   {
     question: 'My customers send voice notes — can Buddie understand them?',
     answer:
-      'Buddie can transcribe supported WhatsApp voice notes and use the transcript in the conversation. Transcription quality and language support can vary with the recording.',
+      'Yes. Buddie transcribes WhatsApp voice notes, checks the language, and answers what the customer asked. Details spoken in the voice note, such as dates, area or number of people, are captured on the request. Transcription quality can vary with the recording.',
+  },
+  {
+    question: 'Can Buddie reply with a voice note?',
+    answer:
+      'Yes, on Growth and Scale. When a customer speaks or asks for voice, Buddie can send a short, natural voice note in English, Hindi, Tamil or Malayalam alongside its written answer. You choose Smart, Customer asks or Off, and menus, links and hand-overs always stay in text.',
   },
   {
     question: 'Which languages does Buddie speak? Can I read chats in my language?',
@@ -70,13 +75,52 @@ export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
       'Yes, within your plan’s seat limit. Teammates can share the inbox, assign conversations, add notes and track the next step.',
   },
   {
-    question: 'Is AI voice calling available?',
+    question: 'How many voice minutes are included?',
     answer:
-      'Scale includes 200 AI voice minutes per month. Availability and setup are shown in your account; WhatsApp voice-note transcription is a separate capability.',
+      'Starter understands customer voice notes. Growth adds 60 minutes of Buddie voice replies a month with Buddie’s default voice. Scale includes 200 minutes a month and lets you choose from four voices. Understanding voice notes and speaking replies use separate allowances.',
   },
   {
     question: 'What happens during the free trial, and can I cancel?',
     answer:
       'Every new signup receives the Growth plan for 30 days with no card required. When the trial ends, you can choose a paid plan or continue on the Free plan. The Free plan does not include a WhatsApp connection or Buddie.',
+  },
+]
+
+/** /whatsapp-voice-ai FAQ — shared by the visible accordion and FAQPage JSON-LD. */
+export const VOICE_FAQ: { question: string; answer: string }[] = [
+  {
+    question: 'What is Buddie Voice?',
+    answer:
+      'Buddie Voice lets LeadBuddie’s AI employee understand WhatsApp voice notes from your customers, reply with a natural voice note when it helps, and turn what was said into a structured lead or request for your team.',
+  },
+  {
+    question: 'Which languages can Buddie reply in by voice?',
+    answer:
+      'Voice replies are available in English, Hindi, Tamil and Malayalam. Buddie can understand voice notes in more Indian languages; when a spoken reply is not available for a language, it answers in text.',
+  },
+  {
+    question: 'Will Buddie send a voice note for every message?',
+    answer:
+      'No. In Smart mode Buddie speaks only after the customer sends a voice note or asks for voice. In Customer asks mode it speaks only when the customer taps Explain by voice or asks. You can also turn voice replies off. Menus, links and hand-overs are always sent as text.',
+  },
+  {
+    question: 'Can Buddie say something different in voice than in text?',
+    answer:
+      'No. The voice note reads out the same checked answer Buddie wrote. It does not add prices, promises or offers that are not in the written reply.',
+  },
+  {
+    question: 'Do customers need a special app?',
+    answer:
+      'No. Voice notes are sent and played inside the normal WhatsApp app your customers already use.',
+  },
+  {
+    question: 'Which plans include voice?',
+    answer:
+      'Starter understands customer voice notes. Growth adds 60 minutes of voice replies a month with Buddie’s default voice. Scale includes 200 minutes a month and a choice of four voices: Asha, Arun, Maya and Kiran.',
+  },
+  {
+    question: 'Does Buddie confirm bookings or prices by voice?',
+    answer:
+      'Buddie works within the business knowledge and rules you approve. For bookings and quotes it collects the details and creates the request; your team confirms availability and final prices where required.',
   },
 ]

@@ -100,7 +100,7 @@ export function softwareApplicationSchema(opts?: {
       opts?.description ??
       'AI sales software for WhatsApp that learns your business, answers enquiries from approved knowledge, collects relevant details for booking or quote requests, and supports team handover.',
     keywords:
-      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, WhatsApp booking automation, WhatsApp quote requests, lead management, multilingual WhatsApp AI',
+      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, WhatsApp booking automation, WhatsApp quote requests, lead management, multilingual WhatsApp AI, WhatsApp voice AI, AI voice replies',
     featureList: [
       'AI replies to WhatsApp enquiries when enabled for the applicable plan and business controls',
       'Train your AI by chat or voice',
@@ -108,7 +108,8 @@ export function softwareApplicationSchema(opts?: {
       'Approved business knowledge and reply safety rules',
       'Product-aware next actions: booking, quote, order, callback or handover',
       'WhatsApp booking and quote-request forms',
-      'Supported WhatsApp voice-note transcription',
+      'Understands customer WhatsApp voice notes and captures spoken details on requests',
+      'AI voice replies in English, Hindi, Tamil and Malayalam on eligible plans',
       'Language-aware replies and inbox translation where supported',
       'Plan-eligible follow-ups with pause, mute and quiet-hours controls',
       'Lead qualification and team handover',
@@ -143,6 +144,7 @@ export function serviceSchema(opts: {
   description: string
   url: string
   serviceType: string
+  audience?: string
 }) {
   return {
     '@context': 'https://schema.org',
@@ -155,7 +157,7 @@ export function serviceSchema(opts: {
     areaServed: { '@type': 'Country', name: 'India' },
     audience: {
       '@type': 'BusinessAudience',
-      name: 'Water purifier and water treatment dealers',
+      name: opts.audience ?? 'Water purifier and water treatment dealers',
     },
   }
 }

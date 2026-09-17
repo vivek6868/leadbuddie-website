@@ -14,7 +14,7 @@ export function Navbar() {
   const [demoModalOpen, setDemoModalOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const hasDarkHero = ['/', '/product', '/ai-employee', '/features', '/how-it-works', '/pricing', '/resources', '/contact', '/demo', '/case-study'].includes(pathname)
+  const hasDarkHero = ['/', '/product', '/ai-employee', '/features', '/how-it-works', '/pricing', '/resources', '/contact', '/demo', '/case-study', '/whatsapp-voice-ai'].includes(pathname)
     || (pathname.startsWith('/blog/') && pathname !== '/blog/rss.xml')
   const isDarkHero = hasDarkHero && !scrolled
 

@@ -412,11 +412,16 @@ html.js-reveal [data-reveal]:not([data-reveal="visible"]) {
 .lb-scene-wave { animation: lbSceneWave 1.6s ease-in-out infinite; }
 .lb-scene-wave-dot { animation: lbSceneWaveDot 2.3s ease-in-out infinite; }
 .lb-scene-live-dot { animation: lbBreathe 1.5s ease-in-out infinite; }
+@keyframes lbVoiceBar {
+  0%, 100% { transform: scaleY(0.45); }
+  50% { transform: scaleY(1); }
+}
+.lb-voice-bar { animation: lbVoiceBar 1.1s ease-in-out infinite; transform-origin: center; }
 
 @media (prefers-reduced-motion: reduce) {
   .lb-live-dot, .lb-halo, .lb-eye, .lb-typing-dot, .lb-float, .lb-float-fast,
   .lb-scene-float, .lb-scene-float-delayed, .lb-scene-pulse, .lb-scene-orbit,
-  .lb-scene-orbit-reverse, .lb-scene-wave, .lb-scene-wave-dot, .lb-scene-live-dot {
+  .lb-scene-orbit-reverse, .lb-scene-wave, .lb-scene-wave-dot, .lb-scene-live-dot, .lb-voice-bar {
     animation: none !important;
   }
 }

@@ -82,8 +82,8 @@ export const FEATURES = [
   },
   {
     id: 'voice-notes-transcription',
-    title: 'Understands voice notes',
-    description: 'Buddie can transcribe supported WhatsApp voice notes and use the transcript to continue the conversation or hand it to your team.',
+    title: 'Understands and replies in voice',
+    description: 'Buddie understands customer voice notes, captures the details on a request, and on Growth and Scale can reply with a natural voice note in English, Hindi, Tamil or Malayalam.',
     icon: 'Mic',
   },
   {
@@ -167,6 +167,7 @@ export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
   ],
   starter: [
     'Buddie auto-replies to WhatsApp enquiries — up to 100 AI replies a day',
+    'Understands customer voice notes',
     '1 WhatsApp number · 2 team members',
     'Lead statuses, notes and manual follow-up reminders',
     'No product catalog, Booking Agent, follow-ups or campaigns',
@@ -174,6 +175,7 @@ export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
   growth: [
     'Everything in Starter, plus:',
     'Buddie Auto mode and configurable follow-up nudges',
+    'Buddie Voice — replies with a natural voice note · 60 min/month',
     'AI product builder — describe an item and review the draft before saving',
     'Product Awareness Agent — shares approved product details and assets, and can offer a booking request',
     'Booking Agent — captures booking requests for demos, callbacks and site visits in chat',
@@ -188,7 +190,8 @@ export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
     'Unlimited products & ad → product mappings',
     'Campaigns · 20/month · 50,000 recipients · scheduling, auto-retry & analytics',
     'Team assignment, analytics & shared inbox',
-    '200 AI voice minutes/month + priority support',
+    'Buddie Voice · 200 min/month · choose from 4 voices',
+    'Priority support',
   ],
 } as const
 
@@ -237,7 +240,7 @@ export const PRICING_PLANS = [
     price: 4999,
     currency: '₹',
     period: 'month',
-    description: 'Teams, advanced campaigns, multi-number WhatsApp and 200 voice minutes/month.',
+    description: 'Teams, advanced campaigns, multi-number WhatsApp and 200 Buddie Voice minutes/month.',
     features: PLAN_VISIBLE_FEATURES.scale,
     cta: 'Start Free Trial',
     highlighted: false,
