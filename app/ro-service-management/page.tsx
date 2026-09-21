@@ -122,8 +122,9 @@ export default function RoServiceManagementPage() {
         faq={FAQ}
         related={[
           { label: 'Water treatment operations', href: '/water-purifier-crm' },
+          { label: 'RO technician job-card guide', href: '/blog/ro-technician-job-card-workflow' },
+          { label: 'Service-due date guide', href: '/blog/water-purifier-service-due-date-system' },
           { label: 'AMC renewal software', href: '/amc-renewal-software' },
-          { label: 'Read the case study', href: '/case-study' },
         ]}
         loopItems={['A service need becomes visible', 'Buddie prepares the customer and unit context', 'Your team completes the visit and next cycle']}
         ctaHeading="Make every service visit organised"

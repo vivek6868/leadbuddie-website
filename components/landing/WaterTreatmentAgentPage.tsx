@@ -137,6 +137,27 @@ const OUTCOMES = [
   { icon: Route, title: 'Continue the cycle', copy: 'Use a completed outcome as the foundation for the next legitimate service event.' },
 ]
 
+const OPERATIONS_GUIDES = [
+  {
+    label: 'Complete guide',
+    title: 'Water purifier service management software in 2026',
+    copy: 'The complete operating loop from installed-unit memory to service visits, AMC renewals and the next cycle.',
+    href: '/blog/water-purifier-service-management-software-guide-2026',
+  },
+  {
+    label: 'Service due',
+    title: 'Track service-due dates without guessing',
+    copy: 'Use valid service anchors, configured intervals and a review queue for incomplete records.',
+    href: '/blog/water-purifier-service-due-date-system',
+  },
+  {
+    label: 'Field work',
+    title: 'Build a reliable RO technician job-card workflow',
+    copy: 'Carry each request through assignment, completion, payment status and the correct next action.',
+    href: '/blog/ro-technician-job-card-workflow',
+  },
+]
+
 export function WaterTreatmentAgentPage() {
   return (
     <>
@@ -161,6 +182,8 @@ export function WaterTreatmentAgentPage() {
       <section className="bg-[#eff4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto max-w-7xl"><div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end"><div><Eyebrow>What the system changes</Eyebrow><h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-5xl">Less searching. More completed work.</h2></div><p className="max-w-lg text-base leading-relaxed text-slate-600 lg:justify-self-end">The value is in the operating continuity: the right context appears when a service, visit or renewal needs a decision.</p></div><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{OUTCOMES.map(({ icon: Icon, title, copy }) => <div key={title} className="rounded-[24px] border border-slate-200 bg-white p-5"><span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#e9faf3] text-[#087c5a]"><Icon className="h-5 w-5" /></span><h3 className="mt-7 text-base font-extrabold text-slate-950">{title}</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">{copy}</p></div>)}</div></div></section>
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center"><div><Eyebrow>Start from the business you have</Eyebrow><h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-5xl">Bring the data in carefully. Activate the cycle with confidence.</h2><p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">Existing customer and service data needs identity checks, clean installed-unit links and trustworthy dates. The goal is a useful operating foundation, not a blind spreadsheet upload.</p></div><div className="rounded-[30px] border border-slate-200 bg-white p-5 shadow-[0_24px_65px_rgba(15,23,42,0.08)] sm:p-7">{[[FileSpreadsheet, 'Map existing data', 'Review customer, product and service columns before import.'], [ShieldCheck, 'Resolve uncertain records', 'Keep ambiguous matches and missing dates visible for review.'], [Sparkles, 'Activate one workflow', 'Begin with a focused service or renewal cycle, then expand.']].map(([Icon, title, copy], index) => { const I = Icon as LucideIcon; return <div key={String(title)} className={`flex gap-4 py-5 ${index ? 'border-t border-slate-100' : ''}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#092331] text-[#67f3bd]"><I className="h-5 w-5" /></span><div><p className="text-sm font-extrabold text-slate-950">{String(title)}</p><p className="mt-1 text-xs leading-relaxed text-slate-600">{String(copy)}</p></div></div> })}</div></div></section>
+
+      <section className="bg-[#061722] px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto max-w-7xl"><div className="grid gap-6 lg:grid-cols-[1fr_0.8fr] lg:items-end"><div><Eyebrow dark>Water operations library</Eyebrow><h2 className="mt-5 max-w-3xl font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] sm:text-5xl">Practical guides for the work behind every service cycle.</h2></div><p className="max-w-lg text-sm leading-relaxed text-slate-300 lg:justify-self-end">Use these playbooks to design the workflow before deciding where automation and messaging should help.</p></div><div className="mt-12 grid gap-4 lg:grid-cols-3">{OPERATIONS_GUIDES.map((guide, index) => <Link key={guide.href} href={guide.href} className="group flex min-h-72 flex-col rounded-[28px] border border-white/10 bg-white/[0.06] p-6 transition hover:-translate-y-1 hover:border-[#67f3bd]/45 hover:bg-white/[0.09]"><div className="flex items-center justify-between"><span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-[#8af7cd]">{guide.label}</span><span className="text-xs font-bold text-slate-500">0{index + 1}</span></div><h3 className="mt-9 text-2xl font-extrabold leading-tight tracking-[-0.035em] text-white">{guide.title}</h3><p className="mt-4 text-sm leading-relaxed text-slate-400">{guide.copy}</p><span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-extrabold text-[#8af7cd]">Read the guide <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></Link>)}</div></div></section>
 
       <section className="border-t border-slate-200 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"><div className="mx-auto max-w-3xl"><h2 className="text-center font-heading text-3xl font-extrabold tracking-[-0.04em] text-slate-950 sm:text-4xl">Questions from water-treatment businesses</h2><div className="mt-10"><FAQAccordion items={WATER_TREATMENT_FAQ} /></div></div></section>
 

@@ -128,6 +128,7 @@ export default function AmcRenewalSoftwarePage() {
         related={[
           { label: 'Water treatment operations', href: '/water-purifier-crm' },
           { label: 'RO service management', href: '/ro-service-management' },
+          { label: 'Water purifier service software guide', href: '/blog/water-purifier-service-management-software-guide-2026' },
         ]}
         loopItems={['A real contract becomes due', 'Buddie prepares the renewal context', 'Your team completes and records the outcome']}
         ctaHeading="Bring your AMC follow-up into one workflow"

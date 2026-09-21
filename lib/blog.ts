@@ -4,10 +4,12 @@ import matter from 'gray-matter'
 
 const BLOG_DIR = path.join(process.cwd(), 'content/blog')
 
-export type BlogCategory = 'CRM' | 'WhatsApp' | 'Automation' | 'Case Study'
+export type BlogCategory = 'Operations' | 'CRM' | 'WhatsApp' | 'Automation' | 'Case Study'
 
 export interface BlogPostMeta {
   title: string
+  /** Optional search-result title when the editorial headline is intentionally longer. */
+  seoTitle?: string
   description: string
   slug: string
   date: string
@@ -54,6 +56,7 @@ export function getAllPosts(): BlogPostMeta[] {
     if (post && post.isPublished) {
       posts.push({
         title: post.title,
+        ...(post.seoTitle && { seoTitle: post.seoTitle }),
         description: post.description,
         slug: post.slug,
         date: post.date,
@@ -87,7 +90,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
 /**
  * Returns categories that have at least one published post, in display order.
  */
-const CATEGORY_ORDER: BlogCategory[] = ['WhatsApp', 'CRM', 'Automation', 'Case Study']
+const CATEGORY_ORDER: BlogCategory[] = ['Operations', 'Automation', 'WhatsApp', 'CRM', 'Case Study']
 
 export function getCategories(): BlogCategory[] {
   const posts = getAllPosts()

@@ -23,7 +23,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
                 {item.label}
               </Link>
             ) : (
-              <span className="text-ink font-medium">{item.label}</span>
+              <span className="font-medium text-gray-600">{item.label}</span>
             )}
           </li>
         ))}

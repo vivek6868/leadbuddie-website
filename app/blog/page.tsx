@@ -5,13 +5,13 @@ import { getAllPosts, getCategories, getPostsByCategory, type BlogCategory } fro
 import { BlogCard } from '@/components/blog/BlogCard'
 
 export const metadata: Metadata = {
-  title: 'WhatsApp AI Sales & Lead Management Guides | LeadBuddie',
+  title: 'Agentic Operations Guides for Indian Businesses | LeadBuddie',
   description:
-    'Practical guides for WhatsApp-led businesses: AI sales employees, lead qualification, booking automation, follow-up controls and team workflows.',
+    'Practical guides for water-treatment operations, service cycles, AMC renewals, lead handling and controlled AI agents for Indian businesses.',
   alternates: { canonical: '/blog' },
 }
 
-const VALID_CATEGORIES: BlogCategory[] = ['CRM', 'WhatsApp', 'Automation', 'Case Study']
+const VALID_CATEGORIES: BlogCategory[] = ['Operations', 'Automation', 'WhatsApp', 'CRM', 'Case Study']
 
 function isValidCategory(value: string | undefined): value is BlogCategory {
   return value !== undefined && VALID_CATEGORIES.includes(value as BlogCategory)
@@ -49,13 +49,13 @@ export default async function BlogPage({ searchParams }: PageProps) {
             LeadBuddie field notes
           </div>
           <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-text-primary md:text-6xl animate-fade-in-up delay-300">
-            WhatsApp sales <br className="hidden md:block" />
+            Real operating playbooks <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-brand-hover via-teal-600 to-indigo-600 bg-clip-text text-transparent">
-              CRM insights for Indian SMBs.
+              for businesses using AI agents.
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg animate-fade-in-up delay-500">
-            Practical guides on managing leads, fixing follow-up leaks and building a calmer WhatsApp sales workflow — written for operators, not generic templates.
+            Practical guides on water-treatment service cycles, field work, renewals, lead handling and controlled agent actions — written for operators.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm animate-fade-in-up delay-700">
@@ -153,7 +153,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
               Get new playbooks the day they ship.
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary md:text-base">
-              Practical playbooks for SMB owners running sales on WhatsApp and Instagram. Subscribe via RSS or explore the product journey.
+              Practical playbooks for owners running service, sales and recurring customer work. Subscribe via RSS or explore the product journey.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link

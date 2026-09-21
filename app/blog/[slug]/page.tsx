@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: Props) {
   const post = getPostBySlug(slug)
   if (!post) return { title: 'Not Found' }
 
-  const title = `${post.title} | LeadBuddie Blog`
+  const title = post.seoTitle ?? `${post.title} | LeadBuddie Blog`
   const description = post.description
   const canonical = `${BASE_URL}/blog/${slug}`
   const ogImage = post.image ? `${BASE_URL}${post.image}` : undefined
@@ -119,7 +119,11 @@ export default async function BlogPostPage({ params }: Props) {
     description: post.description,
     datePublished: post.date,
     dateModified: post.dateModified ?? post.date,
-    author: { '@type': 'Person', name: post.author },
+    author: {
+      '@type': post.author === 'LeadBuddie Team' ? 'Organization' : 'Person',
+      name: post.author,
+      ...(post.author === 'LeadBuddie Team' && { url: BASE_URL }),
+    },
     publisher: {
       '@type': 'Organization',
       name: 'LeadBuddie',
@@ -359,7 +363,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <p className="text-xs uppercase tracking-[0.14em] text-text-muted">Written by</p>
                 <p className="mt-0.5 text-base font-semibold text-text-primary">{post.author}</p>
                 <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-                  Working with Indian SMBs to fix how leads move through WhatsApp and Instagram.
+                  Building practical operating systems and controlled AI agents for Indian businesses.
                 </p>
               </div>
               <Button href="/demo" variant="primary" size="md">
@@ -393,7 +397,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </div>
                 </div>
                 <p className="mt-3 text-xs leading-relaxed text-text-secondary">
-                  Helping Indian SMBs and RO dealers plug leaks, recover recurring AMC revenue, and automate CRM follow-ups.
+                  Helping water-treatment and service businesses connect customer context, field work, renewals and the next action.
                 </p>
                 <div className="mt-4">
                   <Button href="/demo" variant="outline" size="sm" className="w-full text-xs">
@@ -407,7 +411,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-brand/15 blur-xl" />
                 <h4 className="text-sm font-bold text-text-primary">Ready to scale?</h4>
                 <p className="mt-2 text-xs leading-relaxed text-text-secondary">
-                  Get WhatsApp auto-replies, automated AMC renewals, and a multi-agent team inbox on your own number.
+                  Put customers, service work, renewals and controlled agent actions into one operating workspace.
                 </p>
                 <div className="mt-4">
                   <Button href="https://app.leadbuddie.com" variant="primary" size="sm" className="w-full text-xs">

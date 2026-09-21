@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 
-const SITE_LAST_MODIFIED = new Date('2026-09-21T00:00:00.000Z')
+const SITE_LAST_MODIFIED = new Date('2026-09-22T00:00:00.000Z')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://leadbuddie.com'

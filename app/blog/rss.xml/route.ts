@@ -16,9 +16,9 @@ export function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LeadBuddie Blog - WhatsApp &amp; Instagram CRM Insights</title>
+    <title>LeadBuddie Blog - Agentic Operations Guides</title>
     <link>${BASE_URL}/blog</link>
-    <description>Practical guides for teams using WhatsApp and Instagram to manage leads and close more deals.</description>
+    <description>Practical guides for water-treatment operations, service cycles, renewals, lead handling and controlled AI agents.</description>
     <language>en-in</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${BASE_URL}/blog/rss.xml" rel="self" type="application/rss+xml"/>

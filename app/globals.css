@@ -55,6 +55,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 :focus-visible {
@@ -70,6 +71,7 @@ body {
     var(--color-bg-primary);
   font-family: var(--font-body), system-ui, sans-serif;
   min-height: 100vh;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -4,17 +4,17 @@ import { ArrowRight, Calculator, BookOpen, MessageCircle, ShieldCheck } from 'lu
 
 export const metadata: Metadata = {
   title: 'Resources — LeadBuddie',
-  description: 'Practical WhatsApp sales, lead management, AMC renewal and AI safety guides for Indian service businesses.',
+  description: 'Practical water-treatment operations, service workflow, AMC renewal, lead handling and AI-agent guides for Indian businesses.',
   alternates: { canonical: '/resources' },
 }
 
 const resources = [
   {
     icon: BookOpen,
-    title: 'WhatsApp sales guides',
-    description: 'Practical playbooks for handling enquiries, improving follow-ups and organising WhatsApp-led sales.',
-    href: '/blog?category=WhatsApp',
-    cta: 'Browse WhatsApp guides',
+    title: 'Water-treatment operations guides',
+    description: 'Build reliable service cycles, trustworthy due dates and technician workflows for RO and water-treatment teams.',
+    href: '/blog?category=Operations',
+    cta: 'Browse operations guides',
   },
   {
     icon: Calculator,
@@ -25,8 +25,8 @@ const resources = [
   },
   {
     icon: MessageCircle,
-    title: 'Water purifier dealer playbooks',
-    description: 'Guides for RO enquiries, service callbacks and AMC renewals on WhatsApp.',
+    title: 'Water-treatment operating system',
+    description: 'See how customers, installed units, service visits, AMC renewals and agent actions connect.',
     href: '/water-purifier-crm',
     cta: 'Explore water-treatment operations',
   },
@@ -45,7 +45,7 @@ export default function ResourcesPage() {
       <section className="relative isolate overflow-hidden bg-[#07111f] px-4 pb-20 pt-28 text-white sm:px-6 md:pt-36 lg:px-8">
         <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:54px_54px]" />
         <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-[#25d366]/15 blur-[100px]" />
-        <div className="relative mx-auto max-w-4xl text-center"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]">Practical guidance for WhatsApp-led businesses</p><h1 className="mt-5 font-heading text-5xl font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Learn the workflow. <span className="text-[#79eea0]">Build the right customer journey.</span></h1><p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">Straightforward guides and tools for enquiries, follow-ups, quote requests, service operations and responsible AI automation.</p></div>
+        <div className="relative mx-auto max-w-4xl text-center"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]">Practical guidance for agentic operations</p><h1 className="mt-5 font-heading text-5xl font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Learn the workflow. <span className="text-[#79eea0]">Build the right operating system.</span></h1><p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">Straightforward guides and tools for water-treatment service, renewals, enquiries and responsible AI-agent actions.</p></div>
       </section>
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
