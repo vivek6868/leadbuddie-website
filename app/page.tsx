@@ -5,24 +5,24 @@ import { HOMEPAGE_FAQ } from '@/lib/faq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'LeadBuddie — AI Sales Employee for WhatsApp',
+  title: 'LeadBuddie — Agentic Business Operations for Water Treatment, Travel & Retail',
   description:
-    'LeadBuddie is the AI sales employee for WhatsApp. It answers enquiries from approved business knowledge, understands voice notes and replies in voice, collects the right details, and turns leads into bookings, quote requests or team handovers.',
+    'LeadBuddie is an agentic business operations platform for water-treatment companies, travel agencies and retail businesses. It watches customer cycles, prepares the next action and helps teams complete service, renewal, quote and order work.',
   keywords:
-    'AI sales employee for WhatsApp, WhatsApp AI employee, WhatsApp lead management software, WhatsApp booking automation, WhatsApp quote request, WhatsApp CRM India, WhatsApp Business API, train AI for business, WhatsApp automation for small business, WhatsApp voice AI, AI reply to WhatsApp voice notes, AI voice replies Hindi Tamil Malayalam',
+    'agentic business operations, AI operations agent India, water purifier service management software, RO service management software, water treatment business software, AI agent for travel agencies, AI agent for retail business, AMC renewal software',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'LeadBuddie — AI Sales Employee for WhatsApp',
+    title: 'LeadBuddie — Give Every Customer Cycle an Operator',
     description:
-      'Train an AI employee for your WhatsApp business. Buddie answers enquiries, collects the right details, and moves leads to bookings, quotes or your team.',
+      'Agentic business operations for water treatment, travel and retail. Buddie watches what is due, prepares the next action and keeps work moving.',
     url: 'https://leadbuddie.com',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LeadBuddie — AI Sales Employee for WhatsApp',
+    title: 'LeadBuddie — Agentic Business Operations',
     description:
-      'The AI sales employee that turns WhatsApp enquiries into qualified next steps.',
+      'Give every customer cycle an operator. Built first for water-treatment operations, with purpose-built workflows for travel and retail.',
   },
 }
 

@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     title: SEO.title,
     description: SEO.description,
     siteName: 'LeadBuddie',
-    images: [{ url: '/images/brand/social-card-v1.png', width: 1731, height: 909, alt: 'LeadBuddie helps turn WhatsApp enquiries into clear business requests' }],
+    images: [{ url: '/images/brand/water-operations-hero-v1.png', width: 1942, height: 809, alt: 'LeadBuddie agentic operations for water-treatment businesses' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: SEO.title,
     description: SEO.description,
-    images: ['/images/brand/social-card-v1.png'],
+    images: ['/images/brand/water-operations-hero-v1.png'],
   },
   robots: {
     index: true,

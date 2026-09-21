@@ -17,7 +17,7 @@ import { CONTACT } from '@/lib/constants'
  * Prefilled message: a soft "Hi LeadBuddie team — I'd like to know more" so the visitor doesn't
  * stare at a blank compose box. They can edit before sending.
  */
-const PREFILLED_MESSAGE = "Hi LeadBuddie team — I'd like to know more about your AI sales employee for WhatsApp."
+const PREFILLED_MESSAGE = "Hi LeadBuddie team — I'd like to know how Buddie can operate inside my business."
 
 const HIDE_ON_PATHS = ['/contact']
 

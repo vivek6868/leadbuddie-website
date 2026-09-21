@@ -20,7 +20,7 @@ import {
 const PATH = '/ro-service-management'
 const TITLE = 'RO Service Management Software for Water Purifier Dealers | LeadBuddie'
 const DESCRIPTION =
-  'Service management software for RO and water purifier dealers. Collect visit requests from WhatsApp, track complaints, callbacks and customer history in one workspace.'
+  'Agentic service operations for RO and water purifier businesses. Connect customer history, service requests, assignments, visits and the next cycle. WhatsApp is optional.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,7 +40,7 @@ const FAQ = [
   {
     question: 'What is RO service management software?',
     answer:
-      'RO service management software helps water purifier dealers organise service requests, visit details, complaints, callbacks and customer history. LeadBuddie connects that workflow to WhatsApp conversations.',
+      'RO service management software helps water purifier businesses organise service requests, visit details, complaints, callbacks, customer history and the next cycle. LeadBuddie can also connect eligible messaging when configured.',
   },
   {
     question: 'How does Buddie handle customer complaints?',
@@ -60,7 +60,7 @@ const FAQ = [
   {
     question: 'How much does it cost?',
     answer:
-      'LeadBuddie has a limited Free CRM plan. Paid AI plans start at ₹1,499/month, and every new signup receives a 30-day Growth trial with no card required.',
+      'LeadBuddie has a limited Free plan. Paid agent plans are listed on the pricing page, and every new signup receives a 30-day Growth trial with no card required.',
   },
 ]
 
@@ -89,18 +89,18 @@ export default function RoServiceManagementPage() {
       />
       <NicheLanding
         eyebrow="Service & complaints, organised"
-        h1="RO service management that runs from WhatsApp"
-        intro="Turn WhatsApp service enquiries into organised visit requests with customer context attached. Buddie can collect details and hand urgent or sensitive complaints to your team."
+        h1="RO service work with context from request to completion"
+        intro="Organise requests, assignments, visits and customer history from one workspace. Buddie can prepare the next action, while WhatsApp remains an optional channel for eligible customer and technician messages."
         trustPoints={[
-          'Configured reply & routing',
-          'Visit requests from chat',
-          'Full service history drawers',
+          'No WhatsApp required to begin',
+          'Visit work with customer context',
+          'History connected to the next cycle',
         ]}
         problem={{
           heading: 'Service requests scattered across phones and chats are how dealers lose customers.',
           body: [
             'A customer messages about a noisy filter. It gets seen, then buried. The visit is never booked, or it’s booked but the technician shows up with no history. Small misses like these are why customers don’t renew.',
-            'LeadBuddie turns every request into a scheduled visit on the customer’s record, with their full history attached — so service feels organised and customers stay.',
+            'LeadBuddie keeps the request, customer context, assignment and outcome together so the team can complete the visit and continue the next service cycle.',
           ],
         }}
         featuresHeading="Service operations, all in one place"
@@ -114,19 +114,20 @@ export default function RoServiceManagementPage() {
         ]}
         stepsHeading="From service request to satisfied, renewing customer"
         steps={[
-          { title: 'Customer messages on WhatsApp', desc: 'A supported enquiry, service request or complaint appears on the connected business number.' },
-          { title: 'Complaints escalated to you', desc: 'If the customer mentions a malfunction or asks for a refund, Buddie pauses and alerts you for human takeover.' },
-          { title: 'Prepare the visit request', desc: 'Buddie or your team captures the useful details; a person confirms the final schedule and customer message.' },
-          { title: 'Technician arrives with full history', desc: 'The technician has the model, install date, past visits, and AMC history on their screen — zero guess work.' },
+          { title: 'Create or receive the service request', desc: 'Start from the workspace or a supported customer conversation and attach the request to the right customer.' },
+          { title: 'Review the issue and context', desc: 'Bring the installed product, history and reported problem together before assignment.' },
+          { title: 'Assign and complete the visit', desc: 'The office confirms the work, handles exceptions and records the visit outcome.' },
+          { title: 'Continue the service cycle', desc: 'Use the completed visit and configured service rule to prepare the next legitimate cycle.' },
         ]}
         faq={FAQ}
         related={[
-          { label: 'Water purifier dealer CRM', href: '/water-purifier-crm' },
+          { label: 'Water treatment operations', href: '/water-purifier-crm' },
           { label: 'AMC renewal software', href: '/amc-renewal-software' },
           { label: 'Read the case study', href: '/case-study' },
         ]}
+        loopItems={['A service need becomes visible', 'Buddie prepares the customer and unit context', 'Your team completes the visit and next cycle']}
         ctaHeading="Make every service visit organised"
-        ctaSub="Start with a 30-day Growth trial and test a service-request journey before enabling Auto."
+        ctaSub="Start with your customer and service records. Add messaging automation after the operating workflow is ready."
       />
     </>
   )

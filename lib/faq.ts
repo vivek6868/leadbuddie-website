@@ -5,84 +5,44 @@
  */
 export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'Is this official WhatsApp Business API, or QR scanning?',
+    question: 'What does an agentic business operator do?',
     answer:
-      'LeadBuddie connects through Meta’s WhatsApp Business Platform. It does not depend on personal-WhatsApp QR scraping. Your business is still responsible for consent, templates and WhatsApp policy compliance.',
+      'LeadBuddie watches for work that needs attention, brings together the relevant customer and business context, prepares a safe next action and keeps the outcome available for the next cycle. Your team keeps control of decisions, exceptions and final commitments.',
   },
   {
-    question: 'Can Buddie reply and move leads forward automatically?',
+    question: 'Does a water-treatment business need WhatsApp to use LeadBuddie?',
     answer:
-      'Yes, when Auto mode is enabled and the message is eligible. Buddie works within the business knowledge and rules you approve, can collect the required details, and can hand the conversation to your team. Plan limits and WhatsApp messaging rules still apply.',
+      'No. A water-treatment business can begin with customer records, installed units, service work, visits and AMC cycles in the LeadBuddie workspace. WhatsApp can be connected later when the business wants eligible customer or technician messaging.',
   },
   {
-    question: 'What booking actions can Buddie handle?',
+    question: 'Is LeadBuddie just a customer database?',
     answer:
-      'You can configure requests for callbacks, demos, site visits, appointments, consultations, trials and service visits. Buddie collects the details and creates the request; your team confirms availability and the final appointment when required.',
+      'LeadBuddie is designed around active work and completed customer cycles. It keeps the customer memory needed for operations, while Buddie helps notice, prepare and continue the next action instead of leaving teams to manage static records and dashboards alone.',
   },
   {
-    question: 'I sell many products — will Buddie send the wrong one?',
+    question: 'Which water-treatment workflows are covered?',
     answer:
-      'On Growth and Scale, the Product Awareness Agent uses your configured catalogue, keywords and ad mappings. When a match is uncertain, it can ask a clarifying question or bring in your team instead of selecting a product blindly.',
+      'The water-treatment workflow connects customers, installed units, service due, service requests, visits, service history, AMC or renewal work and the next service cycle. Availability of individual automations depends on the configured plan, business controls and messaging setup.',
   },
   {
-    question: 'Can Buddie send images, videos and payment links — not just text?',
+    question: 'How does LeadBuddie work for travel agencies?',
     answer:
-      'Eligible plans let you attach approved images, videos, documents and links to catalogue items. Buddie can share the relevant configured asset when the product is matched and the message can be sent under your settings and WhatsApp rules.',
+      'Buddie can understand a trip enquiry, collect the details required by that agency and prepare a structured quote or booking request for the team. The agency reviews availability, itinerary and final price.',
   },
   {
-    question: 'My customers send voice notes — can Buddie understand them?',
+    question: 'How does LeadBuddie work for retail businesses?',
     answer:
-      'Yes. Buddie transcribes WhatsApp voice notes, checks the language, and answers what the customer asked. Details spoken in the voice note, such as dates, area or number of people, are captured on the request. Transcription quality can vary with the recording.',
+      'Buddie uses the product information and rules the business approves to understand an enquiry, collect missing details and prepare an order, quotation or team handover. Uncertain matches and final commercial decisions can stay with a person.',
   },
   {
-    question: 'Can Buddie reply with a voice note?',
+    question: 'Can Buddie act automatically?',
     answer:
-      'Yes, on Growth and Scale. When a customer speaks or asks for voice, Buddie can send a short, natural voice note in English, Hindi, Tamil or Malayalam alongside its written answer. You choose Smart, Customer asks or Off, and menus, links and hand-overs always stay in text.',
+      'Where a workflow is eligible, the business can choose Watch, Approval or Auto. Approved knowledge, confidence checks, plan limits, consent and provider rules still govern what can be prepared or sent.',
   },
   {
-    question: 'Which languages does Buddie speak? Can I read chats in my language?',
+    question: 'Can I still connect WhatsApp?',
     answer:
-      'Buddie can match commonly used Indian languages and scripts, and inbox translation is available where supported. Language detection and translation quality can vary, so important business commitments should still be reviewed.',
-  },
-  {
-    question: 'How do I train Buddie?',
-    answer:
-      'Teach it by text or voice: explain your business, what you sell, prices and restrictions, what details a quote or booking request needs, and when your team should take over. Buddie shows proposed changes for review before you save them.',
-  },
-  {
-    question: 'Do my customers need to install anything?',
-    answer:
-      'No. Everything happens inside the normal WhatsApp app your customers already have — chats, tap-to-fill booking forms, voice notes, all of it. No app to download, no account to create.',
-  },
-  {
-    question: 'What happens when Buddie doesn’t know an answer?',
-    answer:
-      'It can say that the information needs to be checked, collect any useful context, and bring in your team. Approved knowledge and pricing guardrails are designed to reduce unsupported answers, and you can review the conversation history.',
-  },
-  {
-    question: 'Do you sell leads?',
-    answer:
-      'No. LeadBuddie helps you manage enquiries that come through your connected channels. It is not a lead marketplace.',
-  },
-  {
-    question: 'Will my old WhatsApp chats be imported?',
-    answer:
-      'No. Old chat history is not imported. Supported new conversations appear after your WhatsApp Business number is connected.',
-  },
-  {
-    question: 'Can my team work the same leads together?',
-    answer:
-      'Yes, within your plan’s seat limit. Teammates can share the inbox, assign conversations, add notes and track the next step.',
-  },
-  {
-    question: 'How many voice minutes are included?',
-    answer:
-      'Starter understands customer voice notes. Growth adds 60 minutes of Buddie voice replies a month with Buddie’s default voice. Scale includes 200 minutes a month and lets you choose from four voices. Understanding voice notes and speaking replies use separate allowances.',
-  },
-  {
-    question: 'What happens during the free trial, and can I cancel?',
-    answer:
-      'Every new signup receives the Growth plan for 30 days with no card required. When the trial ends, you can choose a paid plan or continue on the Free plan. The Free plan does not include a WhatsApp connection or Buddie.',
+      'Yes. LeadBuddie supports the official WhatsApp Business Platform for eligible conversational and outbound workflows. WhatsApp is a channel Buddie can use; it is not a requirement for the core water-treatment operating workspace.',
   },
 ]
 

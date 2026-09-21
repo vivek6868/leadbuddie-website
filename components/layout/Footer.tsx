@@ -14,14 +14,14 @@ const columns = [
     ],
   },
   {
-    title: 'Solutions',
+    title: 'Industries',
     links: [
-      { name: 'AI employee for WhatsApp', href: '/ai-employee' },
-      { name: 'WhatsApp voice AI', href: '/whatsapp-voice-ai' },
-      { name: 'Water purifier CRM', href: '/water-purifier-crm' },
-      { name: 'AMC renewal software', href: '/amc-renewal-software' },
-      { name: 'RO service management', href: '/ro-service-management' },
-      { name: 'Lead management', href: '/water-purifier-lead-management' },
+      { name: 'Water treatment', href: '/water-purifier-crm' },
+      { name: 'Travel agencies', href: '/travel-agencies' },
+      { name: 'Retail businesses', href: '/retail-businesses' },
+      { name: 'RO service operations', href: '/ro-service-management' },
+      { name: 'AMC renewal operations', href: '/amc-renewal-software' },
+      { name: 'Buddie agent', href: '/ai-employee' },
     ],
   },
   {
@@ -44,7 +44,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.15fr_1.85fr]">
           <div className="max-w-md">
             <p className="font-heading text-2xl font-extrabold tracking-[-0.04em]">LeadBuddie</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-300">AI sales software for WhatsApp-led businesses. Teach Buddie what is true, choose what it may automate, and give your team requests they can act on.</p>
+            <p className="mt-4 text-sm leading-relaxed text-slate-300">Agentic business operations for water treatment, travel and retail. Buddie notices work, prepares the next action and helps your team continue the customer cycle.</p>
             <a href="https://app.leadbuddie.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#25d366] px-5 py-3 text-sm font-bold text-[#082315] transition hover:-translate-y-0.5 hover:bg-[#68eb95]">Start your 30-day trial <ArrowUpRight className="h-4 w-4" /></a>
             <div className="mt-8 space-y-3 text-sm text-slate-400">
               <a href={`mailto:${CONTACT.general}`} className="flex items-center gap-2 hover:text-white"><Mail className="h-4 w-4" />{CONTACT.general}</a>

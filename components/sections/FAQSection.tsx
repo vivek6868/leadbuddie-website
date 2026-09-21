@@ -8,8 +8,8 @@ export function FAQSection() {
     <Section>
       <SectionHeader
         label="FAQ"
-        title="Questions owners ask before putting Buddie on WhatsApp"
-        description="How setup, business knowledge, automatic replies, requests and human handover work."
+        title="Questions owners ask before giving Buddie real work"
+        description="How the agent, operating workflows, channels and human control work together."
         centered
         className="mb-12"
       />

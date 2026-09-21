@@ -5,16 +5,12 @@ import {
   ArrowRight,
   CalendarDays,
   Check,
-  CheckCircle2,
-  ChevronRight,
   ClipboardCheck,
   FileText,
   Inbox,
-  Languages,
   MessageCircleMore,
   Mic,
   ShieldCheck,
-  Sparkles,
   UsersRound,
   Workflow,
   type LucideIcon,
@@ -22,11 +18,11 @@ import {
 import { ActionScene, TrainBuddieScene } from '@/components/home/AIEmployeeVisuals'
 
 export const metadata: Metadata = {
-  title: 'Product — LeadBuddie AI Sales Employee for WhatsApp',
+  title: 'Product — LeadBuddie Agentic Business Operations',
   description:
-    'See how LeadBuddie learns your business, answers WhatsApp enquiries from approved knowledge, collects the right details, and creates bookings, quote requests and human handovers.',
+    'See how LeadBuddie notices work, uses approved business context, prepares the next action and gives your team what it needs to complete the customer cycle.',
   keywords:
-    'AI sales employee WhatsApp product, WhatsApp booking automation, WhatsApp quote request, product-aware WhatsApp AI, WhatsApp lead management software',
+    'agentic business operations product, AI operations agent, AI business agent, structured business requests, human in the loop AI, WhatsApp automation',
   alternates: { canonical: '/product' },
 }
 
@@ -66,7 +62,7 @@ export default function ProductPage() {
         <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:54px_54px]" />
         <div className="pointer-events-none absolute -right-28 top-16 h-96 w-96 rounded-full bg-[#25d366]/15 blur-[100px]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-          <div className="max-w-xl"><Eyebrow dark>The LeadBuddie product</Eyebrow><h1 className="mt-5 font-heading text-[3rem] font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Not a chatbot.<br /><span className="text-[#79eea0]">An employee that gets work done.</span></h1><p className="mt-6 text-[1.03rem] leading-relaxed text-slate-300 sm:text-lg">LeadBuddie learns your business, understands a customer’s goal, takes the right next action, and gives your team the context to finish what matters.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><TrialButton dark /><Link href="/demo" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.05] px-5 py-3 text-sm font-bold text-white transition hover:bg-white/[0.1]">Watch the product in action <ArrowRight className="h-4 w-4" /></Link></div></div>
+          <div className="max-w-xl"><Eyebrow dark>The LeadBuddie product</Eyebrow><h1 className="mt-5 font-heading text-[3rem] font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Not a chatbot.<br /><span className="text-[#79eea0]">An operating agent that gets work done.</span></h1><p className="mt-6 text-[1.03rem] leading-relaxed text-slate-300 sm:text-lg">LeadBuddie learns your business, understands what needs attention, prepares the right next action and gives your team the context to finish what matters.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><TrialButton dark /><Link href="/demo" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.05] px-5 py-3 text-sm font-bold text-white transition hover:bg-white/[0.1]">Watch the product in action <ArrowRight className="h-4 w-4" /></Link></div></div>
           <TrainBuddieScene dark />
         </div>
       </section>

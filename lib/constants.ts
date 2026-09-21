@@ -321,18 +321,11 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — AI Sales Software for WhatsApp',
+  title: 'LeadBuddie — Agentic Business Operations',
   description:
-    'LeadBuddie helps WhatsApp-led businesses respond to enquiries, collect details for booking or quote requests, and hand conversations to their team. Automation varies by plan, setup and customer-messaging eligibility. Includes a 30-day Growth trial.',
+    'LeadBuddie helps water-treatment, travel and retail businesses notice work, understand the context, prepare the next action and continue the customer cycle. WhatsApp is an optional channel for eligible workflows.',
   keywords:
-    // Head terms (highest intent)
-    'AI sales employee for WhatsApp, WhatsApp CRM, WhatsApp CRM India, WhatsApp automation for business, WhatsApp Business API India, AI chatbot for WhatsApp, AI WhatsApp assistant, WhatsApp auto reply software, ' +
-    // Lead + booking intent
-    'WhatsApp lead management software, lead management software India, WhatsApp follow up automation, WhatsApp appointment booking, book appointments on WhatsApp, WhatsApp booking system, AI sales agent, AI receptionist for business, WhatsApp bot for small business, WhatsApp chatbot for business India, WhatsApp marketing software India, automated WhatsApp replies, ' +
-    // Vertical / industry
-    'salon appointment booking software, gym lead management software, clinic appointment booking WhatsApp, travel agency CRM India, coaching institute CRM, home service booking software, ' +
-    // Water-treatment cluster (existing ranking terms — retained)
-    'water purifier CRM, water purifier dealer software, water treatment CRM, RO service software India, AMC renewal software India, RO CRM software, water purifier lead management, AMC reminder app, annual maintenance contract CRM, AC service software India, service center software India',
+    'agentic business operations, AI operations agent India, AI business agent, water purifier service management software, RO service management software India, water treatment business software, AMC renewal software India, water purifier dealer software, service due management, travel agency AI agent, retail business AI agent, WhatsApp Business automation',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection)

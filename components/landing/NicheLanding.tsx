@@ -20,6 +20,7 @@ export interface NicheLandingProps {
   related: { label: string; href: string }[]
   ctaHeading: string
   ctaSub: string
+  loopItems?: [string, string, string]
 }
 
 export function NicheLanding({
@@ -36,6 +37,7 @@ export function NicheLanding({
   related,
   ctaHeading,
   ctaSub,
+  loopItems = ['A customer messages', 'Buddie collects the useful details', 'Your team receives a clear next action'],
 }: NicheLandingProps) {
   return (
     <>
@@ -44,7 +46,8 @@ export function NicheLanding({
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(37,211,102,0.05),transparent_45%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-bg-primary" />
 
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+          <div>
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-hover">
             <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
             {eyebrow}
@@ -52,11 +55,11 @@ export function NicheLanding({
           <h1 className="text-balance text-3xl font-bold leading-[1.08] tracking-tight text-text-primary sm:text-4xl md:text-5xl font-heading">
             {h1}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg">
             {intro}
           </p>
 
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <Button href="https://app.leadbuddie.com" variant="primary" size="lg" className="w-full sm:w-auto">
               Start Free Trial
             </Button>
@@ -65,7 +68,7 @@ export function NicheLanding({
             </Button>
           </div>
 
-          <ul className="mx-auto mt-9 flex max-w-xl flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <ul className="mt-9 flex max-w-xl flex-wrap gap-x-6 gap-y-2">
             {trustPoints.map((p) => (
               <li key={p} className="flex items-center gap-2 text-sm text-text-secondary">
                 <Check className="h-4 w-4 flex-shrink-0 text-brand" strokeWidth={2.4} />
@@ -73,6 +76,23 @@ export function NicheLanding({
               </li>
             ))}
           </ul>
+          </div>
+
+          <div className="relative rounded-[30px] border border-slate-200 bg-[#092331] p-4 text-white shadow-[0_34px_90px_rgba(15,59,49,0.18)] sm:p-6">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div><p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#8af7cd]">Buddie operating view</p><p className="mt-1 text-base font-extrabold">From signal to completed work</p></div>
+              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-[#67f3bd] text-[#06271f]">✦</span>
+            </div>
+            <div className="mt-5 space-y-3">
+              {loopItems.map((item, index) => (
+                <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] p-3.5">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#67f3bd]/15 text-[10px] font-extrabold text-[#9af3c1]">0{index + 1}</span>
+                  <p className="text-xs font-bold text-slate-100">{item}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 rounded-2xl border border-[#67f3bd]/20 bg-[#0d3029] p-4 text-xs font-semibold leading-relaxed text-[#b9e4d5]">Your team keeps control of the decisions that require judgment.</div>
+          </div>
         </div>
       </section>
 
@@ -90,7 +110,7 @@ export function NicheLanding({
           <div data-reveal className="rounded-2xl border border-brand/25 bg-brand/5 p-8 shadow-inner">
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-hover">A clearer operating loop</p>
             <div className="mt-5 space-y-3 text-left text-sm font-semibold text-text-primary">
-              {['A customer messages', 'Buddie collects the useful details', 'Your team receives a clear next action'].map((item, index) => (
+              {loopItems.map((item, index) => (
                 <div key={item} className="flex items-center gap-3 rounded-xl border border-border bg-bg-card px-3 py-3">
                   <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand text-xs font-bold text-[#082315]">{index + 1}</span>
                   {item}

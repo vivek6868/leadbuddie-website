@@ -28,7 +28,7 @@ const resources = [
     title: 'Water purifier dealer playbooks',
     description: 'Guides for RO enquiries, service callbacks and AMC renewals on WhatsApp.',
     href: '/water-purifier-crm',
-    cta: 'Explore water purifier CRM',
+    cta: 'Explore water-treatment operations',
   },
   {
     icon: ShieldCheck,

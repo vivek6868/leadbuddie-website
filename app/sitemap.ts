@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 
-const SITE_LAST_MODIFIED = new Date('2026-08-01T00:00:00.000Z')
+const SITE_LAST_MODIFIED = new Date('2026-09-21T00:00:00.000Z')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://leadbuddie.com'
@@ -47,6 +47,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: SITE_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/travel-agencies`,
+      lastModified: SITE_LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/retail-businesses`,
+      lastModified: SITE_LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/amc-renewal-software`,

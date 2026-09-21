@@ -60,7 +60,7 @@ const FAQ = [
   {
     question: 'How much does it cost?',
     answer:
-      'LeadBuddie has a limited Free CRM plan. Paid AI plans start at ₹1,499/month, and every new signup receives a 30-day Growth trial with no card required.',
+      'LeadBuddie has a limited Free plan. Paid agent plans are listed on the pricing page, and every new signup receives a 30-day Growth trial with no card required.',
   },
 ]
 
@@ -121,7 +121,7 @@ export default function WaterPurifierLeadManagementPage() {
         ]}
         faq={FAQ}
         related={[
-          { label: 'Water purifier dealer CRM', href: '/water-purifier-crm' },
+          { label: 'Water treatment operations', href: '/water-purifier-crm' },
           { label: 'AMC renewal software', href: '/amc-renewal-software' },
           { label: 'WhatsApp playbook', href: '/blog/whatsapp-for-water-purifier-business-2026' },
         ]}

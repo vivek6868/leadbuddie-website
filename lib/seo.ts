@@ -15,7 +15,7 @@ export const SITE_URL = 'https://leadbuddie.com'
 export const APP_URL = 'https://app.leadbuddie.com'
 
 const ORG_DESCRIPTION =
-  'LeadBuddie is AI sales software for WhatsApp. Businesses teach it in plain language, then it answers enquiries from approved business knowledge, collects relevant details for booking or quote requests, and brings in the team when needed. Built for Indian WhatsApp-led businesses.'
+  'LeadBuddie is an agentic business operations platform for water-treatment companies, travel agencies and retail businesses. Buddie watches work cycles, prepares the next safe action and helps teams complete service, renewal, quote and order workflows.'
 
 /** Organization — sitewide. Establishes the brand entity for Google + LLMs. */
 export const ORGANIZATION_SCHEMA = {
@@ -53,11 +53,11 @@ export const MOBILE_APPLICATION_SCHEMA = {
   name: 'LeadBuddie',
   operatingSystem: 'ANDROID',
   applicationCategory: 'BusinessApplication',
-  applicationSubCategory: 'CRM',
+  applicationSubCategory: 'AI Business Operations',
   url: SITE_URL,
   publisher: { '@id': `${SITE_URL}/#organization` },
   description:
-    'LeadBuddie for Android — an AI sales employee for WhatsApp. Train Buddie, manage leads, and move customer enquiries to the right next step from your phone.',
+    'LeadBuddie for Android — agentic business operations for customer work, service cycles, requests and team actions.',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -90,18 +90,20 @@ export function softwareApplicationSchema(opts?: {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: opts?.name ?? 'LeadBuddie',
-    alternateName: 'LeadBuddie — AI Sales Employee for WhatsApp',
+    alternateName: 'LeadBuddie — Agentic Business Operations',
     applicationCategory: 'BusinessApplication',
-    applicationSubCategory: 'CRM',
+    applicationSubCategory: 'AI Business Operations',
     operatingSystem: 'Web, Android',
     url: opts?.url ?? SITE_URL,
     inLanguage: 'en-IN',
     description:
       opts?.description ??
-      'AI sales software for WhatsApp that learns your business, answers enquiries from approved knowledge, collects relevant details for booking or quote requests, and supports team handover.',
+      'Agentic business operations software that watches customer work cycles, uses approved business context, prepares the next action and supports safe team handover.',
     keywords:
-      'WhatsApp CRM, AI sales employee, WhatsApp automation, WhatsApp Business API, WhatsApp booking automation, WhatsApp quote requests, lead management, multilingual WhatsApp AI, WhatsApp voice AI, AI voice replies',
+      'agentic business operations, AI operations agent, water purifier service management, RO service management, AMC renewal workflow, travel agency AI agent, retail AI agent, WhatsApp Business automation',
     featureList: [
+      'Agent-prepared next actions from customer and business context',
+      'Water-treatment customer, installed-unit, service and renewal workflows',
       'AI replies to WhatsApp enquiries when enabled for the applicable plan and business controls',
       'Train your AI by chat or voice',
       'AI-assisted product and service drafting on eligible plans, with owner review before save',
@@ -122,7 +124,7 @@ export function softwareApplicationSchema(opts?: {
     ],
     audience: {
       '@type': 'BusinessAudience',
-      name: 'Indian small and medium businesses that get leads on WhatsApp',
+      name: 'Indian water-treatment, travel and retail businesses',
     },
     offers: {
       '@type': 'AggregateOffer',

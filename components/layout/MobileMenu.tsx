@@ -100,9 +100,25 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
             </div>
 
             <nav className="flex flex-col p-3">
+              <p className="px-3 pb-2 pt-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#087c5a]">Industries</p>
+              {[
+                { name: 'Water treatment', href: '/water-purifier-crm' },
+                { name: 'Travel agencies', href: '/travel-agencies' },
+                { name: 'Retail businesses', href: '/retail-businesses' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="mb-1 block rounded-lg bg-[#f0faf6] px-3 py-3 text-base font-bold text-text-primary transition-all hover:bg-[#e2f7ee] hover:text-[#087c5a]"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="my-3 border-t border-border" />
               {[
                 { name: 'Product', href: '/product' },
-                { name: 'AI employee', href: '/ai-employee' },
+                { name: 'Buddie agent', href: '/ai-employee' },
                 { name: 'How it works', href: '/how-it-works' },
                 { name: 'Pricing', href: '/pricing' },
                 { name: 'Resources', href: '/resources' },
