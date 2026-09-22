@@ -114,14 +114,14 @@ export default function AmcRenewalSoftwarePage() {
           { icon: Filter, title: 'Sorted by urgency', desc: 'Filter by due this week, next 14, next 30, callbacks, or lapsed. Always know who is due next.' },
           { icon: BellRing, title: 'Win back the lapsed ones', desc: 'Customers who let their AMC go get their own follow-up, and you see who comes back.' },
           { icon: CalendarClock, title: 'Callback scheduling', desc: '“Call me after the 20th” becomes a real follow-up on the right date with notes attached.' },
-          { icon: PhoneCall, title: 'As hands-off as you like', desc: 'Buddie can just show you the list, ask before every message, or handle the routine ones itself.' },
+          { icon: PhoneCall, title: 'As hands-off as you like', desc: 'Buddie can show you the list, or draft each reminder for you to approve. On the Autopilot plan it sends the routine ones itself.' },
           { icon: DollarSign, title: 'Know where every one stands', desc: 'Due, call back later, renewed or lapsed — nothing sits in someone’s head.' },
         ]}
         stepsHeading="How a renewal gets saved"
         steps={[
           { title: 'Import or convert your customers', desc: 'Upload your rough Excel list or add customers. Each profile tracks their equipment, contract value and AMC end-date.' },
           { title: 'See who is due', desc: 'As a contract nears its end date, that customer moves to the top of your list.' },
-          { title: 'Make the call', desc: 'Work the list yourself, or let Buddie draft the follow-up for you to approve with one tap.' },
+          { title: 'Make the call', desc: 'Work the list yourself, or let Buddie draft the follow-up for you to approve with one tap. On Autopilot it does the chasing for you.' },
           { title: 'Chase the ones who went quiet', desc: 'Callbacks, replies and lapsed customers stay on the list until somebody closes them.' },
         ]}
         faq={FAQ}

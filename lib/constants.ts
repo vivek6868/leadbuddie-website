@@ -154,10 +154,12 @@ export const FEATURES = [
   },
 ] as const
 
-// Plan feature lists shown on /pricing. Mirrors the live product tiers in
-// leadmate-hutliv/config/plans.ts. The Buddie modes are the headline differentiator per tier:
-// Public plan copy mirrors leadmate-hutliv/config/plans.ts. Keep customer-facing limits and
-// conditions explicit: plan access does not bypass WhatsApp template, consent or policy rules.
+// Plan feature lists shown on /pricing. These mirror the live product tiers and must not drift
+// from them: Free has no WhatsApp number and no Buddie, Starter adds Buddie replies but no
+// catalogue or campaigns, Growth is the full system of record for a water-treatment business, and
+// Scale is the only tier where Buddie does the chasing itself (shown as "Autopilot" to
+// water-treatment businesses). Keep limits and conditions explicit — a plan never bypasses
+// WhatsApp template, consent or policy rules. Verified against the product's plan config, Sep 2026.
 export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
   basic: [
     'Manually add and organise up to 10 leads',
@@ -182,14 +184,17 @@ export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
     'Products & Services catalog (up to 20 products)',
     '2 WhatsApp numbers · 5 team members',
     'WhatsApp campaigns · 3/month (up to 3,000 recipients) + asset library',
-    'AMC renewal tools for eligible water-treatment businesses + dormant-lead revival',
+    'Water treatment: run the whole service business — customers, installed units, service due, visits and AMC renewals',
+    'Win back lapsed AMCs and nudge leads who went quiet',
   ],
   scale: [
     'Everything in Growth, plus:',
+    'Water treatment — Autopilot: Buddie chases the renewals, books the service from a customer’s reply, assigns the engineer and follows up on payment. Your team handles the exceptions.',
+    'An evening summary of anything that needs you tomorrow',
     '5 WhatsApp numbers · 10 team members',
     'Unlimited products & ad → product mappings',
     'Campaigns · 20/month · 50,000 recipients · scheduling, auto-retry & analytics',
-    'Team assignment, analytics & shared inbox',
+    'Team performance analytics',
     'Buddie Voice · 200 min/month · choose from 4 voices',
     'Priority support',
   ],
@@ -229,7 +234,7 @@ export const PRICING_PLANS = [
     price: 2499,
     currency: '₹',
     period: 'month',
-    description: 'Automation for product-aware replies, booking requests, follow-ups and campaigns.',
+    description: 'Run your service business here — product-aware replies, booking requests, follow-ups, AMC renewals and campaigns.',
     features: PLAN_VISIBLE_FEATURES.growth,
     cta: 'Start Free Trial',
     highlighted: true,
@@ -240,7 +245,7 @@ export const PRICING_PLANS = [
     price: 4999,
     currency: '₹',
     period: 'month',
-    description: 'Teams, advanced campaigns, multi-number WhatsApp and 200 Buddie Voice minutes/month.',
+    description: 'Buddie does the chasing, not just the reminding. Shown as Autopilot for water-treatment businesses.',
     features: PLAN_VISIBLE_FEATURES.scale,
     cta: 'Start Free Trial',
     highlighted: false,
