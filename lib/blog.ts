@@ -140,3 +140,19 @@ export function getRelatedPostsByCategory(
     .filter((p) => p.slug !== currentSlug && p.category === category)
     .slice(0, limit)
 }
+
+/** URL slug for a category: 'Case Study' -> 'case-study'. */
+export function categorySlug(category: BlogCategory): string {
+  return category.toLowerCase().replace(/\s+/g, '-')
+}
+
+/** The canonical listing path for a category. */
+export function categoryPath(category: BlogCategory): string {
+  return `/blog/category/${categorySlug(category)}`
+}
+
+/** Resolve a URL slug back to a category, or null when it matches none. */
+export function categoryFromSlug(slug: string): BlogCategory | null {
+  const wanted = slug.toLowerCase()
+  return CATEGORY_ORDER.find((c) => categorySlug(c) === wanted) ?? null
+}

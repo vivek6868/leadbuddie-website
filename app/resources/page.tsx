@@ -25,7 +25,7 @@ const resources = [
     icon: BookOpen,
     title: 'Water-treatment operations guides',
     description: 'Build reliable service cycles, trustworthy due dates and technician workflows for RO and water-treatment teams.',
-    href: '/blog?category=Operations',
+    href: '/blog/category/operations',
     cta: 'Browse operations guides',
   },
   {

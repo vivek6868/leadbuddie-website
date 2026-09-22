@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm'
 import { ArrowLeft, Clock, User } from 'lucide-react'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
-import { getPostBySlug, getAllSlugs, getRelatedPosts, getRelatedPostsByCategory } from '@/lib/blog'
+import { getPostBySlug, getAllSlugs, getRelatedPosts, getRelatedPostsByCategory, categoryPath } from '@/lib/blog'
 import { BlogCard } from '@/components/blog/BlogCard'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { FinalCTA } from '@/components/sections/FinalCTA'
@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const breadcrumbItems = [
     { label: 'Blog', href: '/blog' },
-    { label: post.category, href: `/blog?category=${encodeURIComponent(post.category)}` },
+    { label: post.category, href: categoryPath(post.category) },
     { label: post.title },
   ]
 
@@ -143,7 +143,7 @@ export default async function BlogPostPage({ params }: Props) {
         '@type': 'ListItem',
         position: 2,
         name: post.category,
-        item: `${BASE_URL}/blog?category=${encodeURIComponent(post.category)}`,
+        item: `${BASE_URL}${categoryPath(post.category)}`,
       },
       { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE_URL}/blog/${slug}` },
     ],
@@ -184,7 +184,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
-                href={`/blog?category=${encodeURIComponent(post.category)}`}
+                href={categoryPath(post.category)}
                 className="inline-flex items-center rounded-full border border-brand/30 bg-brand/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-hover transition-colors hover:bg-brand/25"
               >
                 {post.category}
@@ -432,7 +432,7 @@ export default async function BlogPostPage({ params }: Props) {
               More in {post.category}
             </h2>
             <Link
-              href={`/blog?category=${encodeURIComponent(post.category)}`}
+              href={categoryPath(post.category)}
               className="text-xs font-semibold text-brand-hover hover:text-text-primary"
             >
               View all →

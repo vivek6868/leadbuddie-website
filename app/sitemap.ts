@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/blog'
+import { getAllPosts, getCategories, categoryPath } from '@/lib/blog'
 
 const SITE_LAST_MODIFIED = new Date('2026-09-22T00:00:00.000Z')
 
@@ -8,6 +8,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = getAllPosts()
   const blogEntries: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/blog`, lastModified: SITE_LAST_MODIFIED, changeFrequency: 'weekly', priority: 0.9 },
+    ...getCategories().map((category) => ({
+      url: `${baseUrl}${categoryPath(category)}`,
+      lastModified: SITE_LAST_MODIFIED,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    })),
     ...blogPosts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.dateModified ?? post.date),
