@@ -363,7 +363,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <p className="text-xs uppercase tracking-[0.14em] text-text-muted">Written by</p>
                 <p className="mt-0.5 text-base font-semibold text-text-primary">{post.author}</p>
                 <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-                  Building practical operating systems and controlled AI agents for Indian businesses.
+                  Writing practical guides for Indian service and sales businesses.
                 </p>
               </div>
               <Button href="/demo" variant="primary" size="md">

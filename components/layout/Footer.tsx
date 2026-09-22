@@ -44,7 +44,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.15fr_1.85fr]">
           <div className="max-w-md">
             <p className="font-heading text-2xl font-extrabold tracking-[-0.04em]">LeadBuddie</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-300">Agentic business operations for water treatment, travel and retail. Buddie notices work, prepares the next action and helps your team continue the customer cycle.</p>
+            <p className="mt-4 text-sm leading-relaxed text-slate-300">LeadBuddie keeps track of your customers, service visits, renewals and enquiries — and tells your team what needs doing today. Built in India for water treatment, travel and retail businesses.</p>
             <a href="https://app.leadbuddie.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#25d366] px-5 py-3 text-sm font-bold text-[#082315] transition hover:-translate-y-0.5 hover:bg-[#68eb95]">Start your 30-day trial <ArrowUpRight className="h-4 w-4" /></a>
             <div className="mt-8 space-y-3 text-sm text-slate-400">
               <a href={`mailto:${CONTACT.general}`} className="flex items-center gap-2 hover:text-white"><Mail className="h-4 w-4" />{CONTACT.general}</a>

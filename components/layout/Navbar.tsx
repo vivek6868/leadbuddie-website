@@ -11,9 +11,9 @@ import { cn } from '@/lib/utils'
 import { ChevronDown, Droplets, Plane, ShoppingBag } from 'lucide-react'
 
 const INDUSTRIES = [
-  { name: 'Water treatment', note: 'Primary operating workflow', href: '/water-purifier-crm', icon: Droplets },
-  { name: 'Travel agencies', note: 'Enquiry to quote request', href: '/travel-agencies', icon: Plane },
-  { name: 'Retail businesses', note: 'Product intent to next action', href: '/retail-businesses', icon: ShoppingBag },
+  { name: 'Water treatment', note: 'Service, visits & AMC renewals', href: '/water-purifier-crm', icon: Droplets },
+  { name: 'Travel agencies', note: 'Enquiries into quotes', href: '/travel-agencies', icon: Plane },
+  { name: 'Retail businesses', note: 'Enquiries into orders', href: '/retail-businesses', icon: ShoppingBag },
 ]
 
 export function Navbar() {
@@ -62,7 +62,7 @@ export function Navbar() {
             </span>
             <div className={`hidden items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium lg:inline-flex ${isDarkHero ? 'border-white/15 bg-white/[0.07] text-slate-300' : 'border-border bg-bg-elevated/80 text-text-secondary'}`}>
               <span className="h-2 w-2 rounded-full bg-wa" />
-              <span>Agentic operator</span>
+              <span>AI employee</span>
             </div>
           </Link>
 

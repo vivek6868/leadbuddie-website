@@ -25,10 +25,10 @@ const resources = [
   },
   {
     icon: MessageCircle,
-    title: 'Water-treatment operating system',
-    description: 'See how customers, installed units, service visits, AMC renewals and agent actions connect.',
+    title: 'Software for water purifier businesses',
+    description: 'See how your customers, installed units, service visits and AMC renewals all come together.',
     href: '/water-purifier-crm',
-    cta: 'Explore water-treatment operations',
+    cta: 'See it for water purifier businesses',
   },
   {
     icon: ShieldCheck,
@@ -45,7 +45,7 @@ export default function ResourcesPage() {
       <section className="relative isolate overflow-hidden bg-[#07111f] px-4 pb-20 pt-28 text-white sm:px-6 md:pt-36 lg:px-8">
         <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:54px_54px]" />
         <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-[#25d366]/15 blur-[100px]" />
-        <div className="relative mx-auto max-w-4xl text-center"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]">Practical guidance for agentic operations</p><h1 className="mt-5 font-heading text-5xl font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Learn the workflow. <span className="text-[#79eea0]">Build the right operating system.</span></h1><p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">Straightforward guides and tools for water-treatment service, renewals, enquiries and responsible AI-agent actions.</p></div>
+        <div className="relative mx-auto max-w-4xl text-center"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8bf0aa]">Practical guides for business owners</p><h1 className="mt-5 font-heading text-5xl font-extrabold leading-[0.94] tracking-[-0.065em] sm:text-6xl">Learn the playbook. <span className="text-[#79eea0]">Run a tighter business.</span></h1><p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">Straightforward guides and tools for service visits, AMC renewals, customer enquiries and using AI without losing control.</p></div>
       </section>
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">

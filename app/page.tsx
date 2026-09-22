@@ -5,24 +5,24 @@ import { HOMEPAGE_FAQ } from '@/lib/faq'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'LeadBuddie — Agentic Business Operations for Water Treatment, Travel & Retail',
+  title: 'LeadBuddie — Software for Water Treatment, Travel & Retail Businesses',
   description:
-    'LeadBuddie is an agentic business operations platform for water-treatment companies, travel agencies and retail businesses. It watches customer cycles, prepares the next action and helps teams complete service, renewal, quote and order work.',
+    'LeadBuddie keeps track of your customers for you — who is due for service, whose AMC is running out, who is still waiting for a reply. Built for water purifier dealers, travel agencies and retail businesses in India.',
   keywords:
-    'agentic business operations, AI operations agent India, water purifier service management software, RO service management software, water treatment business software, AI agent for travel agencies, AI agent for retail business, AMC renewal software',
+    'water purifier service management software, RO service management software, water treatment business software, AMC renewal software India, water purifier dealer software, service due management software, travel agency software India, retail business software India',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'LeadBuddie — Give Every Customer Cycle an Operator',
+    title: 'LeadBuddie — Every Customer Looked After, Every Time',
     description:
-      'Agentic business operations for water treatment, travel and retail. Buddie watches what is due, prepares the next action and keeps work moving.',
+      'Buddie keeps track of who is due for service, whose renewal is coming up and who is waiting for a reply — then hands your team a job that is ready to do.',
     url: 'https://leadbuddie.com',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LeadBuddie — Agentic Business Operations',
+    title: 'LeadBuddie — Every Customer Looked After, Every Time',
     description:
-      'Give every customer cycle an operator. Built first for water-treatment operations, with purpose-built workflows for travel and retail.',
+      'Service visits, AMC renewals and customer enquiries — tracked, prepared and followed up. Built first for water purifier businesses in India.',
   },
 }
 

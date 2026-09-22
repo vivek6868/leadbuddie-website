@@ -50,7 +50,7 @@ const FAQ = [
   {
     question: 'Do I lose control over what the AI says?',
     answer:
-      'Choose Watch, Approval or Auto for eligible actions. Approved business knowledge, pricing guardrails and human takeover controls help define what Buddie may handle.',
+      'You decide how much Buddie does on its own — just watch, ask you before every message, or handle the routine ones itself. It only answers from what you have told it, and anything to do with price or a complaint comes to you.',
   },
   {
     question: 'Can my team work from one shared inbox?',
@@ -121,7 +121,7 @@ export default function WaterPurifierLeadManagementPage() {
         ]}
         faq={FAQ}
         related={[
-          { label: 'Water treatment operations', href: '/water-purifier-crm' },
+          { label: 'Water purifier service software', href: '/water-purifier-crm' },
           { label: 'AMC renewal software', href: '/amc-renewal-software' },
           { label: 'WhatsApp playbook', href: '/blog/whatsapp-for-water-purifier-business-2026' },
         ]}

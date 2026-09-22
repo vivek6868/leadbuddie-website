@@ -20,7 +20,7 @@ import {
 const PATH = '/ro-service-management'
 const TITLE = 'RO Service Management Software for Water Purifier Dealers | LeadBuddie'
 const DESCRIPTION =
-  'Agentic service operations for RO and water purifier businesses. Connect customer history, service requests, assignments, visits and the next cycle. WhatsApp is optional.'
+  'Service software for RO and water purifier dealers. Every complaint, visit, technician and customer history in one place — so nothing is missed and your technician never turns up blind. WhatsApp optional.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,17 +40,17 @@ const FAQ = [
   {
     question: 'What is RO service management software?',
     answer:
-      'RO service management software helps water purifier businesses organise service requests, visit details, complaints, callbacks, customer history and the next cycle. LeadBuddie can also connect eligible messaging when configured.',
+      'It is software that keeps every service call, visit, complaint and callback in one place, along with the customer’s full history. With LeadBuddie you can also send updates on WhatsApp once your business number is connected.',
   },
   {
     question: 'How does Buddie handle customer complaints?',
     answer:
-      'Buddie is your AI employee. When a customer messages about a leak, noise, or malfunction, Buddie identifies the complaint and routes it directly to your human review queue. It pauses automated replies for that lead and ensures you take over.',
+      'When a customer messages about a leak, a noise or a unit that has stopped working, Buddie recognises it as a complaint, stops replying automatically and puts it in front of your team straight away. Complaints are never left to a bot.',
   },
   {
     question: 'Can I schedule service visits from WhatsApp chat?',
     answer:
-      'Buddie can collect the details for a service-visit request. Your team checks availability and confirms the final visit; the record keeps the conversation context.',
+      'Buddie collects the details — what is wrong, when suits them, the address. Your team checks who is free and confirms the visit. The whole conversation stays attached to the customer.',
   },
   {
     question: 'Does it keep a full service history per customer?',
@@ -89,46 +89,46 @@ export default function RoServiceManagementPage() {
       />
       <NicheLanding
         eyebrow="Service & complaints, organised"
-        h1="RO service work with context from request to completion"
-        intro="Organise requests, assignments, visits and customer history from one workspace. Buddie can prepare the next action, while WhatsApp remains an optional channel for eligible customer and technician messages."
+        h1="Every service call finished, not forgotten"
+        intro="Keep every service call, technician assignment, visit and customer history in one place. Buddie gets the job ready for your team, and WhatsApp updates are there when you want them."
         trustPoints={[
-          'No WhatsApp required to begin',
-          'Visit work with customer context',
-          'History connected to the next cycle',
+          'No WhatsApp needed to start',
+          'Your technician gets the full history',
+          'The next service is set automatically',
         ]}
         problem={{
           heading: 'Service requests scattered across phones and chats are how dealers lose customers.',
           body: [
             'A customer messages about a noisy filter. It gets seen, then buried. The visit is never booked, or it’s booked but the technician shows up with no history. Small misses like these are why customers don’t renew.',
-            'LeadBuddie keeps the request, customer context, assignment and outcome together so the team can complete the visit and continue the next service cycle.',
+            'LeadBuddie keeps the complaint, the customer’s history, who is going and what happened, all in one place — so the visit gets done and the next service is already set.',
           ],
         }}
         featuresHeading="Service operations, all in one place"
         features={[
-          { icon: MessageCircle, title: 'Configured WhatsApp replies', desc: 'Buddie can answer routine service questions from approved knowledge when the message is eligible.' },
-          { icon: CalendarCheck, title: 'Visit-request capture', desc: 'Collect the preferred date, time, location and reason, then let your team confirm the visit.' },
+          { icon: MessageCircle, title: 'Routine questions answered', desc: 'Buddie handles “when is my service due” and “what does a filter change cost” from the answers you gave it.' },
+          { icon: CalendarCheck, title: 'Visit requests, complete', desc: 'Preferred date, time, address and what is wrong — collected before it reaches your team.' },
           { icon: History, title: 'Full service history', desc: 'Installed model, install date, AMC, past visits and notes — all on one customer drawer.' },
-          { icon: Wrench, title: 'Complaint routing', desc: 'Urgent complaints are flagged and sent to your review desk, stopping automated replies for human takeover.' },
+          { icon: Wrench, title: 'Complaints reach a person', desc: 'An upset customer is flagged for your team and automatic replies stop. No bot argues with them.' },
           { icon: Users, title: 'Team assignment & roles', desc: 'Assign visits and chats so any technician or staff member can pick up with full context.' },
-          { icon: MapPin, title: 'Dashboard suggestions', desc: 'See exactly which follow-up play or pending service task needs your attention today.' },
+          { icon: MapPin, title: 'What to do today', desc: 'Open the dashboard and see exactly which follow-up or pending visit needs you today.' },
         ]}
         stepsHeading="From service request to satisfied, renewing customer"
         steps={[
-          { title: 'Create or receive the service request', desc: 'Start from the workspace or a supported customer conversation and attach the request to the right customer.' },
-          { title: 'Review the issue and context', desc: 'Bring the installed product, history and reported problem together before assignment.' },
-          { title: 'Assign and complete the visit', desc: 'The office confirms the work, handles exceptions and records the visit outcome.' },
-          { title: 'Continue the service cycle', desc: 'Use the completed visit and configured service rule to prepare the next legitimate cycle.' },
+          { title: 'The call comes in', desc: 'From a WhatsApp message or your own team, attached to the right customer straight away.' },
+          { title: 'You see the full picture', desc: 'The unit you installed, the last visit and what they are complaining about — on one screen.' },
+          { title: 'Send someone and close it', desc: 'Your office picks the technician, sorts out anything odd and records what was done.' },
+          { title: 'The next service is set', desc: 'Counted from the visit you actually did, so the date is one your team can trust.' },
         ]}
         faq={FAQ}
         related={[
-          { label: 'Water treatment operations', href: '/water-purifier-crm' },
-          { label: 'RO technician job-card guide', href: '/blog/ro-technician-job-card-workflow' },
+          { label: 'Water purifier service software', href: '/water-purifier-crm' },
+          { label: 'Technician job-card guide', href: '/blog/ro-technician-job-card-workflow' },
           { label: 'Service-due date guide', href: '/blog/water-purifier-service-due-date-system' },
           { label: 'AMC renewal software', href: '/amc-renewal-software' },
         ]}
-        loopItems={['A service need becomes visible', 'Buddie prepares the customer and unit context', 'Your team completes the visit and next cycle']}
+        loopItems={['A customer reports a problem', 'Buddie pulls up their purifier and history', 'Your team sends someone and closes the visit']}
         ctaHeading="Make every service visit organised"
-        ctaSub="Start with your customer and service records. Add messaging automation after the operating workflow is ready."
+        ctaSub="Start with your customers and service records. Turn on WhatsApp reminders whenever you are ready."
       />
     </>
   )

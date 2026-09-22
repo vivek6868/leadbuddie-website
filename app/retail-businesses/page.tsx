@@ -6,57 +6,57 @@ import { breadcrumbSchema, faqSchema, serviceSchema, SITE_URL, softwareApplicati
 
 const PATH = '/retail-businesses'
 const TITLE = 'AI Agent for Retail Businesses — Product Enquiry to Next Action | LeadBuddie'
-const DESCRIPTION = 'An agentic product-enquiry workflow for retail businesses. Buddie understands buying intent, uses approved product knowledge, collects missing details and prepares an order, quotation or team handover.'
+const DESCRIPTION = 'Buddie answers product enquiries for your shop, finds the right item from your own catalogue, asks what is missing and raises an order or quote for your team. It never invents stock or prices.'
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: 'AI agent for retail business, retail product enquiry automation India, AI product sales agent, retail order request software, catalogue enquiry agent, AI sales operations retail',
+  keywords: 'retail business software India, product enquiry management, order request software, catalogue enquiry on WhatsApp, WhatsApp automation for shops, retail lead management India',
   alternates: { canonical: PATH },
   openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}${PATH}`, type: 'website', images: ['/images/stories/retail-owner-order-request.webp'] },
 }
 
 const FAQ = [
-  { question: 'Can Buddie recommend products?', answer: 'Buddie can use the catalogue, approved descriptions, keywords and business rules you configure. When a product match is uncertain, it can ask a clarifying question or bring in the team.' },
-  { question: 'Does Buddie confirm stock or the final selling price?', answer: 'Only information that the business has approved should be used. Live availability, discounts, negotiation and final commercial commitments can remain with a person.' },
-  { question: 'What can the agent prepare for the team?', answer: 'Depending on the configured workflow, Buddie can collect product intent, variant, quantity, location and other required details, then prepare an order request, quotation request or handover.' },
-  { question: 'Can this work for businesses with many products?', answer: 'The product-awareness workflow is designed to use configured catalogue context and clarify ambiguity. Catalogue quality, mappings and business rules determine how reliably a large range can be handled.' },
-  { question: 'Is WhatsApp required?', answer: 'WhatsApp is a supported conversational channel when connected through the official platform. The value of the agent is the structured intent, safe product context and next action it prepares.' },
+  { question: 'Can Buddie recommend products?', answer: 'Yes — from your catalogue and your own product descriptions. If it is not sure which item the customer means, it asks a question or brings your team in.' },
+  { question: 'Will it confirm stock or the final price?', answer: 'No. Live stock, discounts, bargaining and the final price stay with a person. Buddie sticks to what you have approved.' },
+  { question: 'What does my team actually receive?', answer: 'The product the customer wants, the variant, the quantity, where they are and how urgent it is — as an order request, a quote request, or a call for someone to take over.' },
+  { question: 'I have hundreds of products. Will it cope?', answer: 'Yes, as long as your catalogue is in reasonable shape — that is what Buddie reads from. We help you get it tidy during setup, and Buddie asks rather than guesses when two items look similar.' },
+  { question: 'Do I need WhatsApp?', answer: 'WhatsApp is the usual channel and connects through your official WhatsApp Business number. Enquiries can also reach LeadBuddie from your website.' },
 ]
 
 export default function RetailBusinessesPage() {
   return (
     <>
       <JsonLd data={[
-        serviceSchema({ name: 'LeadBuddie for Retail Businesses', serviceType: 'Agentic product-enquiry and request operations for retail businesses', description: DESCRIPTION, url: `${SITE_URL}${PATH}`, audience: 'Retailers, distributors and product-led small businesses' }),
+        serviceSchema({ name: 'LeadBuddie for Retail Businesses', serviceType: 'Product-enquiry and order-request software for retail businesses', description: DESCRIPTION, url: `${SITE_URL}${PATH}`, audience: 'Retailers, distributors and product-led small businesses' }),
         softwareApplicationSchema({ name: 'LeadBuddie — Retail Business Agent', description: DESCRIPTION, url: `${SITE_URL}${PATH}` }),
         faqSchema(FAQ),
         breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Retail Businesses', path: PATH }]),
       ]} />
       <AgentVerticalPage
-        eyebrow="Agentic product operations for retail"
-        h1={<>Turn product intent into a <span className="text-[#7cf4c5]">clear next action.</span></>}
-        intro="Buddie understands what the customer is trying to buy, uses approved product knowledge, collects what is missing and prepares the right request for your team."
+        eyebrow="For shops, distributors & product businesses"
+        h1={<>“Do you have this?” <span className="text-[#7cf4c5]">answered properly.</span></>}
+        intro="Buddie works out what the customer is actually after, finds it in your own catalogue, asks for what is missing and puts an order or quote on your team’s list."
         image="/images/stories/retail-owner-order-request.webp"
-        imageAlt="A retail business owner reviewing a structured customer order request"
+        imageAlt="A shop owner reading a complete customer order request"
         icon={ShoppingBag}
-        workflowTitle="From “Do you have this?” to an actionable product request."
-        workflowIntro="The agent helps the customer express the real need while keeping stock, discount and final commercial decisions inside the business rules."
+        workflowTitle="From a one-line question to an order you can fill."
+        workflowIntro="Buddie helps the customer say what they actually want. Stock, discounts and the final price stay with you."
         steps={[
-          { title: 'Understand intent', copy: 'Identify the product, use case or category behind the customer’s question.' },
-          { title: 'Clarify the match', copy: 'Ask for configured details such as variant, quantity, budget or location.' },
-          { title: 'Apply product context', copy: 'Use approved catalogue knowledge and avoid unsupported claims.' },
-          { title: 'Prepare the next action', copy: 'Create an order request, quotation request or handover for the team.' },
+          { title: 'Works out what they want', copy: 'The product, the size, or just the job they are trying to get done.' },
+          { title: 'Asks what is missing', copy: 'Variant, quantity, budget, delivery area — whatever your shop needs.' },
+          { title: 'Checks your catalogue', copy: 'Answers from your own products and descriptions, never from guesswork.' },
+          { title: 'Raises the order', copy: 'An order or quote request lands on your team’s list, ready to fill.' },
         ]}
-        requestTitle="The team receives buying intent, not an unread chat."
-        requestFields={['Product or use case', 'Variant or specification', 'Quantity', 'Customer location', 'Budget or urgency', 'Customer contact context']}
-        teamReceives={['Order or quote request', 'Matched product context', 'Missing-detail status', 'Clear next action']}
-        operatingRules={['Only configured products, descriptions and policies guide the response.', 'Uncertain matches trigger a question or human handover.', 'Stock, negotiated price and final order confirmation can stay with the team.', 'Watch, Approval and eligible Auto modes define the agent’s autonomy.']}
+        requestTitle="Your team gets a real order, not an unread chat."
+        requestFields={['What they want to buy', 'Variant or size', 'How many', 'Where they are', 'Budget and how soon', 'Who they are and how to reach them']}
+        teamReceives={['An order or quote request', 'The product they meant', 'Anything still missing', 'What to do next']}
+        operatingRules={['Buddie answers only from the products and policies you have given it.', 'If the match is not obvious, it asks the customer or calls you in.', 'Stock, discounts and confirming the order stay with your team.', 'You choose how much it does alone: watch only, ask you first, or handle routine replies.']}
         outcomes={[
-          { title: 'Faster product understanding', copy: 'Bring the real need and useful specification together early.' },
-          { title: 'Safer recommendations', copy: 'Use approved catalogue context and expose uncertainty.' },
-          { title: 'Cleaner sales handover', copy: 'Give the team a structured request instead of a fragmented conversation.' },
-          { title: 'Consistent next actions', copy: 'Route an enquiry toward an order, quotation or person based on the rules.' },
+          { title: 'No more back and forth', copy: 'The real need and the right size are sorted out in the first conversation.' },
+          { title: 'No made-up answers', copy: 'Buddie sticks to your catalogue and says when it is not sure.' },
+          { title: 'Cleaner orders', copy: 'Your team gets one clear request instead of scrolling a chat for details.' },
+          { title: 'Every enquiry goes somewhere', copy: 'An order, a quote or a person — nothing is left sitting unread.' },
         ]}
         faq={FAQ}
       />

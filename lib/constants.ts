@@ -130,8 +130,8 @@ export const FEATURES = [
   },
   {
     id: 'no-invent-guardrail',
-    title: 'Pricing guardrails & Human takeover',
-    description: 'Buddie uses the business information you approve. When a price or fact is not configured, it can defer to your team; manual takeover can pause automated replies for that lead.',
+    title: 'It will not invent a price',
+    description: 'Buddie only says what you have told it. If a price or a fact is missing, it brings your team in — and you can take over a chat any time to stop automatic replies.',
     icon: 'ShieldCheck',
   },
   {
@@ -321,11 +321,11 @@ export const TESTIMONIALS = [
 ] as const
 
 export const SEO = {
-  title: 'LeadBuddie — Agentic Business Operations',
+  title: 'LeadBuddie — Your AI Employee for Customers and Service Work',
   description:
-    'LeadBuddie helps water-treatment, travel and retail businesses notice work, understand the context, prepare the next action and continue the customer cycle. WhatsApp is an optional channel for eligible workflows.',
+    'LeadBuddie keeps track of your customers, service visits, AMC renewals and enquiries, and tells your team what needs doing today. Built for water purifier, travel and retail businesses in India. WhatsApp optional.',
   keywords:
-    'agentic business operations, AI operations agent India, AI business agent, water purifier service management software, RO service management software India, water treatment business software, AMC renewal software India, water purifier dealer software, service due management, travel agency AI agent, retail business AI agent, WhatsApp Business automation',
+    'water purifier service management software, RO service management software India, water treatment business software, AMC renewal software India, water purifier dealer software, service due management software, RO service CRM, AMC reminder app India, travel agency software India, retail business software India, WhatsApp CRM India, WhatsApp automation for business',
 } as const
 
 /** Social proof stats for homepage (CustomerProofSection)

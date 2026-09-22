@@ -37,7 +37,7 @@ export function NicheLanding({
   related,
   ctaHeading,
   ctaSub,
-  loopItems = ['A customer messages', 'Buddie collects the useful details', 'Your team receives a clear next action'],
+  loopItems = ['A customer messages you', 'Buddie collects what your team needs', 'The job lands on your list, ready to do'],
 }: NicheLandingProps) {
   return (
     <>
@@ -80,7 +80,7 @@ export function NicheLanding({
 
           <div className="relative rounded-[30px] border border-slate-200 bg-[#092331] p-4 text-white shadow-[0_34px_90px_rgba(15,59,49,0.18)] sm:p-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <div><p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#8af7cd]">Buddie operating view</p><p className="mt-1 text-base font-extrabold">From signal to completed work</p></div>
+              <div><p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#8af7cd]">With Buddie</p><p className="mt-1 text-base font-extrabold">How one enquiry goes</p></div>
               <span className="grid h-10 w-10 place-items-center rounded-2xl bg-[#67f3bd] text-[#06271f]">✦</span>
             </div>
             <div className="mt-5 space-y-3">
@@ -91,7 +91,7 @@ export function NicheLanding({
                 </div>
               ))}
             </div>
-            <div className="mt-4 rounded-2xl border border-[#67f3bd]/20 bg-[#0d3029] p-4 text-xs font-semibold leading-relaxed text-[#b9e4d5]">Your team keeps control of the decisions that require judgment.</div>
+            <div className="mt-4 rounded-2xl border border-[#67f3bd]/20 bg-[#0d3029] p-4 text-xs font-semibold leading-relaxed text-[#b9e4d5]">Your team still makes every call that matters.</div>
           </div>
         </div>
       </section>
@@ -108,7 +108,7 @@ export function NicheLanding({
             ))}
           </div>
           <div data-reveal className="rounded-2xl border border-brand/25 bg-brand/5 p-8 shadow-inner">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-hover">A clearer operating loop</p>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-hover">How it works</p>
             <div className="mt-5 space-y-3 text-left text-sm font-semibold text-text-primary">
               {loopItems.map((item, index) => (
                 <div key={item} className="flex items-center gap-3 rounded-xl border border-border bg-bg-card px-3 py-3">

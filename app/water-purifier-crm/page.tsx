@@ -12,7 +12,7 @@ import {
 const PATH = '/water-purifier-crm'
 const TITLE = 'Water Purifier & RO Service Management Software | LeadBuddie'
 const DESCRIPTION =
-  'Agentic operations software for water purifier and RO businesses in India. Connect customers, installed units, service work, visits, AMC renewals and the next cycle. WhatsApp is optional.'
+  'Software for water purifier and RO businesses in India. Keep your customers, the units you installed, service visits and AMC renewals in one place, and know who needs attention today. WhatsApp optional.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -35,7 +35,7 @@ export default function WaterPurifierCrmPage() {
         data={[
           serviceSchema({
             name: 'Water Purifier and RO Service Management Software',
-            serviceType: 'Agentic operations software for water purifier and RO businesses',
+            serviceType: 'Service and renewal software for water purifier and RO businesses',
             description: DESCRIPTION,
             url: `${SITE_URL}${PATH}`,
           }),

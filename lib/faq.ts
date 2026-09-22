@@ -5,44 +5,44 @@
  */
 export const HOMEPAGE_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does an agentic business operator do?',
+    question: 'What does Buddie actually do?',
     answer:
-      'LeadBuddie watches for work that needs attention, brings together the relevant customer and business context, prepares a safe next action and keeps the outcome available for the next cycle. Your team keeps control of decisions, exceptions and final commitments.',
+      'Buddie keeps an eye on your customers all day. It notices who is due for service, whose AMC is running out and who is still waiting for a reply, pulls up everything about that customer, and puts a ready-to-do job in front of your team. Your team still makes every decision that matters.',
   },
   {
-    question: 'Does a water-treatment business need WhatsApp to use LeadBuddie?',
+    question: 'Do I need WhatsApp to use LeadBuddie?',
     answer:
-      'No. A water-treatment business can begin with customer records, installed units, service work, visits and AMC cycles in the LeadBuddie workspace. WhatsApp can be connected later when the business wants eligible customer or technician messaging.',
+      'No. You can start with your customers, the products you installed, service visits and AMC renewals straight away. Connect your WhatsApp Business number later if you want reminders and updates going out on it.',
   },
   {
-    question: 'Is LeadBuddie just a customer database?',
+    question: 'Is this just another CRM?',
     answer:
-      'LeadBuddie is designed around active work and completed customer cycles. It keeps the customer memory needed for operations, while Buddie helps notice, prepare and continue the next action instead of leaving teams to manage static records and dashboards alone.',
+      'A CRM is built around selling. LeadBuddie is built around the work — the service that is due, the visit that needs a technician, the renewal that is about to lapse. It keeps the customer history you need and then tells you what to do with it.',
   },
   {
-    question: 'Which water-treatment workflows are covered?',
+    question: 'What does it cover for a water purifier business?',
     answer:
-      'The water-treatment workflow connects customers, installed units, service due, service requests, visits, service history, AMC or renewal work and the next service cycle. Availability of individual automations depends on the configured plan, business controls and messaging setup.',
+      'Customers and the units you installed, service due dates, complaints and requests, technician visits, service history, AMC renewals and the next service. Automatic WhatsApp messages depend on your plan and on your number being connected.',
   },
   {
-    question: 'How does LeadBuddie work for travel agencies?',
+    question: 'How does it help a travel agency?',
     answer:
-      'Buddie can understand a trip enquiry, collect the details required by that agency and prepare a structured quote or booking request for the team. The agency reviews availability, itinerary and final price.',
+      'Buddie asks the traveller where, when, how many and what budget, then puts a quote-ready enquiry on your desk. Your team checks availability, builds the itinerary and sets the price.',
   },
   {
-    question: 'How does LeadBuddie work for retail businesses?',
+    question: 'How does it help a retail business?',
     answer:
-      'Buddie uses the product information and rules the business approves to understand an enquiry, collect missing details and prepare an order, quotation or team handover. Uncertain matches and final commercial decisions can stay with a person.',
+      'Buddie works out which product the customer means from your own catalogue, asks for the variant, quantity and delivery details, and raises an order or quote request. Stock, discounts and the final price stay with your team.',
   },
   {
-    question: 'Can Buddie act automatically?',
+    question: 'Can Buddie reply to customers on its own?',
     answer:
-      'Where a workflow is eligible, the business can choose Watch, Approval or Auto. Approved knowledge, confidence checks, plan limits, consent and provider rules still govern what can be prepared or sent.',
+      'That is your choice. Buddie can simply watch and suggest, ask you to approve every message before it goes, or handle the routine ones by itself. You can change your mind any time.',
   },
   {
-    question: 'Can I still connect WhatsApp?',
+    question: 'Which WhatsApp number does it use?',
     answer:
-      'Yes. LeadBuddie supports the official WhatsApp Business Platform for eligible conversational and outbound workflows. WhatsApp is a channel Buddie can use; it is not a requirement for the core water-treatment operating workspace.',
+      'Your own. LeadBuddie connects through the official WhatsApp Business Platform — no QR scanning, no second SIM, no risk to your number.',
   },
 ]
 

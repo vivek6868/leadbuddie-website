@@ -5,7 +5,7 @@ import { getAllPosts, getCategories, getPostsByCategory, type BlogCategory } fro
 import { BlogCard } from '@/components/blog/BlogCard'
 
 export const metadata: Metadata = {
-  title: 'Agentic Operations Guides for Indian Businesses | LeadBuddie',
+  title: 'Guides for Indian Service & Sales Businesses | LeadBuddie',
   description:
     'Practical guides for water-treatment operations, service cycles, AMC renewals, lead handling and controlled AI agents for Indian businesses.',
   alternates: { canonical: '/blog' },

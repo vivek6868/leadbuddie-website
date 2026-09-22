@@ -11,11 +11,11 @@ readTimeMinutes: 9
 isPublished: true
 ---
 
-A trustworthy water purifier service-due date needs two things: a valid starting event and a configured service interval. The best starting event is usually the most recent completed service. A verified installation can start the first cycle only when the business policy allows it and the record is reliable.
+A service date you can trust needs two things: a real service you are counting from, and your own service interval. Usually that is the last service you actually completed. An installation date can start the first cycle, but only if you know the record is reliable.
 
-If either the event or interval is missing, the correct answer is **needs service setup**. It is not a guessed date.
+If either piece is missing, the honest answer is **this one needs setting up** — not a date somebody guessed.
 
-This sounds strict, but it protects the most valuable part of a service system: the team’s trust in the work queue.
+That sounds strict. It protects the thing that matters most: your team believing the list when they open it in the morning.
 
 ## Why service-due dates become unreliable
 
@@ -43,106 +43,38 @@ Bad due dates cause real operating damage:
 
 The solution is not a more colourful dashboard. It is a clear due-date policy.
 
-## The service-due formula
+## Two things decide the date
 
-At its simplest:
+**What you are counting from.** The best answer is the last service you actually completed on that unit — you know the work happened, on which purifier, on which day. If there has been no service yet, a reliable installation date can start the first cycle. An enquiry date, a sale date or “the date somebody last touched the spreadsheet” should never quietly start a maintenance cycle.
 
-```text
-next service due = valid service anchor + configured interval
-```
+**How long between services.** Six months for a home RO, three for a commercial unit, something else for a particular AMC plan — whatever your business actually does. Write it down against the unit or the plan. If the interval only lives in one senior technician’s head, you do not have a system.
 
-Both inputs need evidence.
+If either piece is missing, leave the date blank and flag the unit. A blank you can fix beats a date nobody believes.
 
-### Valid service anchor
+## What you need to record per unit
 
-A service anchor is the event from which the next cycle begins. Use the strongest available evidence first.
+More than a name and a phone number:
 
-| Priority | Possible anchor | When it is valid |
-| --- | --- | --- |
-| 1 | Most recent completed service visit | The visit belongs to the correct customer and installed unit, and has a real completion date |
-| 2 | Verified commissioning or installation | The business explicitly allows installation to start the first cycle and the record is sufficiently recent and reliable |
-| 3 | Reviewed historical service record | The source and meaning of the date were confirmed during migration |
-| — | Missing or ambiguous date | Do not calculate; mark the unit as needing service setup |
-
-An enquiry date, spreadsheet modification date or unverified sales date should not silently start a maintenance cycle.
-
-### Configured interval
-
-The interval answers “how long after this event should the next service become due?”
-
-It might be defined by:
-
-- service type;
-- purifier model or category;
-- AMC plan;
-- commercial versus residential use;
-- local operating policy.
-
-Avoid hiding the interval inside code or depending on one employee’s memory. The team should be able to see the rule applied to the unit.
-
-## The minimum data required
-
-A dependable service-due system needs more than customer name and phone number.
-
-| Field | Purpose |
+| What to record | Why it matters |
 | --- | --- |
-| Customer identity | Connects the work to the correct relationship |
-| Installed-unit identity | Prevents histories from mixing when a customer has multiple units |
-| Service type | Determines what kind of work is repeating |
-| Anchor date | Records the real event that begins this cycle |
-| Anchor source | Explains whether the date came from a completed visit, installation or reviewed import |
-| Interval | Defines the repeat period |
-| Next due date | Stores or derives the next action point |
-| Setup status | Makes missing or uncertain information visible |
+| The customer | So the work sits on the right relationship, not a duplicate row |
+| Which unit | A customer with a home RO and a shop RO needs two separate histories |
+| Type of service | A filter change and a leak inspection are not the same job |
+| The date you are counting from | The real service or install this cycle starts from |
+| Where that date came from | “Visit we did” and “date from the old Excel” are worth very different levels of trust |
+| The interval | How long until the next one is due |
+| Next due date | What your team actually works from |
+| Whether it still needs setting up | So gaps stay visible instead of disappearing |
 
-The **anchor source** is often forgotten. It matters because two identical dates can have very different levels of confidence.
+The one most people skip is **where the date came from**. Two identical dates can mean completely different things — one you can act on, one you should check first.
 
-## The correct order for recalculating a cycle
+## When a date should change
 
-When new information arrives, use a deterministic order.
+**A service you completed is the best reason to move it.** Real work, on a known unit, on a known day. A visit that was cancelled, duplicated or only scheduled should not shift anything.
 
-### 1. Look for the latest valid completed service
+**Installation counts only for the first cycle.** And only when you trust the record. An install from four years ago should not turn into a confident “overdue by 742 days” — that customer needs a human look, not a reminder.
 
-The completed visit is normally the best evidence. It tells the system that real work happened on a known unit at a known time.
-
-The visit should be attached to:
-
-- the correct business;
-- the correct customer;
-- the correct installed unit where possible;
-- a completed state;
-- a reliable completion timestamp.
-
-Cancelled, duplicate or merely scheduled visits should not move the cycle.
-
-### 2. Consider installation only for the first cycle
-
-Installation can be a valid anchor when:
-
-- there is no later completed service;
-- the business policy permits it;
-- the installation record is verified;
-- the date is not obviously stale or ambiguous;
-- the installed unit has a valid interval.
-
-An installation from several years ago should not automatically create a precise “overdue by 742 days” claim. It may instead need human review.
-
-### 3. Apply the configured interval
-
-Use the interval that belongs to the service policy, product or plan. If there is no interval, stop and surface the missing setup.
-
-### 4. Preserve the evidence
-
-The result should retain:
-
-- calculated due date;
-- anchor date;
-- anchor type;
-- interval used;
-- time of calculation;
-- whether a person reviewed an imported value.
-
-This lets the team answer a customer who asks, “Why are you saying my service is due?”
+**Be able to explain the date.** When a customer asks “why are you telling me my service is due?”, somebody in your office should be able to say “we serviced it on 10 August and your plan is every six months.” If nobody can answer that, the list will lose the team’s trust and they will go back to their own notebooks.
 
 ## Important exceptions
 
@@ -170,38 +102,29 @@ The service history belongs to the installed unit and business relationship. Re-
 
 The service record may still be operationally useful even when messaging is unavailable. Phone or WhatsApp eligibility should not decide whether the unit exists in the service system.
 
-## Build three queues, not one giant overdue list
+## Three lists, not one giant overdue pile
 
-A useful operating view separates work by confidence.
+Split the work by how much you trust it.
 
-### Due and ready
+### Due now
 
-The anchor and interval are valid. The team can review the customer and take the next action.
+You know the last service and you know the interval. Your team can call today.
 
-### Upcoming
+### Coming up
 
-The service is not due yet, but it is approaching the business’s planning window.
+Not due yet, but close enough to plan the route around.
 
-### Needs service setup
+### Needs setting up
 
-The unit is missing an interval, anchor or trusted installed-product link. A person must correct the record before any customer action.
+No interval, no reliable date, or you are not sure which unit it belongs to. Somebody fixes the record before this customer hears from you.
 
-This third queue prevents missing data from being disguised as automation.
+That third list is the important one. Without it, missing information hides inside your reminders and goes out to customers as fact.
 
-## What an AI agent can do safely
+## Where AI genuinely helps — and where it should not
 
-An AI operations agent can help with interpretation and preparation:
+AI is good at the reading and writing around this work. It can sum up a customer’s history in two lines, spot that a WhatsApp message is really a service request, point out which units are missing a date, draft the follow-up, and gather up everything that needs a human eye.
 
-- summarise the customer and service history;
-- identify an apparent service request in a conversation;
-- highlight missing fields;
-- prepare a follow-up draft;
-- explain which business rule is relevant;
-- group the work that needs review.
-
-The agent should not decide that an ambiguous date is a completed service. It should not invent an interval. It should not send a reminder when the underlying work record fails validation.
-
-The operating system remains the judge: validate the evidence, apply the configured rule, persist the result and control whether an action may proceed.
+What it should never do is fill in a gap to look helpful. It should not decide an unclear old date counts as a completed service, invent an interval nobody set, or message a customer about a record that does not add up. “I am not sure about this one” is the right answer, and it should say so instead of guessing.
 
 ## A weekly service-due routine
 
@@ -233,41 +156,41 @@ A small RO service business can run this rhythm even before adding messaging aut
 - resolve missing intervals;
 - review ambiguous imported dates;
 - merge confirmed duplicate customer records carefully;
-- check for units without a usable service anchor.
+- check for units with no reliable date to count from.
 
 ## Service-due spreadsheet template
 
 If you are starting in Excel, use explicit columns rather than one generic “date” field.
 
-| Customer | Installed unit | Service type | Last completed service | Anchor source | Interval | Next due | Setup status |
+| Customer | Unit | Service type | Last service done | Where that date came from | Interval | Next due | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Example customer | Home RO | Filter service | 2026-08-10 | Completed visit | 180 days | 2027-02-06 | Ready |
-| Example customer | Commercial RO | Preventive visit | — | — | 90 days | — | Needs anchor |
+| Example customer | Home RO | Filter service | 2026-08-10 | Visit we completed | 180 days | 2027-02-06 | Ready |
+| Example customer | Commercial RO | Preventive visit | — | — | 90 days | — | Needs setting up |
 
-Treat these as operational fields, not marketing data. Review the sheet before turning any row into a reminder campaign.
+Go through the sheet once before any row turns into a message to a customer.
 
 ## Frequently asked questions
 
-### Should installation date always start the first service cycle?
+### Should the installation date always start the first cycle?
 
-No. It should start the first cycle only when the business policy allows it and the date is trustworthy. A stale or unclear installation record should go to review.
+No. Only when you trust that date. An old or unclear install record should go to somebody to check first.
 
 ### Should a complaint visit reset the service date?
 
-Only if the configured policy says that the completed service type resets that cycle. Inspection and planned filter replacement may have different effects.
+Only if that kind of work really does reset the cycle for you. A leak inspection and a full filter replacement usually should not count the same.
 
-### Can WhatsApp reminders run without a due-date system?
+### Can I send WhatsApp reminders without sorting this out first?
 
-They can be sent, but they will not be trustworthy. Fix the customer, unit, anchor and interval first. Messaging should execute valid work, not create it.
+You can, but they will be wrong often enough to embarrass you. Fix the customer, the unit, the date and the interval first. Reminders should carry work that is already correct.
 
-### What happens when data is missing?
+### What if the information just is not there?
 
-Show “needs service setup.” That is an honest and actionable status. A guessed date creates false certainty.
+Say so — “needs setting up.” It is honest and somebody can act on it. A guessed date only looks like an answer.
 
-## Trustworthy dates create a trustworthy operation
+## A list your team believes is worth more than a big number
 
-The purpose of a service-due system is not to produce the largest overdue count. It is to give the team a worklist they can trust.
+The point is not to show the biggest overdue count on the dashboard. It is to give your team a list they pick up and act on without second-guessing it.
 
-[LeadBuddie’s water-treatment operating system](/water-purifier-crm) connects service-due work to the customer, installed unit, visit history, AMC context and next cycle. WhatsApp can be connected later for eligible messaging; it is not required to build the operational foundation.
+[LeadBuddie for water purifier businesses](/water-purifier-crm) keeps service due dates tied to the customer, the unit you installed, past visits and the AMC — and flags anything it is not sure about instead of guessing. WhatsApp reminders are there when you want them; you do not need them to get started.
 
-Explore [RO service operations](/ro-service-management) or [book a walkthrough](/demo) to map the cycle using your existing data.
+See [RO service management](/ro-service-management) or [book a walkthrough](/demo) with your own data.

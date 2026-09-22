@@ -9,7 +9,7 @@ export function FAQSection() {
       <SectionHeader
         label="FAQ"
         title="Questions owners ask before giving Buddie real work"
-        description="How the agent, operating workflows, channels and human control work together."
+        description="Setup, what Buddie can say, what it can send, and where your team steps in."
         centered
         className="mb-12"
       />

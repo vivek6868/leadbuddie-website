@@ -16,7 +16,7 @@ export function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LeadBuddie Blog - Agentic Operations Guides</title>
+    <title>LeadBuddie Blog — Guides for Indian Businesses</title>
     <link>${BASE_URL}/blog</link>
     <description>Practical guides for water-treatment operations, service cycles, renewals, lead handling and controlled AI agents.</description>
     <language>en-in</language>

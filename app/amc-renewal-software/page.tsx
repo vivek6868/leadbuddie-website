@@ -20,7 +20,7 @@ import {
 const PATH = '/amc-renewal-software'
 const TITLE = 'Water Purifier AMC Renewal Operations Software | LeadBuddie'
 const DESCRIPTION =
-  'Agentic AMC renewal operations for water purifier and RO businesses. Keep contract context, due work, callbacks, outcomes and optional customer messaging in one system.'
+  'AMC renewal software for water purifier and RO businesses. See whose contract is expiring, follow up on time, track callbacks and record every outcome — so renewals stop quietly lapsing.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,22 +40,22 @@ const FAQ = [
   {
     question: 'What is AMC renewal software?',
     answer:
-      'AMC renewal software keeps contract dates, due accounts, callbacks, follow-up status and outcomes visible. LeadBuddie can also prepare eligible customer messages when a channel is connected and configured.',
+      'It keeps every contract date, every customer who is due, every callback and every outcome in one list. With LeadBuddie, Buddie can also write the follow-up message for you once your WhatsApp Business number is connected.',
   },
   {
     question: 'Which businesses can use LeadBuddie for AMC renewals?',
     answer:
-      'The current AMC renewal workflow is for eligible water purifier, RO and water-treatment businesses on Growth or Scale. Other industries should contact us before assuming the workflow is available for their account.',
+      'Right now it is built for water purifier, RO and water-treatment businesses on the Growth or Scale plan. If you are in another service trade, talk to us first — we will tell you honestly whether it fits.',
   },
   {
     question: 'How does LeadBuddie automate AMC renewals?',
     answer:
-      'LeadBuddie can surface due renewal work and prepare configured follow-ups. Sending depends on the selected operating mode, approved templates, customer consent and messaging eligibility.',
+      'It shows you who is due and writes the follow-up. Whether that message goes out on its own or waits for your approval is up to you — and your WhatsApp Business number has to be connected first.',
   },
   {
     question: 'Is it safe to automate customer reminders?',
     answer:
-      'Choose Watch, Approval or Auto for eligible actions. Reminder sends still depend on approved templates, customer consent, account health and WhatsApp policy.',
+      'You decide. Buddie can just show you the list, draft each reminder for you to approve with one tap, or send the routine ones itself. Reminders go out from your own WhatsApp Business number using formats WhatsApp has approved.',
   },
   {
     question: 'Can I track manual callbacks?',
@@ -65,7 +65,7 @@ const FAQ = [
   {
     question: 'How much does LeadBuddie cost?',
     answer:
-      'LeadBuddie has a limited Free plan. Water-treatment AMC tools are available on eligible paid plans. Every signup receives a 30-day Growth trial with no card required.',
+      'There is a limited free plan, and AMC tools come with the paid plans. Every signup gets a 30-day Growth trial — no card needed.',
   },
 ]
 
@@ -95,44 +95,44 @@ export default function AmcRenewalSoftwarePage() {
       <NicheLanding
         eyebrow="Keep renewal work visible"
         h1="AMC renewal work that does not disappear"
-        intro="Organise expiring contracts, due work, callbacks, renewal outcomes and lapsed accounts from one operating workspace. Connect WhatsApp only when you want eligible customer messaging."
+        intro="See whose contract is expiring, who promised to call back and who has already lapsed — all in one list. Connect WhatsApp when you want the follow-ups going out on their own."
         trustPoints={[
-          'Due-work renewal queue',
-          'Watch, Approval or Auto controls',
-          'WhatsApp messaging is optional',
+          'One list of who is due',
+          'You approve what goes out',
+          'WhatsApp optional',
         ]}
         problem={{
           heading: 'The AMC renewal is the cheapest sale you have — and the one most service businesses lose.',
           body: [
             'The customer already trusts you, already paid for the unit or service, and already knows your team. Renewing their AMC should be effortless. Instead, manual reminders get forgotten, callbacks get lost, and contracts quietly lapse.',
-            'LeadBuddie keeps due dates, callbacks and outcomes visible, then can prepare configured messages when the plan, templates and messaging conditions are in place.',
+            'LeadBuddie keeps every due date, callback and outcome in front of you, and can write the follow-up so your team only has to make the call.',
           ],
         }}
-        featuresHeading="A controlled renewal workflow for water-treatment teams"
+        featuresHeading="Everything you need to hold on to a renewal"
         features={[
-          { icon: RefreshCcw, title: 'Due-based renewal work', desc: 'Surface renewal work from real contract dates and the business rules you configure.' },
+          { icon: RefreshCcw, title: 'Who is due, today', desc: 'Every contract nearing its end date moves to the top of the list on its own.' },
           { icon: Filter, title: 'Sorted by urgency', desc: 'Filter by due this week, next 14, next 30, callbacks, or lapsed. Always know who is due next.' },
-          { icon: BellRing, title: 'Lapsed-account follow-up', desc: 'Prepare a reactivation play for eligible lapsed accounts and track the customer response.' },
+          { icon: BellRing, title: 'Win back the lapsed ones', desc: 'Customers who let their AMC go get their own follow-up, and you see who comes back.' },
           { icon: CalendarClock, title: 'Callback scheduling', desc: '“Call me after the 20th” becomes a real follow-up on the right date with notes attached.' },
-          { icon: PhoneCall, title: 'Owner-set operating mode', desc: 'Use Watch, Approval or Auto based on the messages and controls appropriate for your business.' },
-          { icon: DollarSign, title: 'Renewal status visibility', desc: 'Track due, callback, renewed and lapsed records so the team can see what needs action.' },
+          { icon: PhoneCall, title: 'As hands-off as you like', desc: 'Buddie can just show you the list, ask before every message, or handle the routine ones itself.' },
+          { icon: DollarSign, title: 'Know where every one stands', desc: 'Due, call back later, renewed or lapsed — nothing sits in someone’s head.' },
         ]}
-        stepsHeading="How the renewal workflow operates"
+        stepsHeading="How a renewal gets saved"
         steps={[
           { title: 'Import or convert your customers', desc: 'Upload your rough Excel list or add customers. Each profile tracks their equipment, contract value and AMC end-date.' },
-          { title: 'Surface due renewal work', desc: 'When a real contract approaches expiry, the operating queue shows what needs attention.' },
-          { title: 'Review the next action', desc: 'Work manually from the workspace or prepare eligible messages under the selected mode and business controls.' },
-          { title: 'Follow up on replies and lapsed accounts', desc: 'Callbacks, replies and renewal status stay visible so your team can complete the commercial action.' },
+          { title: 'See who is due', desc: 'As a contract nears its end date, that customer moves to the top of your list.' },
+          { title: 'Make the call', desc: 'Work the list yourself, or let Buddie draft the follow-up for you to approve with one tap.' },
+          { title: 'Chase the ones who went quiet', desc: 'Callbacks, replies and lapsed customers stay on the list until somebody closes them.' },
         ]}
         faq={FAQ}
         related={[
-          { label: 'Water treatment operations', href: '/water-purifier-crm' },
+          { label: 'Water purifier service software', href: '/water-purifier-crm' },
           { label: 'RO service management', href: '/ro-service-management' },
           { label: 'Water purifier service software guide', href: '/blog/water-purifier-service-management-software-guide-2026' },
         ]}
-        loopItems={['A real contract becomes due', 'Buddie prepares the renewal context', 'Your team completes and records the outcome']}
+        loopItems={['An AMC is about to expire', 'Buddie brings up the customer and drafts the follow-up', 'Your team calls and records what they said']}
         ctaHeading="Bring your AMC follow-up into one workflow"
-        ctaSub="Start with the renewal worklist. Add eligible messaging automation when your data and operating rules are ready."
+        ctaSub="Start with the renewals list. Turn on automatic reminders once your data is clean and you are comfortable."
       />
     </>
   )
