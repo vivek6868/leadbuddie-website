@@ -2,7 +2,7 @@
 
 /*
  * Buddie Voice — customers speak, Buddie listens, speaks back, and files the request.
- * Facts mirror leadmate-hutliv (Sep 2026): voice notes understood on every Buddie plan;
+ * Facts mirror the live product (Sep 2026): voice notes understood on every Buddie plan;
  * spoken replies on Growth (default voice) and Scale (four voices) in English, Hindi,
  * Tamil and Malayalam; owner modes Off / Smart / Customer asks; never spoken for menus,
  * links or hand-overs. Scenes are illustrative — keep them request-shaped, never a

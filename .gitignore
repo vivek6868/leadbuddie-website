@@ -35,3 +35,17 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Internal working documents — audits, growth plans, outreach copy. This repo is PUBLIC;
+# business strategy and candid product critique do not belong in it.
+/LeadBuddie-*.md
+/*-Audit.md
+/REDESIGN_SUMMARY.md
+marketing/*.md
+
+# Unrelated personal files that were committed by accident
+/resume-exports/
+
+# Editor / local-machine config (contains absolute paths from a dev's machine)
+/.idea/
+/.claude/launch.json

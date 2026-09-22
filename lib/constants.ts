@@ -54,7 +54,7 @@ export const LEGAL_LINKS = [
 // that's the headline value-prop after V1 ship — replies, sends brochures, follows up,
 // escalates. The old "AI Reply Copilot" entry is retired (it described V0's manual
 // click-to-suggest; the product now auto-acts within owner-chosen autonomy bounds). Mirror
-// the live product in leadmate-hutliv so the marketing page never overpromises.
+// the live product so the marketing page never overpromises.
 export const FEATURES = [
   {
     id: 'buddie-ai-sales-employee',
@@ -200,7 +200,7 @@ export const PLAN_VISIBLE_FEATURES: Record<string, string[]> = {
   ],
 } as const
 
-// Public 2026 pricing ladder. Mirrors leadmate-hutliv/config/plans.ts (the visible `starter_v3`,
+// Public 2026 pricing ladder. Mirrors the product's own plan config (the visible Starter,
 // `growth_v2` and `scale` plans). Old Basic/Starter ₹499 / Growth ₹999 / Team ₹1,999 /
 // Enterprise ₹4,999 are grandfathered-only in the product and have been removed from this
 // public-facing list. Growth is highlighted as recommended (the trust bridge tier — Buddie
