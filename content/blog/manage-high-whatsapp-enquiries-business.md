@@ -193,4 +193,4 @@ If you want to manage your WhatsApp enquiries more efficiently, LeadBuddie can h
 
 You can connect your existing WhatsApp number and start organising customer conversations in minutes.
 
-👉 https://www.leadbuddie.com
+See how [Buddie handles a busy WhatsApp inbox](/ai-employee), or [start your 30-day trial](https://app.leadbuddie.com).

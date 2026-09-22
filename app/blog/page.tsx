@@ -3,12 +3,21 @@ import Link from 'next/link'
 import { Rss, ArrowRight } from 'lucide-react'
 import { getAllPosts, getCategories, getPostsByCategory, type BlogCategory } from '@/lib/blog'
 import { BlogCard } from '@/components/blog/BlogCard'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { breadcrumbSchema, collectionPageSchema, SITE_URL } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Guides for Indian Service & Sales Businesses | LeadBuddie',
   description:
     'Practical guides for water-treatment operations, service cycles, AMC renewals, lead handling and controlled AI agents for Indian businesses.',
   alternates: { canonical: '/blog' },
+  openGraph: {
+    title: 'Guides for Indian Service & Sales Businesses | LeadBuddie',
+    description:
+      'Practical guides for water-treatment operations, service cycles, AMC renewals, lead handling and controlled AI agents for Indian businesses.',
+    url: `${SITE_URL}/blog`,
+    type: 'website',
+  },
 }
 
 const VALID_CATEGORIES: BlogCategory[] = ['Operations', 'Automation', 'WhatsApp', 'CRM', 'Case Study']
@@ -34,6 +43,21 @@ export default async function BlogPage({ searchParams }: PageProps) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          collectionPageSchema({
+            name: 'LeadBuddie guides for Indian service and sales businesses',
+            description:
+              'Practical guides for water-treatment operations, service cycles, AMC renewals, lead handling and using AI on WhatsApp without losing control.',
+            path: '/blog',
+            items: allPosts.map((post) => ({ name: post.title, path: `/blog/${post.slug}` })),
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Guides', path: '/blog' },
+          ]),
+        ]}
+      />
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-bg-primary px-4 pt-28 pb-16 sm:px-6 lg:px-8 md:pt-36 md:pb-24">
         <div className="pointer-events-none absolute inset-0 z-0">

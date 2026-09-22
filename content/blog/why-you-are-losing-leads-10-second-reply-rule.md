@@ -66,6 +66,6 @@ For after-hours coverage, use approved replies and a clear handover rule. Review
 
 Faster, more useful replies can help you make better use of the enquiries you already receive.
 
-With [LeadBuddie](/ai-sales-employee), you can connect your existing WhatsApp number to an AI sales employee, configure approved business knowledge, and choose when a human should review or take over.
+With [LeadBuddie](/ai-employee), you can connect your existing WhatsApp number to an AI sales employee, configure approved business knowledge, and choose when a human should review or take over.
 
 [Try LeadBuddie free for 1 month](https://app.leadbuddie.com) and experience the power of the 10-second reply rule for your own business.

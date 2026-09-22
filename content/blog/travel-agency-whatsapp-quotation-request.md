@@ -112,7 +112,9 @@ Before this workflow goes live, the agency owner should confirm:
 - inclusions, exclusions and restrictions;
 - the fields required for each quotation request;
 - when Buddie should hand the conversation to a person;
-- whether the workflow runs in Watch, Approval or Auto;
+- how much the agent may do on its own — watch only, ask you before every reply, or handle the routine ones;
 - the exact test cases that must pass.
 
-[See how LeadBuddie works](/how-it-works), [watch the product demo](/demo), or [start the 30-day Growth trial](https://app.leadbuddie.com).
+See how this works for [travel agencies and tour operators](/travel-agencies), or read [how LeadBuddie works](/how-it-works).
+
+[Watch the product demo](/demo) or [start the 30-day Growth trial](https://app.leadbuddie.com).

@@ -19,6 +19,7 @@ import {
   Wrench,
   type LucideIcon,
 } from 'lucide-react'
+import { BuddieVoice } from '@/components/home/BuddieVoice'
 import { FAQSection } from '@/components/sections/FAQSection'
 
 const APP_URL = 'https://app.leadbuddie.com'
@@ -195,6 +196,8 @@ export function PremiumHome() {
         [FileText, 'The history comes with the job', 'Who the customer is, what you installed and what happened last time — attached to every task.'],
         [Route, 'One job sets up the next', 'Close a visit today and the next service is already waiting on the list.'],
       ].map(([Icon, title, copy]) => { const I = Icon as LucideIcon; return <div key={String(title)} className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_14px_42px_rgba(15,23,42,0.05)]"><span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#e8fbf4] text-[#087c5a]"><I className="h-5 w-5" /></span><h3 className="mt-6 text-base font-extrabold text-slate-950">{String(title)}</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">{String(copy)}</p></div> })}</div></div></section>
+
+      <BuddieVoice />
 
       <section className="px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28"><div className="relative mx-auto max-w-7xl overflow-hidden rounded-[38px] bg-[#092331] px-6 py-16 text-center text-white sm:px-12 sm:py-20"><div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#46eaae]/20 blur-[100px]" /><div className="absolute -bottom-28 -left-20 h-80 w-80 rounded-full bg-[#367c9f]/25 blur-[100px]" /><div className="relative mx-auto max-w-3xl"><Eyebrow dark>See it with your own customers</Eyebrow><h2 className="mt-5 font-heading text-4xl font-extrabold leading-[0.98] tracking-[-0.055em] sm:text-6xl">See what Buddie would do in your business.</h2><p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300">Start with one thing — service due, or renewals. Add the rest once your team is comfortable.</p><div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row"><PrimaryButton>Start your trial</PrimaryButton><Link href="/demo" className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3.5 text-sm font-bold text-white transition hover:bg-white/[0.08]">Book a walkthrough</Link></div></div></div></section>
       <FAQSection />

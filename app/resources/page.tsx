@@ -1,11 +1,23 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Calculator, BookOpen, MessageCircle, ShieldCheck } from 'lucide-react'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { breadcrumbSchema, collectionPageSchema, SITE_URL } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Resources — LeadBuddie',
-  description: 'Practical water-treatment operations, service workflow, AMC renewal, lead handling and AI-agent guides for Indian businesses.',
+  title: 'Resources — Guides & Tools for Service Businesses | LeadBuddie',
+  description:
+    'Free guides and tools for Indian service businesses: water purifier service management, trustworthy service-due dates, technician job cards, AMC renewal recovery and a revenue calculator.',
+  keywords:
+    'water purifier service guides, RO service management guide, AMC renewal guide India, service due date tracking, technician job card template, AMC revenue calculator',
   alternates: { canonical: '/resources' },
+  openGraph: {
+    title: 'Resources — Guides & Tools for Service Businesses | LeadBuddie',
+    description:
+      'Free guides and tools for Indian service businesses: service management, service-due dates, job cards, AMC renewals and a revenue calculator.',
+    url: `${SITE_URL}/resources`,
+    type: 'website',
+  },
 }
 
 const resources = [
@@ -31,6 +43,27 @@ const resources = [
     cta: 'See it for water purifier businesses',
   },
   {
+    icon: BookOpen,
+    title: 'Water purifier service software guide',
+    description: 'What to look for in software that has to run installs, services, renewals and technicians.',
+    href: '/blog/water-purifier-service-management-software-guide-2026',
+    cta: 'Read the 2026 guide',
+  },
+  {
+    icon: Calculator,
+    title: 'Service dates you can trust',
+    description: 'How to work out when a purifier is really due — and what to do with old dates nobody can explain.',
+    href: '/blog/water-purifier-service-due-date-system',
+    cta: 'Read the guide',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Technician job cards',
+    description: 'From the customer’s call to a closed visit, money collected and the next service date.',
+    href: '/blog/ro-technician-job-card-workflow',
+    cta: 'Read the guide',
+  },
+  {
     icon: ShieldCheck,
     title: 'AI control and safety',
     description: 'Understand how approval workflows and business knowledge can keep automated WhatsApp conversations on track.',
@@ -42,6 +75,21 @@ const resources = [
 export default function ResourcesPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          collectionPageSchema({
+            name: 'LeadBuddie resources for Indian service businesses',
+            description:
+              'Guides and tools for water purifier service management, service-due dates, technician job cards, AMC renewal recovery and planning renewal revenue.',
+            path: '/resources',
+            items: resources.map((r) => ({ name: r.title, path: r.href })),
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Resources', path: '/resources' },
+          ]),
+        ]}
+      />
       <section className="relative isolate overflow-hidden bg-[#07111f] px-4 pb-20 pt-28 text-white sm:px-6 md:pt-36 lg:px-8">
         <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:54px_54px]" />
         <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-[#25d366]/15 blur-[100px]" />

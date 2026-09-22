@@ -265,3 +265,5 @@ WhatsApp is no longer just a chat tool.
 It is a structured sales channel.
 
 Treat it accordingly.
+
+If you want to see how LeadBuddie measures up on this list, start with [what the product does](/product), [what Buddie handles for you](/ai-employee) and [what it costs](/pricing).

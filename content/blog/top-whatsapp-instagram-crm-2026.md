@@ -167,3 +167,5 @@ It is the one that helps your team:
 - and turn social conversations into closed deals
 
 If both WhatsApp and Instagram matter to your business, your CRM should reflect that reality clearly.
+
+[LeadBuddie](/product) brings both inboxes together, with [Buddie](/ai-employee) answering the routine enquiries and your team picking up the rest. [See the plans](/pricing).

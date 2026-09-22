@@ -190,3 +190,61 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
     })),
   }
 }
+
+/**
+ * Collection/listing page (the blog index, the resources hub). Gives Google the page's identity
+ * plus an ordered ItemList of what it links to, which is what earns the listing rich results and
+ * helps the individual guides get discovered from one crawl.
+ */
+export function collectionPageSchema(opts: {
+  name: string
+  description: string
+  path: string
+  items: { name: string; path: string }[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}${opts.path}#collection`,
+    name: opts.name,
+    description: opts.description,
+    url: `${SITE_URL}${opts.path}`,
+    inLanguage: 'en-IN',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: opts.items.length,
+      itemListElement: opts.items.map((it, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: it.name,
+        url: `${SITE_URL}${it.path}`,
+      })),
+    },
+  }
+}
+
+/** Step-by-step page (/how-it-works). */
+export function howToSchema(opts: {
+  name: string
+  description: string
+  path: string
+  steps: { title: string; description: string }[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: opts.name,
+    description: opts.description,
+    url: `${SITE_URL}${opts.path}`,
+    inLanguage: 'en-IN',
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    step: opts.steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.title,
+      text: s.description,
+    })),
+  }
+}

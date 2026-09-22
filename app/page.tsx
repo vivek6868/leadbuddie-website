@@ -7,9 +7,9 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'LeadBuddie — Software for Water Treatment, Travel & Retail Businesses',
   description:
-    'LeadBuddie keeps track of your customers for you — who is due for service, whose AMC is running out, who is still waiting for a reply. Built for water purifier dealers, travel agencies and retail businesses in India.',
+    'LeadBuddie keeps track of your customers for you — who is due for service, whose AMC is running out, who is still waiting for a reply. Buddie also understands WhatsApp voice notes and can reply by voice in English, Hindi, Tamil and Malayalam. Built for water purifier dealers, travel agencies and retail businesses in India.',
   keywords:
-    'water purifier service management software, RO service management software, water treatment business software, AMC renewal software India, water purifier dealer software, service due management software, travel agency software India, retail business software India',
+    'water purifier service management software, RO service management software, water treatment business software, AMC renewal software India, water purifier dealer software, service due management software, travel agency software India, retail business software India, WhatsApp voice AI, WhatsApp voice note reply, Hindi Tamil Malayalam WhatsApp AI',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'LeadBuddie — Every Customer Looked After, Every Time',

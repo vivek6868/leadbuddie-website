@@ -203,3 +203,7 @@ When follow-ups become systematic, conversions improve automatically.
 Managing WhatsApp leads shouldn’t feel chaotic.
 
 With the right structure in place, a high-volume inbox becomes easier to manage.
+
+That structure is what [LeadBuddie](/product) gives you: every enquiry captured, owned and followed up, with [Buddie](/ai-employee) answering the routine ones. Water purifier businesses can go further and run [service visits and AMC renewals](/water-purifier-crm) in the same place.
+
+[Start your 30-day trial](https://app.leadbuddie.com) or [book a walkthrough](/demo).

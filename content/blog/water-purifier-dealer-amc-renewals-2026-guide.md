@@ -153,4 +153,6 @@ So we built that — first with Mastec, now with more water purifier dealers onb
 
 If any of this sounds like the workflow your dealership needs, [book a 20-minute dealer demo](/demo). We will walk through your actual customer base, your actual renewal numbers, and show you exactly what changes when the workflow runs itself.
 
+You can also read how [AMC renewal software](/amc-renewal-software) keeps the due list, the callbacks and the outcomes in one place, or see the whole picture for [water purifier and RO businesses](/water-purifier-crm).
+
 The next AMC renewal you lose is the one that would have paid your team's salary next month. Do not lose it.

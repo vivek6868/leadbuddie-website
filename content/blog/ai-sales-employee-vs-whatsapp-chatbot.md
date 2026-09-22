@@ -129,4 +129,6 @@ The future of WhatsApp sales is not a prettier menu tree. It is a system that un
 
 That is the standard LeadBuddie is built around: an AI sales employee that does useful work without pretending to replace human judgment.
 
-If you want to see the difference with your own WhatsApp number, [start a LeadBuddie trial](https://app.leadbuddie.com) or [book a demo](/demo).
+See what [Buddie actually does day to day](/ai-employee), or [how the whole product fits together](/product).
+
+If you want to see the difference on your own WhatsApp number, [start a LeadBuddie trial](https://app.leadbuddie.com) or [book a demo](/demo).
