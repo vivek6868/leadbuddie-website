@@ -47,7 +47,7 @@ This is why training matters. The owner should be able to say, in ordinary langu
 
 > For Bali packages, ask for travel dates, departure city and number of travellers. Never promise the final price.
 
-The system should turn that into a proposed policy, show the owner exactly what will change, and only then apply it. The owner should not need to hunt through several settings pages to decide whether a sentence belongs under “FAQ,” “product,” “booking,” or “guardrail.”
+The system should turn that into a proposed policy, show the owner exactly what will change, and only then apply it. The owner should not have to hunt through half a dozen settings pages working out where that sentence is supposed to go.
 
 ### 2. Choose the lightest useful interaction
 

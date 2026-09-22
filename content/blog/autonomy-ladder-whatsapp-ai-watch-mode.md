@@ -79,12 +79,13 @@ To maintain safety, configure Auto Mode to run **Out-of-Hours only** (e.g., from
 
 ---
 
-## Built-In Guardrails: Safety first
+## The safety net underneath
 
-Even in Auto Mode, a professional AI CRM must have strict safety guardrails:
-*   **Pricing Guardrails**: If the AI does not know the exact price of a service (e.g., standard AMC package: ₹2,499), it should never guess. It must politely defer: *"I will check with our billing team and get back to you shortly."*
-*   **Human Takeover**: If a human team member types a manual message in the thread, the AI must instantly pause itself and step back.
-*   **Manual Pause**: A one-tap button in the chat view to freeze the AI for a specific contact if a conversation becomes delicate or complex.
+Even when the AI is answering on its own, three things should always be true:
+
+*   **It never invents a price.** If it does not know what your standard AMC costs, it should say *“I will check with our team and get back to you shortly”* — not guess a number you then have to honour.
+*   **A human typing wins.** The moment someone from your team writes in that chat, the AI should go quiet and stay quiet.
+*   **You can stop it in one tap.** When a conversation turns delicate, you should be able to freeze the AI for that one customer without switching anything else off.
 
 ---
 

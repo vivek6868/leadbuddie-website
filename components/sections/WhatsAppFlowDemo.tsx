@@ -52,7 +52,7 @@ export function WhatsAppFlowDemo() {
             tone="border-cyan-400/30 bg-cyan-400/10 text-cyan-300"
             icon={Target}
             title="Qualifies the lead the moment it lands."
-            body="Detects intent — price enquiry, ready to buy, complaint, AMC renewal. Tags it. Surfaces it on the right pipeline."
+            body="Works out what they actually want — a price, a purchase, a complaint, a renewal — and puts them in front of the right person."
           />
           <ExplainerStep
             number="04"

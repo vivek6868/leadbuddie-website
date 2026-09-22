@@ -423,7 +423,7 @@ const FLOW_STEPS: FlowStep[] = [
     icon: RefreshCcw,
     tone: 'border-teal-400/30 bg-teal-400/10 text-teal-300',
     title: 'Automated AMC reminders by Buddie',
-    caption: 'Buddie runs the 60/30/15/7-day reminder plays on WhatsApp to secure renewals. Watch or Approval mode lets you review before sending.',
+    caption: 'Buddie sends the 60, 30, 15 and 7-day renewal reminders on WhatsApp — after you approve them, or on their own once you trust it.',
   },
   {
     number: '05',
@@ -760,7 +760,7 @@ function WorkflowRow({
           </span>
           <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-emerald-300">
             <Check className="h-3 w-3" strokeWidth={3} />
-            Active play
+            Running now
           </span>
         </div>
         <h4 className="text-2xl font-bold leading-snug text-text-primary md:text-3xl">{title}</h4>

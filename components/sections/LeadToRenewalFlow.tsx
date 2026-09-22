@@ -48,7 +48,7 @@ const STEPS: Step[] = [
     iconTone: 'text-indigo-300',
     iconBg: 'bg-indigo-400/15 border-indigo-400/30',
     title: 'Lead auto-qualified',
-    caption: 'Detects intent — AMC renewal interest. Tags the conversation. Surfaces it on your pipeline so you do not miss it.',
+    caption: 'Spots that they are asking about their renewal and puts them on your list, so it is not missed.',
     annotation: 'Lead auto-qualified',
     annotationDot: 'bg-cyan-400',
   },

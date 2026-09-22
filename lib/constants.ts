@@ -95,31 +95,31 @@ export const FEATURES = [
   {
     id: 'autonomy-modes',
     title: 'Automatic replies with business controls',
-    description: 'Buddie can reply automatically within the business rules you have approved. Pause a sensitive lead, stop a follow-up, or bring your team in whenever human judgment is needed.',
+    description: 'Buddie replies on its own, but only within what you have approved. Pause a delicate conversation, stop a follow-up, or step in yourself whenever you want to.',
     icon: 'Hand',
   },
   {
     id: 'amc-renewal-reminders',
     title: 'Automated AMC Reminders',
-    description: 'For eligible water-treatment businesses, Buddie can prepare 60, 30, 15 and 7-day AMC reminders. Sending depends on your mode, approved templates and WhatsApp eligibility.',
+    description: 'Buddie reminds your water-treatment customers 60, 30, 15 and 7 days before their AMC runs out — after you approve each one, or on its own once you trust it.',
     icon: 'RefreshCcw',
   },
   {
     id: 'winback-lapsed-amc',
     title: 'Win back lapsed AMCs',
-    description: 'For eligible water-treatment businesses, prepare a reactivation message for customers with lapsed AMCs and review or send it under your chosen controls.',
+    description: 'Customers whose AMC already lapsed get their own win-back message, ready for you to check before it goes.',
     icon: 'RefreshCcw',
   },
   {
     id: 'revive-dormant-leads',
     title: 'Revive dormant leads',
-    description: 'Set up a controlled re-engagement play for eligible quiet leads, subject to your plan, autonomy mode and WhatsApp messaging rules.',
+    description: 'Leads who went quiet get one polite nudge instead of being forgotten. You choose whether it sends on its own or waits for your approval.',
     icon: 'Clock',
   },
   {
     id: 'followup-automation',
     title: 'Day 1/3/7 & Quiet-lead Follow-ups',
-    description: 'Growth and Scale businesses can configure follow-up nudges for quiet leads, with pause, mute and human-handover controls.',
+    description: 'A nudge on day 1, day 3 and day 7 for leads who went quiet — and you can pause, mute or take over any conversation at any time.',
     icon: 'Zap',
   },
   {
@@ -143,7 +143,7 @@ export const FEATURES = [
   {
     id: 'lead-crm',
     title: 'Lead CRM with dashboard suggestions',
-    description: 'Status, tags, and AMC info alongside the chat, with dashboard suggestions showing exactly which play or job to turn on for leads waiting today.',
+    description: 'Status, tags and AMC details right next to the chat, and a dashboard that tells you which customers are waiting on you today.',
     icon: 'Kanban',
   },
   {

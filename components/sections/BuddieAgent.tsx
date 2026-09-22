@@ -138,7 +138,7 @@ export function BuddieAgent() {
             {/* Queue Header */}
             <div className="flex justify-between items-center pb-4 border-b border-white/[0.06] mb-4">
               <div>
-                <p className="text-[10px] font-bold text-white/35 uppercase tracking-widest leading-none">AI Assistant Queue</p>
+                <p className="text-[10px] font-bold text-white/35 uppercase tracking-widest leading-none">Waiting on you</p>
                 <h4 className="text-sm font-bold text-white mt-1.5">Active Worklist</h4>
               </div>
               <span className="text-[9.5px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/20 px-2 py-0.5 rounded-full">

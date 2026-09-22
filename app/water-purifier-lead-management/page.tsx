@@ -110,7 +110,7 @@ export default function WaterPurifierLeadManagementPage() {
           { icon: Filter, title: 'Watch/Approval safety', desc: 'Review Buddie’s draft replies in your Approval Desk before they go out, or set him to Auto Mode.' },
           { icon: Clock, title: 'Configurable follow-ups', desc: 'Growth and Scale can prepare follow-up nudges for eligible quiet leads, with pause, mute and handover controls.' },
           { icon: Users, title: 'Assignment & ownership', desc: 'Assign chats so every lead has a clear owner and the next step is never anyone’s guess.' },
-          { icon: BarChart3, title: 'Dormant-lead plays', desc: 'Run controlled re-engagement for eligible quiet leads under your plan, consent and WhatsApp messaging rules.' },
+          { icon: BarChart3, title: 'Nudge the quiet ones', desc: 'A lead who stopped replying gets one polite follow-up instead of being forgotten — on your terms.' },
         ]}
         stepsHeading="From WhatsApp enquiry to closed sale"
         steps={[

@@ -26,9 +26,9 @@ const MODES: ModeDetails[] = [
     id: 'watch',
     name: 'Watch Mode',
     tagline: 'Observe, log, and learn.',
-    description: 'Buddie runs silently in the background of your WhatsApp Business. It monitors chats, transcribes details, updates your CRM, and tags lead warmth—all without drafting or sending a single message.',
-    agency: 'Passive Logger',
-    risk: '0% Autonomy (Safe Mode)',
+    description: 'Buddie runs silently in the background of your WhatsApp Business. It reads the chats, picks out the details, keeps your lead records up to date and marks who is hot — without writing or sending a single message.',
+    agency: 'Quietly taking notes',
+    risk: 'Nothing is sent — Buddie only watches',
     bestFor: 'First-week testing and training Buddie on your business tone.',
     color: 'from-blue-500 to-indigo-500',
     icon: Eye,
@@ -70,7 +70,7 @@ export function AutonomyModes() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand/5 rounded-full blur-3xl pointer-events-none" />
 
       <SectionHeader
-        label="Granular Autonomy"
+        label="You choose how much it does"
         title="Deploy AI at your comfort level"
         description="Choose how much agency you give Buddie. Toggle modes in one click, from zero-risk logging to fully autonomous follow-ups."
         centered
@@ -200,9 +200,9 @@ export function AutonomyModes() {
                     </h5>
                     <ul className="text-[10px] font-mono text-text-secondary space-y-1.5">
                       <li className="flex items-center gap-1.5"><Check className="h-3 w-3 text-brand" /> Incoming text captured successfully</li>
-                      <li className="flex items-center gap-1.5"><Check className="h-3 w-3 text-brand" /> Intent identified: <span className="text-text-primary font-bold">pricing_query_amc</span></li>
+                      <li className="flex items-center gap-1.5"><Check className="h-3 w-3 text-brand" /> Buddie understood: <span className="text-text-primary font-bold">asking about AMC price</span></li>
                       <li className="flex items-center gap-1.5"><Check className="h-3 w-3 text-brand" /> CRM status set to: <span className="text-brand font-bold">Warm Lead</span></li>
-                      <li className="flex items-center gap-1.5 text-yellow-600 font-medium">⚠️ 0% Autonomy: Reply not drafted (Observing only)</li>
+                      <li className="flex items-center gap-1.5 text-yellow-600 font-medium">⚠️ Watch mode: nothing drafted, nothing sent</li>
                     </ul>
                   </div>
                 </motion.div>
@@ -283,12 +283,12 @@ export function AutonomyModes() {
                   <div className="border border-border bg-bg-card rounded-xl p-2.5">
                     <p className="text-[9px] text-text-muted font-mono">AUTOPILOT ACTIONS</p>
                     <div className="flex justify-between items-center text-[10px] font-mono text-text-secondary mt-1">
-                      <span>1. Scanned contract DB</span>
+                      <span>1. Checked their AMC</span>
                       <span className="text-brand font-bold">Match found</span>
                     </div>
                     <div className="flex justify-between items-center text-[10px] font-mono text-text-secondary">
-                      <span>2. Generated checkout link</span>
-                      <span className="text-brand font-bold">API OK</span>
+                      <span>2. Prepared the payment link</span>
+                      <span className="text-brand font-bold">Ready</span>
                     </div>
                     <div className="flex justify-between items-center text-[10px] font-mono text-text-secondary">
                       <span>3. Dispatched message</span>

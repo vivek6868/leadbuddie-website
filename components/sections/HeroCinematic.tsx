@@ -93,9 +93,9 @@ const ANIMATION_STEPS: AnimationStep[] = [
     dashboardStatus: 'Hot Opportunity',
     dashboardRevenue: 184500,
     dashboardLogs: [
-      'Inbound matches intent: request_payment_link',
-      'Buddie classified: ready_to_buy (95% confidence)',
-      'Surfaced to work queue: Action required'
+      'Ramesh asked for a booking link',
+      'Buddie marked him ready to buy',
+      'Waiting on you: send the link'
     ],
     notification: 'Opportunity Surfaced: Ramesh Kulkarni is ready to pay'
   },
@@ -112,9 +112,9 @@ const ANIMATION_STEPS: AnimationStep[] = [
     dashboardStatus: 'Converted',
     dashboardRevenue: 203000,
     dashboardLogs: [
-      'Cashfree Payment webhook received (Success)',
-      'Account activated: Gold AMC scheduled',
-      'Lifetime Revenue increased by +₹18,500'
+      'Payment received',
+      'Gold AMC started · first service scheduled',
+      'Ramesh has now spent ₹18,500 with you'
     ]
   }
 ]

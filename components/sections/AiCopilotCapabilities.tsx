@@ -37,7 +37,7 @@ const CAPABILITIES: Capability[] = [
     tone: 'from-cyan-400/20 to-cyan-500/5 text-cyan-300 border-cyan-400/30',
     title: 'Qualifies leads automatically',
     description:
-      'Detects intent — price enquiry, ready to buy, complaint — and tags every conversation so you spend time on the hot ones.',
+      'Works out who is asking a price, who is ready to buy and who is unhappy — so your team spends the day on the ones that matter.',
   },
   {
     icon: Clock,
