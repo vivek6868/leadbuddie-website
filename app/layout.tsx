@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { DemoModalProvider } from '@/components/providers/DemoModalProvider'
 import { ScrollRevealClient } from '@/components/ui/ScrollRevealClient'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { MetaPixel } from '@/components/analytics/MetaPixel'
 import { SEO } from '@/lib/constants'
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, MOBILE_APPLICATION_SCHEMA, SITE_URL } from '@/lib/seo'
 
@@ -138,6 +139,7 @@ export default function RootLayout({
       <body className="bg-bg-primary text-text-primary">
         <a href="#main-content" className="sr-only fixed left-4 top-4 z-[2147483647] rounded-lg bg-white px-4 py-2 font-semibold text-slate-950 shadow-lg focus:not-sr-only">Skip to content</a>
         <JsonLd data={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, MOBILE_APPLICATION_SCHEMA]} />
+        <MetaPixel />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <DemoModalProvider>
             <ScrollRevealClient />
