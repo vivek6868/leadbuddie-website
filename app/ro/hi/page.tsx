@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { RoLanding } from '@/components/ro/RoLanding'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { roCopyHi } from '@/lib/ro/copy-hi'
-import { roMetadata } from '@/lib/ro/metadata'
+import { RO_ENGINEER_IMAGE, roMetadata } from '@/lib/ro/metadata'
+import { visualsHi } from '@/lib/ro/visuals'
 import { RO_HI_PATH, RO_HREFLANG, RO_PATH } from '@/lib/ro/paths'
 import { leadbuddieRoSoftwareSchema, roBreadcrumbSchema, roFaqSchema } from '@/lib/ro/schema'
 
@@ -18,6 +19,7 @@ export const metadata: Metadata = roMetadata({
     'LeadBuddie RO, LeadBuddie RO हिन्दी, RO सर्विस सॉफ्टवेयर, RO AMC, वॉटर प्यूरीफायर सर्विस सॉफ्टवेयर, RO ग्राहक Excel, RO डीलर सॉफ्टवेयर',
   locale: 'hi_IN',
   languages: RO_HREFLANG,
+  image: { ...RO_ENGINEER_IMAGE, alt: visualsHi.photo.alt },
 })
 
 export default function LeadbuddieRoHindiPage() {

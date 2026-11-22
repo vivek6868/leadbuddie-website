@@ -6,6 +6,7 @@ export type RoVisualCopy = {
   amc: { caption: string; alt: string; title: string; ends: string; active: string; renewal: string }
   phone: { caption: string; alt: string; jobs: string; card: string; complete: string }
   upload: { caption: string; alt: string; sheet: string; upload: string; list: string }
+  photo: { caption: string; alt: string }
 }
 
 export const visualsEn: RoVisualCopy = {
@@ -52,6 +53,10 @@ export const visualsEn: RoVisualCopy = {
     sheet: 'Your Excel',
     upload: 'Upload',
     list: 'Customer list',
+  },
+  photo: {
+    caption: 'Illustration',
+    alt: 'Illustration of an RO engineer in a customer’s kitchen, marking a job complete on his phone with the LeadBuddie Engineer app.',
   },
 }
 
@@ -100,6 +105,10 @@ export const visualsHi: RoVisualCopy = {
     upload: 'अपलोड',
     list: 'ग्राहक सूची',
   },
+  photo: {
+    caption: 'चित्रण',
+    alt: 'चित्रण: एक RO इंजीनियर ग्राहक की रसोई में फ़ोन पर LeadBuddie Engineer ऐप में जॉब पूरा चिह्नित कर रहा है।',
+  },
 }
 
 export const visualsTa: RoVisualCopy = {
@@ -146,5 +155,9 @@ export const visualsTa: RoVisualCopy = {
     sheet: 'உங்கள் Excel',
     upload: 'பதிவேற்றம்',
     list: 'வாடிக்கையாளர் பட்டியல்',
+  },
+  photo: {
+    caption: 'விளக்கப்படம்',
+    alt: 'விளக்கப்படம்: ஒரு RO இன்ஜினியர் வாடிக்கையாளர் சமையலறையில் போனில் LeadBuddie Engineer ஆப்பில் வேலையை முடித்ததாகக் குறிக்கிறார்.',
   },
 }

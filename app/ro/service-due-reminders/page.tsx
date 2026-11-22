@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { RoGuide } from '@/components/ro/RoGuide'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { serviceDueGuide } from '@/lib/ro/guides'
-import { roMetadata } from '@/lib/ro/metadata'
+import { RO_ENGINEER_IMAGE, roMetadata } from '@/lib/ro/metadata'
 import { RO_PATH } from '@/lib/ro/paths'
 import { roArticleSchema, roBreadcrumbSchema, roFaqSchema } from '@/lib/ro/schema'
 
@@ -13,6 +13,7 @@ export const metadata: Metadata = roMetadata({
   description: serviceDueGuide.description,
   path: serviceDueGuide.path,
   keywords: serviceDueGuide.keywords,
+  image: RO_ENGINEER_IMAGE,
 })
 
 export default function RoServiceDuePage() {

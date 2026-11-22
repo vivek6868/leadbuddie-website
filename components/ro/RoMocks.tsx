@@ -139,10 +139,10 @@ export function AmcListMock({ copy }: { copy: RoVisualCopy }) {
   )
 }
 
-export function EngineerPhoneMock({ copy }: { copy: RoVisualCopy }) {
+export function EngineerPhoneMock({ copy, tone = 'dark' }: { copy: RoVisualCopy; tone?: 'light' | 'dark' }) {
   const v = copy.phone
   return (
-    <Figure caption={v.caption} alt={v.alt} tone="dark">
+    <Figure caption={v.caption} alt={v.alt} tone={tone}>
       <div className="mx-auto w-full max-w-[280px] rounded-[36px] border-[8px] border-[#0b3c31] bg-[#071d2a] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
         <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/15" />
         <p className="px-1 text-[11px] font-extrabold text-[#9af3c1]">LeadBuddie Engineer</p>
