@@ -2,8 +2,10 @@ import Link from 'next/link'
 import { ArrowRight, Download } from 'lucide-react'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
-import { APP_URL, RO_PATH, RO_TEMPLATE_CSV, RO_TEMPLATE_XLSX, RO_UPDATED } from '@/lib/ro/paths'
+import { AmcListMock, CustomerListMock, ExcelUploadMock, JobCardMock, ServiceDueMock } from '@/components/ro/RoMocks'
+import { APP_URL, RO_AMC_PATH, RO_DUE_PATH, RO_EXCEL_PATH, RO_PATH, RO_TEMPLATE_CSV, RO_TEMPLATE_XLSX, RO_UPDATED } from '@/lib/ro/paths'
 import type { RoGuideContent } from '@/lib/ro/types'
+import { visualsEn } from '@/lib/ro/visuals'
 
 function formatUpdated(iso: string) {
   return new Date(`${iso}T00:00:00.000Z`).toLocaleDateString('en-IN', {
@@ -46,6 +48,23 @@ export function RoGuide({ guide }: { guide: RoGuideContent }) {
               { label: guide.eyebrow },
             ]}
           />
+          <div className="mb-10 grid gap-8">
+            {guide.path === RO_AMC_PATH ? <AmcListMock copy={visualsEn} /> : null}
+            {guide.path === RO_DUE_PATH ? (
+              <>
+                <ServiceDueMock copy={visualsEn} />
+                <JobCardMock copy={visualsEn} />
+              </>
+            ) : null}
+            {guide.path === RO_EXCEL_PATH ? (
+              <>
+                <CustomerListMock copy={visualsEn} />
+                <div className="rounded-[24px] bg-[#06271f] p-4 sm:p-5">
+                  <ExcelUploadMock copy={visualsEn} />
+                </div>
+              </>
+            ) : null}
+          </div>
           <div className="space-y-5 text-base leading-relaxed text-slate-700">
             {guide.blocks.map((block, index) => {
               if (block.type === 'p') {
