@@ -55,8 +55,8 @@ export const visualsEn: RoVisualCopy = {
     list: 'Customer list',
   },
   photo: {
-    caption: 'Illustration',
-    alt: 'Illustration of an RO engineer in a customer’s kitchen, marking a job complete on his phone with the LeadBuddie Engineer app.',
+    caption: 'Sample image',
+    alt: 'Sample image of a uniformed RO engineer giving a thumbs up and showing a Job Complete screen on his phone, with a smiling customer in a kitchen next to an RO purifier.',
   },
 }
 
@@ -106,8 +106,8 @@ export const visualsHi: RoVisualCopy = {
     list: 'ग्राहक सूची',
   },
   photo: {
-    caption: 'चित्रण',
-    alt: 'चित्रण: एक RO इंजीनियर ग्राहक की रसोई में फ़ोन पर LeadBuddie Engineer ऐप में जॉब पूरा चिह्नित कर रहा है।',
+    caption: 'नमूना चित्र',
+    alt: 'नमूना चित्र: वर्दी में एक RO इंजीनियर अंगूठा उठाकर फ़ोन पर Job Complete स्क्रीन दिखा रहा है। रसोई में मुस्कुराता ग्राहक RO प्यूरीफायर के पास खड़ा है।',
   },
 }
 
@@ -157,7 +157,7 @@ export const visualsTa: RoVisualCopy = {
     list: 'வாடிக்கையாளர் பட்டியல்',
   },
   photo: {
-    caption: 'விளக்கப்படம்',
-    alt: 'விளக்கப்படம்: ஒரு RO இன்ஜினியர் வாடிக்கையாளர் சமையலறையில் போனில் LeadBuddie Engineer ஆப்பில் வேலையை முடித்ததாகக் குறிக்கிறார்.',
+    caption: 'மாதிரி படம்',
+    alt: 'மாதிரி படம்: சீருடையில் ஒரு RO இன்ஜினியர் கட்டைவிரலைக் காட்டி போனில் Job Complete திரையைக் காட்டுகிறார். சமையலறையில் புன்னகைக்கும் வாடிக்கையாளர் RO பியூரிஃபையர் அருகில் நிற்கிறார்.',
   },
 }

@@ -185,12 +185,12 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
               <Image
                 src="/images/ro/engineer-using-app.webp"
                 alt={visuals.photo.alt}
-                width={1152}
-                height={864}
+                width={1672}
+                height={941}
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 priority
                 loading="eager"
-                className="h-auto w-full rounded-[28px] border border-white/10"
+                className="h-auto w-full rounded-[28px] border border-white/10 object-contain"
               />
               <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
                 {visuals.photo.caption}

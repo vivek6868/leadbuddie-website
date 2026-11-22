@@ -10,9 +10,9 @@ export const RO_OG_IMAGE = {
 
 export const RO_ENGINEER_IMAGE = {
   url: '/images/ro/engineer-using-app.webp',
-  width: 1152,
-  height: 864,
-  alt: 'Illustration of an RO engineer in a customer’s kitchen marking a job complete on his phone',
+  width: 1672,
+  height: 941,
+  alt: 'Sample image of a uniformed RO engineer giving a thumbs up and showing a Job Complete screen, with a smiling customer beside an RO purifier',
 } as const
 
 export function roMetadata(opts: {
