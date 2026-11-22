@@ -188,6 +188,8 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
                 width={1152}
                 height={864}
                 sizes="(min-width: 1024px) 58vw, 100vw"
+                priority
+                loading="eager"
                 className="h-auto w-full rounded-[28px] border border-white/10"
               />
               <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
