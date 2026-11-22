@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { RoLanding } from '@/components/ro/RoLanding'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { roCopyTa } from '@/lib/ro/copy-ta'
-import { roMetadata } from '@/lib/ro/metadata'
+import { RO_ENGINEER_IMAGE, roMetadata } from '@/lib/ro/metadata'
+import { visualsTa } from '@/lib/ro/visuals'
 import { RO_HREFLANG, RO_PATH, RO_TA_PATH } from '@/lib/ro/paths'
 import { leadbuddieRoSoftwareSchema, roBreadcrumbSchema, roFaqSchema } from '@/lib/ro/schema'
 
@@ -18,6 +19,7 @@ export const metadata: Metadata = roMetadata({
     'LeadBuddie RO, LeadBuddie RO தமிழ், RO சேவை மென்பொருள், RO AMC, நீர் சுத்திகரிப்பு சேவை மென்பொருள், RO வாடிக்கையாளர் Excel, தமிழ்நாடு RO டீலர்',
   locale: 'ta_IN',
   languages: RO_HREFLANG,
+  image: { ...RO_ENGINEER_IMAGE, alt: visualsTa.photo.alt },
 })
 
 export default function LeadbuddieRoTamilPage() {

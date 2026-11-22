@@ -6,6 +6,7 @@ export type RoVisualCopy = {
   amc: { caption: string; alt: string; title: string; ends: string; active: string; renewal: string }
   phone: { caption: string; alt: string; jobs: string; card: string; complete: string }
   upload: { caption: string; alt: string; sheet: string; upload: string; list: string }
+  photo: { caption: string; alt: string }
 }
 
 export const visualsEn: RoVisualCopy = {
@@ -52,6 +53,10 @@ export const visualsEn: RoVisualCopy = {
     sheet: 'Your Excel',
     upload: 'Upload',
     list: 'Customer list',
+  },
+  photo: {
+    caption: 'Sample image',
+    alt: 'Sample image of a uniformed RO engineer giving a thumbs up and showing a Job Complete screen on his phone, with a smiling customer in a kitchen next to an RO purifier.',
   },
 }
 
@@ -100,6 +105,10 @@ export const visualsHi: RoVisualCopy = {
     upload: 'अपलोड',
     list: 'ग्राहक सूची',
   },
+  photo: {
+    caption: 'नमूना चित्र',
+    alt: 'नमूना चित्र: वर्दी में एक RO इंजीनियर अंगूठा उठाकर फ़ोन पर Job Complete स्क्रीन दिखा रहा है। रसोई में मुस्कुराता ग्राहक RO प्यूरीफायर के पास खड़ा है।',
+  },
 }
 
 export const visualsTa: RoVisualCopy = {
@@ -146,5 +155,9 @@ export const visualsTa: RoVisualCopy = {
     sheet: 'உங்கள் Excel',
     upload: 'பதிவேற்றம்',
     list: 'வாடிக்கையாளர் பட்டியல்',
+  },
+  photo: {
+    caption: 'மாதிரி படம்',
+    alt: 'மாதிரி படம்: சீருடையில் ஒரு RO இன்ஜினியர் கட்டைவிரலைக் காட்டி போனில் Job Complete திரையைக் காட்டுகிறார். சமையலறையில் புன்னகைக்கும் வாடிக்கையாளர் RO பியூரிஃபையர் அருகில் நிற்கிறார்.',
   },
 }

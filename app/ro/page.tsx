@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { RoLanding } from '@/components/ro/RoLanding'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { roCopyEn } from '@/lib/ro/copy-en'
-import { roMetadata } from '@/lib/ro/metadata'
+import { RO_ENGINEER_IMAGE, roMetadata } from '@/lib/ro/metadata'
 import { RO_HREFLANG, RO_PATH } from '@/lib/ro/paths'
 import { leadbuddieRoSoftwareSchema, roBreadcrumbSchema, roFaqSchema } from '@/lib/ro/schema'
 
@@ -18,6 +18,7 @@ export const metadata: Metadata = roMetadata({
     'LeadBuddie RO, LeadBuddie, RO service management software, AMC management software for RO dealers, water purifier service software India, RO customer Excel, RO service due reminders',
   locale: 'en_IN',
   languages: RO_HREFLANG,
+  image: RO_ENGINEER_IMAGE,
 })
 
 export default function LeadbuddieRoPage() {

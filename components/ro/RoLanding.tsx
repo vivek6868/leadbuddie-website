@@ -180,7 +180,23 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-300">{copy.engineerLede}</p>
             <p className="mt-4 text-sm font-semibold text-[#9af3c1]">{copy.engineerFoot}</p>
           </div>
-          <div className="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+          <div className="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+            <figure className="min-w-0">
+              <Image
+                src="/images/ro/engineer-using-app.webp"
+                alt={visuals.photo.alt}
+                width={1672}
+                height={941}
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                priority
+                loading="eager"
+                className="h-auto w-full rounded-[28px] border border-white/10 object-contain"
+              />
+              <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                {visuals.photo.caption}
+              </figcaption>
+            </figure>
+            <div className="grid items-start gap-8">
             <ol className="grid gap-3">
               {copy.engineerPoints.map((point, index) => {
                 const Icon = [Smartphone, ClipboardCheck, Check][index] ?? Smartphone
@@ -197,9 +213,10 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
                 )
               })}
             </ol>
-            <div className="grid items-start gap-8 sm:grid-cols-2">
-              <JobCardMock copy={visuals} tone="dark" />
+            <div className="grid items-start gap-8 sm:grid-cols-2 lg:grid-cols-1">
               <EngineerPhoneMock copy={visuals} />
+              <JobCardMock copy={visuals} tone="dark" />
+            </div>
             </div>
           </div>
         </div>

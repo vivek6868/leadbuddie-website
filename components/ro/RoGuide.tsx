@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Download } from 'lucide-react'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
-import { AmcListMock, CustomerListMock, ExcelUploadMock, JobCardMock, ServiceDueMock } from '@/components/ro/RoMocks'
+import { AmcListMock, CustomerListMock, EngineerPhoneMock, ExcelUploadMock, ServiceDueMock } from '@/components/ro/RoMocks'
 import { APP_URL, RO_AMC_PATH, RO_DUE_PATH, RO_EXCEL_PATH, RO_PATH, RO_TEMPLATE_CSV, RO_TEMPLATE_XLSX, RO_UPDATED } from '@/lib/ro/paths'
 import type { RoGuideContent } from '@/lib/ro/types'
 import { visualsEn } from '@/lib/ro/visuals'
@@ -53,7 +53,7 @@ export function RoGuide({ guide }: { guide: RoGuideContent }) {
             {guide.path === RO_DUE_PATH ? (
               <>
                 <ServiceDueMock copy={visualsEn} />
-                <JobCardMock copy={visualsEn} />
+                <EngineerPhoneMock copy={visualsEn} tone="light" />
               </>
             ) : null}
             {guide.path === RO_EXCEL_PATH ? (
