@@ -15,8 +15,17 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
-import { APP_URL, RO_EXCEL_PATH, RO_LOCALES, RO_PRICING_PATH, SUPPORT_EMAIL } from '@/lib/ro/paths'
+import {
+  AmcListMock,
+  CustomerListMock,
+  EngineerPhoneMock,
+  ExcelUploadMock,
+  JobCardMock,
+  ServiceDueMock,
+} from '@/components/ro/RoMocks'
+import { APP_URL, RO_EXCEL_PATH, RO_HI_PATH, RO_LOCALES, RO_PRICING_PATH, RO_TA_PATH, SUPPORT_EMAIL } from '@/lib/ro/paths'
 import type { RoCopy } from '@/lib/ro/types'
+import { visualsEn, visualsHi, visualsTa } from '@/lib/ro/visuals'
 
 const ICONS: Record<RoCopy['capabilities'][number]['id'], LucideIcon> = {
   customers: FileSpreadsheet,
@@ -48,6 +57,7 @@ function SignupLink({
 }
 
 export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: string }) {
+  const visuals = localePath === RO_HI_PATH ? visualsHi : localePath === RO_TA_PATH ? visualsTa : visualsEn
   return (
     <>
       <section className="relative isolate overflow-hidden bg-[#061722] px-4 pb-16 pt-28 text-white sm:px-6 md:pb-24 md:pt-36 lg:px-8">
@@ -108,38 +118,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
             </ul>
           </div>
 
-          <div
-            className="rounded-[28px] border border-white/15 bg-[#071d2a]/90 p-4 shadow-[0_34px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-5"
-            aria-label={copy.exampleLabel}
-          >
-            <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
-              <div>
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#9af3c1]">{copy.exampleLabel}</p>
-                <p className="mt-1 text-base font-extrabold text-white">{copy.exampleTitle}</p>
-              </div>
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-[#67f3bd] text-[#06271f]">
-                <Droplets className="h-5 w-5" aria-hidden="true" />
-              </span>
-            </div>
-            <ul className="mt-4 space-y-2">
-              {copy.exampleRows.map((row) => (
-                <li key={row.label} className="rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-3">
-                  <p className="text-sm font-bold text-white">{row.label}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-400">{row.detail}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-3 rounded-2xl border border-[#67f3bd]/25 bg-[#0d3029] p-4">
-              <p className="text-xs font-extrabold text-[#dbfff0]">{copy.jobCardTitle}</p>
-              <ul className="mt-3 grid grid-cols-2 gap-2">
-                {copy.jobCardItems.map((item) => (
-                  <li key={item} className="rounded-xl bg-white/[0.06] px-2.5 py-2 text-[11px] font-semibold leading-snug text-slate-200">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <CustomerListMock copy={visuals} tone="dark" />
         </div>
       </section>
 
@@ -184,12 +163,16 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
               )
             })}
           </div>
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-2">
+            <ServiceDueMock copy={visuals} />
+            <AmcListMock copy={visuals} />
+          </div>
         </div>
       </section>
 
       <section id="engineer-app" className="scroll-mt-24 bg-[#06271f] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#9af3c1]">{copy.engineerEyebrow}</p>
             <h2 className="mt-4 font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.045em] sm:text-5xl">
               {copy.engineerTitle}
@@ -197,22 +180,28 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-300">{copy.engineerLede}</p>
             <p className="mt-4 text-sm font-semibold text-[#9af3c1]">{copy.engineerFoot}</p>
           </div>
-          <ol className="grid gap-3">
-            {copy.engineerPoints.map((point, index) => {
-              const Icon = [Smartphone, ClipboardCheck, Check][index] ?? Smartphone
-              return (
-              <li key={point.title} className="flex gap-4 rounded-[24px] border border-white/10 bg-white/[0.05] p-5">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#67f3bd] text-[#06271f]">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h3 className="text-base font-extrabold">{point.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-300">{point.copy}</p>
-                </div>
-              </li>
-              )
-            })}
-          </ol>
+          <div className="mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+            <ol className="grid gap-3">
+              {copy.engineerPoints.map((point, index) => {
+                const Icon = [Smartphone, ClipboardCheck, Check][index] ?? Smartphone
+                return (
+                  <li key={point.title} className="flex gap-4 rounded-[24px] border border-white/10 bg-white/[0.05] p-5">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#67f3bd] text-[#06271f]">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <h3 className="text-base font-extrabold">{point.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-slate-300">{point.copy}</p>
+                    </div>
+                  </li>
+                )
+              })}
+            </ol>
+            <div className="grid items-start gap-8 sm:grid-cols-2">
+              <JobCardMock copy={visuals} tone="dark" />
+              <EngineerPhoneMock copy={visuals} />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -254,6 +243,9 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
             <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#9af3c1]">{copy.flowEyebrow}</p>
             <h2 className="mt-4 font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.045em] sm:text-5xl">{copy.flowTitle}</h2>
             <p className="mt-4 text-base leading-relaxed text-slate-300">{copy.flowLede}</p>
+            <div className="mt-8">
+              <ExcelUploadMock copy={visuals} />
+            </div>
           </div>
           <ol className="space-y-3">
             {copy.flow.map((step, index) => (
