@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils'
 import { ChevronDown, Droplets, Plane, ShoppingBag } from 'lucide-react'
 
 const INDUSTRIES = [
-  { name: 'Water treatment', note: 'Service, visits & AMC renewals', href: '/water-purifier-crm', icon: Droplets },
+  { name: 'LeadBuddie RO', note: 'Customers, jobs & AMC renewals', href: '/ro', icon: Droplets },
   { name: 'Travel agencies', note: 'Enquiries into quotes', href: '/travel-agencies', icon: Plane },
   { name: 'Retail businesses', note: 'Enquiries into orders', href: '/retail-businesses', icon: ShoppingBag },
 ]
@@ -21,7 +21,8 @@ export function Navbar() {
   const [demoModalOpen, setDemoModalOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const hasDarkHero = ['/', '/product', '/ai-employee', '/features', '/how-it-works', '/pricing', '/resources', '/contact', '/demo', '/case-study', '/whatsapp-voice-ai', '/water-purifier-crm', '/travel-agencies', '/retail-businesses'].includes(pathname)
+  const hasDarkHero = ['/', '/product', '/ai-employee', '/features', '/how-it-works', '/pricing', '/resources', '/contact', '/demo', '/case-study', '/whatsapp-voice-ai', '/travel-agencies', '/retail-businesses'].includes(pathname)
+    || pathname === '/ro' || pathname.startsWith('/ro/')
     || (pathname.startsWith('/blog/') && pathname !== '/blog/rss.xml')
   const isDarkHero = hasDarkHero && !scrolled
 

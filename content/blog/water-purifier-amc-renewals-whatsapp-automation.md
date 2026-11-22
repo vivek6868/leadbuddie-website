@@ -83,7 +83,7 @@ Meta has strict rules regarding outbound messages. If you send unsolicited bulk 
 
 If you keep customer records in physical paper notebooks, importing them is the biggest barrier to starting. 
 
-With [LeadBuddie](/water-purifier-crm), you can import customer records and AMC dates from a prepared spreadsheet, then organise renewal follow-ups in one workflow.
+With [LeadBuddie](/ro), you can import customer records and AMC dates from a prepared spreadsheet, then organise renewal follow-ups in one workflow.
 
 Once your list is in, LeadBuddie watches the expiry dates for you and gets the WhatsApp reminders ready on your own number — for you to approve, or to send on their own once you are comfortable.
 

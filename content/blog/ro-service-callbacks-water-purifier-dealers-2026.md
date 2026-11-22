@@ -32,13 +32,13 @@ Fix those three and your service operation transforms.
 
 The moment a service request arrives, it should become a **scheduled visit on the customer's record** — date, time, and reason captured — in one tap, with a confirmation sent back in the same chat. Not a mental note. Not a separate diary. A booked item that can't be forgotten.
 
-This is the core of proper [RO service management](/ro-service-management): the request and the booking live on the customer, not in a chat scroll.
+This is the core of proper [RO service management](/ro): the request and the booking live on the customer, not in a chat scroll.
 
 ## Step 2 — Give technicians full context
 
 When the technician arrives, they should already know: the installed model, install date, AMC plan, past visits, and previous notes. No "what model do you have, sir?" No re-explaining last month's complaint.
 
-That context does two things — it makes the visit faster, and it makes the customer feel *remembered*. Remembered customers renew. This is exactly why service should live inside your [water purifier dealer CRM](/water-purifier-crm), not a standalone app.
+That context does two things — it makes the visit faster, and it makes the customer feel *remembered*. Remembered customers renew. This is exactly why service should live inside your [water purifier dealer CRM](/ro), not a standalone app.
 
 ## Step 3 — Make "call me later" un-forgettable
 
@@ -65,4 +65,4 @@ You don't need software to *start* — you need discipline. But software makes t
 
 A water purifier dealership doesn't lose customers in one big dramatic moment. It loses them one missed callback at a time. Plug that leak — book every visit, give technicians context, never drop a callback — and you keep customers for years, not just one AMC cycle.
 
-[LeadBuddie](/water-purifier-crm) runs this entire service-and-callback workflow on your existing WhatsApp number. [Start free](https://app.leadbuddie.com) or [book a demo](/demo) to see it on your own dealership.
+[LeadBuddie](/ro) runs this entire service-and-callback workflow on your existing WhatsApp number. [Start free](https://app.leadbuddie.com) or [book a demo](/demo) to see it on your own dealership.

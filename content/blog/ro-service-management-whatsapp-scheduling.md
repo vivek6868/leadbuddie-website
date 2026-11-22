@@ -71,4 +71,4 @@ By using a mobile-optimized CRM, your office team can schedule visits on a centr
 Moving your service management to WhatsApp doesn't just save time—it build **trust**. 
 Customers appreciate instant scheduling, clear arrival confirmations, and having their repair history remembered. When your AMC is due for renewal next year, they will renew without hesitation because your service experience was flawless.
 
-[LeadBuddie](/ro-service-management) is built specifically for water purifier dealers to handle leads, bookings, service tracking, and AMC renewals in one clean WhatsApp CRM. [Try it for free](https://app.leadbuddie.com) and organise your service visits today.
+[LeadBuddie](/ro) is built specifically for water purifier dealers to handle leads, bookings, service tracking, and AMC renewals in one clean WhatsApp CRM. [Try it for free](https://app.leadbuddie.com) and organise your service visits today.

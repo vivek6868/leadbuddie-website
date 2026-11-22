@@ -235,6 +235,6 @@ No. Only the kinds of service that genuinely reset the cycle for your business s
 
 A good job-card workflow does more than dispatch technicians. It preserves the link between the customer’s need, the work performed, the money collected and the service that comes next.
 
-That is how [LeadBuddie works for water purifier businesses](/water-purifier-crm) — alongside the units you installed, [RO service management](/ro-service-management), service due dates and [AMC renewals](/amc-renewal-software). WhatsApp updates are optional, and you can add them whenever you like.
+That is how [LeadBuddie works for water purifier businesses](/ro) — alongside the units you installed, [RO service management](/ro), service due dates and [AMC renewals](/ro/amc-renewal-tracking). WhatsApp updates are optional, and you can add them whenever you like.
 
 [Explore the complete water purifier service-management guide](/blog/water-purifier-service-management-software-guide-2026) or [book a walkthrough](/demo) using your current service process.

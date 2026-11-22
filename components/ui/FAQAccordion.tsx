@@ -20,6 +20,11 @@ interface FAQAccordionProps {
    * dark one (/ai-employee).
    */
   tone?: 'light' | 'dark'
+  /**
+   * Scroll-reveal hides the block until it enters the viewport. RO pages pass false so the
+   * questions and answers are visible in the first HTML paint, without waiting for JS.
+   */
+  reveal?: boolean
 }
 
 const TONE = {
@@ -41,7 +46,7 @@ const TONE = {
   },
 } as const
 
-export function FAQAccordion({ items, className, tone = 'light' }: FAQAccordionProps) {
+export function FAQAccordion({ items, className, tone = 'light', reveal = true }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const t = TONE[tone]
 
@@ -52,8 +57,9 @@ export function FAQAccordion({ items, className, tone = 'light' }: FAQAccordionP
         return (
           <div
             key={index}
-            data-reveal
-            style={{ ['--reveal-delay' as string]: `${index * 0.04}s` } as React.CSSProperties}
+            {...(reveal
+              ? { 'data-reveal': true, style: { ['--reveal-delay' as string]: `${index * 0.04}s` } as React.CSSProperties }
+              : {})}
             className={cn(
               'overflow-hidden rounded-2xl border transition-colors',
               t.card,

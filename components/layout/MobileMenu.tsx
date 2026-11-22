@@ -102,7 +102,10 @@ export function MobileMenu({ darkTrigger = false, onRequestDemo }: MobileMenuPro
             <nav className="flex flex-col p-3">
               <p className="px-3 pb-2 pt-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#087c5a]">Industries</p>
               {[
-                { name: 'Water treatment', href: '/water-purifier-crm' },
+                { name: 'LeadBuddie RO', href: '/ro' },
+                { name: 'LeadBuddie RO pricing', href: '/ro/pricing' },
+                { name: 'LeadBuddie RO (हिन्दी)', href: '/ro/hi' },
+                { name: 'LeadBuddie RO (தமிழ்)', href: '/ro/ta' },
                 { name: 'Travel agencies', href: '/travel-agencies' },
                 { name: 'Retail businesses', href: '/retail-businesses' },
               ].map((item) => (

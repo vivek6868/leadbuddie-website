@@ -16,11 +16,12 @@ const columns = [
   {
     title: 'Industries',
     links: [
-      { name: 'Water treatment', href: '/water-purifier-crm' },
+      { name: 'LeadBuddie RO', href: '/ro' },
+      { name: 'LeadBuddie RO pricing', href: '/ro/pricing' },
+      { name: 'LeadBuddie RO in Hindi', href: '/ro/hi' },
+      { name: 'LeadBuddie RO in Tamil', href: '/ro/ta' },
       { name: 'Travel agencies', href: '/travel-agencies' },
       { name: 'Retail businesses', href: '/retail-businesses' },
-      { name: 'RO service operations', href: '/ro-service-management' },
-      { name: 'AMC renewal operations', href: '/amc-renewal-software' },
       { name: 'Buddie agent', href: '/ai-employee' },
     ],
   },

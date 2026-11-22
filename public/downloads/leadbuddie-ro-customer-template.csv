@@ -1,0 +1,4 @@
+﻿Customer name,Phone,Address,Area,Purifier model,Installation date,Last service date,Next service due,AMC start,AMC end,AMC amount
+Sample Customer 1,9800000001,14 Sample Street,Sample Area 1,Sample RO 8-stage,2024-04-12,2025-10-12,2026-01-12,2025-04-12,2026-04-11,3500
+Sample Customer 2,9800000002,8 Lake Road,Sample Area 2,Sample RO 10-stage,2023-11-02,2025-11-02,2026-02-02,2024-11-02,2025-11-01,4200
+Sample Customer 3,9800000003,21 Temple Street,Sample Area 3,Sample RO under-sink,2025-01-20,2025-07-20,2025-10-20,2025-01-20,2026-01-19,2800
