@@ -27,12 +27,20 @@ const nextConfig = {
       ['Case Study', 'case-study'],
       ['Case%20Study', 'case-study'],
     ]
-    return categories.map(([value, slug]) => ({
+    const categoryRedirects = categories.map(([value, slug]) => ({
       source: '/blog',
       has: [{ type: 'query', key: 'category', value }],
       destination: `/blog/category/${slug}`,
       statusCode: 301,
     }))
+    const waterRedirects = [
+      ['/water-purifier-crm', '/ro'],
+      ['/water-treatment', '/ro'],
+      ['/ro-service-management', '/ro'],
+      ['/water-purifier-lead-management', '/ro'],
+      ['/amc-renewal-software', '/ro/amc-renewal-tracking'],
+    ].map(([source, destination]) => ({ source, destination, statusCode: 301 }))
+    return [...categoryRedirects, ...waterRedirects]
   },
 }
 

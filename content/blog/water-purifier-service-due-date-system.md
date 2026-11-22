@@ -191,6 +191,6 @@ Say so — “needs setting up.” It is honest and somebody can act on it. A gu
 
 The point is not to show the biggest overdue count on the dashboard. It is to give your team a list they pick up and act on without second-guessing it.
 
-[LeadBuddie for water purifier businesses](/water-purifier-crm) keeps service due dates tied to the customer, the unit you installed, past visits and the AMC — and flags anything it is not sure about instead of guessing. WhatsApp reminders are there when you want them; you do not need them to get started.
+[LeadBuddie for water purifier businesses](/ro) keeps service due dates tied to the customer, the unit you installed, past visits and the AMC — and flags anything it is not sure about instead of guessing. WhatsApp reminders are there when you want them; you do not need them to get started.
 
-See [RO service management](/ro-service-management) or [book a walkthrough](/demo) with your own data.
+See [RO service management](/ro) or [book a walkthrough](/demo) with your own data.

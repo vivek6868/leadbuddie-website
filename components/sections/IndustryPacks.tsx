@@ -28,7 +28,7 @@ const PACKS: Pack[] = [
     tagline: 'AMC tracking, warranties, technician scheduling, and service callback reminders.',
     tone: 'from-teal-400/20 text-teal-300 border-teal-400/25',
     status: 'live',
-    href: '/water-purifier-crm',
+    href: '/ro',
   },
   {
     icon: Compass,

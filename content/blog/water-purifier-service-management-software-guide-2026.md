@@ -107,7 +107,7 @@ Service history is your memory of that customer. It should show what was done, w
 
 AMC work is related to service, but it is not the same thing. A contract has its own start, expiry, plan, value, status and renewal outcome. Renewal work should appear before the contract becomes invisible.
 
-See [LeadBuddie’s AMC renewal operations](/amc-renewal-software) for the dedicated workflow.
+See [LeadBuddie’s AMC renewal operations](/ro/amc-renewal-tracking) for the dedicated workflow.
 
 ### Next cycle
 
@@ -217,6 +217,6 @@ You should be able to choose: let it only watch and suggest, make it ask you bef
 
 An inbox helps your team talk to customers. Software for a purifier business has to do more than that: it has to remember which customer owns which unit, what you did last time, what is due next and whose AMC is running out.
 
-That is what [LeadBuddie does for water purifier businesses](/water-purifier-crm). Start with your customers and your service work, and add Buddie’s follow-ups and WhatsApp when you are ready.
+That is what [LeadBuddie does for water purifier businesses](/ro). Start with your customers and your service work, and add Buddie’s follow-ups and WhatsApp when you are ready.
 
-[See how it works](/water-purifier-crm) or [book a walkthrough](/demo) using your own customer list.
+[See how it works](/ro) or [book a walkthrough](/demo) using your own customer list.

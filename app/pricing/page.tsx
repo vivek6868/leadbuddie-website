@@ -62,6 +62,26 @@ export default function PricingPage() {
 
       <PricingGrid />
 
+      <section className="px-4 pb-6 sm:px-6 lg:px-8" aria-labelledby="leadbuddie-ro-pricing">
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-[#bcebd8] bg-[#e9faf3] p-6 sm:p-8">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#087c5a]">LeadBuddie RO</p>
+          <h2 id="leadbuddie-ro-pricing" className="mt-3 font-heading text-2xl font-extrabold tracking-[-0.04em] text-slate-950 sm:text-3xl">
+            RO dealers have a separate price list
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-slate-700">
+            The plans above are unchanged. LeadBuddie RO, for water-purifier dealers and service centres, is listed on its own page.
+          </p>
+          <ul className="mt-4 space-y-2 text-sm font-semibold text-slate-800">
+            <li>Growth: free for the first month after signup, then Rs 1,999 per month. Includes the LeadBuddie Engineer app.</li>
+            <li>Scale: Rs 3,999 per month.</li>
+            <li>Pay yearly for a further discount — talk to our team.</li>
+          </ul>
+          <a href="/ro/pricing" className="mt-5 inline-flex text-sm font-extrabold text-[#087c5a] underline-offset-2 hover:underline">
+            LeadBuddie RO price list
+          </a>
+        </div>
+      </section>
+
       <section className="px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[34px] bg-[#07111f] px-6 py-14 text-center text-white sm:px-12 sm:py-20">
           <div className="absolute -right-20 -top-16 h-72 w-72 rounded-full bg-[#25d366]/20 blur-[90px]" />

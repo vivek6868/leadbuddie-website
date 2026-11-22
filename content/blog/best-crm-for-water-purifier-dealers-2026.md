@@ -51,14 +51,14 @@ For a water purifier dealer, the second category wins on the metric that matters
 
 ## Where LeadBuddie fits
 
-We built [LeadBuddie](/water-purifier-crm) as a Customer Operations Platform for WhatsApp-first businesses, with a dedicated **Water Treatment Pack** because we spent weeks inside a real dealership — [Mastec Water Purifier](/case-study) — watching exactly where renewals leaked.
+We built [LeadBuddie](/ro) as a Customer Operations Platform for WhatsApp-first businesses, with a dedicated **Water Treatment Pack** because we spent weeks inside a real dealership — [Mastec Water Purifier](/case-study) — watching exactly where renewals leaked.
 
 It does the seven things above on your existing WhatsApp number:
 
 - WhatsApp enquiries become tracked leads.
 - Customers carry their installed model, install date and AMC plan.
-- Every renewal is surfaced before it lapses — see [AMC renewal software](/amc-renewal-software).
-- Service visits and complaints are scheduled and logged — see [RO service management](/ro-service-management).
+- Every renewal is surfaced before it lapses — see [AMC renewal software](/ro/amc-renewal-tracking).
+- Service visits and complaints are scheduled and logged — see [RO service management](/ro).
 - Callbacks resurface on the right day so none are forgotten.
 
 You can start free and only upgrade as you add inbox, AI replies and campaigns.

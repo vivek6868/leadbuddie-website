@@ -47,12 +47,47 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    // Niche landing pages — primary SEO targets for the water-treatment vertical
     {
-      url: `${baseUrl}/water-purifier-crm`,
-      lastModified: SITE_LAST_MODIFIED,
-      changeFrequency: 'monthly',
+      url: `${baseUrl}/ro`,
+      lastModified: new Date('2026-11-22T00:00:00.000Z'),
+      changeFrequency: 'weekly',
       priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/ro/pricing`,
+      lastModified: new Date('2026-11-22T00:00:00.000Z'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ro/hi`,
+      lastModified: new Date('2026-11-22T00:00:00.000Z'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ro/ta`,
+      lastModified: new Date('2026-11-22T00:00:00.000Z'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ro/amc-renewal-tracking`,
+      lastModified: new Date('2026-11-22T00:00:00.000Z'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/ro/service-due-reminders`,
+      lastModified: new Date('2026-11-22T00:00:00.000Z'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/ro/excel-customers`,
+      lastModified: new Date('2026-11-22T00:00:00.000Z'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/travel-agencies`,
@@ -65,24 +100,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: SITE_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/amc-renewal-software`,
-      lastModified: SITE_LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/ro-service-management`,
-      lastModified: SITE_LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/water-purifier-lead-management`,
-      lastModified: SITE_LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.95,
     },
     {
       url: `${baseUrl}/amc-revenue-calculator`,

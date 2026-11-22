@@ -100,8 +100,8 @@ export default function AmcRevenueCalculatorPage() {
             </p>
             <p>
               It is an operations and communication workflow. Review your own results over time rather than treating this calculator’s scenario as a forecast.{' '}
-              <Link href="/amc-renewal-software" className="font-semibold text-brand-hover hover:underline">
-                See how AMC renewal tracking works →
+              <Link href="/ro/amc-renewal-tracking" className="font-semibold text-brand-hover hover:underline">
+                See how RO AMC renewal tracking works →
               </Link>
             </p>
           </div>
@@ -117,11 +117,11 @@ export default function AmcRevenueCalculatorPage() {
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <span className="text-sm text-text-muted">Explore more:</span>
-            <Link href="/amc-renewal-software" className="rounded-full border border-border bg-bg-card px-4 py-2 text-sm font-medium text-text-secondary hover:border-brand hover:text-text-primary shadow-sm transition-all">
-              AMC renewal software
+            <Link href="/ro/amc-renewal-tracking" className="rounded-full border border-border bg-bg-card px-4 py-2 text-sm font-medium text-text-secondary hover:border-brand hover:text-text-primary shadow-sm transition-all">
+              RO AMC tracking
             </Link>
-            <Link href="/water-purifier-crm" className="rounded-full border border-border bg-bg-card px-4 py-2 text-sm font-medium text-text-secondary hover:border-brand hover:text-text-primary shadow-sm transition-all">
-              Water purifier CRM
+            <Link href="/ro" className="rounded-full border border-border bg-bg-card px-4 py-2 text-sm font-medium text-text-secondary hover:border-brand hover:text-text-primary shadow-sm transition-all">
+              LeadBuddie RO
             </Link>
           </div>
         </div>

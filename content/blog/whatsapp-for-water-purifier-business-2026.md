@@ -28,7 +28,7 @@ If your enquiries are currently split across two or three personal phones, conso
 
 The moment a new person messages, that's a lead. The mistake most dealers make is *replying* to the message but never *recording* it — so when the customer goes quiet, there's nothing to follow up on.
 
-A proper setup turns each new chat into a tracked lead automatically, with a status (new, quoted, follow-up, won) and an owner. No copy-paste, no lead lost after 9 PM. This is the core of any [water purifier dealer CRM](/water-purifier-crm).
+A proper setup turns each new chat into a tracked lead automatically, with a status (new, quoted, follow-up, won) and an owner. No copy-paste, no lead lost after 9 PM. This is the core of any [water purifier dealer CRM](/ro).
 
 ## Step 2 — Convert buyers into customers with full context
 
@@ -42,7 +42,7 @@ This record is what makes everything afterwards possible — service, reminders,
 
 ## Step 3 — Handle service visits in the same chat
 
-When a customer messages "filter is making noise," that should become a **scheduled visit** on their record in one tap — with the date, time and reason captured, and confirmation sent back in the same thread. The visit history then travels with the customer, so the next technician arrives knowing the full story. That's the heart of good [RO service management](/ro-service-management).
+When a customer messages "filter is making noise," that should become a **scheduled visit** on their record in one tap — with the date, time and reason captured, and confirmation sent back in the same thread. The visit history then travels with the customer, so the next technician arrives knowing the full story. That's the heart of good [RO service management](/ro).
 
 ## Step 4 — Never miss an AMC renewal
 
@@ -80,4 +80,4 @@ That rhythm, run consistently, is the difference between a dealership that leaks
 
 WhatsApp is the front door to your water purifier business. With one business number, every enquiry captured, customers tracked with their product and AMC, service handled in-thread, and renewals surfaced before they lapse, that front door becomes a real operating system.
 
-[LeadBuddie](/water-purifier-crm) runs exactly this workflow on your existing WhatsApp number, built on official Meta infrastructure. [Start free](https://app.leadbuddie.com) or [book a demo](/demo) to see it on your own numbers.
+[LeadBuddie](/ro) runs exactly this workflow on your existing WhatsApp number, built on official Meta infrastructure. [Start free](https://app.leadbuddie.com) or [book a demo](/demo) to see it on your own numbers.
