@@ -209,7 +209,7 @@ export default function LeadbuddieRoPricingPage() {
 
           <h2 className="mt-14 font-heading text-2xl font-extrabold tracking-[-0.04em] text-slate-950">Questions</h2>
           <div className="mt-5">
-            <FAQAccordion items={FAQ} />
+            <FAQAccordion items={FAQ} reveal={false} />
           </div>
 
           <p className="mt-10 text-sm text-slate-600">

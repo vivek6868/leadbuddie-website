@@ -135,7 +135,7 @@ export function RoGuide({ guide }: { guide: RoGuideContent }) {
 
           <h2 className="mt-14 font-heading text-2xl font-extrabold tracking-[-0.04em] text-slate-950">Questions</h2>
           <div className="mt-5">
-            <FAQAccordion items={guide.faq} />
+            <FAQAccordion items={guide.faq} reveal={false} />
           </div>
 
           <div className="mt-12 rounded-[28px] bg-[#06271f] p-6 text-white sm:p-8">

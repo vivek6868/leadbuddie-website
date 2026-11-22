@@ -143,7 +143,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24" data-reveal>
+      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#087c5a]">{copy.audienceEyebrow}</p>
           <div className="mt-4 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
@@ -163,7 +163,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
         </div>
       </section>
 
-      <section id="capabilities" className="scroll-mt-24 bg-[#eaf3f0] px-4 py-16 sm:px-6 lg:px-8 lg:py-24" data-reveal>
+      <section id="capabilities" className="scroll-mt-24 bg-[#eaf3f0] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#087c5a]">{copy.capabilityEyebrow}</p>
           <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.045em] text-slate-950 sm:text-5xl">
@@ -187,7 +187,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
         </div>
       </section>
 
-      <section id="engineer-app" className="scroll-mt-24 bg-[#06271f] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24" data-reveal>
+      <section id="engineer-app" className="scroll-mt-24 bg-[#06271f] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#9af3c1]">{copy.engineerEyebrow}</p>
@@ -216,7 +216,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24" data-reveal>
+      <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#087c5a]">{copy.whatsappEyebrow}</p>
           <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.045em] text-slate-950 sm:text-5xl">
@@ -248,7 +248,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
         </div>
       </section>
 
-      <section className="bg-[#061722] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24" data-reveal>
+      <section className="bg-[#061722] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
             <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#9af3c1]">{copy.flowEyebrow}</p>
@@ -271,7 +271,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
         </div>
       </section>
 
-      <section id="pricing" className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8 lg:py-24" data-reveal>
+      <section id="pricing" className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#087c5a]">{copy.pricingEyebrow}</p>
           <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.045em] text-slate-950 sm:text-5xl">
@@ -350,7 +350,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
         </div>
       </section>
 
-      <section id="guides" className="scroll-mt-24 bg-[#061722] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24" data-reveal>
+      <section id="guides" className="scroll-mt-24 bg-[#061722] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#9af3c1]">{copy.guidesEyebrow}</p>
           <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.045em] sm:text-5xl">
@@ -389,7 +389,7 @@ export function RoLanding({ copy, localePath }: { copy: RoCopy; localePath: stri
             </a>
           </p>
           <div className="mt-8">
-            <FAQAccordion items={copy.faq} />
+            <FAQAccordion items={copy.faq} reveal={false} />
           </div>
         </div>
       </section>
